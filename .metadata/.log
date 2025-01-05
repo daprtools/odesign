@@ -564,3 +564,180 @@ java.lang.Exception: Resource '/daprsample/representations.aird' does not exist.
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
+!SESSION 2025-01-05 14:30:53.007 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.13
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_IN
+Framework arguments:  -product fr.obeo.dsl.designer.ce.product
+Command-line arguments:  -product fr.obeo.dsl.designer.ce.product -data /home/raman/obeo-workspace/../runtime-New_configuration -dev file:/home/raman/obeo-workspace/.metadata/.plugins/org.eclipse.pde.core/New_configuration/dev.properties -os linux -ws gtk -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.ui.navigator 4 0 2025-01-05 15:39:52.882
+!MESSAGE Cannot find navigator content extension (using triggerPoints) for object "<null>" parent path: "F/io.dapr.daprdesigner.design/icons". Check that you have an expression for this object in a navigatorContent triggerPoints or enablement.
+
+!ENTRY org.eclipse.sirius.diagram 2 0 2025-01-05 15:45:02.627
+!MESSAGE An error occurred during the representation refresh of TestArchitecture.
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.emf.ecore.EStructuralFeature$Setting.getEObject()" because "setting" is null
+	at org.eclipse.emf.ecore.util.ECrossReferenceAdapter$InverseCrossReferencer.remove(ECrossReferenceAdapter.java:398)
+	at org.eclipse.sirius.business.internal.session.danalysis.LocalResourceCollectorCrossReferencer$LocalInverseCrossReferencer.remove(LocalResourceCollectorCrossReferencer.java:200)
+	at org.eclipse.emf.ecore.util.ECrossReferenceAdapter.handleCrossReference(ECrossReferenceAdapter.java:906)
+	at org.eclipse.emf.ecore.util.ECrossReferenceAdapter.selfAdapt(ECrossReferenceAdapter.java:737)
+	at org.eclipse.sirius.business.internal.session.danalysis.SessionLazyCrossReferencer.selfAdapt(SessionLazyCrossReferencer.java:300)
+	at org.eclipse.emf.ecore.util.ECrossReferenceAdapter.notifyChanged(ECrossReferenceAdapter.java:715)
+	at org.eclipse.sirius.business.internal.session.danalysis.SessionLazyCrossReferencer.notifyChanged(SessionLazyCrossReferencer.java:161)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.sirius.viewpoint.impl.DViewImpl.getViewpoint(DViewImpl.java:189)
+	at org.eclipse.sirius.business.internal.session.danalysis.DViewOperations.getSelectedViewpoints(DViewOperations.java:70)
+	at org.eclipse.sirius.business.internal.session.danalysis.DAnalysisSessionImpl.getSelectedViewpoints(DAnalysisSessionImpl.java:1146)
+	at org.eclipse.sirius.business.api.dialect.AbstractRepresentationDialectServices.areRequiredViewpointsSelected(AbstractRepresentationDialectServices.java:154)
+	at org.eclipse.sirius.business.api.dialect.AbstractRepresentationDialectServices.canRefresh(AbstractRepresentationDialectServices.java:137)
+	at org.eclipse.sirius.business.internal.dialect.DialectManagerImpl.canRefresh(DialectManagerImpl.java:190)
+	at org.eclipse.sirius.business.api.dialect.command.RefreshRepresentationsCommand.canExecute(RefreshRepresentationsCommand.java:140)
+	at org.eclipse.emf.transaction.impl.AbstractTransactionalCommandStack.execute(AbstractTransactionalCommandStack.java:158)
+	at org.eclipse.emf.transaction.impl.AbstractTransactionalCommandStack.execute(AbstractTransactionalCommandStack.java:214)
+	at org.eclipse.sirius.diagram.ui.tools.internal.editor.DDiagramEditorImpl.launchRefresh(DDiagramEditorImpl.java:1419)
+	at org.eclipse.sirius.diagram.ui.tools.internal.editor.DDiagramEditorImpl$1.run(DDiagramEditorImpl.java:798)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui 4 0 2025-01-05 15:45:02.632
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.emf.ecore.EStructuralFeature$Setting.getEObject()" because "setting" is null
+	at org.eclipse.emf.ecore.util.ECrossReferenceAdapter$InverseCrossReferencer.remove(ECrossReferenceAdapter.java:398)
+	at org.eclipse.sirius.business.internal.session.danalysis.LocalResourceCollectorCrossReferencer$LocalInverseCrossReferencer.remove(LocalResourceCollectorCrossReferencer.java:200)
+	at org.eclipse.emf.ecore.util.ECrossReferenceAdapter.handleCrossReference(ECrossReferenceAdapter.java:906)
+	at org.eclipse.emf.ecore.util.ECrossReferenceAdapter.selfAdapt(ECrossReferenceAdapter.java:737)
+	at org.eclipse.sirius.business.internal.session.danalysis.SessionLazyCrossReferencer.selfAdapt(SessionLazyCrossReferencer.java:300)
+	at org.eclipse.emf.ecore.util.ECrossReferenceAdapter.notifyChanged(ECrossReferenceAdapter.java:715)
+	at org.eclipse.sirius.business.internal.session.danalysis.SessionLazyCrossReferencer.notifyChanged(SessionLazyCrossReferencer.java:161)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.sirius.viewpoint.impl.DViewImpl.getViewpoint(DViewImpl.java:189)
+	at org.eclipse.sirius.business.internal.session.danalysis.DViewOperations.getSelectedViewpoints(DViewOperations.java:70)
+	at org.eclipse.sirius.business.internal.session.danalysis.DAnalysisSessionImpl.getSelectedViewpoints(DAnalysisSessionImpl.java:1146)
+	at org.eclipse.sirius.diagram.tools.api.management.ToolManagement.addVSMToolsForDiagramWithLayer(ToolManagement.java:424)
+	at org.eclipse.sirius.diagram.tools.api.management.ToolManagement.addVSMTools(ToolManagement.java:494)
+	at org.eclipse.sirius.diagram.tools.api.management.ToolManagement.computeAvailableTools(ToolManagement.java:278)
+	at org.eclipse.sirius.diagram.tools.api.management.ToolManagement.updateTools(ToolManagement.java:217)
+	at org.eclipse.sirius.diagram.tools.internal.management.UpdateToolRecordingCommand.doExecute(UpdateToolRecordingCommand.java:59)
+	at org.eclipse.emf.transaction.RecordingCommand.execute(RecordingCommand.java:130)
+	at org.eclipse.sirius.diagram.ui.tools.internal.editor.DDiagramEditorSessionListenerDelegate.reloadPalette(DDiagramEditorSessionListenerDelegate.java:262)
+	at org.eclipse.sirius.diagram.ui.tools.internal.editor.DDiagramEditorSessionListenerDelegate.run(DDiagramEditorSessionListenerDelegate.java:150)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:5040)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4520)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:166)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:368)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:470)
+	at org.eclipse.sirius.editor.tools.internal.presentation.CustomSiriusEditor.doSave(CustomSiriusEditor.java:510)
+	at org.eclipse.ui.internal.SaveableHelper.lambda$0(SaveableHelper.java:156)
+	at org.eclipse.ui.internal.SaveableHelper.lambda$3(SaveableHelper.java:271)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:434)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:352)
+	at org.eclipse.ui.internal.WorkbenchWindow.lambda$7(WorkbenchWindow.java:2346)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2344)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:278)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:260)
+	at org.eclipse.ui.internal.SaveableHelper.savePart(SaveableHelper.java:160)
+	at org.eclipse.ui.internal.WorkbenchPage.saveSaveable(WorkbenchPage.java:3802)
+	at org.eclipse.ui.internal.WorkbenchPage.saveEditor(WorkbenchPage.java:3815)
+	at org.eclipse.ui.internal.handlers.SaveHandler.execute(SaveHandler.java:82)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:283)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:97)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:317)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:251)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:173)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:156)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:485)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:213)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:308)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:580)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:647)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:439)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:96)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1953)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1528)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1555)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1538)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1577)
+	at org.eclipse.swt.widgets.Widget.gtk_key_press_event(Widget.java:937)
+	at org.eclipse.swt.widgets.Control.gtk_key_press_event(Control.java:4013)
+	at org.eclipse.swt.widgets.Button.gtk_key_press_event(Button.java:686)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:2507)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:6834)
+	at org.eclipse.swt.widgets.Button.windowProc(Button.java:1341)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:6163)
+	at org.eclipse.swt.internal.gtk3.GTK3.gtk_main_do_event(Native Method)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1597)
+	at org.eclipse.swt.internal.gtk3.GTK3.gtk_main_iteration_do(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4514)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
+
+!ENTRY org.eclipse.sirius 2 0 2025-01-05 15:47:31.138
+!MESSAGE Icon file "/io.dapr.daprdesigner.design/icons/png/Environment.png" not found
+
+!ENTRY org.eclipse.sirius 2 0 2025-01-05 15:47:31.140
+!MESSAGE Icon file "/io.dapr.daprdesigner.design/icons/png/Environment.png" not found
+
+!ENTRY org.eclipse.sirius 2 0 2025-01-05 15:47:31.141
+!MESSAGE Icon file "/io.dapr.daprdesigner.design/icons/png/Environment.png" not found
+
+!ENTRY org.eclipse.sirius 2 0 2025-01-05 15:47:31.143
+!MESSAGE Icon file "/io.dapr.daprdesigner.design/icons/png/Environment.png" not found
+
+!ENTRY org.eclipse.ui.navigator 4 0 2025-01-05 15:47:51.055
+!MESSAGE Cannot find navigator content extension (using triggerPoints) for object "<null>" parent path: "F/io.dapr.daprdesigner.design/icons/png". Check that you have an expression for this object in a navigatorContent triggerPoints or enablement.
+
+!ENTRY org.eclipse.sirius 2 0 2025-01-05 15:48:11.171
+!MESSAGE Icon file "/io.dapr.daprdesigner.design/icons/png/Environment.png" not found
+
+!ENTRY org.eclipse.sirius 2 0 2025-01-05 15:48:11.172
+!MESSAGE Icon file "/io.dapr.daprdesigner.design/icons/png/Environment.png" not found
+
+!ENTRY org.eclipse.sirius 2 0 2025-01-05 15:48:11.174
+!MESSAGE Icon file "/io.dapr.daprdesigner.design/icons/png/Environment.png" not found
+
+!ENTRY org.eclipse.sirius 2 0 2025-01-05 15:48:11.175
+!MESSAGE Icon file "/io.dapr.daprdesigner.design/icons/png/Environment.png" not found
+
+!ENTRY org.eclipse.sirius 2 0 2025-01-05 15:55:05.860
+!MESSAGE Icon file "/io.dapr.daprdesigner.design/icons/png/Environment.png" not found
+
+!ENTRY org.eclipse.sirius 2 0 2025-01-05 15:55:05.861
+!MESSAGE Icon file "/io.dapr.daprdesigner.design/icons/png/Environment.png" not found
+
+!ENTRY org.eclipse.sirius 2 0 2025-01-05 15:55:05.863
+!MESSAGE Icon file "/io.dapr.daprdesigner.design/icons/png/Environment.png" not found
+
+!ENTRY org.eclipse.sirius 2 0 2025-01-05 15:55:05.864
+!MESSAGE Icon file "/io.dapr.daprdesigner.design/icons/png/Environment.png" not found
