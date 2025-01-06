@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<daprdesigner:DaprArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:daprdesigner="http://dapr.io/daprtools/daprdesigner">
+  <environments>
+    <namespace name="NewNS"/>
+    <buildingblocks xsi:type="daprdesigner:Services" namespace="//@environments.0/@namespace"/>
+  </environments>
+  <environments>
+    <buildingblocks xsi:type="daprdesigner:Services"/>
+    <buildingblocks xsi:type="daprdesigner:Secrets"/>
+  </environments>
+</daprdesigner:DaprArchitecture>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="daprdesigner" version="12.0.0.2017041100">
+  <ownedViewpoints name="ArchitectureViewpoint" modelFileExtension="daprdesigner">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Architecture" domainClass="daprdesigner::DaprArchitecture" enablePopupBars="true">
+      <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
+      <defaultLayer name="Default">
+        <containerMappings name="Environment" semanticCandidatesExpression="feature:environments" domainClass="daprdesigner::Environment">
+          <subNodeMappings name="Namespace" semanticCandidatesExpression="feature:namespace" domainClass="daprdesigner::Namespace">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" sizeComputationExpression="-1" labelPosition="node" workspacePath="/io.dapr.daprdesigner.design/icons/png/32/Namespace.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="TrustDomain" semanticCandidatesExpression="feature:trustdomain" domainClass="daprdesigner::Trustdomain"/>
+          <subContainerMappings name="Services" semanticCandidatesExpression="feature:buildingblocks" domainClass="daprdesigner::Services" childrenPresentation="List">
+            <subNodeMappings name="App" semanticCandidatesExpression="feature:apps" domainClass="daprdesigner::App">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" labelExpression="feature:appId" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/png/32/App.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Services.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="PubSub" semanticCandidatesExpression="feature:buildingblocks" domainClass="daprdesigner::PubSub" childrenPresentation="List">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/PubSub.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="Secret Store" semanticCandidatesExpression="feature:buildingblocks" domainClass="daprdesigner::SecretStore" childrenPresentation="List">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/SecretStore.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Environment.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="EnvironmentCreation" containerMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Environment.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Environment" referenceName="environments">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Services" referenceName="buildingblocks"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="PubSub" referenceName="buildingblocks"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Secrets" referenceName="buildingblocks"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Namespace" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subNodeMappings[name='Namespace']" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Namespace.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Namespace" referenceName="namespace"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="TrustDomain" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subNodeMappings[name='TrustDomain']" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Domain.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation/>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="io.dapr.daprdesigner.design.Services"/>
+  </ownedViewpoints>
+</description:Group>
