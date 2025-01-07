@@ -4,7 +4,7 @@
     <semanticResources>Scratch.daprdesigner</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_V9YgwMs5Ee-fmrk9iRPHxQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_TVTL8MuAEe-fdZlIA4T0Qw" name="TestArchitecture" repPath="#_TVR90MuAEe-fdZlIA4T0Qw" changeId="1736229763978">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_TVTL8MuAEe-fdZlIA4T0Qw" name="TestArchitecture" repPath="#_TVR90MuAEe-fdZlIA4T0Qw" changeId="1736165720404">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']"/>
         <target xmi:type="daprdesigner:DaprArchitecture" href="Scratch.daprdesigner#/"/>
       </ownedRepresentationDescriptors>
@@ -138,14 +138,14 @@
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_VFnSwMwfEe-CjdEev6K_8g">
       <target xmi:type="daprdesigner:Environment" href="Scratch.daprdesigner#//@environments.0"/>
       <semanticElements xmi:type="daprdesigner:Environment" href="Scratch.daprdesigner#//@environments.0"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_VFn50MwfEe-CjdEev6K_8g" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Environment.png" labelColor="136,136,136" borderSize="1" borderSizeComputationExpression="1">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_VFn50MwfEe-CjdEev6K_8g" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Environment.png" borderSize="1" borderSizeComputationExpression="1">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']"/>
       <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_VFpvAswfEe-CjdEev6K_8g" name="Services Group">
         <target xmi:type="daprdesigner:Services" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.0"/>
         <semanticElements xmi:type="daprdesigner:Services" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.0"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_VFpvA8wfEe-CjdEev6K_8g" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/SecretStore.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_VFpvA8wfEe-CjdEev6K_8g" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Services.png" borderSize="1" borderSizeComputationExpression="1" backgroundColor="136,136,136" foregroundColor="253,206,137">
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Services']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Services']"/>
@@ -153,7 +153,7 @@
       <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_VFqWEMwfEe-CjdEev6K_8g" name="Message Brokers">
         <target xmi:type="daprdesigner:PubSub" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.2"/>
         <semanticElements xmi:type="daprdesigner:PubSub" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.2"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_VFqWEcwfEe-CjdEev6K_8g" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/SecretStore.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_VFqWEcwfEe-CjdEev6K_8g" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/PubSub.png" borderSize="1" borderSizeComputationExpression="1" backgroundColor="136,136,136" foregroundColor="253,206,137">
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='PubSub']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='PubSub']"/>
@@ -161,7 +161,7 @@
       <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_VFqWE8wfEe-CjdEev6K_8g" name="Secrets Store">
         <target xmi:type="daprdesigner:Secrets" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.1"/>
         <semanticElements xmi:type="daprdesigner:Secrets" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.1"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_VFqWFMwfEe-CjdEev6K_8g" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/SecretStore.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_VFqWFMwfEe-CjdEev6K_8g" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/SecretStore.png" borderSize="1" borderSizeComputationExpression="1" backgroundColor="136,136,136" foregroundColor="253,206,137">
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Secrets']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Secrets']"/>
@@ -186,14 +186,14 @@
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_WWSQcMwfEe-CjdEev6K_8g">
       <target xmi:type="daprdesigner:Environment" href="Scratch.daprdesigner#//@environments.1"/>
       <semanticElements xmi:type="daprdesigner:Environment" href="Scratch.daprdesigner#//@environments.1"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WWSQccwfEe-CjdEev6K_8g" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Environment.png" labelColor="136,136,136" borderSize="1" borderSizeComputationExpression="1">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WWSQccwfEe-CjdEev6K_8g" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Environment.png" borderSize="1" borderSizeComputationExpression="1">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']"/>
       <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WWcBcMwfEe-CjdEev6K_8g" name="Services Group">
         <target xmi:type="daprdesigner:Services" href="Scratch.daprdesigner#//@environments.1/@buildingblocks.0"/>
         <semanticElements xmi:type="daprdesigner:Services" href="Scratch.daprdesigner#//@environments.1/@buildingblocks.0"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WWcBccwfEe-CjdEev6K_8g" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/SecretStore.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WWcBccwfEe-CjdEev6K_8g" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Services.png" borderSize="1" borderSizeComputationExpression="1" backgroundColor="136,136,136" foregroundColor="253,206,137">
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Services']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Services']"/>
@@ -201,7 +201,7 @@
       <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WWdPkMwfEe-CjdEev6K_8g" name="Message Brokers">
         <target xmi:type="daprdesigner:PubSub" href="Scratch.daprdesigner#//@environments.1/@buildingblocks.2"/>
         <semanticElements xmi:type="daprdesigner:PubSub" href="Scratch.daprdesigner#//@environments.1/@buildingblocks.2"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WWd2oMwfEe-CjdEev6K_8g" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/SecretStore.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WWd2oMwfEe-CjdEev6K_8g" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/PubSub.png" borderSize="1" borderSizeComputationExpression="1" backgroundColor="136,136,136" foregroundColor="253,206,137">
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='PubSub']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='PubSub']"/>
@@ -209,7 +209,7 @@
       <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WWedsMwfEe-CjdEev6K_8g" name="Secrets Store">
         <target xmi:type="daprdesigner:Secrets" href="Scratch.daprdesigner#//@environments.1/@buildingblocks.1"/>
         <semanticElements xmi:type="daprdesigner:Secrets" href="Scratch.daprdesigner#//@environments.1/@buildingblocks.1"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WWfEwMwfEe-CjdEev6K_8g" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/SecretStore.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WWfEwMwfEe-CjdEev6K_8g" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/SecretStore.png" borderSize="1" borderSizeComputationExpression="1" backgroundColor="136,136,136" foregroundColor="253,206,137">
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Secrets']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Secrets']"/>
