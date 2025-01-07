@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<daprdesigner:DaprArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:daprdesigner="http://dapr.io/daprtools/daprdesigner"/>
+<daprdesigner:DaprArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:daprdesigner="http://dapr.io/daprtools/daprdesigner">
+  <environments>
+    <buildingblocks xsi:type="daprdesigner:Services"/>
+    <buildingblocks xsi:type="daprdesigner:Secrets"/>
+    <buildingblocks xsi:type="daprdesigner:PubSub"/>
+    <buildingblocks xsi:type="daprdesigner:Bindings"/>
+    <buildingblocks xsi:type="daprdesigner:Jobs"/>
+    <buildingblocks xsi:type="daprdesigner:Configuration"/>
+    <buildingblocks xsi:type="daprdesigner:Workflow"/>
+    <buildingblocks xsi:type="daprdesigner:Actors"/>
+    <buildingblocks xsi:type="daprdesigner:StateManagement"/>
+    <buildingblocks xsi:type="daprdesigner:DistributedLocks"/>
+    <buildingblocks xsi:type="daprdesigner:CryptoGraphy"/>
+  </environments>
+</daprdesigner:DaprArchitecture>

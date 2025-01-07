@@ -1,26 +1,241 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:daprdesigner="http://dapr.io/daprtools/daprdesigner" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:daprdesigner="http://dapr.io/daprtools/daprdesigner" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_OA-q4Ms5Ee-fmrk9iRPHxQ" selectedViews="_V9YgwMs5Ee-fmrk9iRPHxQ" version="15.4.1.202403191723">
     <semanticResources>Scratch.daprdesigner</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_V9YgwMs5Ee-fmrk9iRPHxQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Xl4voMs5Ee-fmrk9iRPHxQ" name="TestArchitecture" repPath="#_XlixYMs5Ee-fmrk9iRPHxQ" changeId="1736063272948">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_TVTL8MuAEe-fdZlIA4T0Qw" name="TestArchitecture" repPath="#_TVR90MuAEe-fdZlIA4T0Qw" changeId="1736267780257">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']"/>
         <target xmi:type="daprdesigner:DaprArchitecture" href="Scratch.daprdesigner#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram uid="_XlixYMs5Ee-fmrk9iRPHxQ">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_Xma7IMs5Ee-fmrk9iRPHxQ" source="GMF_DIAGRAMS">
-      <data xmi:type="notation:Diagram" xmi:id="_XmbiMMs5Ee-fmrk9iRPHxQ" type="Sirius" element="_XlixYMs5Ee-fmrk9iRPHxQ" measurementUnit="Pixel">
-        <styles xmi:type="notation:DiagramStyle" xmi:id="_XmbiMcs5Ee-fmrk9iRPHxQ"/>
+  <diagram:DSemanticDiagram uid="_TVR90MuAEe-fdZlIA4T0Qw">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_TVZ5oMuAEe-fdZlIA4T0Qw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_TVZ5ocuAEe-fdZlIA4T0Qw" type="Sirius" element="_TVR90MuAEe-fdZlIA4T0Qw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_hkil0M0VEe-Yb5FUr56F0A" type="2002" element="_hkZb4M0VEe-Yb5FUr56F0A">
+          <children xmi:type="notation:Node" xmi:id="_hkjM4M0VEe-Yb5FUr56F0A" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_hkjM4c0VEe-Yb5FUr56F0A" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_hkjz8M0VEe-Yb5FUr56F0A" type="3009" element="_hkcfMc0VEe-Yb5FUr56F0A">
+              <children xmi:type="notation:Node" xmi:id="_hkjz880VEe-Yb5FUr56F0A" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_hkjz9M0VEe-Yb5FUr56F0A" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_hkjz9c0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_hkjz9s0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_hkjz980VEe-Yb5FUr56F0A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_hkjz8c0VEe-Yb5FUr56F0A" fontName="Ubuntu" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hkjz8s0VEe-Yb5FUr56F0A"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_hkjz-M0VEe-Yb5FUr56F0A" type="3009" element="_hkdGQM0VEe-Yb5FUr56F0A">
+              <children xmi:type="notation:Node" xmi:id="_hkkbAM0VEe-Yb5FUr56F0A" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_hkkbAc0VEe-Yb5FUr56F0A" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_hkkbAs0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_hkkbA80VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_hkkbBM0VEe-Yb5FUr56F0A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_hkjz-c0VEe-Yb5FUr56F0A" fontName="Ubuntu" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hkjz-s0VEe-Yb5FUr56F0A" y="40"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_hkkbBc0VEe-Yb5FUr56F0A" type="3009" element="_hkdtUM0VEe-Yb5FUr56F0A">
+              <children xmi:type="notation:Node" xmi:id="_hkkbCM0VEe-Yb5FUr56F0A" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_hklCEM0VEe-Yb5FUr56F0A" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_hklCEc0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_hklCEs0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_hklCE80VEe-Yb5FUr56F0A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_hkkbBs0VEe-Yb5FUr56F0A" fontName="Ubuntu" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hkkbB80VEe-Yb5FUr56F0A" y="80"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_hklCFM0VEe-Yb5FUr56F0A" type="3009" element="_hkdtU80VEe-Yb5FUr56F0A">
+              <children xmi:type="notation:Node" xmi:id="_hklCF80VEe-Yb5FUr56F0A" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_hklCGM0VEe-Yb5FUr56F0A" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_hklCGc0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_hklCGs0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_hklCG80VEe-Yb5FUr56F0A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_hklCFc0VEe-Yb5FUr56F0A" fontName="Ubuntu" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hklCFs0VEe-Yb5FUr56F0A" y="120"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_hklCHM0VEe-Yb5FUr56F0A" type="3009" element="_hkeUYs0VEe-Yb5FUr56F0A">
+              <children xmi:type="notation:Node" xmi:id="_hklpIM0VEe-Yb5FUr56F0A" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_hklpIc0VEe-Yb5FUr56F0A" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_hklpIs0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_hklpI80VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_hklpJM0VEe-Yb5FUr56F0A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_hklCHc0VEe-Yb5FUr56F0A" fontName="Ubuntu" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hklCHs0VEe-Yb5FUr56F0A" y="160"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_hklpJc0VEe-Yb5FUr56F0A" type="3009" element="_hke7cs0VEe-Yb5FUr56F0A">
+              <children xmi:type="notation:Node" xmi:id="_hklpKM0VEe-Yb5FUr56F0A" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_hklpKc0VEe-Yb5FUr56F0A" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_hklpKs0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_hklpK80VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_hklpLM0VEe-Yb5FUr56F0A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_hklpJs0VEe-Yb5FUr56F0A" fontName="Ubuntu" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hklpJ80VEe-Yb5FUr56F0A" y="200"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_hkmQMM0VEe-Yb5FUr56F0A" type="3009" element="_hkgJkM0VEe-Yb5FUr56F0A">
+              <children xmi:type="notation:Node" xmi:id="_hkmQM80VEe-Yb5FUr56F0A" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_hkmQNM0VEe-Yb5FUr56F0A" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_hkmQNc0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_hkmQNs0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_hkmQN80VEe-Yb5FUr56F0A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_hkmQMc0VEe-Yb5FUr56F0A" fontName="Ubuntu" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hkmQMs0VEe-Yb5FUr56F0A" y="240"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_hkmQOM0VEe-Yb5FUr56F0A" type="3009" element="_hkgwoM0VEe-Yb5FUr56F0A">
+              <children xmi:type="notation:Node" xmi:id="_hkm3QM0VEe-Yb5FUr56F0A" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_hkm3Qc0VEe-Yb5FUr56F0A" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_hkm3Qs0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_hkm3Q80VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_hkm3RM0VEe-Yb5FUr56F0A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_hkmQOc0VEe-Yb5FUr56F0A" fontName="Ubuntu" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hkmQOs0VEe-Yb5FUr56F0A" y="280"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_hkm3Rc0VEe-Yb5FUr56F0A" type="3009" element="_hkgwo80VEe-Yb5FUr56F0A">
+              <children xmi:type="notation:Node" xmi:id="_hkm3SM0VEe-Yb5FUr56F0A" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_hkneUM0VEe-Yb5FUr56F0A" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_hkneUc0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_hkneUs0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_hkneU80VEe-Yb5FUr56F0A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_hkm3Rs0VEe-Yb5FUr56F0A" fontName="Ubuntu" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hkm3R80VEe-Yb5FUr56F0A" y="320"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_hkneVM0VEe-Yb5FUr56F0A" type="3009" element="_hkhXsc0VEe-Yb5FUr56F0A">
+              <children xmi:type="notation:Node" xmi:id="_hkneV80VEe-Yb5FUr56F0A" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_hkneWM0VEe-Yb5FUr56F0A" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_hkneWc0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_hkneWs0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_hkneW80VEe-Yb5FUr56F0A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_hkneVc0VEe-Yb5FUr56F0A" fontName="Ubuntu" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hkneVs0VEe-Yb5FUr56F0A" y="360"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_hkneXM0VEe-Yb5FUr56F0A" type="3009" element="_hkh-wM0VEe-Yb5FUr56F0A">
+              <children xmi:type="notation:Node" xmi:id="_hkoFYM0VEe-Yb5FUr56F0A" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_hkoFYc0VEe-Yb5FUr56F0A" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_hkoFYs0VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_hkoFY80VEe-Yb5FUr56F0A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_hkoFZM0VEe-Yb5FUr56F0A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_hkneXc0VEe-Yb5FUr56F0A" fontName="Ubuntu" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hkneXs0VEe-Yb5FUr56F0A" y="400"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_hkjM4s0VEe-Yb5FUr56F0A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_hkjM480VEe-Yb5FUr56F0A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_hkil0c0VEe-Yb5FUr56F0A" fontColor="8947848" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hkil0s0VEe-Yb5FUr56F0A" x="90" y="75"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_TVZ5osuAEe-fdZlIA4T0Qw"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_Xmho0Ms5Ee-fmrk9iRPHxQ" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_XmiP4Ms5Ee-fmrk9iRPHxQ"/>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_TVbu08uAEe-fdZlIA4T0Qw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_TVbu1MuAEe-fdZlIA4T0Qw"/>
     </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_hkZb4M0VEe-Yb5FUr56F0A" childrenPresentation="VerticalStack">
+      <target xmi:type="daprdesigner:Environment" href="Scratch.daprdesigner#//@environments.0"/>
+      <semanticElements xmi:type="daprdesigner:Environment" href="Scratch.daprdesigner#//@environments.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_hkZb4c0VEe-Yb5FUr56F0A" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Environment.png" labelColor="136,136,136" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_hkcfMc0VEe-Yb5FUr56F0A" name="Services Group">
+        <target xmi:type="daprdesigner:Services" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.0"/>
+        <semanticElements xmi:type="daprdesigner:Services" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_hkcfMs0VEe-Yb5FUr56F0A" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Services.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Services']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Services']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_hkdGQM0VEe-Yb5FUr56F0A" name="Message Brokers">
+        <target xmi:type="daprdesigner:PubSub" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.2"/>
+        <semanticElements xmi:type="daprdesigner:PubSub" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.2"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_hkdGQc0VEe-Yb5FUr56F0A" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/PubSub.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='PubSub']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='PubSub']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_hkdtUM0VEe-Yb5FUr56F0A" name="Secrets">
+        <target xmi:type="daprdesigner:Secrets" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.1"/>
+        <semanticElements xmi:type="daprdesigner:Secrets" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.1"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_hkdtUc0VEe-Yb5FUr56F0A" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/SecretStore.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Secrets']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Secrets']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_hkdtU80VEe-Yb5FUr56F0A" name="Bindings">
+        <target xmi:type="daprdesigner:Bindings" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.3"/>
+        <semanticElements xmi:type="daprdesigner:Bindings" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.3"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_hkeUYM0VEe-Yb5FUr56F0A" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Bindings.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Bindings']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Bindings']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_hkeUYs0VEe-Yb5FUr56F0A" name="Jobs">
+        <target xmi:type="daprdesigner:Jobs" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.4"/>
+        <semanticElements xmi:type="daprdesigner:Jobs" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.4"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_hke7cM0VEe-Yb5FUr56F0A" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Jobs.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Jobs']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Jobs']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_hke7cs0VEe-Yb5FUr56F0A" name="Configuration">
+        <target xmi:type="daprdesigner:Configuration" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.5"/>
+        <semanticElements xmi:type="daprdesigner:Configuration" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.5"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_hkfigM0VEe-Yb5FUr56F0A" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Configuration.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Configuration']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Configuration']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_hkgJkM0VEe-Yb5FUr56F0A" name="Workflow">
+        <target xmi:type="daprdesigner:Workflow" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.6"/>
+        <semanticElements xmi:type="daprdesigner:Workflow" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.6"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_hkgJkc0VEe-Yb5FUr56F0A" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Workflow.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Workflow']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Workflow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_hkgwoM0VEe-Yb5FUr56F0A" name="Actors">
+        <target xmi:type="daprdesigner:Actors" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.7"/>
+        <semanticElements xmi:type="daprdesigner:Actors" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.7"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_hkgwoc0VEe-Yb5FUr56F0A" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Actors.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Actors']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Actors']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_hkgwo80VEe-Yb5FUr56F0A" name="StateStore">
+        <target xmi:type="daprdesigner:StateManagement" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.8"/>
+        <semanticElements xmi:type="daprdesigner:StateManagement" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.8"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_hkgwpM0VEe-Yb5FUr56F0A" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/StateManagement.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='StateStore']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='StateStore']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_hkhXsc0VEe-Yb5FUr56F0A" name="Distributed Locks">
+        <target xmi:type="daprdesigner:DistributedLocks" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.9"/>
+        <semanticElements xmi:type="daprdesigner:DistributedLocks" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.9"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_hkhXss0VEe-Yb5FUr56F0A" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/DistributedLocks.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Distributed%20Locks']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Distributed%20Locks']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_hkh-wM0VEe-Yb5FUr56F0A" name="Cryptography">
+        <target xmi:type="daprdesigner:CryptoGraphy" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.10"/>
+        <semanticElements xmi:type="daprdesigner:CryptoGraphy" href="Scratch.daprdesigner#//@environments.0/@buildingblocks.10"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_hkh-wc0VEe-Yb5FUr56F0A" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/32/CryptoGraphy.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Cryptography']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Cryptography']"/>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_Xlu-oMs5Ee-fmrk9iRPHxQ"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_TVR90cuAEe-fdZlIA4T0Qw"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer"/>
     <target xmi:type="daprdesigner:DaprArchitecture" href="Scratch.daprdesigner#/"/>
   </diagram:DSemanticDiagram>
