@@ -1,8 +1,8 @@
-#Sun Jan 05 22:00:25 IST 2025
+#Tue Jan 07 22:53:59 IST 2025
 rulergrid.rulerunit=1
 print.margin.left=0.5
 rulergrid.gridlinestyle=6
-zoom=1.0
+zoom=0.75
 print.useMillim=true
 print.usePortrait=true
 print.page.height=11.6929134

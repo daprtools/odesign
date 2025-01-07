@@ -7,6 +7,7 @@
     <buildingblocks xsi:type="daprdesigner:Bindings"/>
     <buildingblocks xsi:type="daprdesigner:Jobs"/>
     <buildingblocks xsi:type="daprdesigner:Configuration"/>
+    <buildingblocks xsi:type="daprdesigner:Workflow"/>
     <buildingblocks xsi:type="daprdesigner:Actors"/>
     <buildingblocks xsi:type="daprdesigner:StateManagement"/>
     <buildingblocks xsi:type="daprdesigner:DistributedLocks"/>
