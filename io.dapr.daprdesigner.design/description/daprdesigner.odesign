@@ -4,8 +4,17 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Architecture" initialisation="true" domainClass="daprdesigner::DaprArchitecture" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
-        <containerMappings name="Block" semanticCandidatesExpression="feature:buildingblocks" domainClass="daprdesigner::Block">
-          <subContainerMappings name="Sub Block" semanticCandidatesExpression="feature:subblocks" domainClass="daprdesigner::Block">
+        <containerMappings name="Block" semanticCandidatesExpression="feature:buildingblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Block']" domainClass="daprdesigner::Block">
+          <subContainerMappings name="Sub Block" semanticCandidatesExpression="feature:subblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Block']" domainClass="daprdesigner::Block">
+            <subContainerMappings name="Sub Block2" semanticCandidatesExpression="feature:subblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Block']" domainClass="daprdesigner::Block">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Component.png" widthComputationExpression="10" heightComputationExpression="10">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </subContainerMappings>
             <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Component.png" widthComputationExpression="10" heightComputationExpression="10">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>bold</labelFormat>
@@ -23,7 +32,7 @@
           </style>
         </containerMappings>
         <toolSections name="Dapr Node ">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Block" containerMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block']" iconPath="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Block" containerMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']/@subContainerMappings[name='Sub%20Block2'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']/@subContainerMappings[name='Sub%20Block2']" iconPath="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -32,7 +41,68 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Sub Block" containerMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Component.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Sub Block" containerMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']/@subContainerMappings[name='Sub%20Block2'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']/@subContainerMappings[name='Sub%20Block2']" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Component.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Interactions">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Block" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']/@subContainerMappings[name='Sub%20Block2'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']/@subContainerMappings[name='Sub%20Block2']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Blocks" domainClass="daprdesigner::Block" enablePopupBars="true">
+      <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
+      <defaultLayer name="Default">
+        <containerMappings name="Block" semanticCandidatesExpression="feature:subblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Block']" domainClass="daprdesigner::Block">
+          <subContainerMappings name="Sub Block" semanticCandidatesExpression="feature:subblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Block']" domainClass="daprdesigner::Block">
+            <subContainerMappings name="Sub Block2" semanticCandidatesExpression="feature:subblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Block']" domainClass="daprdesigner::Block">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Component.png" widthComputationExpression="10" heightComputationExpression="10">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Component.png" widthComputationExpression="10" heightComputationExpression="10">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" iconPath="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png" widthComputationExpression="20" heightComputationExpression="20">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Block" containerMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']/@subContainerMappings[name='Sub%20Block2'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']/@subContainerMappings[name='Sub%20Block2']" iconPath="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="buildingblocks"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Sub Block" containerMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']/@subContainerMappings[name='Sub%20Block2'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']/@subContainerMappings[name='Sub%20Block2']" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Component.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
