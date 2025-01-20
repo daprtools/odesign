@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<daprdesigner:DaprArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:daprdesigner="http://dapr.io/daprtools/daprdesigner">
+<daprdesigner:DaprArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:daprdesigner="http://dapr.io/daprtools/daprdesigner">
   <buildingblocks name="Development" blockType="MICROSERVICES">
-    <subblocks blockType="STATESTORE"/>
     <subblocks blockType="MICROSERVICES"/>
+    <subblocks blockType="MICROSERVICES"/>
+    <nodes xsi:type="daprdesigner:Actor"/>
   </buildingblocks>
 </daprdesigner:DaprArchitecture>
