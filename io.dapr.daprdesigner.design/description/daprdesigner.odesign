@@ -5,13 +5,15 @@
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default" icon="/io.dapr.daprdesigner.design/icons/svg/24/DaprArchitecture.svg">
         <containerMappings name="Environment" semanticCandidatesExpression="feature:buildingblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Block']" domainClass="daprdesigner::Block">
-          <subNodeMappings name="Actor" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Actor">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svgs/AppConfiguration2.svg">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </style>
-          </subNodeMappings>
           <subContainerMappings name="Service Groups" semanticCandidatesExpression="feature:subblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Block']" domainClass="daprdesigner::Block">
+            <subNodeMappings name="NodeBlock" semanticCandidatesExpression="feature:nodes" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='NodeBlock']" domainClass="daprdesigner::NodeBlocks">
+              <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" labelSize="15" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/Block.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelFormat>italic</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
             <subContainerMappings name="Sub Block2" semanticCandidatesExpression="feature:subblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Block']" domainClass="daprdesigner::Block">
               <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" iconPath="/io.dapr.daprdesigner.design/icons/png/24/Component.png" widthComputationExpression="10" heightComputationExpression="10">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -21,12 +23,12 @@
                 <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
               </style>
             </subContainerMappings>
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="20" iconPath="/io.dapr.daprdesigner.design/icons/png/24/Component.png" widthComputationExpression="130" heightComputationExpression="20">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="20" iconPath="/io.dapr.daprdesigner.design/icons/png/24/Component.png" widthComputationExpression="50" heightComputationExpression="30">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
             </style>
           </subContainerMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="25" iconPath="/io.dapr.daprdesigner.design/icons/svg/48/Block.svg" roundedCorner="true" widthComputationExpression="150" heightComputationExpression="100">
@@ -191,6 +193,144 @@
               <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']"/>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="NodeBlock" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Switch">
+                  <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::APP">
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']"/>
+                  </cases>
+                  <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::ACTOR">
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ActorBlocks']"/>
+                  </cases>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Dapr Nodes">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="App" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/App2.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::APP"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Actor" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Actor.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::ACTOR"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Workflow" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Workflow.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::WORKFLOW"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="PubSub" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/PubSub.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::PUBSUB"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Binding" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Bindings.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::BINDING"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SecretStore" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SecretStore.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::SECRETSTORE"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="StateStore" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/StateStore.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::STATESTORE"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Locks" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Locks.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::DISTRIBUTEDLOCK"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Cryptography" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Cryptography.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::CRYPTOGRAPHY"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Subscription" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SubscriptionConfiguration.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::SUBSCRIPTION"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Resiliency" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/ResiliencyConfiguration.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::RESILIENCY"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="HttpEndPoints" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/HTTPEndPoint.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::HTTPENDPOINT"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
         <customization>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.blockType=daprdesigner::BlockType::ENVIRONMENT">
@@ -231,6 +371,42 @@
           </vsmElementCustomizations>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.blockType=daprdesigner::BlockType::STATESTORE">
             <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@style //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@style //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subContainerMappings[name='Sub%20Block2']/@style //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@style //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']/@style //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']/@subContainerMappings[name='Sub%20Block2']/@style" attributeName="iconPath" value="/io.dapr.daprdesigner.design/icons/png/64/containers/StateStore.png"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.nodeBlockType=daprdesigner::NodeBlockType::APP">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']/@style" attributeName="workspacePath" value="/io.dapr.daprdesigner.design/icons/png/48/components/App2.png"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.nodeBlockType=daprdesigner::NodeBlockType::ACTOR">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']/@style" attributeName="workspacePath" value="/io.dapr.daprdesigner.design/icons/png/48/components/Actor.png"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.nodeBlockType=daprdesigner::NodeBlockType::WORKFLOW">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']/@style" attributeName="workspacePath" value="/io.dapr.daprdesigner.design/icons/png/48/components/Workflow.png"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.nodeBlockType=daprdesigner::NodeBlockType::PUBSUB">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']/@style" attributeName="workspacePath" value="/io.dapr.daprdesigner.design/icons/png/48/components/PubSub.png"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.nodeBlockType=daprdesigner::NodeBlockType::BINDING">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']/@style" attributeName="workspacePath" value="/io.dapr.daprdesigner.design/icons/png/48/components/Bindings.png"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.nodeBlockType=daprdesigner::NodeBlockType::SECRETSTORE">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']/@style" attributeName="workspacePath" value="/io.dapr.daprdesigner.design/icons/png/48/components/SecretStore.png"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.nodeBlockType=daprdesigner::NodeBlockType::STATESTORE">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']/@style" attributeName="workspacePath" value="/io.dapr.daprdesigner.design/icons/png/48/components/StateStore.png"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.nodeBlockType=daprdesigner::NodeBlockType::DISTRIBUTEDLOCK">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']/@style" attributeName="workspacePath" value="/io.dapr.daprdesigner.design/icons/png/48/components/Locks.png"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.nodeBlockType=daprdesigner::NodeBlockType::CRYPTOGRAPHY">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']/@style" attributeName="workspacePath" value="/io.dapr.daprdesigner.design/icons/png/48/components/Cryptography.png"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.nodeBlockType=daprdesigner::NodeBlockType::SUBSCRIPTION">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']/@style" attributeName="workspacePath" value="/io.dapr.daprdesigner.design/icons/png/48/components/SubscriptionConfiguration.png"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.nodeBlockType=daprdesigner::NodeBlockType::RESILIENCY">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']/@style" attributeName="workspacePath" value="/io.dapr.daprdesigner.design/icons/png/48/components/ResiliencyConfiguration.png"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.nodeBlockType=daprdesigner::NodeBlockType::HTTPENDPOINT">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']/@style" attributeName="workspacePath" value="/io.dapr.daprdesigner.design/icons/png/48/components/HTTPEndPoint.png"/>
           </vsmElementCustomizations>
         </customization>
       </defaultLayer>
@@ -292,6 +468,18 @@
         </customization>
       </defaultLayer>
     </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="AppBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+      <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
+      <defaultLayer name="Default">
+        <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png"/>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ActorBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+      <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
+      <defaultLayer name="Default">
+        <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png"/>
+      </defaultLayer>
+    </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="io.dapr.daprdesigner.design.Services"/>
   </ownedViewpoints>
   <extensions xsi:type="properties:ViewExtensionDescription" name="sirius_default_rules_properties">
@@ -335,8 +523,8 @@
               </conditionalStyles>
             </widget>
           </ifs>
-          <ifs name="sirius_default_rules_enum_if" predicateExpression="aql:eStructuralFeature.eType.oclIsKindOf(ecore::EEnum) and not(eStructuralFeature.many)">
-            <widget xsi:type="properties:RadioDescription" name="sirius_default_rules_enum" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
+          <ifs name="sirius_default_rules_enum_if" predicateExpression="aql:eStructuralFeature.eType.oclIsKindOf(ecore::EEnum) and not(eStructuralFeature.many) and not(eStructuralFeature.name='blockType') ">
+            <widget xsi:type="properties:RadioDescription" name="sirius_default_rules_enum" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="2">
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
               </initialOperation>
@@ -352,6 +540,18 @@
           </ifs>
           <ifs name="sirius_default_rules_ereference_if" predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EReference)">
             <widget xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="sirius_default_rules_ereference" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" referenceNameExpression="aql:eStructuralFeature.name"/>
+          </ifs>
+          <ifs name="sirius_default_rules_enum_if_blockType" predicateExpression="aql:eStructuralFeature.eType.oclIsKindOf(ecore::EEnum) and not(eStructuralFeature.many) ">
+            <widget xsi:type="properties:SelectDescription" name="blockTypeWidget" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).eLiterals" candidateDisplayExpression="aql:candidate.name">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
           </ifs>
         </controls>
       </groups>

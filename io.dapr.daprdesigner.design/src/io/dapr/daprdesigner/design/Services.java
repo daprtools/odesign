@@ -22,4 +22,15 @@ public class Services {
     	unnamedCounter++;
     	return self.getBlockType().getName()+"_"+unnamedCounter;
     }
+    
+    public String getUnnamedNodeBlock(NodeBlocks self) {
+    	unnamedCounter++;
+    	return self.getNodeBlockType().getName()+"_"+unnamedCounter;
+    }
+    
+    public boolean isNodeBlockType(NodeBlocks self, String nodeType) {
+    	
+    	System.out.println("Here "+self.getNodeBlockType().toString());
+    	return self.getNodeBlockType().toString()==nodeType;
+    }
 }
