@@ -1,6 +1,7 @@
 package io.dapr.daprdesigner.design;
 
 import org.eclipse.emf.ecore.EObject;
+import daprdesigner.*;
 
 /**
  * The services class used by VSM.
@@ -17,8 +18,8 @@ public class Services {
       return self;
     }
     
-    public String getUnnamed(EObject self) {
+    public String getUnnamed(Block self) {
     	unnamedCounter++;
-    	return "Unnamed_"+unnamedCounter;
+    	return self.getBlockType().getName()+"_"+unnamedCounter;
     }
 }

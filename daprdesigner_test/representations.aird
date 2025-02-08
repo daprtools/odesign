@@ -4,7 +4,7 @@
     <semanticResources>Test.daprdesigner</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_nNw9wNZNEe-uRIHsZfhAOA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_olvdUNZNEe-uRIHsZfhAOA" name="TestArchitecture" repPath="#_olu2QNZNEe-uRIHsZfhAOA" changeId="1738489243639">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_olvdUNZNEe-uRIHsZfhAOA" name="TestArchitecture" repPath="#_olu2QNZNEe-uRIHsZfhAOA" changeId="1739019198662">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']"/>
         <target xmi:type="daprdesigner:DaprArchitecture" href="Test.daprdesigner#/"/>
       </ownedRepresentationDescriptors>
@@ -31,12 +31,37 @@
   <diagram:DSemanticDiagram uid="_olu2QNZNEe-uRIHsZfhAOA">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_olwrcNZNEe-uRIHsZfhAOA" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_olwrcdZNEe-uRIHsZfhAOA" type="Sirius" element="_olu2QNZNEe-uRIHsZfhAOA" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_WNKP4OYZEe-5Zro9JoZEuA" type="2002" element="_WNHMkOYZEe-5Zro9JoZEuA">
+          <children xmi:type="notation:Node" xmi:id="_WNK28OYZEe-5Zro9JoZEuA" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_WNK28eYZEe-5Zro9JoZEuA" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_WNK28uYZEe-5Zro9JoZEuA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_WNK28-YZEe-5Zro9JoZEuA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_WNKP4eYZEe-5Zro9JoZEuA" fontName="Ubuntu" fontHeight="25" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WNKP4uYZEe-5Zro9JoZEuA" x="560" y="180" width="1500" height="1000"/>
+        </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_olwrctZNEe-uRIHsZfhAOA"/>
       </data>
     </ownedAnnotationEntries>
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_olx5kNZNEe-uRIHsZfhAOA" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_olx5kdZNEe-uRIHsZfhAOA"/>
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_olx5kdZNEe-uRIHsZfhAOA">
+        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_WNHzoOYZEe-5Zro9JoZEuA" borderSizeComputationExpression="1" labelSize="25" iconPath="/io.dapr.daprdesigner.design/icons/png/64/containers/Environment.png" roundedCorner="true" widthComputationExpression="150" heightComputationExpression="100">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <labelFormat>bold</labelFormat>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          <foregroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+        </computedStyleDescriptions>
+      </data>
     </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_WNHMkOYZEe-5Zro9JoZEuA" name="ENVIRONMENT_1" width="150" height="100">
+      <target xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0"/>
+      <semanticElements xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WNHzoeYZEe-5Zro9JoZEuA" labelSize="25" iconPath="/io.dapr.daprdesigner.design/icons/png/64/containers/Environment.png" description="_WNHzoOYZEe-5Zro9JoZEuA" borderSize="1" borderSizeComputationExpression="1">
+        <labelFormat>bold</labelFormat>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']"/>
+    </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_olu2QdZNEe-uRIHsZfhAOA"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer"/>
