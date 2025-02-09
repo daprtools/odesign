@@ -15,7 +15,9 @@
       <nodes xsi:type="daprdesigner:NodeBlocks" name="HTTPENDPOINT_19" nodeBlockType="HTTPENDPOINT"/>
     </subblocks>
     <subblocks name="MICROSERVICES_6" blockType="MICROSERVICES">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="APP_2"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="Account">
+        <nodes xsi:type="daprdesigner:App" name="Account" appId="account"/>
+      </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="APP_3"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="APP_4"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="APP_5"/>
@@ -24,7 +26,7 @@
       <nodes xsi:type="daprdesigner:NodeBlocks" name="STATESTORE_8" nodeBlockType="STATESTORE"/>
     </subblocks>
     <subblocks name="STATESTORE_20" blockType="STATESTORE">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="ACTOR_1" nodeBlockType="HTTPENDPOINT"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="ACTOR_1" nodeBlockType="ACTOR"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="HTTPENDPOINT_1" nodeBlockType="HTTPENDPOINT"/>
     </subblocks>
   </buildingblocks>
