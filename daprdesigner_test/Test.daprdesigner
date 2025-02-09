@@ -16,7 +16,8 @@
     </subblocks>
     <subblocks name="MICROSERVICES_6" blockType="MICROSERVICES">
       <nodes xsi:type="daprdesigner:NodeBlocks" name="Account">
-        <nodes xsi:type="daprdesigner:App" name="Account" appId="account"/>
+        <nodes xsi:type="daprdesigner:App"/>
+        <nodes xsi:type="daprdesigner:MetricsConfiguration"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="APP_3"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="APP_4"/>
