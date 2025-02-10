@@ -7,7 +7,7 @@
       <nodes xsi:type="daprdesigner:NodeBlocks" name="WORKFLOW_11" nodeBlockType="WORKFLOW"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="PUBSUB_12" nodeBlockType="PUBSUB"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="BINDING_13" nodeBlockType="BINDING"/>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="SECRETSTORE_14" nodeBlockType="SECRETSTORE"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="SECRETSTORE_14" nodeBlockType="ACTOR"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="DISTRIBUTEDLOCK_15" nodeBlockType="DISTRIBUTEDLOCK"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="CRYPTOGRAPHY_16" nodeBlockType="CRYPTOGRAPHY"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="SUBSCRIPTION_17" nodeBlockType="SUBSCRIPTION"/>
@@ -16,8 +16,17 @@
     </subblocks>
     <subblocks name="MICROSERVICES_6" blockType="MICROSERVICES">
       <nodes xsi:type="daprdesigner:NodeBlocks" name="Account">
-        <nodes xsi:type="daprdesigner:App"/>
-        <nodes xsi:type="daprdesigner:MetricsConfiguration"/>
+        <nodes xsi:type="daprdesigner:App" configurations="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.4 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.3 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.5"/>
+        <nodes xsi:type="daprdesigner:MetricsConfiguration" enabled="true">
+          <latencyDistributionBuckets>1</latencyDistributionBuckets>
+          <latencyDistributionBuckets>2</latencyDistributionBuckets>
+          <latencyDistributionBuckets>56</latencyDistributionBuckets>
+        </nodes>
+        <nodes xsi:type="daprdesigner:Operation" name="Op 1" protocol="GRPC" applyToGet="true" applyToPost="true" applyToPut="true" applyToDelete="true" applyToPatch="true" action="DENY"/>
+        <nodes xsi:type="daprdesigner:AppAccessControl"/>
+        <nodes xsi:type="daprdesigner:MiddlewareConfiguration"/>
+        <nodes xsi:type="daprdesigner:SecretsAccessConfiguration" accessList="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.6"/>
+        <nodes xsi:type="daprdesigner:SecretsAccessList" action="DENY"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="APP_3"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="APP_4"/>

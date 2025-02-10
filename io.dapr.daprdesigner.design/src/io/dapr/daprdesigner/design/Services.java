@@ -1,6 +1,8 @@
 package io.dapr.daprdesigner.design;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import daprdesigner.*;
 
 /**
@@ -33,4 +35,19 @@ public class Services {
     	System.out.println("Here "+self.getNodeBlockType().toString());
     	return self.getNodeBlockType().toString()==nodeType;
     }
+    
+    public String getValueAsString(EObject self, Object o) {
+    	
+    	return o.toString();
+    }
+    
+   public void addAppConfiguration(App source, AppConfiguration target) {
+	   source.getConfigurations().add(target);
+   }
+   
+   public void removeAppConfiguration(App source, AppConfiguration target) {
+	   
+	   System.out.println("Caleed ================");
+	   source.getConfigurations().remove(target);
+   }
 }
