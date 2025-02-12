@@ -38,7 +38,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='NodeBlocks']"/>
         <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.6"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_h4vjEuZiEe-ZuJ2F7qJBzA" name="AppBlocks" repPath="#_h4vjEOZiEe-ZuJ2F7qJBzA" changeId="1739200092761">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_h4vjEuZiEe-ZuJ2F7qJBzA" name="AppBlocks" repPath="#_h4vjEOZiEe-ZuJ2F7qJBzA" changeId="1739357933367">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']"/>
         <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.1/@nodes.0"/>
       </ownedRepresentationDescriptors>
@@ -1093,7 +1093,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='App']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_VhfwwObqEe-S3JD6NT2AzQ" incomingEdges="_f-qcsOe6Ee-9bei0x0KFTg" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_VhfwwObqEe-S3JD6NT2AzQ" name="MC1" incomingEdges="_f-qcsOe6Ee-9bei0x0KFTg" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:MetricsConfiguration" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.1"/>
       <semanticElements xmi:type="daprdesigner:MetricsConfiguration" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.1"/>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_VhfwwebqEe-S3JD6NT2AzQ" labelSize="12" showIcon="false" labelAlignment="RIGHT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/MetricsConfiguration.svg">
@@ -1162,7 +1162,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Secrets%20Access%20Configuration']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_xC_4sOfAEe-9bei0x0KFTg" incomingEdges="_yz2LTOfAEe-9bei0x0KFTg" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_xC_4sOfAEe-9bei0x0KFTg" name="SA1" incomingEdges="_yz2LTOfAEe-9bei0x0KFTg" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:SecretsAccessList" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.6"/>
       <semanticElements xmi:type="daprdesigner:SecretsAccessList" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.6"/>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_xC_4sefAEe-9bei0x0KFTg" labelSize="12" showIcon="false" labelAlignment="RIGHT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/SecretsAccessList.svg">
