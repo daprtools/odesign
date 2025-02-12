@@ -1,10 +1,14 @@
 package io.dapr.daprdesigner.design;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import daprdesigner.*;
-
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 /**
  * The services class used by VSM.
  */
@@ -49,5 +53,18 @@ public class Services {
 	   
 	   System.out.println("Caleed ================");
 	   source.getConfigurations().remove(target);
+   }
+   
+   public void openURL(EObject self,EStructuralFeature feature) {
+	   String uri = self.eGet(feature).toString();
+	   if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+		    try {
+				Desktop.getDesktop().browse(new URI(uri));
+			} catch (IOException | URISyntaxException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	   
    }
 }
