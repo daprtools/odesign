@@ -88,6 +88,12 @@ public class Services {
 
 	}
 	
+	public void addHttpHandler(MiddlewareConfiguration source, HttpHandler target) {
+
+		source.getHttpHandlers().add(target);
+
+	}
+	
 	public void addOperation(AppPolicy source, Operation target) {
 
 		source.getOperations().add(target);

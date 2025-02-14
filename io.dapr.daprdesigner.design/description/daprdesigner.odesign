@@ -682,6 +682,14 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
+        <edgeMappings name="MiddlewareConfigurationToHttpHandler" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Middleware%20Configuration']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Http%20Handler']" targetFinderExpression="feature:httpHandlers">
+          <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
           <ownedTools xsi:type="tool:NodeCreationDescription" name="App" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='App']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/App2.png">
             <variable name="container"/>
@@ -902,6 +910,17 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.addOperation(target)"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="MiddlewareConfiguration -> HttpHandler" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@edgeMappings[name='MiddlewareConfigurationToHttpHandler']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/HttpHandler.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.addHttpHandler(target)"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>

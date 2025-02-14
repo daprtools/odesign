@@ -16,7 +16,7 @@
     </subblocks>
     <subblocks name="MICROSERVICES_6" blockType="MICROSERVICES">
       <nodes xsi:type="daprdesigner:NodeBlocks" name="Account">
-        <nodes xsi:type="daprdesigner:App" name="Account" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.2 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.3 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.4 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.6 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.7 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.9"/>
+        <nodes xsi:type="daprdesigner:App" name="Account" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.2 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.3 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.4 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.6 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.7 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.9 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.15 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.17"/>
         <nodes xsi:type="daprdesigner:DeniedComponentsConfiguration" name="DC1"/>
         <nodes xsi:type="daprdesigner:LoggingConfiguration" name="LC"/>
         <nodes xsi:type="daprdesigner:NameResolutionConfiguration" name="NR"/>
@@ -31,6 +31,9 @@
         <nodes xsi:type="daprdesigner:API" name="API_4"/>
         <nodes xsi:type="daprdesigner:API" name="API_5"/>
         <nodes xsi:type="daprdesigner:API" name="API_6"/>
+        <nodes xsi:type="daprdesigner:MiddlewareConfiguration" name="mc_1" httpHandlers="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.16"/>
+        <nodes xsi:type="daprdesigner:HttpHandler" name="hh_2"/>
+        <nodes xsi:type="daprdesigner:TracingConfiguration" name="tc_1"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="APP_3"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="APP_4"/>
