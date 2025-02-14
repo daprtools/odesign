@@ -105,6 +105,42 @@ public class Services {
 		source.getRouteRules().add(target);
 
 	}
+	
+	public void setResiliencyPolicy(ResiliencyConfiguration source, ResiliencyPolicy target) {
+
+		source.setPolicy(target);
+		
+
+	}
+	
+	public void addRetryPolicy(ResiliencyPolicy source, RetryPolicy target) {
+
+		source.getRetries().add(target);
+		
+
+	}
+	
+	public void addCircuitBreakerPolicy(ResiliencyPolicy source, CircuitBreakerPolicy target) {
+
+		source.getCircuitbreakers().add(target);
+		
+
+	}
+	public void addResiliencyTimeouts(ResiliencyPolicy source, ResiliencyTimeout target) {
+
+		source.getTimeoutDefinitions().add(target);
+		
+
+	}
+	
+	public void addResiliencyTargets(ResiliencyConfiguration source, ResiliencyTarget target) {
+
+		source.getTargets().add(target);
+		
+
+	}
+	
+	
 
 	public void removeAppConfiguration(App source, AppConfiguration target) {
 

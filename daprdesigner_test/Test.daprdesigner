@@ -49,6 +49,14 @@
         <nodes xsi:type="daprdesigner:RouteRules" name="rr_4"/>
         <nodes xsi:type="daprdesigner:RouteRules" name="rr_5"/>
       </nodes>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="RESILIENCY_1" nodeBlockType="RESILIENCY">
+        <nodes xsi:type="daprdesigner:ResiliencyConfiguration" name="rc_1" policy="//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.1" targets="//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.5"/>
+        <nodes xsi:type="daprdesigner:ResiliencyPolicy" name="rp_2" retries="//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.2" circuitbreakers="//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.3" timeoutDefinitions="//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.4"/>
+        <nodes xsi:type="daprdesigner:RetryPolicy" name="rp_3"/>
+        <nodes xsi:type="daprdesigner:CircuitBreakerPolicy" name="cbp_1"/>
+        <nodes xsi:type="daprdesigner:ResiliencyTimeout" name="rt_1"/>
+        <nodes xsi:type="daprdesigner:ResiliencyTarget" name="rt_1"/>
+      </nodes>
     </subblocks>
     <nodes xsi:type="daprdesigner:Namespace" name="dev"/>
     <nodes xsi:type="daprdesigner:Trustdomain" name="public"/>

@@ -1025,7 +1025,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Connectors">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Subscrition Configuration -> RouteRules" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SubscriptionBlocks']/@defaultLayer/@edgeMappings[name='SubscriptionConfigurationToRouteRules']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/RouteRules.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Subscription Configuration -> RouteRules" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SubscriptionBlocks']/@defaultLayer/@edgeMappings[name='SubscriptionConfigurationToRouteRules']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/RouteRules.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1042,7 +1042,237 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ResiliencyBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
-        <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png"/>
+        <nodeMappings name="ResiliencyConfiguration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::ResiliencyConfiguration">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/ResiliencyConfiguration.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ResiliencyPolicy" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::ResiliencyPolicy">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/ResiliencyPolicy.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ResiliencyTarget" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::ResiliencyTarget">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/ResiliencyTarget.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="RetryPolicy" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::RetryPolicy">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/RetryPolicy.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="CircuitBreakerPolicy" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::CircuitBreakerPolicy">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/CircuitBreakerPolicy.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="NamedResiliencyTimeouts" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::ResiliencyTimeout">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/ResiliencyTimeout.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="ResiliencyConfigurationToResiliencyPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyConfiguration']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" targetFinderExpression="feature:policy">
+          <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ResiliencyPolicyToRetryPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='RetryPolicy']" targetFinderExpression="feature:retries">
+          <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ResiliencyPolicyToCircuitBreakerPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='CircuitBreakerPolicy']" targetFinderExpression="feature:circuitbreakers">
+          <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ResiliencyPolicyToResiliencyTimeouts" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='NamedResiliencyTimeouts']" targetFinderExpression="feature:timeoutDefinitions">
+          <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ResiliencyConfigurationToResiliencyTargets" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyConfiguration']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyTarget']" targetFinderExpression="feature:targets">
+          <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ResiliencyTargetToRetryPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyTarget']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='RetryPolicy']" targetFinderExpression="feature:retry">
+          <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ResiliencyTargetToCircuitBreakerPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyTarget']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='CircuitBreakerPolicy']" targetFinderExpression="feature:circuitBreaker">
+          <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ResiliencyTargetToResiliencyTimeout" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyTarget']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='NamedResiliencyTimeouts']" targetFinderExpression="feature:timeout">
+          <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ResiliencyConfiguration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyConfiguration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/ResiliencyConfiguration.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ResiliencyConfiguration" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:self.getDaprNodeName()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ResiliencyPolicy" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/ResiliencyPolicy.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ResiliencyPolicy" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:self.getDaprNodeName()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ResiliencyTarget" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyTarget']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/ResiliencyTarget.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ResiliencyTarget" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:self.getDaprNodeName()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="RetryPolicy" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='RetryPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/RetryPolicy.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="RetryPolicy" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:self.getDaprNodeName()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CircuitBreakerPolicy" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='CircuitBreakerPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/CircuitBreakerPolicy.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="CircuitBreakerPolicy" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:self.getDaprNodeName()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ResiliencyTimeout" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='NamedResiliencyTimeouts']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/ResiliencyTimeout.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ResiliencyTimeout" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:self.getDaprNodeName()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Connectors">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Resiliency Configuration -> Resiliency Policy" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyConfigurationToResiliencyPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/ResiliencyPolicy.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setResiliencyPolicy(target)"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Resiliency Policy -> Retry Policy" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyPolicyToRetryPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/RetryPolicy.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.addRetryPolicy(target)"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Resiliency Policy -> Circuit Breaker Policy" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyPolicyToCircuitBreakerPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/CircuitBreakerPolicy.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.addCircuitBreakerPolicy(target)"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Resiliency Policy -> Resiliency Timeouts" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyPolicyToResiliencyTimeouts']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/ResiliencyTimeout.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.addResiliencyTimeouts(target)"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Resiliency Configuration -> Resiliency Targets" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyConfigurationToResiliencyTargets']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/ResiliencyTarget.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.addResiliencyTargets(target)"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="HttpEndpointBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
