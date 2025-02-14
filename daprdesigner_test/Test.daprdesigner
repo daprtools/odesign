@@ -16,21 +16,15 @@
     </subblocks>
     <subblocks name="MICROSERVICES_6" blockType="MICROSERVICES">
       <nodes xsi:type="daprdesigner:NodeBlocks" name="Account">
-        <nodes xsi:type="daprdesigner:App" sdkLanguage="CSHARP" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.4 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.3 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.5"/>
-        <nodes xsi:type="daprdesigner:MetricsConfiguration" name="MC1" notes="MC1" enabled="true" latencyDistributionBuckets="56">
-          <http_pathMatching>dfdsff</http_pathMatching>
-          <http_pathMatching>sdasd</http_pathMatching>
-          <http_pathMatching>dfgdfg</http_pathMatching>
-        </nodes>
-        <nodes xsi:type="daprdesigner:Operation" name="Op 1" protocol="GRPC" applyToGet="true" applyToPost="true" applyToPut="true" applyToDelete="true" applyToPatch="true" action="DENY"/>
-        <nodes xsi:type="daprdesigner:AppAccessControl"/>
-        <nodes xsi:type="daprdesigner:MiddlewareConfiguration"/>
-        <nodes xsi:type="daprdesigner:SecretsAccessConfiguration" accessList="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.6"/>
-        <nodes xsi:type="daprdesigner:SecretsAccessList" name="SA1" action="DENY">
-          <secrets>tert</secrets>
-          <secrets>fdgdg</secrets>
-          <secrets>asdasd</secrets>
-        </nodes>
+        <nodes xsi:type="daprdesigner:App" name="Account" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.2 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.3 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.4 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.6 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.7"/>
+        <nodes xsi:type="daprdesigner:DeniedComponentsConfiguration" name="DC1"/>
+        <nodes xsi:type="daprdesigner:LoggingConfiguration" name="LC"/>
+        <nodes xsi:type="daprdesigner:NameResolutionConfiguration" name="NR"/>
+        <nodes xsi:type="daprdesigner:SecretsAccessConfiguration" name="S1" accessList="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.5"/>
+        <nodes xsi:type="daprdesigner:SecretsAccessList" name="SA11"/>
+        <nodes xsi:type="daprdesigner:MetricsConfiguration" name="MC"/>
+        <nodes xsi:type="daprdesigner:APIAccessControl" name="APIAcc" apiList="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.8"/>
+        <nodes xsi:type="daprdesigner:API" name="API_3"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="APP_3"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="APP_4"/>
