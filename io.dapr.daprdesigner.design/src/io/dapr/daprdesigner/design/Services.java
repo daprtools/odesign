@@ -135,7 +135,7 @@ public class Services {
 	
 	public void addResiliencyTargets(ResiliencyConfiguration source, ResiliencyTarget target) {
 
-		source.getTargets().add(target);
+		source.getResiliencyTargets().add(target);
 		
 
 	}
