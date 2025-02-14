@@ -57,6 +57,10 @@
         <nodes xsi:type="daprdesigner:ResiliencyTimeout" name="rt_1"/>
         <nodes xsi:type="daprdesigner:ResiliencyTarget" name="rt_1"/>
       </nodes>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="HTTPENDPOINT_1" nodeBlockType="HTTPENDPOINT">
+        <nodes xsi:type="daprdesigner:HTTPEndPoint" name="httpep_1" scopes="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.0" specHeaders="//@buildingblocks.0/@subblocks.2/@nodes.2/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2" isFetchedFromEnvironment="true"/>
+      </nodes>
     </subblocks>
     <nodes xsi:type="daprdesigner:Namespace" name="dev"/>
     <nodes xsi:type="daprdesigner:Trustdomain" name="public"/>

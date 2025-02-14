@@ -140,6 +140,13 @@ public class Services {
 
 	}
 	
+	public void addSpecMetadatHeadersToHTTPEndPoint(HTTPEndPoint source, SpecMetadata target) {
+
+		source.getSpecHeaders().add(target);
+		
+
+	}
+	
 	
 
 	public void removeAppConfiguration(App source, AppConfiguration target) {
