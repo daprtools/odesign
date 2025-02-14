@@ -99,6 +99,12 @@ public class Services {
 		source.getOperations().add(target);
 
 	}
+	
+	public void addRouteRules(SubscriptionConfiguration source, RouteRules target) {
+
+		source.getRouteRules().add(target);
+
+	}
 
 	public void removeAppConfiguration(App source, AppConfiguration target) {
 
