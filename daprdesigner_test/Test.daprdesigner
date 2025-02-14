@@ -16,15 +16,21 @@
     </subblocks>
     <subblocks name="MICROSERVICES_6" blockType="MICROSERVICES">
       <nodes xsi:type="daprdesigner:NodeBlocks" name="Account">
-        <nodes xsi:type="daprdesigner:App" name="Account" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.2 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.3 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.4 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.6 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.7"/>
+        <nodes xsi:type="daprdesigner:App" name="Account" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.2 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.3 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.4 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.6 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.7 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.9"/>
         <nodes xsi:type="daprdesigner:DeniedComponentsConfiguration" name="DC1"/>
         <nodes xsi:type="daprdesigner:LoggingConfiguration" name="LC"/>
         <nodes xsi:type="daprdesigner:NameResolutionConfiguration" name="NR"/>
         <nodes xsi:type="daprdesigner:SecretsAccessConfiguration" name="S1" accessList="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.5"/>
         <nodes xsi:type="daprdesigner:SecretsAccessList" name="SA11"/>
         <nodes xsi:type="daprdesigner:MetricsConfiguration" name="MC"/>
-        <nodes xsi:type="daprdesigner:APIAccessControl" name="APIAcc" apiList="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.8"/>
-        <nodes xsi:type="daprdesigner:API" name="API_3"/>
+        <nodes xsi:type="daprdesigner:APIAccessControl" name="APIAcc" apiList="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.8 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.12 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.13 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.14"/>
+        <nodes xsi:type="daprdesigner:API" name="API_3" apiType="PUBLISH"/>
+        <nodes xsi:type="daprdesigner:AppAccessControl" name="AAC" policies="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.10"/>
+        <nodes xsi:type="daprdesigner:AppPolicy" name="AP1" app="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.0" operations="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.11"/>
+        <nodes xsi:type="daprdesigner:Operation" name="OPERATION_1"/>
+        <nodes xsi:type="daprdesigner:API" name="API_4"/>
+        <nodes xsi:type="daprdesigner:API" name="API_5"/>
+        <nodes xsi:type="daprdesigner:API" name="API_6"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="APP_3"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="APP_4"/>

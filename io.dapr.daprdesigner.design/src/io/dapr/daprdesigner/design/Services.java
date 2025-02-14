@@ -42,7 +42,18 @@ public class Services {
 		unnamedCounter++;
 		String s = self.getClass().getCanonicalName();
 		s = s.substring(s.lastIndexOf('.') + 1, s.indexOf("Impl"));
-		return s.toUpperCase() + "_" + unnamedCounter;
+		return getAllCaps(s)+ "_" + unnamedCounter;
+	}
+	
+
+	private String getAllCaps(String s) {
+		StringBuffer sb = new StringBuffer();
+		for( char c : s.toCharArray()) {
+			if(Character.isUpperCase(c))
+				sb.append(c);			
+		}
+		
+		return sb.toString().toLowerCase();
 	}
 
 	public boolean isNodeBlockType(NodeBlocks self, String nodeType) {
@@ -65,10 +76,22 @@ public class Services {
 
 		source.getAccessList().add(target);
 	}
-	
+
 	public void addAPI(APIAccessControl source, API target) {
 
 		source.getApiList().add(target);
+	}
+
+	public void addAppPolicy(AppAccessControl source, AppPolicy target) {
+
+		source.getPolicies().add(target);
+
+	}
+	
+	public void addOperation(AppPolicy source, Operation target) {
+
+		source.getOperations().add(target);
+
 	}
 
 	public void removeAppConfiguration(App source, AppConfiguration target) {
