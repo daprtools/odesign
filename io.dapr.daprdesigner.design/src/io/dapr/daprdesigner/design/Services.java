@@ -37,6 +37,14 @@ public class Services {
     	return self.getNodeBlockType().getName()+"_"+unnamedCounter;
     }
     
+    
+    public String getDaprNodeName(DaprNode self) {
+    	unnamedCounter++;
+    	String s = self.getClass().getCanonicalName();
+    	s = s.substring(s.lastIndexOf('.')+1, s.indexOf("Impl"));
+    	return s.toUpperCase()+"_"+unnamedCounter;
+    }
+    
     public boolean isNodeBlockType(NodeBlocks self, String nodeType) {
     	
     	System.out.println("Here "+self.getNodeBlockType().toString());
