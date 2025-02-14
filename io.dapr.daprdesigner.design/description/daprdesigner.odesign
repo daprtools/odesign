@@ -1100,7 +1100,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ResiliencyPolicyToCircuitBreakerPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='CircuitBreakerPolicy']" targetFinderExpression="feature:circuitbreakers">
+        <edgeMappings name="ResiliencyPolicyToCircuitBreakerPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='CircuitBreakerPolicy']" targetFinderExpression="feature:circuitBreakers">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">

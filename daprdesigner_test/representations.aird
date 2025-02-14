@@ -66,7 +66,7 @@
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_-6n18OrYEe-sda0eMQyhUw" name="CryptographyBlocks" repPath="#_-6mn0OrYEe-sda0eMQyhUw" changeId="1739540313811">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='CryptographyBlocks']"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_g8YrIOrZEe-sda0eMQyhUw" name="ResiliencyBlocks" repPath="#_g8YEEOrZEe-sda0eMQyhUw" changeId="1739549050911">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_g8YrIOrZEe-sda0eMQyhUw" name="ResiliencyBlocks" repPath="#_g8YEEOrZEe-sda0eMQyhUw" changeId="1739550982715">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']"/>
         <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1"/>
       </ownedRepresentationDescriptors>
@@ -2144,22 +2144,6 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yhw9sOrqEe-5mYpfSGPDpA" id="(0.5,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yhw9serqEe-5mYpfSGPDpA" id="(0.5,1.0)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_FsWGwOrsEe-5mYpfSGPDpA" type="4001" element="_FsFBAersEe-5mYpfSGPDpA" source="_vvoNQOrqEe-5mYpfSGPDpA" target="_ERZLsOrsEe-5mYpfSGPDpA">
-          <children xmi:type="notation:Node" xmi:id="_FsWGxOrsEe-5mYpfSGPDpA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FsWGxersEe-5mYpfSGPDpA" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_FsWt0OrsEe-5mYpfSGPDpA" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FsWt0ersEe-5mYpfSGPDpA" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_FsWt0ursEe-5mYpfSGPDpA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FsWt0-rsEe-5mYpfSGPDpA" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_FsWGwersEe-5mYpfSGPDpA" routing="Rectilinear"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_FsWGwursEe-5mYpfSGPDpA" fontName="Ubuntu" fontHeight="12"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FsWGw-rsEe-5mYpfSGPDpA" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FsWt1OrsEe-5mYpfSGPDpA" id="(0.5,0.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FsWt1ersEe-5mYpfSGPDpA" id="(0.5,1.0)"/>
-        </edges>
         <edges xmi:type="notation:Edge" xmi:id="_kWVu4OrsEe-5mYpfSGPDpA" type="4001" element="_kWA-xOrsEe-5mYpfSGPDpA" source="_vvoNQOrqEe-5mYpfSGPDpA" target="_jn57kOrsEe-5mYpfSGPDpA">
           <children xmi:type="notation:Node" xmi:id="_kWVu5OrsEe-5mYpfSGPDpA" type="6001">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kWVu5ersEe-5mYpfSGPDpA" y="-10"/>
@@ -2192,6 +2176,54 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_U_7JFOrtEe-5mYpfSGPDpA" id="(1.0,0.453125)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_U_7JFertEe-5mYpfSGPDpA" id="(0.0,0.546875)"/>
         </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_QjxKAOrxEe-P9bYK4Cef8A" type="4001" element="_QjYIcerxEe-P9bYK4Cef8A" source="_vvoNQOrqEe-5mYpfSGPDpA" target="_ERZLsOrsEe-5mYpfSGPDpA">
+          <children xmi:type="notation:Node" xmi:id="_QjxxEOrxEe-P9bYK4Cef8A" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QjxxEerxEe-P9bYK4Cef8A" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_QjxxEurxEe-P9bYK4Cef8A" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QjxxE-rxEe-P9bYK4Cef8A" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_QjyYIOrxEe-P9bYK4Cef8A" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QjyYIerxEe-P9bYK4Cef8A" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_QjxKAerxEe-P9bYK4Cef8A" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_QjxKAurxEe-P9bYK4Cef8A" fontName="Ubuntu" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QjxKA-rxEe-P9bYK4Cef8A" points="[0, 0, 0, 59]$[0, -59, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QjyYIurxEe-P9bYK4Cef8A" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QjyYI-rxEe-P9bYK4Cef8A" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_hz9fcOrxEe-P9bYK4Cef8A" type="4001" element="_hzgMdOrxEe-P9bYK4Cef8A" source="_PJ2GgOrtEe-5mYpfSGPDpA" target="_ERZLsOrsEe-5mYpfSGPDpA">
+          <children xmi:type="notation:Node" xmi:id="_hz-GgOrxEe-P9bYK4Cef8A" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hz-GgerxEe-P9bYK4Cef8A" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_hz-GgurxEe-P9bYK4Cef8A" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hz-Gg-rxEe-P9bYK4Cef8A" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_hz-GhOrxEe-P9bYK4Cef8A" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hz-GherxEe-P9bYK4Cef8A" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_hz9fcerxEe-P9bYK4Cef8A" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_hz9fcurxEe-P9bYK4Cef8A" fontName="Ubuntu" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hz9fc-rxEe-P9bYK4Cef8A" points="[-32, 0, 303, 172]$[-167, 0, 168, 172]$[-167, -172, 168, 0]$[-303, -172, 32, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hz-tkOrxEe-P9bYK4Cef8A" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hz-tkerxEe-P9bYK4Cef8A" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_03CHwOrxEe-P9bYK4Cef8A" type="4001" element="_02k0wOrxEe-P9bYK4Cef8A" source="_PJ2GgOrtEe-5mYpfSGPDpA" target="_yJVPkOrqEe-5mYpfSGPDpA">
+          <children xmi:type="notation:Node" xmi:id="_03CHxOrxEe-P9bYK4Cef8A" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_03CHxerxEe-P9bYK4Cef8A" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_03Cu0OrxEe-P9bYK4Cef8A" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_03Cu0erxEe-P9bYK4Cef8A" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_03Cu0urxEe-P9bYK4Cef8A" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_03Cu0-rxEe-P9bYK4Cef8A" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_03CHwerxEe-P9bYK4Cef8A" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_03CHwurxEe-P9bYK4Cef8A" fontName="Ubuntu" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_03CHw-rxEe-P9bYK4Cef8A" points="[-32, 0, 428, 174]$[-230, 0, 230, 174]$[-230, -174, 230, 0]$[-428, -174, 32, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_03Cu1OrxEe-P9bYK4Cef8A" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_03Cu1erxEe-P9bYK4Cef8A" id="(0.5,0.5)"/>
+        </edges>
       </data>
     </ownedAnnotationEntries>
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_g8ZSM-rZEe-sda0eMQyhUw" source="DANNOTATION_CUSTOMIZATION_KEY">
@@ -2206,7 +2238,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyConfiguration']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_vvMvcOrqEe-5mYpfSGPDpA" name="rp_2" outgoingEdges="_yhYjMOrqEe-5mYpfSGPDpA _FsFBAersEe-5mYpfSGPDpA _kWA-xOrsEe-5mYpfSGPDpA" incomingEdges="_wMB1YOrqEe-5mYpfSGPDpA" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_vvMvcOrqEe-5mYpfSGPDpA" name="rp_2" outgoingEdges="_yhYjMOrqEe-5mYpfSGPDpA _kWA-xOrsEe-5mYpfSGPDpA _QjYIcerxEe-P9bYK4Cef8A" incomingEdges="_wMB1YOrqEe-5mYpfSGPDpA" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:ResiliencyPolicy" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.1"/>
       <semanticElements xmi:type="daprdesigner:ResiliencyPolicy" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.1"/>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_vvNWgOrqEe-5mYpfSGPDpA" labelSize="12" showIcon="false" labelAlignment="RIGHT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/ResiliencyPolicy.svg">
@@ -2223,7 +2255,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyConfigurationToResiliencyPolicy']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_yI-DMOrqEe-5mYpfSGPDpA" name="rp_3" incomingEdges="_yhYjMOrqEe-5mYpfSGPDpA" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_yI-DMOrqEe-5mYpfSGPDpA" name="rp_3" incomingEdges="_yhYjMOrqEe-5mYpfSGPDpA _02k0wOrxEe-P9bYK4Cef8A" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:RetryPolicy" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.2"/>
       <semanticElements xmi:type="daprdesigner:RetryPolicy" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.2"/>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_yI-DMerqEe-5mYpfSGPDpA" labelSize="12" showIcon="false" labelAlignment="RIGHT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/RetryPolicy.svg">
@@ -2240,7 +2272,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyPolicyToRetryPolicy']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_ERDNcOrsEe-5mYpfSGPDpA" name="cbp_1" incomingEdges="_FsFBAersEe-5mYpfSGPDpA" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_ERDNcOrsEe-5mYpfSGPDpA" name="cbp_1" incomingEdges="_QjYIcerxEe-P9bYK4Cef8A _hzgMdOrxEe-P9bYK4Cef8A" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:CircuitBreakerPolicy" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.3"/>
       <semanticElements xmi:type="daprdesigner:CircuitBreakerPolicy" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.3"/>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_ERD0gOrsEe-5mYpfSGPDpA" labelSize="12" showIcon="false" labelAlignment="RIGHT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/CircuitBreakerPolicy.svg">
@@ -2248,14 +2280,6 @@
         <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='CircuitBreakerPolicy']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='CircuitBreakerPolicy']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_FsFBAersEe-5mYpfSGPDpA" sourceNode="_vvMvcOrqEe-5mYpfSGPDpA" targetNode="_ERDNcOrsEe-5mYpfSGPDpA">
-      <target xmi:type="daprdesigner:ResiliencyPolicy" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.1"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_FsFoEOrsEe-5mYpfSGPDpA" sourceArrow="Dot" targetArrow="InputClosedArrow" size="2" routingStyle="manhattan" strokeColor="154,103,23">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyPolicyToCircuitBreakerPolicy']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_FsFoEersEe-5mYpfSGPDpA" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyPolicyToCircuitBreakerPolicy']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_jngS8OrsEe-5mYpfSGPDpA" name="rt_1" incomingEdges="_kWA-xOrsEe-5mYpfSGPDpA" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:ResiliencyTimeout" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.4"/>
@@ -2274,7 +2298,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyPolicyToResiliencyTimeouts']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_PJdsAOrtEe-5mYpfSGPDpA" name="rt_1" incomingEdges="_U_tGoOrtEe-5mYpfSGPDpA" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_PJdsAOrtEe-5mYpfSGPDpA" name="rt_1" outgoingEdges="_hzgMdOrxEe-P9bYK4Cef8A _02k0wOrxEe-P9bYK4Cef8A" incomingEdges="_U_tGoOrtEe-5mYpfSGPDpA" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:ResiliencyTarget" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.5"/>
       <semanticElements xmi:type="daprdesigner:ResiliencyTarget" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.5"/>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_PJeTEOrtEe-5mYpfSGPDpA" labelSize="12" showIcon="false" labelAlignment="RIGHT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/ResiliencyTarget.svg">
@@ -2290,6 +2314,30 @@
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_U_tGourtEe-5mYpfSGPDpA" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyConfigurationToResiliencyTargets']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_QjYIcerxEe-P9bYK4Cef8A" sourceNode="_vvMvcOrqEe-5mYpfSGPDpA" targetNode="_ERDNcOrsEe-5mYpfSGPDpA">
+      <target xmi:type="daprdesigner:ResiliencyPolicy" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_QjYIcurxEe-P9bYK4Cef8A" sourceArrow="Dot" targetArrow="InputClosedArrow" size="2" routingStyle="manhattan" strokeColor="154,103,23">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyPolicyToCircuitBreakerPolicy']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_QjYIc-rxEe-P9bYK4Cef8A" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyPolicyToCircuitBreakerPolicy']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_hzgMdOrxEe-P9bYK4Cef8A" sourceNode="_PJdsAOrtEe-5mYpfSGPDpA" targetNode="_ERDNcOrsEe-5mYpfSGPDpA">
+      <target xmi:type="daprdesigner:ResiliencyTarget" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.5"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_hzgzgOrxEe-P9bYK4Cef8A" sourceArrow="Dot" targetArrow="InputClosedArrow" size="2" routingStyle="manhattan" strokeColor="154,103,23">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyTargetToCircuitBreakerPolicy']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_hzgzgerxEe-P9bYK4Cef8A" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyTargetToCircuitBreakerPolicy']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_02k0wOrxEe-P9bYK4Cef8A" sourceNode="_PJdsAOrtEe-5mYpfSGPDpA" targetNode="_yI-DMOrqEe-5mYpfSGPDpA">
+      <target xmi:type="daprdesigner:ResiliencyTarget" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.5"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_02k0werxEe-P9bYK4Cef8A" sourceArrow="Dot" targetArrow="InputClosedArrow" size="2" routingStyle="manhattan" strokeColor="154,103,23">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyTargetToRetryPolicy']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_02k0wurxEe-P9bYK4Cef8A" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyTargetToRetryPolicy']"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_g8YEEerZEe-sda0eMQyhUw"/>

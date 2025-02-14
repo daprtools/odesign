@@ -122,7 +122,7 @@ public class Services {
 	
 	public void addCircuitBreakerPolicy(ResiliencyPolicy source, CircuitBreakerPolicy target) {
 
-		source.getCircuitbreakers().add(target);
+		source.getCircuitBreakers().add(target);
 		
 
 	}
