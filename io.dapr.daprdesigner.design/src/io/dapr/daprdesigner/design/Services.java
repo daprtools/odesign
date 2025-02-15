@@ -25,6 +25,30 @@ public class Services {
 			+ "pubsub.mqtt3,pubsub.pulsar,pubsub.rabbitmq,pubsub.redis,pubsub.rocketmq,pubsub.solace.amqp,"
 			+ "pubsub.aws.snssqs,pubsub.gcp.pubsub,pubsub.azure.eventhubs,pubsub.azure.servicebus.queues,azure.servicebus.topics";
 	
+	String bindings ="bindings.apns,bindings.commercetools,bindings.cron,bindings.graphql,bindings.http,bindings.huawei.obs,"
+			+ "bindings.influxdb,bindings.kafka,bindings.kubernetes,bindings.localstorage,bindings.mqtt3,bindings.mysql,"
+			+ "bindings.postgresql,bindings.postmark,bindings.rabbitmq,bindings.redis,bindings.rethinkdb.statechange,"
+			+ "bindings.twilio.sendgrid,bindings.smtp,bindings.twilio.sms,bindings.wasm,bindings.dingtalk.webhook,"
+			+ "bindings.alicloud.oss,bindings.alicloud.sls,bindings.alicloud.tablestore,"
+			+ "bindings.aws.dynamodb,bindings.aws.kinesis,bindings.aws.s3,bindings.aws.ses,"
+			+ "bindings.aws.sns,bindings.aws.sqs,bindings.cloudflare.queues,bindings.gcp.pubsub,"
+			+ "bindings.gcp.bucket,bindings.azure.blobstorage,bindings.azure.cosmosdb.gremlinapi,"
+			+ "bindings.azure.cosmosdb,bindings.azure.eventgrid,bindings.azure.eventhubs,"
+			+ "bindings.azure.openai,bindings.azure.servicebusqueues,"
+			+ "bindings.azure.signalr,bindings.azure.storagequeues,bindings.zeebe.command,bindings.zeebe.jobworker";
+	
+	String statestore = "state.Aerospike,state.cassandra,state.cockroachdb,state.couchbase,state.etcd,state.consul,"
+			+ "state.hazelcast,state.in-memory,state.jetstream,state.memcached,state.mysql,state.mongodb,state.oracledatabase,"
+			+ "state.postgresql,state.redis,state.rethinkdb,state.sqlite,state.zookeeper,state.aws.dynamodb,"
+			+ "state.cloudflare.workerskv,state.gcp.firestore,state.azure.blobstorage,state.azure.cosmosdb,"
+			+ "state.azure.tablestorage,state.sqlserver,state.oci.objectstorage";
+	
+	String secretstore ="secretstores.hashicorp.vault,secretstores.kubernetes,secretstores.local.env,"
+			+ "secretstores.local.file,secretstores.alicloud.parameterstore,secretstores.aws.secretmanager,"
+			+ "secretstores.aws.parameterstore,secretstores.gcp.secretmanager,secretstores.azure.keyvault";
+	String configurationstore = "configuration.postgresql,configuration.redis,configuration.azure.appconfig";
+	String locks ="lock.redis";
+	String cryptography ="crypto.dapr.jwks,crypto.dapr.kubernetes.secrets,crypto.dapr.localstorage,crypto.azure.keyvault";
 	
 			
 

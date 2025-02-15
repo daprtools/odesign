@@ -1,0 +1,3 @@
+configuration.postgresql
+configuration.redis
+configuration.azure.appconfig

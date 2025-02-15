@@ -1,0 +1,4 @@
+crypto.dapr.jwks
+crypto.dapr.kubernetes.secrets
+crypto.dapr.localstorage
+crypto.azure.keyvault

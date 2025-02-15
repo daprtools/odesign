@@ -19,5 +19,6 @@ bindings
 secretstore
 cryptography
 statestore
-locks
 pubsub
+locks
+configurationstore
