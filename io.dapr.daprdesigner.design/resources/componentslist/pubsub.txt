@@ -13,3 +13,11 @@ pubsub.gcp.pubsub
 pubsub.azure.eventhubs
 pubsub.azure.servicebus.queues
 azure.servicebus.topics
+
+
+bindings
+secretstore
+cryptography
+statestore
+locks
+pubsub

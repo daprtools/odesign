@@ -189,8 +189,8 @@ public class Services {
 	
 	public ArrayList<String> getComponentValues(EObject self) {
 		
-		System.out.println(self.getClass().getName());
-		System.out.println(pubsub.split(",").length);
+		String className = self.getClass().getName();
+		System.out.println(className.substring(className.lastIndexOf('.') + 1, className.indexOf("Impl")).toLowerCase());
 		ArrayList<String> als = new ArrayList<String>();
 		for(String s: pubsub.split(","))
 			als.add(s);
