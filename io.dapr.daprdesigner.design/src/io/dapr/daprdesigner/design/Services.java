@@ -6,7 +6,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import daprdesigner.*;
 import java.awt.Desktop;
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -17,6 +20,13 @@ import java.util.ArrayList;
 public class Services {
 
 	int unnamedCounter = 0;
+	
+	String pubsub = "pubsub.kafka,pubsub.in-memory,pubsub.jetstream,pubsub.kubemq,"
+			+ "pubsub.mqtt3,pubsub.pulsar,pubsub.rabbitmq,pubsub.redis,pubsub.rocketmq,pubsub.solace.amqp,"
+			+ "pubsub.aws.snssqs,pubsub.gcp.pubsub,pubsub.azure.eventhubs,pubsub.azure.servicebus.queues,azure.servicebus.topics";
+	
+	
+			
 
 	/**
 	 * See
@@ -147,6 +157,15 @@ public class Services {
 
 	}
 	
+	public void addSpecMetadaToComponent(Component source, SpecMetadata target) {
+		
+
+		source.getSpecMetadata().add(target);
+		
+
+	}
+	
+	 
 	
 
 	public void removeAppConfiguration(App source, AppConfiguration target) {
@@ -167,7 +186,20 @@ public class Services {
 		}
 
 	}
+	
+	public ArrayList<String> getComponentValues(EObject self) {
+		
+		System.out.println(self.getClass().getName());
+		System.out.println(pubsub.split(",").length);
+		ArrayList<String> als = new ArrayList<String>();
+		for(String s: pubsub.split(","))
+			als.add(s);
+		return als;
+		
 
+	}
+
+	
 	public EObject addStringValue(EObject self, EStructuralFeature feature, String value) {
 		System.out.println("Hellloooo...." + feature.getName() + " " + value + " " + feature.getClass().getName());
 

@@ -1,0 +1,15 @@
+pubsub.kafka
+pubsub.in-memory
+pubsub.jetstream
+pubsub.kubemq
+pubsub.mqtt3
+pubsub.pulsar
+pubsub.rabbitmq
+pubsub.redis
+pubsub.rocketmq
+pubsub.solace.amqp
+pubsub.aws.snssqs
+pubsub.gcp.pubsub
+pubsub.azure.eventhubs
+pubsub.azure.servicebus.queues
+azure.servicebus.topics

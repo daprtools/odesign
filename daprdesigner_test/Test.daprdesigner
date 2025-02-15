@@ -5,7 +5,10 @@
       <nodes xsi:type="daprdesigner:NodeBlocks" name="APP_9"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="ACTOR_10" nodeBlockType="ACTOR"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="WORKFLOW_11" nodeBlockType="WORKFLOW"/>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="PUBSUB_12" nodeBlockType="PUBSUB"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="PUBSUB_12" nodeBlockType="PUBSUB">
+        <nodes xsi:type="daprdesigner:PubSub" name="ps_1" providerName="pubsub.gcp.pubsub" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
+      </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="BINDING_13" nodeBlockType="BINDING"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="SECRETSTORE_14" nodeBlockType="ACTOR"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="DISTRIBUTEDLOCK_15" nodeBlockType="DISTRIBUTEDLOCK"/>
@@ -59,7 +62,7 @@
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="HTTPENDPOINT_1" nodeBlockType="HTTPENDPOINT">
         <nodes xsi:type="daprdesigner:HTTPEndPoint" name="httpep_1" scopes="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.0" specHeaders="//@buildingblocks.0/@subblocks.2/@nodes.2/@nodes.1"/>
-        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2" isFetchedFromEnvironment="true"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_3"/>
       </nodes>
     </subblocks>
     <nodes xsi:type="daprdesigner:Namespace" name="dev"/>

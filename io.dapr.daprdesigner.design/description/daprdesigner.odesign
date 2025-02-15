@@ -942,7 +942,65 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="PubSubBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
-        <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png"/>
+        <nodeMappings name="PubSub Component" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::PubSub">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/PubSub.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="SpecMetadata" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SpecMetadata">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/SpecMetadata.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="PubSubToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubBlocks']/@defaultLayer/@nodeMappings[name='PubSub%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
+          <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="PubSub" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubBlocks']/@defaultLayer/@nodeMappings[name='PubSub%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/PubSub.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="PubSub" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:self.getDaprNodeName()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="SpecMetadata" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:self.getDaprNodeName()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Connectors">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Pubsub -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubBlocks']/@defaultLayer/@edgeMappings[name='PubSubToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.addSpecMetadaToComponent(target)"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="BindingsBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
@@ -1346,7 +1404,7 @@
       <pages name="sirius_default_rules_defaultpage" labelExpression="aql:input.emfEditServices(self).getTabName()" semanticCandidateExpression="aql:input.getAllSemanticElements()" groups="//@extensions.0/@categories.0/@groups.0"/>
       <groups name="sirius_default_rules_defaultgroup" labelExpression="Properties" semanticCandidateExpression="var:self" preconditionExpression="">
         <controls xsi:type="properties:DynamicMappingForDescription" name="sirius_default_rules_structural_features_for" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
-          <ifs name="sirius_default_rules_mono_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature) and not (eStructuralFeature.name='help' or eStructuralFeature.name='additionalHelp')">
+          <ifs name="sirius_default_rules_mono_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature) and not (eStructuralFeature.name='help' or eStructuralFeature.name='additionalHelp' or eStructuralFeature.name='providerName')">
             <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
@@ -1356,6 +1414,13 @@
                   <labelFontFormat>bold</labelFontFormat>
                 </style>
               </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs name="sirius_default_rules_mono_string_if_providername" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature) and (eStructuralFeature.name='providerName')">
+            <widget xsi:type="properties:SelectDescription" name="provider_select" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)" candidatesExpression="aql:self.getComponentValues()" candidateDisplayExpression="var:candidate">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
             </widget>
           </ifs>
           <ifs name="sirius_default_rules_multi_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and input.emfEditServices(self).isMultiline(eStructuralFeature)">
@@ -1405,7 +1470,7 @@
                     <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                       <initialOperation/>
                     </buttons>
-                    <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0/@controls.0/@ifs.4/@widget/@actions.0/@initialOperation/@firstModelOperations/@groups.0"/>
+                    <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0/@controls.0/@ifs.5/@widget/@actions.0/@initialOperation/@firstModelOperations/@groups.0"/>
                     <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self">
                       <controls xsi:type="properties:TextDescription">
                         <initialOperation>
