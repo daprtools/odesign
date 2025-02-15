@@ -9,10 +9,25 @@
         <nodes xsi:type="daprdesigner:PubSub" name="ps_1" providerName="pubsub.gcp.pubsub" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.1"/>
         <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
       </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="BINDING_13" nodeBlockType="BINDING"/>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="SECRETSTORE_14" nodeBlockType="ACTOR"/>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="DISTRIBUTEDLOCK_15" nodeBlockType="DISTRIBUTEDLOCK"/>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="CRYPTOGRAPHY_16" nodeBlockType="CRYPTOGRAPHY"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="BINDING_13" nodeBlockType="BINDING">
+        <nodes xsi:type="daprdesigner:PubSub" name="ps_1"/>
+        <nodes xsi:type="daprdesigner:PubSub" name="ps_2"/>
+        <nodes xsi:type="daprdesigner:PubSub" name="ps_3"/>
+        <nodes xsi:type="daprdesigner:Bindings" name="b_4" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.4"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_5"/>
+      </nodes>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="SECRETSTORE_14" nodeBlockType="SECRETSTORE">
+        <nodes xsi:type="daprdesigner:SecretStore" name="ss_1" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.5/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
+      </nodes>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="DISTRIBUTEDLOCK_15" nodeBlockType="DISTRIBUTEDLOCK">
+        <nodes xsi:type="daprdesigner:Locks" name="l_1" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.6/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
+      </nodes>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="CRYPTOGRAPHY_16" nodeBlockType="CRYPTOGRAPHY">
+        <nodes xsi:type="daprdesigner:Cryptography" name="c_1" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.7/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
+      </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="SUBSCRIPTION_17" nodeBlockType="SUBSCRIPTION"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="RESILIENCY_18" nodeBlockType="RESILIENCY"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="HTTPENDPOINT_19" nodeBlockType="HTTPENDPOINT"/>
@@ -43,7 +58,10 @@
       <nodes xsi:type="daprdesigner:NodeBlocks" name="APP_5"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="ACTOR_6" nodeBlockType="ACTOR"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="HTTPENDPOINT_7" nodeBlockType="HTTPENDPOINT"/>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="STATESTORE_8" nodeBlockType="STATESTORE"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="STATESTORE_8" nodeBlockType="STATESTORE">
+        <nodes xsi:type="daprdesigner:StateStore" name="ss_1" specMetadata="//@buildingblocks.0/@subblocks.1/@nodes.6/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
+      </nodes>
     </subblocks>
     <subblocks name="CONFIGURATIONGROUP_1" blockType="CONFIGURATIONGROUP">
       <nodes xsi:type="daprdesigner:NodeBlocks" name="SUBSCRIPTION_2" nodeBlockType="SUBSCRIPTION">
