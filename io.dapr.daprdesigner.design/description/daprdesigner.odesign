@@ -248,49 +248,49 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
                 <subModelOperations xsi:type="tool_1:Switch">
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::APP">
-                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']"/>
                   </cases>
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::ACTOR">
-                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ActorBlocks']"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ActorNodeBlocks']"/>
                   </cases>
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::WORKFLOW">
-                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='WorkflowBlocks']"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='WorkflowNodeBlocks']"/>
                   </cases>
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::PUBSUB">
-                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubBlocks']"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubNodeBlocks']"/>
                   </cases>
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::BINDING">
-                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsBlocks']"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsNodeBlocks']"/>
                   </cases>
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::SECRETSTORE">
-                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreBlocks']"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreNodeBlocks']"/>
                   </cases>
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::STATESTORE">
-                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreBlocks']"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreNodeBlocks']"/>
                   </cases>
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::DISTRIBUTEDLOCK">
-                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='LocksBlocks']"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='LocksNodeBlocks']"/>
                   </cases>
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::CRYPTOGRAPHY">
-                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='CryptographyBlocks']"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='CryptographyNodeBlocks']"/>
                   </cases>
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::SUBSCRIPTION">
-                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SubscriptionBlocks']"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SubscriptionNodeBlocks']"/>
                   </cases>
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::RESILIENCY">
-                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']"/>
                   </cases>
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::HTTPENDPOINT">
-                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='HttpEndpointBlocks']"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='HttpEndpointNodeBlocks']"/>
                   </cases>
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::JOBS">
-                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobBlocks']"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']"/>
                   </cases>
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::CONFIGURATIONSTORE">
-                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ConfigurationBlocks']"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ConfigurationNodeBlocks']"/>
                   </cases>
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::MIDDLEWARE">
-                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='MiddlewareBlocks']"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='MiddlewareNodeBlocks']"/>
                   </cases>
                 </subModelOperations>
               </firstModelOperations>
@@ -546,7 +546,7 @@
         <containerMappings name="Block" semanticCandidatesExpression="feature:subblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Block']" domainClass="daprdesigner::Block">
           <subContainerMappings name="Sub Block" semanticCandidatesExpression="feature:subblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Block']" domainClass="daprdesigner::Block">
             <subContainerMappings name="Sub Block2" semanticCandidatesExpression="feature:subblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Block']" domainClass="daprdesigner::Block">
-              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Component.png" widthComputationExpression="10" heightComputationExpression="10">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Block.png" widthComputationExpression="10" heightComputationExpression="10">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelFormat>bold</labelFormat>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -554,7 +554,7 @@
                 <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
               </style>
             </subContainerMappings>
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" iconPath="/io.dapr.daprdesigner.design/icons/png/32/Component.png" widthComputationExpression="10" heightComputationExpression="10">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Block.png" widthComputationExpression="10" heightComputationExpression="10">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -562,7 +562,16 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" iconPath="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png" widthComputationExpression="20" heightComputationExpression="20">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Block.png" widthComputationExpression="20" heightComputationExpression="20">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="NodeBlocks" semanticCandidatesExpression="feature:nodes" domainClass="NodeBlocks">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Block.png" widthComputationExpression="20" heightComputationExpression="20">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -571,12 +580,12 @@
           </style>
         </containerMappings>
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Block" containerMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subContainerMappings[name='Sub%20Block2'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']/@subContainerMappings[name='Sub%20Block2']" iconPath="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Block" containerMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']/@subContainerMappings[name='Sub%20Block2']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Block.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="buildingblocks"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -597,7 +606,7 @@
         </customization>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="AppBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="AppNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="App" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::App">
@@ -705,7 +714,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="AppConfiguration" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='App']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Denied%20Components'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Logging%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Metrics%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Middleware%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Name%20Resolution%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Secrets%20Access%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Tracing%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='API%20Access%20Control'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='App%20Access%20Control']" targetFinderExpression="feature:configurations">
+        <edgeMappings name="AppConfiguration" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='App']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Denied%20Components'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Logging%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Metrics%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Middleware%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Name%20Resolution%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Secrets%20Access%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Tracing%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='API%20Access%20Control'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='App%20Access%20Control']" targetFinderExpression="feature:configurations">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -713,7 +722,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="SecretsAccessList" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Secrets%20Access%20Configuration']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Secrets%20Access%20List']" targetFinderExpression="feature:accessList">
+        <edgeMappings name="SecretsAccessList" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Secrets%20Access%20Configuration']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Secrets%20Access%20List']" targetFinderExpression="feature:accessList">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -721,7 +730,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="API" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='API%20Access%20Control']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='API']" targetFinderExpression="feature:apiList">
+        <edgeMappings name="API" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='API%20Access%20Control']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='API']" targetFinderExpression="feature:apiList">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -729,7 +738,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="AppAccessControlToAppPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='App%20Access%20Control']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='App%20Policy']" targetFinderExpression="feature:policies">
+        <edgeMappings name="AppAccessControlToAppPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='App%20Access%20Control']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='App%20Policy']" targetFinderExpression="feature:policies">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -737,7 +746,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="AppPolicyToOperation" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='App%20Policy']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Operation']" targetFinderExpression="feature:operations">
+        <edgeMappings name="AppPolicyToOperation" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='App%20Policy']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Operation']" targetFinderExpression="feature:operations">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -745,7 +754,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="MiddlewareConfigurationToHttpHandler" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Middleware%20Configuration']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Http%20Handler']" targetFinderExpression="feature:httpHandlers">
+        <edgeMappings name="MiddlewareConfigurationToHttpHandler" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Middleware%20Configuration']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Http%20Handler']" targetFinderExpression="feature:httpHandlers">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -754,7 +763,7 @@
           </style>
         </edgeMappings>
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="App" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='App']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/App2.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="App" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='App']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/App2.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -765,7 +774,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Denied Components" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Denied%20Components']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/DeniedComponentsConfiguration.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Denied Components" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Denied%20Components']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/DeniedComponentsConfiguration.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -776,7 +785,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Logging Configuration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Logging%20Configuration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/LoggingConfiguration.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Logging Configuration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Logging%20Configuration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/LoggingConfiguration.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -787,7 +796,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Name Resolution Configuration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Name%20Resolution%20Configuration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/NameResolutionConfiguration.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Name Resolution Configuration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Name%20Resolution%20Configuration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/NameResolutionConfiguration.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -798,7 +807,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Secrets Access Configuration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Secrets%20Access%20Configuration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SecretsAccessConfiguration.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Secrets Access Configuration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Secrets%20Access%20Configuration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SecretsAccessConfiguration.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -809,7 +818,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Metrics Configuration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Metrics%20Configuration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/MetricsConfiguration.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Metrics Configuration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Metrics%20Configuration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/MetricsConfiguration.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -820,7 +829,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="API Access Control" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='API%20Access%20Control']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/APIAccessControl.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="API Access Control" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='API%20Access%20Control']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/APIAccessControl.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -831,7 +840,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="App Access Control" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='App%20Access%20Control']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/AppAccessControl.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="App Access Control" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='App%20Access%20Control']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/AppAccessControl.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -842,7 +851,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Middleware Configuration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Middleware%20Configuration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/MiddlewareConfiguration.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Middleware Configuration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Middleware%20Configuration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/MiddlewareConfiguration.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -853,7 +862,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Tracing Configuration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Tracing%20Configuration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/TracingConfiguration.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Tracing Configuration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Tracing%20Configuration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/TracingConfiguration.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -864,7 +873,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Secrets Access List" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Secrets%20Access%20List']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SecretsAccessList.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Secrets Access List" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Secrets%20Access%20List']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SecretsAccessList.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -875,7 +884,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="API" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='API']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/API.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="API" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='API']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/API.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -886,7 +895,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="App Policy" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='App%20Policy']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/AppPolicy.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="App Policy" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='App%20Policy']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/AppPolicy.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -897,7 +906,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Operation" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Operation']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Operation.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Operation" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Operation']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Operation.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -908,7 +917,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Http Handler" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@nodeMappings[name='Http%20Handler']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/HttpHandler.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Http Handler" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Http%20Handler']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/HttpHandler.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -921,7 +930,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Connectors">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="App -> AppConfiguration" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@edgeMappings[name='AppConfiguration']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="App -> AppConfiguration" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@edgeMappings[name='AppConfiguration']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -932,7 +941,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="SecretsAccessConfiguration -> SecretsAccessList" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@edgeMappings[name='SecretsAccessList']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SecretsAccessList.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="SecretsAccessConfiguration -> SecretsAccessList" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@edgeMappings[name='SecretsAccessList']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SecretsAccessList.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -943,7 +952,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="APIAccessControl -> API" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@edgeMappings[name='API']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/API.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="APIAccessControl -> API" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@edgeMappings[name='API']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/API.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -954,7 +963,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="AppAccessControl -> AppPolicy" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@edgeMappings[name='AppAccessControlToAppPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppPolicy.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="AppAccessControl -> AppPolicy" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@edgeMappings[name='AppAccessControlToAppPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppPolicy.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -965,7 +974,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="AppPolicy  -> Operation" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@edgeMappings[name='AppPolicyToOperation']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/Operation.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="AppPolicy  -> Operation" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@edgeMappings[name='AppPolicyToOperation']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/Operation.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -976,7 +985,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="MiddlewareConfiguration -> HttpHandler" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@edgeMappings[name='MiddlewareConfigurationToHttpHandler']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/HttpHandler.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="MiddlewareConfiguration -> HttpHandler" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@edgeMappings[name='MiddlewareConfigurationToHttpHandler']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/HttpHandler.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -990,25 +999,25 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ActorBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ActorNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png"/>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="JobBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="JobNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png"/>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="WorkflowBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="WorkflowNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png"/>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="PubSubBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="PubSubNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="PubSub Component" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::PubSub">
@@ -1025,7 +1034,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="PubSubToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubBlocks']/@defaultLayer/@nodeMappings[name='PubSub%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
+        <edgeMappings name="PubSubToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubNodeBlocks']/@defaultLayer/@nodeMappings[name='PubSub%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1034,7 +1043,7 @@
           </style>
         </edgeMappings>
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="PubSub" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubBlocks']/@defaultLayer/@nodeMappings[name='PubSub%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/PubSub.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="PubSub" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubNodeBlocks']/@defaultLayer/@nodeMappings[name='PubSub%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/PubSub.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1045,7 +1054,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1058,7 +1067,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Connectors">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Pubsub -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubBlocks']/@defaultLayer/@edgeMappings[name='PubSubToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Pubsub -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubNodeBlocks']/@defaultLayer/@edgeMappings[name='PubSubToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1072,7 +1081,7 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="BindingsBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="BindingsNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="Bindings Component" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Bindings">
@@ -1089,7 +1098,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="BindingsToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsBlocks']/@defaultLayer/@nodeMappings[name='Bindings%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
+        <edgeMappings name="BindingsToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsNodeBlocks']/@defaultLayer/@nodeMappings[name='Bindings%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1098,7 +1107,7 @@
           </style>
         </edgeMappings>
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Bindings" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsBlocks']/@defaultLayer/@nodeMappings[name='Bindings%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Bindings.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Bindings" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsNodeBlocks']/@defaultLayer/@nodeMappings[name='Bindings%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Bindings.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1109,7 +1118,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1122,7 +1131,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Connectors">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Bindings -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsBlocks']/@defaultLayer/@edgeMappings[name='BindingsToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Bindings -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsNodeBlocks']/@defaultLayer/@edgeMappings[name='BindingsToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1136,7 +1145,7 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SecretStoreBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SecretStoreNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="SecretStore Component" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SecretStore">
@@ -1153,7 +1162,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="SecretStoreToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreBlocks']/@defaultLayer/@nodeMappings[name='SecretStore%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
+        <edgeMappings name="SecretStoreToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='SecretStore%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1162,7 +1171,7 @@
           </style>
         </edgeMappings>
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SecretStore" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreBlocks']/@defaultLayer/@nodeMappings[name='SecretStore%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SecretStore.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SecretStore" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='SecretStore%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SecretStore.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1173,7 +1182,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1186,7 +1195,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Connectors">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="SecretStore -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreBlocks']/@defaultLayer/@edgeMappings[name='SecretStoreToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="SecretStore -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreNodeBlocks']/@defaultLayer/@edgeMappings[name='SecretStoreToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1200,7 +1209,7 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="StateStoreBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="StateStoreNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="StateStore Component" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::StateStore">
@@ -1217,7 +1226,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="StateStoreToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreBlocks']/@defaultLayer/@nodeMappings[name='StateStore%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
+        <edgeMappings name="StateStoreToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='StateStore%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1226,7 +1235,7 @@
           </style>
         </edgeMappings>
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="StateStore" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreBlocks']/@defaultLayer/@nodeMappings[name='StateStore%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/StateStore.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="StateStore" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='StateStore%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/StateStore.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1237,7 +1246,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1250,7 +1259,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Connectors">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="StateStore -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreBlocks']/@defaultLayer/@edgeMappings[name='StateStoreToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="StateStore -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreNodeBlocks']/@defaultLayer/@edgeMappings[name='StateStoreToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1264,7 +1273,7 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="LocksBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="LocksNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="Locks Component" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Locks">
@@ -1281,7 +1290,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="LocksToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='LocksBlocks']/@defaultLayer/@nodeMappings[name='Locks%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='LocksBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
+        <edgeMappings name="LocksToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='LocksNodeBlocks']/@defaultLayer/@nodeMappings[name='Locks%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='LocksNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1290,7 +1299,7 @@
           </style>
         </edgeMappings>
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Locks" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='LocksBlocks']/@defaultLayer/@nodeMappings[name='Locks%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Locks.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Locks" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='LocksNodeBlocks']/@defaultLayer/@nodeMappings[name='Locks%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Locks.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1301,7 +1310,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='LocksBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='LocksNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1314,7 +1323,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Connectors">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Locks -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='LocksBlocks']/@defaultLayer/@edgeMappings[name='LocksToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Locks -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='LocksNodeBlocks']/@defaultLayer/@edgeMappings[name='LocksToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1328,7 +1337,7 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="CryptographyBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="CryptographyNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="Cryptography Component" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Cryptography">
@@ -1345,7 +1354,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="CryptographyToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='CryptographyBlocks']/@defaultLayer/@nodeMappings[name='Cryptography%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='CryptographyBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
+        <edgeMappings name="CryptographyToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='CryptographyNodeBlocks']/@defaultLayer/@nodeMappings[name='Cryptography%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='CryptographyNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1354,7 +1363,7 @@
           </style>
         </edgeMappings>
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Cryptography" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='CryptographyBlocks']/@defaultLayer/@nodeMappings[name='Cryptography%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Cryptography.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Cryptography" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='CryptographyNodeBlocks']/@defaultLayer/@nodeMappings[name='Cryptography%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Cryptography.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1365,7 +1374,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='CryptographyBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='CryptographyNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1378,7 +1387,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Connectors">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Cryptography -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='CryptographyBlocks']/@defaultLayer/@edgeMappings[name='CryptographyToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Cryptography -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='CryptographyNodeBlocks']/@defaultLayer/@edgeMappings[name='CryptographyToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1392,7 +1401,7 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="MiddlewareBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="MiddlewareNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="Middleware Component" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Middleware">
@@ -1409,7 +1418,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="MiddlewareToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='MiddlewareBlocks']/@defaultLayer/@nodeMappings[name='Middleware%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='MiddlewareBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
+        <edgeMappings name="MiddlewareToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='MiddlewareNodeBlocks']/@defaultLayer/@nodeMappings[name='Middleware%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='MiddlewareNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1418,7 +1427,7 @@
           </style>
         </edgeMappings>
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Middleware" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='MiddlewareBlocks']/@defaultLayer/@nodeMappings[name='Middleware%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Middleware.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Middleware" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='MiddlewareNodeBlocks']/@defaultLayer/@nodeMappings[name='Middleware%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/Middleware.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1429,7 +1438,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='MiddlewareBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='MiddlewareNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1442,7 +1451,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Connectors">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Middleware -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='MiddlewareBlocks']/@defaultLayer/@edgeMappings[name='MiddlewareToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Middleware -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='MiddlewareNodeBlocks']/@defaultLayer/@edgeMappings[name='MiddlewareToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1456,7 +1465,7 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ConfigurationBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ConfigurationNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="ConfigurationStore Component" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::ConfigurationStore">
@@ -1473,7 +1482,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="ConfigurationStoreToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ConfigurationBlocks']/@defaultLayer/@nodeMappings[name='ConfigurationStore%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ConfigurationBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
+        <edgeMappings name="ConfigurationStoreToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ConfigurationNodeBlocks']/@defaultLayer/@nodeMappings[name='ConfigurationStore%20Component']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ConfigurationNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specMetadata">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1482,7 +1491,7 @@
           </style>
         </edgeMappings>
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="ConfigurationStore" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ConfigurationBlocks']/@defaultLayer/@nodeMappings[name='ConfigurationStore%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/ConfigurationStore.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ConfigurationStore" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ConfigurationNodeBlocks']/@defaultLayer/@nodeMappings[name='ConfigurationStore%20Component']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/ConfigurationStore.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1493,7 +1502,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ConfigurationBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ConfigurationNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1506,7 +1515,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Connectors">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ConfigurationStore -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ConfigurationBlocks']/@defaultLayer/@edgeMappings[name='ConfigurationStoreToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ConfigurationStore -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ConfigurationNodeBlocks']/@defaultLayer/@edgeMappings[name='ConfigurationStoreToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1520,7 +1529,7 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SubscriptionBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SubscriptionNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="SubscriptionConfiguration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SubscriptionConfiguration">
@@ -1537,7 +1546,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="SubscriptionConfigurationToRouteRules" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SubscriptionBlocks']/@defaultLayer/@nodeMappings[name='SubscriptionConfiguration']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SubscriptionBlocks']/@defaultLayer/@nodeMappings[name='RouteRules']" targetFinderExpression="feature:routeRules">
+        <edgeMappings name="SubscriptionConfigurationToRouteRules" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SubscriptionNodeBlocks']/@defaultLayer/@nodeMappings[name='SubscriptionConfiguration']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SubscriptionNodeBlocks']/@defaultLayer/@nodeMappings[name='RouteRules']" targetFinderExpression="feature:routeRules">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1546,7 +1555,7 @@
           </style>
         </edgeMappings>
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SubscriptionConfiguration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SubscriptionBlocks']/@defaultLayer/@nodeMappings[name='SubscriptionConfiguration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SubscriptionConfiguration.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SubscriptionConfiguration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SubscriptionNodeBlocks']/@defaultLayer/@nodeMappings[name='SubscriptionConfiguration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SubscriptionConfiguration.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1557,7 +1566,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="RouteRules" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SubscriptionBlocks']/@defaultLayer/@nodeMappings[name='RouteRules']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/RouteRules.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="RouteRules" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SubscriptionNodeBlocks']/@defaultLayer/@nodeMappings[name='RouteRules']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/RouteRules.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1570,7 +1579,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Connectors">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Subscription Configuration -> RouteRules" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SubscriptionBlocks']/@defaultLayer/@edgeMappings[name='SubscriptionConfigurationToRouteRules']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/RouteRules.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Subscription Configuration -> RouteRules" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SubscriptionNodeBlocks']/@defaultLayer/@edgeMappings[name='SubscriptionConfigurationToRouteRules']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/RouteRules.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1584,7 +1593,7 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ResiliencyBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ResiliencyNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="ResiliencyConfiguration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::ResiliencyConfiguration">
@@ -1629,7 +1638,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="ResiliencyConfigurationToResiliencyPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyConfiguration']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" targetFinderExpression="feature:policy">
+        <edgeMappings name="ResiliencyConfigurationToResiliencyPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyConfiguration']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" targetFinderExpression="feature:policy">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1637,7 +1646,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ResiliencyPolicyToRetryPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='RetryPolicy']" targetFinderExpression="feature:retries">
+        <edgeMappings name="ResiliencyPolicyToRetryPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='RetryPolicy']" targetFinderExpression="feature:retries">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1645,7 +1654,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ResiliencyPolicyToCircuitBreakerPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='CircuitBreakerPolicy']" targetFinderExpression="feature:circuitBreakers">
+        <edgeMappings name="ResiliencyPolicyToCircuitBreakerPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='CircuitBreakerPolicy']" targetFinderExpression="feature:circuitBreakers">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1653,7 +1662,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ResiliencyPolicyToResiliencyTimeouts" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='NamedResiliencyTimeouts']" targetFinderExpression="feature:timeoutDefinitions">
+        <edgeMappings name="ResiliencyPolicyToResiliencyTimeouts" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='NamedResiliencyTimeouts']" targetFinderExpression="feature:timeoutDefinitions">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1661,7 +1670,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ResiliencyConfigurationToResiliencyTargets" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyConfiguration']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyTarget']" targetFinderExpression="feature:resiliencyTargets">
+        <edgeMappings name="ResiliencyConfigurationToResiliencyTargets" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyConfiguration']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyTarget']" targetFinderExpression="feature:resiliencyTargets">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1669,7 +1678,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ResiliencyTargetToRetryPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyTarget']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='RetryPolicy']" targetFinderExpression="feature:retry">
+        <edgeMappings name="ResiliencyTargetToRetryPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyTarget']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='RetryPolicy']" targetFinderExpression="feature:retry">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1677,7 +1686,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ResiliencyTargetToCircuitBreakerPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyTarget']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='CircuitBreakerPolicy']" targetFinderExpression="feature:circuitBreaker">
+        <edgeMappings name="ResiliencyTargetToCircuitBreakerPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyTarget']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='CircuitBreakerPolicy']" targetFinderExpression="feature:circuitBreaker">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1685,7 +1694,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ResiliencyTargetToResiliencyTimeout" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyTarget']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='NamedResiliencyTimeouts']" targetFinderExpression="feature:timeout">
+        <edgeMappings name="ResiliencyTargetToResiliencyTimeout" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyTarget']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='NamedResiliencyTimeouts']" targetFinderExpression="feature:timeout">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1694,7 +1703,7 @@
           </style>
         </edgeMappings>
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="ResiliencyConfiguration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyConfiguration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/ResiliencyConfiguration.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ResiliencyConfiguration" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyConfiguration']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/ResiliencyConfiguration.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1705,7 +1714,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="ResiliencyPolicy" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/ResiliencyPolicy.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ResiliencyPolicy" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/ResiliencyPolicy.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1716,7 +1725,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="ResiliencyTarget" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyTarget']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/ResiliencyTarget.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ResiliencyTarget" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='ResiliencyTarget']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/ResiliencyTarget.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1727,7 +1736,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="RetryPolicy" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='RetryPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/RetryPolicy.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="RetryPolicy" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='RetryPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/RetryPolicy.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1738,7 +1747,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="CircuitBreakerPolicy" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='CircuitBreakerPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/CircuitBreakerPolicy.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CircuitBreakerPolicy" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='CircuitBreakerPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/CircuitBreakerPolicy.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1749,7 +1758,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="ResiliencyTimeout" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@nodeMappings[name='NamedResiliencyTimeouts']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/ResiliencyTimeout.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ResiliencyTimeout" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@nodeMappings[name='NamedResiliencyTimeouts']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/ResiliencyTimeout.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1762,7 +1771,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Connectors">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Resiliency Configuration -> Resiliency Policy" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyConfigurationToResiliencyPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/ResiliencyPolicy.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Resiliency Configuration -> Resiliency Policy" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyConfigurationToResiliencyPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/ResiliencyPolicy.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1773,7 +1782,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Resiliency Policy -> Retry Policy" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyPolicyToRetryPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/RetryPolicy.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Resiliency Policy -> Retry Policy" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyPolicyToRetryPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/RetryPolicy.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1784,7 +1793,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Resiliency Policy -> Circuit Breaker Policy" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyPolicyToCircuitBreakerPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/CircuitBreakerPolicy.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Resiliency Policy -> Circuit Breaker Policy" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyPolicyToCircuitBreakerPolicy']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/CircuitBreakerPolicy.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1795,7 +1804,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Resiliency Policy -> Resiliency Timeouts" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyPolicyToResiliencyTimeouts']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/ResiliencyTimeout.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Resiliency Policy -> Resiliency Timeouts" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyPolicyToResiliencyTimeouts']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/ResiliencyTimeout.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1806,7 +1815,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Resiliency Configuration -> Resiliency Targets" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyConfigurationToResiliencyTargets']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/ResiliencyTarget.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Resiliency Configuration -> Resiliency Targets" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@edgeMappings[name='ResiliencyConfigurationToResiliencyTargets']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/ResiliencyTarget.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1820,7 +1829,7 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="HttpEndpointBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="HttpEndpointNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="HTTPEndPoint" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::HTTPEndPoint">
@@ -1837,7 +1846,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="HttpEndpointToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='HttpEndpointBlocks']/@defaultLayer/@nodeMappings[name='HTTPEndPoint']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='HttpEndpointBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specHeaders">
+        <edgeMappings name="HttpEndpointToSpecMetaData" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='HttpEndpointNodeBlocks']/@defaultLayer/@nodeMappings[name='HTTPEndPoint']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='HttpEndpointNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" targetFinderExpression="feature:specHeaders">
           <style sourceArrow="Dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <centerLabelStyleDescription labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
@@ -1846,7 +1855,7 @@
           </style>
         </edgeMappings>
         <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="HttpEndPoint" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='HttpEndpointBlocks']/@defaultLayer/@nodeMappings[name='HTTPEndPoint']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/HTTPEndPoint.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="HttpEndPoint" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='HttpEndpointNodeBlocks']/@defaultLayer/@nodeMappings[name='HTTPEndPoint']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/HTTPEndPoint.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1857,7 +1866,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='HttpEndpointBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpecMetadata" nodeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='HttpEndpointNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']" iconPath="/io.dapr.daprdesigner.design/icons/png/48/components/SpecMetadata.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1870,7 +1879,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Connectors">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="HttpEndpoint -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='HttpEndpointBlocks']/@defaultLayer/@edgeMappings[name='HttpEndpointToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="HttpEndpoint -> SpecMetadata" edgeMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='HttpEndpointNodeBlocks']/@defaultLayer/@edgeMappings[name='HttpEndpointToSpecMetaData']" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/SpecMetadata.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1883,6 +1892,9 @@
           </ownedTools>
         </toolSections>
       </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="AppBlocks" enablePopupBars="true">
+      <defaultLayer name="Default"/>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="io.dapr.daprdesigner.design.Services"/>
   </ownedViewpoints>
