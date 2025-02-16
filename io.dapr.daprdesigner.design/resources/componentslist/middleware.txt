@@ -1,0 +1,10 @@
+middleware.http.oauth2
+middleware.http.oauth2clientcredentials
+middleware.http.bearer
+middleware.http.ratelimit
+middleware.http.opa
+middleware.http.routeralias
+middleware.http.routerchecker
+middleware.http.sentinel
+middleware.http.uppercase
+middleware.http.wasm

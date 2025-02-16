@@ -13,6 +13,8 @@ import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * The services class used by VSM.
@@ -46,9 +48,17 @@ public class Services {
 	String secretstore = "secretstores.hashicorp.vault,secretstores.kubernetes,secretstores.local.env,"
 			+ "secretstores.local.file,secretstores.alicloud.parameterstore,secretstores.aws.secretmanager,"
 			+ "secretstores.aws.parameterstore,secretstores.gcp.secretmanager,secretstores.azure.keyvault";
+
 	String configurationstore = "configuration.postgresql,configuration.redis,configuration.azure.appconfig";
+
 	String locks = "lock.redis";
+
 	String cryptography = "crypto.dapr.jwks,crypto.dapr.kubernetes.secrets,crypto.dapr.localstorage,crypto.azure.keyvault";
+
+	String middleware = "middleware.http.oauth2,middleware.http.oauth2clientcredentials,"
+			+ "middleware.http.bearer,middleware.http.ratelimit,middleware.http.opa,"
+			+ "middleware.http.routeralias,middleware.http.routerchecker,"
+			+ "middleware.http.sentinel,middleware.http.uppercase,middleware.http.wasm";
 
 	/**
 	 * See
@@ -198,15 +208,35 @@ public class Services {
 
 	}
 
-	public ArrayList<String> getComponentValues(EObject self) {
+	public List<String> getComponentValues(EObject self) {
 
 		String className = self.getClass().getName();
-		System.out
-				.println(className.substring(className.lastIndexOf('.') + 1, className.indexOf("Impl")).toLowerCase());
-		ArrayList<String> als = new ArrayList<String>();
-		for (String s : pubsub.split(","))
-			als.add(s);
-		return als;
+		String classNameLowerCase = className.substring(className.lastIndexOf('.') + 1, className.indexOf("Impl"))
+				.toLowerCase();
+		System.out.println(classNameLowerCase);
+		
+		switch (classNameLowerCase) {
+		case "pubsub":
+			return (List<String>)Arrays.asList(pubsub.split(","));
+		case "middleware":
+			return (List<String>)Arrays.asList(middleware.split(","));
+		case "bindings":
+			return (List<String>)Arrays.asList(bindings.split(","));
+		case "secretstore":
+			return (List<String>)Arrays.asList(secretstore.split(","));
+		case "cryptography":
+			return (List<String>)Arrays.asList(cryptography.split(","));
+		case "statestore":
+			return (List<String>)Arrays.asList(statestore.split(","));
+		case "locks":
+			return (List<String>)Arrays.asList(locks.split(","));
+		case "configurationstore":
+			return (List<String>)Arrays.asList(configurationstore.split(","));
+
+		}
+
+		return new ArrayList<String>();
+		
 
 	}
 

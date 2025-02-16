@@ -272,7 +272,7 @@
                     <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='LocksBlocks']"/>
                   </cases>
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::CRYPTOGRAPHY">
-                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='MiddlewareBlocks']"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='CryptographyBlocks']"/>
                   </cases>
                   <cases conditionExpression="aql:self.nodeBlockType==daprdesigner::NodeBlockType::SUBSCRIPTION">
                     <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SubscriptionBlocks']"/>

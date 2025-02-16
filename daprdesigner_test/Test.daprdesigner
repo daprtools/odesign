@@ -3,26 +3,26 @@
   <buildingblocks name="ENVIRONMENT_1">
     <subblocks name="ACTORS_5" blockType="ACTORS">
       <nodes xsi:type="daprdesigner:NodeBlocks" name="PUBSUB_12" nodeBlockType="PUBSUB">
-        <nodes xsi:type="daprdesigner:PubSub" name="ps_1" providerName="pubsub.gcp.pubsub" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:PubSub" name="ps_1" providerName="pubsub.pulsar" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.1"/>
         <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="BINDING_13" nodeBlockType="BINDING">
         <nodes xsi:type="daprdesigner:PubSub" name="ps_1"/>
         <nodes xsi:type="daprdesigner:PubSub" name="ps_2"/>
         <nodes xsi:type="daprdesigner:PubSub" name="ps_3"/>
-        <nodes xsi:type="daprdesigner:Bindings" name="b_4" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.4"/>
+        <nodes xsi:type="daprdesigner:Bindings" name="b_4" providerName="bindings.aws.kinesis" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.4"/>
         <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_5"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="DISTRIBUTEDLOCK_15" nodeBlockType="DISTRIBUTEDLOCK">
-        <nodes xsi:type="daprdesigner:Locks" name="l_1" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.2/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:Locks" name="l_1" providerName="lock.redis" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.2/@nodes.1"/>
         <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="CRYPTOGRAPHY_16" nodeBlockType="CRYPTOGRAPHY">
-        <nodes xsi:type="daprdesigner:Cryptography" name="c_1" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:Cryptography" name="c_1" providerName="crypto.dapr.kubernetes.secrets" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.1"/>
         <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="SECRETSTORE_1" nodeBlockType="SECRETSTORE">
-        <nodes xsi:type="daprdesigner:SecretStore" name="ss_1"/>
+        <nodes xsi:type="daprdesigner:SecretStore" name="ss_1" providerName="secretstores.aws.secretmanager"/>
       </nodes>
     </subblocks>
     <subblocks name="MICROSERVICES_6" blockType="MICROSERVICES">
@@ -47,7 +47,7 @@
         <nodes xsi:type="daprdesigner:TracingConfiguration" name="tc_1"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="STATESTORE_8" nodeBlockType="STATESTORE">
-        <nodes xsi:type="daprdesigner:StateStore" name="ss_1" specMetadata="//@buildingblocks.0/@subblocks.1/@nodes.1/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:StateStore" name="ss_1" providerName="state.hazelcast" specMetadata="//@buildingblocks.0/@subblocks.1/@nodes.1/@nodes.1"/>
         <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="JOBS_3" nodeBlockType="JOBS"/>
@@ -78,7 +78,7 @@
     </subblocks>
     <subblocks name="MIDDLEWARE_1" blockType="MIDDLEWARE">
       <nodes xsi:type="daprdesigner:NodeBlocks" name="MIDDLEWARE_2" nodeBlockType="MIDDLEWARE">
-        <nodes xsi:type="daprdesigner:Middleware" name="m_1" specMetadata="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:Middleware" name="m_1" providerName="middleware.http.wasm" specMetadata="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.1"/>
         <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
       </nodes>
     </subblocks>
