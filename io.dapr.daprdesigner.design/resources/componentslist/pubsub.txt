@@ -15,6 +15,7 @@ pubsub.azure.servicebus.queues
 azure.servicebus.topics
 
 
+middleware
 bindings
 secretstore
 cryptography

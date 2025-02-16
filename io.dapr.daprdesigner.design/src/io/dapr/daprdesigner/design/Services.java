@@ -20,12 +20,12 @@ import java.util.ArrayList;
 public class Services {
 
 	int unnamedCounter = 0;
-	
+
 	String pubsub = "pubsub.kafka,pubsub.in-memory,pubsub.jetstream,pubsub.kubemq,"
 			+ "pubsub.mqtt3,pubsub.pulsar,pubsub.rabbitmq,pubsub.redis,pubsub.rocketmq,pubsub.solace.amqp,"
 			+ "pubsub.aws.snssqs,pubsub.gcp.pubsub,pubsub.azure.eventhubs,pubsub.azure.servicebus.queues,azure.servicebus.topics";
-	
-	String bindings ="bindings.apns,bindings.commercetools,bindings.cron,bindings.graphql,bindings.http,bindings.huawei.obs,"
+
+	String bindings = "bindings.apns,bindings.commercetools,bindings.cron,bindings.graphql,bindings.http,bindings.huawei.obs,"
 			+ "bindings.influxdb,bindings.kafka,bindings.kubernetes,bindings.localstorage,bindings.mqtt3,bindings.mysql,"
 			+ "bindings.postgresql,bindings.postmark,bindings.rabbitmq,bindings.redis,bindings.rethinkdb.statechange,"
 			+ "bindings.twilio.sendgrid,bindings.smtp,bindings.twilio.sms,bindings.wasm,bindings.dingtalk.webhook,"
@@ -36,21 +36,19 @@ public class Services {
 			+ "bindings.azure.cosmosdb,bindings.azure.eventgrid,bindings.azure.eventhubs,"
 			+ "bindings.azure.openai,bindings.azure.servicebusqueues,"
 			+ "bindings.azure.signalr,bindings.azure.storagequeues,bindings.zeebe.command,bindings.zeebe.jobworker";
-	
+
 	String statestore = "state.Aerospike,state.cassandra,state.cockroachdb,state.couchbase,state.etcd,state.consul,"
 			+ "state.hazelcast,state.in-memory,state.jetstream,state.memcached,state.mysql,state.mongodb,state.oracledatabase,"
 			+ "state.postgresql,state.redis,state.rethinkdb,state.sqlite,state.zookeeper,state.aws.dynamodb,"
 			+ "state.cloudflare.workerskv,state.gcp.firestore,state.azure.blobstorage,state.azure.cosmosdb,"
 			+ "state.azure.tablestorage,state.sqlserver,state.oci.objectstorage";
-	
-	String secretstore ="secretstores.hashicorp.vault,secretstores.kubernetes,secretstores.local.env,"
+
+	String secretstore = "secretstores.hashicorp.vault,secretstores.kubernetes,secretstores.local.env,"
 			+ "secretstores.local.file,secretstores.alicloud.parameterstore,secretstores.aws.secretmanager,"
 			+ "secretstores.aws.parameterstore,secretstores.gcp.secretmanager,secretstores.azure.keyvault";
 	String configurationstore = "configuration.postgresql,configuration.redis,configuration.azure.appconfig";
-	String locks ="lock.redis";
-	String cryptography ="crypto.dapr.jwks,crypto.dapr.kubernetes.secrets,crypto.dapr.localstorage,crypto.azure.keyvault";
-	
-			
+	String locks = "lock.redis";
+	String cryptography = "crypto.dapr.jwks,crypto.dapr.kubernetes.secrets,crypto.dapr.localstorage,crypto.azure.keyvault";
 
 	/**
 	 * See
@@ -76,17 +74,16 @@ public class Services {
 		unnamedCounter++;
 		String s = self.getClass().getCanonicalName();
 		s = s.substring(s.lastIndexOf('.') + 1, s.indexOf("Impl"));
-		return getAllCaps(s)+ "_" + unnamedCounter;
+		return getAllCaps(s) + "_" + unnamedCounter;
 	}
-	
 
 	private String getAllCaps(String s) {
 		StringBuffer sb = new StringBuffer();
-		for( char c : s.toCharArray()) {
-			if(Character.isUpperCase(c))
-				sb.append(c);			
+		for (char c : s.toCharArray()) {
+			if (Character.isUpperCase(c))
+				sb.append(c);
 		}
-		
+
 		return sb.toString().toLowerCase();
 	}
 
@@ -121,76 +118,66 @@ public class Services {
 		source.getPolicies().add(target);
 
 	}
-	
+
 	public void addHttpHandler(MiddlewareConfiguration source, HttpHandler target) {
 
 		source.getHttpHandlers().add(target);
 
 	}
-	
+
 	public void addOperation(AppPolicy source, Operation target) {
 
 		source.getOperations().add(target);
 
 	}
-	
+
 	public void addRouteRules(SubscriptionConfiguration source, RouteRules target) {
 
 		source.getRouteRules().add(target);
 
 	}
-	
+
 	public void setResiliencyPolicy(ResiliencyConfiguration source, ResiliencyPolicy target) {
 
 		source.setPolicy(target);
-		
 
 	}
-	
+
 	public void addRetryPolicy(ResiliencyPolicy source, RetryPolicy target) {
 
 		source.getRetries().add(target);
-		
 
 	}
-	
+
 	public void addCircuitBreakerPolicy(ResiliencyPolicy source, CircuitBreakerPolicy target) {
 
 		source.getCircuitBreakers().add(target);
-		
 
 	}
+
 	public void addResiliencyTimeouts(ResiliencyPolicy source, ResiliencyTimeout target) {
 
 		source.getTimeoutDefinitions().add(target);
-		
 
 	}
-	
+
 	public void addResiliencyTargets(ResiliencyConfiguration source, ResiliencyTarget target) {
 
 		source.getResiliencyTargets().add(target);
-		
 
 	}
-	
+
 	public void addSpecMetadatHeadersToHTTPEndPoint(HTTPEndPoint source, SpecMetadata target) {
 
 		source.getSpecHeaders().add(target);
-		
 
 	}
-	
+
 	public void addSpecMetadaToComponent(Component source, SpecMetadata target) {
-		
 
 		source.getSpecMetadata().add(target);
-		
 
 	}
-	
-	 
-	
 
 	public void removeAppConfiguration(App source, AppConfiguration target) {
 
@@ -210,20 +197,19 @@ public class Services {
 		}
 
 	}
-	
+
 	public ArrayList<String> getComponentValues(EObject self) {
-		
+
 		String className = self.getClass().getName();
-		System.out.println(className.substring(className.lastIndexOf('.') + 1, className.indexOf("Impl")).toLowerCase());
+		System.out
+				.println(className.substring(className.lastIndexOf('.') + 1, className.indexOf("Impl")).toLowerCase());
 		ArrayList<String> als = new ArrayList<String>();
-		for(String s: pubsub.split(","))
+		for (String s : pubsub.split(","))
 			als.add(s);
 		return als;
-		
 
 	}
 
-	
 	public EObject addStringValue(EObject self, EStructuralFeature feature, String value) {
 		System.out.println("Hellloooo...." + feature.getName() + " " + value + " " + feature.getClass().getName());
 
@@ -232,7 +218,10 @@ public class Services {
 		if (self instanceof SecretsAccessList) {
 
 			SecretsAccessList s = (SecretsAccessList) self;
-			s.getSecrets().add(value);
+			if (feature.getName().equals("allowedSecrets"))
+				s.getAllowedSecrets().add(value);
+			if (feature.getName().equals("deniedSecrets"))
+				s.getDeniedSecrets().add(value);
 
 		}
 		if (self instanceof MetricsConfiguration) {
@@ -253,7 +242,10 @@ public class Services {
 		if (self instanceof SecretsAccessList) {
 
 			SecretsAccessList s = (SecretsAccessList) self;
-			s.getSecrets().removeAll((ArrayList) value);
+			if (feature.getName().equals("allowedSecrets"))
+				s.getAllowedSecrets().removeAll((ArrayList) value);
+			if (feature.getName().equals("deniedSecrets"))
+				s.getDeniedSecrets().removeAll((ArrayList) value);
 
 		}
 		if (self instanceof MetricsConfiguration) {

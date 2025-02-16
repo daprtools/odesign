@@ -21,6 +21,9 @@
         <nodes xsi:type="daprdesigner:Cryptography" name="c_1" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.1"/>
         <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
       </nodes>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="SECRETSTORE_1" nodeBlockType="SECRETSTORE">
+        <nodes xsi:type="daprdesigner:SecretStore" name="ss_1"/>
+      </nodes>
     </subblocks>
     <subblocks name="MICROSERVICES_6" blockType="MICROSERVICES">
       <nodes xsi:type="daprdesigner:NodeBlocks" name="Account">
@@ -29,7 +32,7 @@
         <nodes xsi:type="daprdesigner:LoggingConfiguration" name="LC"/>
         <nodes xsi:type="daprdesigner:NameResolutionConfiguration" name="NR"/>
         <nodes xsi:type="daprdesigner:SecretsAccessConfiguration" name="S1" accessList="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.5"/>
-        <nodes xsi:type="daprdesigner:SecretsAccessList" name="SA11"/>
+        <nodes xsi:type="daprdesigner:SecretsAccessList" name="SA11" secretStore="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.0"/>
         <nodes xsi:type="daprdesigner:MetricsConfiguration" name="MC"/>
         <nodes xsi:type="daprdesigner:APIAccessControl" name="APIAcc" apiList="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.8 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.12 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.13 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.14"/>
         <nodes xsi:type="daprdesigner:API" name="API_3" apiType="PUBLISH"/>
@@ -71,6 +74,12 @@
       <nodes xsi:type="daprdesigner:NodeBlocks" name="HTTPENDPOINT_1" nodeBlockType="HTTPENDPOINT">
         <nodes xsi:type="daprdesigner:HTTPEndPoint" name="httpep_1" scopes="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.0" specHeaders="//@buildingblocks.0/@subblocks.2/@nodes.2/@nodes.1"/>
         <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_3"/>
+      </nodes>
+    </subblocks>
+    <subblocks name="MIDDLEWARE_1" blockType="MIDDLEWARE">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="MIDDLEWARE_2" nodeBlockType="MIDDLEWARE">
+        <nodes xsi:type="daprdesigner:Middleware" name="m_1" specMetadata="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
       </nodes>
     </subblocks>
     <nodes xsi:type="daprdesigner:Namespace" name="dev"/>
