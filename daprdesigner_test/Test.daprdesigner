@@ -17,5 +17,6 @@
       <nodes xsi:type="daprdesigner:NodeBlocks" name="all good" nodeBlockType="RESILIENCY"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="httpendpoint_30" nodeBlockType="HTTPENDPOINT"/>
     </subblocks>
+    <nodes xsi:type="daprdesigner:Namespace" name="dev_n"/>
   </buildingblocks>
 </daprdesigner:DaprArchitecture>
