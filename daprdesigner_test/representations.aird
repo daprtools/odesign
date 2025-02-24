@@ -4,7 +4,7 @@
     <semanticResources>Test.daprdesigner</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_nNw9wNZNEe-uRIHsZfhAOA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_olvdUNZNEe-uRIHsZfhAOA" name="TestArchitecture" repPath="#_olu2QNZNEe-uRIHsZfhAOA" changeId="1740391765370">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_olvdUNZNEe-uRIHsZfhAOA" name="TestArchitecture" repPath="#_olu2QNZNEe-uRIHsZfhAOA" changeId="1740396553849">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']"/>
         <target xmi:type="daprdesigner:DaprArchitecture" href="Test.daprdesigner#/"/>
       </ownedRepresentationDescriptors>
@@ -404,7 +404,7 @@
         </computedStyleDescriptions>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_j390YPKNEe-XOLLzUk7QUA" name="environment_1" width="150" height="100">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_j390YPKNEe-XOLLzUk7QUA" name="Dev env" width="150" height="100">
       <target xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0"/>
       <semanticElements xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_j390YvKNEe-XOLLzUk7QUA" labelSize="25" iconPath="/io.dapr.daprdesigner.design/icons/png/64/containers/Environment.png" description="_j390YfKNEe-XOLLzUk7QUA" borderSize="1" borderSizeComputationExpression="1">
@@ -444,7 +444,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_Vom5EPKVEe-XOLLzUk7QUA" name="jobs_19" width="50" height="30">
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_Vom5EPKVEe-XOLLzUk7QUA" name="All Jobs" width="50" height="30">
         <target xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.3"/>
         <semanticElements xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.3"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_z_N1s_KWEe-XOLLzUk7QUA" labelSize="20" iconPath="/io.dapr.daprdesigner.design/icons/png/64/containers/Jobs.png" labelColor="39,76,114" description="_z_N1sfKWEe-XOLLzUk7QUA" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="255,255,255">
@@ -468,7 +468,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_Ywxj4PKVEe-XOLLzUk7QUA" name="statestore_22" width="50" height="30">
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_Ywxj4PKVEe-XOLLzUk7QUA" name="States" width="50" height="30">
         <target xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.6"/>
         <semanticElements xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.6"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_z_Q5APKWEe-XOLLzUk7QUA" labelSize="20" iconPath="/io.dapr.daprdesigner.design/icons/png/64/containers/StateStore.png" labelColor="39,76,114" description="_z_QR8fKWEe-XOLLzUk7QUA" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="255,255,255">
@@ -492,7 +492,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bjZcgPKVEe-XOLLzUk7QUA" name="distributedlock_25" width="50" height="30">
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bjZcgPKVEe-XOLLzUk7QUA" name="fdsdf" width="50" height="30">
         <target xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.9"/>
         <semanticElements xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.9"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_z_SuMvKWEe-XOLLzUk7QUA" labelSize="20" iconPath="/io.dapr.daprdesigner.design/icons/png/64/containers/Locks.png" labelColor="39,76,114" description="_z_SuMPKWEe-XOLLzUk7QUA" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="255,255,255">
@@ -515,7 +515,7 @@
           <labelFormat>bold</labelFormat>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']"/>
-        <ownedDiagramElements xmi:type="diagram:DNode" uid="_3FT5YPKVEe-XOLLzUk7QUA" name="subscription_28" width="-1" height="-1" resizeKind="NSEW">
+        <ownedDiagramElements xmi:type="diagram:DNode" uid="_3FT5YPKVEe-XOLLzUk7QUA" name="this works" width="-1" height="-1" resizeKind="NSEW">
           <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.11/@nodes.0"/>
           <semanticElements xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.11/@nodes.0"/>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_3FUgcfKVEe-XOLLzUk7QUA" labelSize="15" showIcon="false" labelAlignment="RIGHT" description="_3FUgcPKVEe-XOLLzUk7QUA" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/SubscriptionConfiguration.png">
@@ -524,7 +524,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNode" uid="_3x1oMPKVEe-XOLLzUk7QUA" name="resiliency_29" width="-1" height="-1" resizeKind="NSEW">
+        <ownedDiagramElements xmi:type="diagram:DNode" uid="_3x1oMPKVEe-XOLLzUk7QUA" name="all good" width="-1" height="-1" resizeKind="NSEW">
           <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.11/@nodes.1"/>
           <semanticElements xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.11/@nodes.1"/>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_3x2PQfKVEe-XOLLzUk7QUA" labelSize="15" showIcon="false" labelAlignment="RIGHT" description="_3x2PQPKVEe-XOLLzUk7QUA" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/ResiliencyConfiguration.png">

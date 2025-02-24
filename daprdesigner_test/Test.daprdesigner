@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <daprdesigner:DaprArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:daprdesigner="http://dapr.io/daprtools/daprdesigner">
-  <buildingblocks name="environment_1">
+  <buildingblocks name="Dev env">
     <subblocks name="microservices_16" blockType="MICROSERVICES"/>
     <subblocks name="actors_17" blockType="ACTORS"/>
     <subblocks name="workflow_18" blockType="WORKFLOW"/>
-    <subblocks name="jobs_19" blockType="JOBS"/>
+    <subblocks name="All Jobs" blockType="JOBS"/>
     <subblocks name="pubsub_20" blockType="PUBSUB"/>
     <subblocks name="secretstore_21" blockType="SECRETSTORE"/>
-    <subblocks name="statestore_22" blockType="STATESTORE"/>
+    <subblocks name="States" blockType="STATESTORE"/>
     <subblocks name="bindings_23" blockType="BINDINGS"/>
     <subblocks name="configuration_24" blockType="CONFIGURATION"/>
-    <subblocks name="distributedlock_25" blockType="DISTRIBUTEDLOCK"/>
+    <subblocks name="fdsdf" blockType="DISTRIBUTEDLOCK"/>
     <subblocks name="middleware_26" blockType="MIDDLEWARE"/>
     <subblocks name="configurationgroup_27" blockType="CONFIGURATIONGROUP">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="subscription_28" nodeBlockType="SUBSCRIPTION"/>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="resiliency_29" nodeBlockType="RESILIENCY"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="this works" nodeBlockType="SUBSCRIPTION"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="all good" nodeBlockType="RESILIENCY"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="httpendpoint_30" nodeBlockType="HTTPENDPOINT"/>
     </subblocks>
   </buildingblocks>

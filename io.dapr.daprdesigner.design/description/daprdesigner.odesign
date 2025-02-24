@@ -5,7 +5,7 @@
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.rectpacking" label="ELK Rectangle Packing" description="Algorithm for packing of unconnected boxes, i.e. graphs without edges. The given order of the boxes is always preserved and the main reading direction of the boxes is left to right. The algorithm is divided into two phases. One phase approximates the width in which the rectangles can be placed. The next phase places the rectangles in rows using the previously calculated width as bounding width and bundles rectangles with a similar height in blocks. A compaction step reduces the size of the drawing. Finally, the rectangles are expanded to fill their bounding box and eliminate empty unused spaces."/>
       <defaultLayer name="Default" icon="/io.dapr.daprdesigner.design/icons/svg/24/DaprArchitecture.svg">
-        <containerMappings name="Environment" semanticCandidatesExpression="feature:buildingblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='NodeBlock']" domainClass="daprdesigner::Block">
+        <containerMappings name="Environment" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Blocks%20and%20Nodeblocks']" semanticCandidatesExpression="feature:buildingblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='NodeBlock']" domainClass="daprdesigner::Block">
           <subNodeMappings name="Trustdomain" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Trustdomain">
             <style xsi:type="style:WorkspaceImageDescription" labelSize="15" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/Trustdomain.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -13,15 +13,15 @@
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
-          <subNodeMappings name="Namespace" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Namespace">
+          <subNodeMappings name="Namespace" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Blocks%20and%20Nodeblocks']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Namespace">
             <style xsi:type="style:WorkspaceImageDescription" labelSize="15" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/Namespace.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
-          <subContainerMappings name="Service Groups" semanticCandidatesExpression="feature:subblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Block']" domainClass="daprdesigner::Block">
-            <subNodeMappings name="NodeBlock" semanticCandidatesExpression="feature:nodes" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='NodeBlock']" domainClass="daprdesigner::NodeBlocks">
+          <subContainerMappings name="Service Groups" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Blocks%20and%20Nodeblocks']" semanticCandidatesExpression="feature:subblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Block']" domainClass="daprdesigner::Block">
+            <subNodeMappings name="NodeBlock" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Blocks%20and%20Nodeblocks']" semanticCandidatesExpression="feature:nodes" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='NodeBlock']" domainClass="daprdesigner::NodeBlocks">
               <style xsi:type="style:WorkspaceImageDescription" labelSize="15" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/Block.png">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelFormat>bold</labelFormat>
@@ -323,6 +323,12 @@
                   </cases>
                 </subModelOperations>
               </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Blocks and Nodeblocks">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
             </initialOperation>
           </ownedTools>
         </toolSections>
