@@ -1,88 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <daprdesigner:DaprArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:daprdesigner="http://dapr.io/daprtools/daprdesigner">
-  <buildingblocks name="ENVIRONMENT_1">
-    <subblocks name="ACTORS_5" blockType="ACTORS">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="PUBSUB_12" nodeBlockType="PUBSUB">
-        <nodes xsi:type="daprdesigner:PubSub" name="ps_1" providerName="pubsub.pulsar" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.1"/>
-        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
-      </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="BINDING_13" nodeBlockType="BINDING">
-        <nodes xsi:type="daprdesigner:PubSub" name="ps_1"/>
-        <nodes xsi:type="daprdesigner:PubSub" name="ps_2"/>
-        <nodes xsi:type="daprdesigner:PubSub" name="ps_3"/>
-        <nodes xsi:type="daprdesigner:Bindings" name="b_4" providerName="bindings.aws.kinesis" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.4"/>
-        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_5"/>
-      </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="DISTRIBUTEDLOCK_15" nodeBlockType="DISTRIBUTEDLOCK">
-        <nodes xsi:type="daprdesigner:Locks" name="l_1" providerName="lock.redis" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.2/@nodes.1"/>
-        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
-      </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="CRYPTOGRAPHY_16" nodeBlockType="CRYPTOGRAPHY">
-        <nodes xsi:type="daprdesigner:Cryptography" name="c_1" providerName="crypto.dapr.kubernetes.secrets" specMetadata="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.1"/>
-        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
-      </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="SECRETSTORE_1" nodeBlockType="SECRETSTORE">
-        <nodes xsi:type="daprdesigner:SecretStore" name="ss_1" providerName="secretstores.aws.secretmanager"/>
-      </nodes>
+  <buildingblocks name="environment_1">
+    <subblocks name="microservices_16" blockType="MICROSERVICES"/>
+    <subblocks name="actors_17" blockType="ACTORS"/>
+    <subblocks name="workflow_18" blockType="WORKFLOW"/>
+    <subblocks name="jobs_19" blockType="JOBS"/>
+    <subblocks name="pubsub_20" blockType="PUBSUB"/>
+    <subblocks name="secretstore_21" blockType="SECRETSTORE"/>
+    <subblocks name="statestore_22" blockType="STATESTORE"/>
+    <subblocks name="bindings_23" blockType="BINDINGS"/>
+    <subblocks name="configuration_24" blockType="CONFIGURATION"/>
+    <subblocks name="distributedlock_25" blockType="DISTRIBUTEDLOCK"/>
+    <subblocks name="middleware_26" blockType="MIDDLEWARE"/>
+    <subblocks name="configurationgroup_27" blockType="CONFIGURATIONGROUP">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="subscription_28" nodeBlockType="SUBSCRIPTION"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="resiliency_29" nodeBlockType="RESILIENCY"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="httpendpoint_30" nodeBlockType="HTTPENDPOINT"/>
     </subblocks>
-    <subblocks name="MICROSERVICES_6" blockType="MICROSERVICES">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="Account">
-        <nodes xsi:type="daprdesigner:App" name="Account" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.2 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.3 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.4 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.6 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.7 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.9 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.15 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.17"/>
-        <nodes xsi:type="daprdesigner:DeniedComponentsConfiguration" name="DC1"/>
-        <nodes xsi:type="daprdesigner:LoggingConfiguration" name="LC"/>
-        <nodes xsi:type="daprdesigner:NameResolutionConfiguration" name="NR"/>
-        <nodes xsi:type="daprdesigner:SecretsAccessConfiguration" name="S1" accessList="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.5"/>
-        <nodes xsi:type="daprdesigner:SecretsAccessList" name="SA11" secretStore="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.0"/>
-        <nodes xsi:type="daprdesigner:MetricsConfiguration" name="MC"/>
-        <nodes xsi:type="daprdesigner:APIAccessControl" name="APIAcc" apiList="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.8 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.12 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.13 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.14"/>
-        <nodes xsi:type="daprdesigner:API" name="API_3" apiType="PUBLISH"/>
-        <nodes xsi:type="daprdesigner:AppAccessControl" name="AAC" policies="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.10"/>
-        <nodes xsi:type="daprdesigner:AppPolicy" name="AP1" app="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.0" operations="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.11"/>
-        <nodes xsi:type="daprdesigner:Operation" name="OPERATION_1"/>
-        <nodes xsi:type="daprdesigner:API" name="API_4"/>
-        <nodes xsi:type="daprdesigner:API" name="API_5"/>
-        <nodes xsi:type="daprdesigner:API" name="API_6"/>
-        <nodes xsi:type="daprdesigner:MiddlewareConfiguration" name="mc_1" httpHandlers="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.16"/>
-        <nodes xsi:type="daprdesigner:HttpHandler" name="hh_2"/>
-        <nodes xsi:type="daprdesigner:TracingConfiguration" name="tc_1"/>
-      </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="STATESTORE_8" nodeBlockType="STATESTORE">
-        <nodes xsi:type="daprdesigner:StateStore" name="ss_1" providerName="state.hazelcast" specMetadata="//@buildingblocks.0/@subblocks.1/@nodes.1/@nodes.1"/>
-        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
-      </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="JOBS_3" nodeBlockType="JOBS"/>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="CONFIGURATIONSTORE_4" nodeBlockType="CONFIGURATIONSTORE">
-        <nodes xsi:type="daprdesigner:ConfigurationStore" name="cs_1" specMetadata="//@buildingblocks.0/@subblocks.1/@nodes.3/@nodes.1"/>
-        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
-      </nodes>
-    </subblocks>
-    <subblocks name="CONFIGURATIONGROUP_1" blockType="CONFIGURATIONGROUP">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="SUBSCRIPTION_2" nodeBlockType="SUBSCRIPTION">
-        <nodes xsi:type="daprdesigner:SubscriptionConfiguration" name="sc_1" routeRules="//@buildingblocks.0/@subblocks.2/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.2/@nodes.0/@nodes.3 //@buildingblocks.0/@subblocks.2/@nodes.0/@nodes.2"/>
-        <nodes xsi:type="daprdesigner:RouteRules" name="rr_3"/>
-        <nodes xsi:type="daprdesigner:RouteRules" name="rr_4"/>
-        <nodes xsi:type="daprdesigner:RouteRules" name="rr_5"/>
-      </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="RESILIENCY_1" nodeBlockType="RESILIENCY">
-        <nodes xsi:type="daprdesigner:ResiliencyConfiguration" name="rc_1" policy="//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.1" resiliencyTargets="//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.5"/>
-        <nodes xsi:type="daprdesigner:ResiliencyPolicy" name="rp_2" retries="//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.2" circuitBreakers="//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.3" timeoutDefinitions="//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.4"/>
-        <nodes xsi:type="daprdesigner:RetryPolicy" name="rp_3"/>
-        <nodes xsi:type="daprdesigner:CircuitBreakerPolicy" name="cbp_1"/>
-        <nodes xsi:type="daprdesigner:ResiliencyTimeout" name="rt_1"/>
-        <nodes xsi:type="daprdesigner:ResiliencyTarget" name="rt_1"/>
-      </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="HTTPENDPOINT_1" nodeBlockType="HTTPENDPOINT">
-        <nodes xsi:type="daprdesigner:HTTPEndPoint" name="httpep_1" scopes="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.0" specHeaders="//@buildingblocks.0/@subblocks.2/@nodes.2/@nodes.1"/>
-        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_3"/>
-      </nodes>
-    </subblocks>
-    <subblocks name="MIDDLEWARE_1" blockType="MIDDLEWARE">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="MIDDLEWARE_2" nodeBlockType="MIDDLEWARE">
-        <nodes xsi:type="daprdesigner:Middleware" name="m_1" providerName="middleware.http.wasm" specMetadata="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.1"/>
-        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
-      </nodes>
-    </subblocks>
-    <nodes xsi:type="daprdesigner:Namespace" name="dev"/>
-    <nodes xsi:type="daprdesigner:Trustdomain" name="public"/>
   </buildingblocks>
 </daprdesigner:DaprArchitecture>

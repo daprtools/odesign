@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:properties-ext-widgets-reference="http://www.eclipse.org/sirius/properties/1.0.0/ext/widgets/reference" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="daprdesigner" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:properties-ext-widgets-reference="http://www.eclipse.org/sirius/properties/1.0.0/ext/widgets/reference" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="daprdesigner" version="15.4.0.202401051836">
   <ownedViewpoints name="ArchitectureViewpoint" modelFileExtension="daprdesigner">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Architecture" initialisation="true" domainClass="daprdesigner::DaprArchitecture" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
+      <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.rectpacking" label="ELK Rectangle Packing" description="Algorithm for packing of unconnected boxes, i.e. graphs without edges. The given order of the boxes is always preserved and the main reading direction of the boxes is left to right. The algorithm is divided into two phases. One phase approximates the width in which the rectangles can be placed. The next phase places the rectangles in rows using the previously calculated width as bounding width and bundles rectangles with a similar height in blocks. A compaction step reduces the size of the drawing. Finally, the rectangles are expanded to fill their bounding box and eliminate empty unused spaces."/>
       <defaultLayer name="Default" icon="/io.dapr.daprdesigner.design/icons/svg/24/DaprArchitecture.svg">
-        <containerMappings name="Environment" semanticCandidatesExpression="feature:buildingblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Block']" domainClass="daprdesigner::Block">
+        <containerMappings name="Environment" semanticCandidatesExpression="feature:buildingblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='NodeBlock']" domainClass="daprdesigner::Block">
           <subNodeMappings name="Trustdomain" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Trustdomain">
             <style xsi:type="style:WorkspaceImageDescription" labelSize="15" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/Trustdomain.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -40,9 +41,9 @@
             <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="20" iconPath="/io.dapr.daprdesigner.design/icons/png/24/Component.png" widthComputationExpression="50" heightComputationExpression="30">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>bold</labelFormat>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subContainerMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="25" iconPath="/io.dapr.daprdesigner.design/icons/svg/48/Block.svg" roundedCorner="true" widthComputationExpression="150" heightComputationExpression="100">
@@ -61,7 +62,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="buildingblocks">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::ENVIRONMENT"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:get"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -70,9 +71,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Namespace" referenceName="nodes">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:self.getDaprNodeName()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType = daprdesigner::BlockType::ENVIRONMENT">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Namespace" referenceName="nodes">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:self.getDaprNodeName()"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -81,9 +84,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Trustdomain" referenceName="nodes">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:self.getDaprNodeName()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType = daprdesigner::BlockType::ENVIRONMENT">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Trustdomain" referenceName="nodes">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:self.getDaprNodeName()"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -92,10 +97,12 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::MICROSERVICES"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType = daprdesigner::BlockType::ENVIRONMENT">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::MICROSERVICES"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -104,10 +111,12 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::ACTORS"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType = daprdesigner::BlockType::ENVIRONMENT">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::ACTORS"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -116,10 +125,12 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::WORKFLOW"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType = daprdesigner::BlockType::ENVIRONMENT">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::WORKFLOW"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -128,10 +139,12 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::JOBS"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType = daprdesigner::BlockType::ENVIRONMENT">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::JOBS"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -140,10 +153,12 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::PUBSUB"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType = daprdesigner::BlockType::ENVIRONMENT">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::PUBSUB"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -152,10 +167,12 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::SECRETSTORE"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType = daprdesigner::BlockType::ENVIRONMENT">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::SECRETSTORE"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -164,10 +181,12 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::STATESTORE"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType = daprdesigner::BlockType::ENVIRONMENT">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::STATESTORE"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -176,10 +195,12 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::BINDINGS"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType = daprdesigner::BlockType::ENVIRONMENT">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::BINDINGS"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -188,10 +209,12 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::CONFIGURATION"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType = daprdesigner::BlockType::ENVIRONMENT">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::CONFIGURATION"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -200,10 +223,12 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::DISTRIBUTEDLOCK"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType = daprdesigner::BlockType::ENVIRONMENT">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::DISTRIBUTEDLOCK"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -212,10 +237,12 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::MIDDLEWARE"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType = daprdesigner::BlockType::ENVIRONMENT">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::MIDDLEWARE"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -224,24 +251,26 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::CONFIGURATIONGROUP"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType = daprdesigner::BlockType::ENVIRONMENT">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::CONFIGURATIONGROUP"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
         </toolSections>
         <toolSections name="Interactions">
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="Block" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subContainerMappings[name='Sub%20Block2'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']/@subContainerMappings[name='Sub%20Block2']">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Block" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subContainerMappings[name='Sub%20Block2'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']/@defaultLayer/@containerMappings[name='Block']/@subContainerMappings[name='Sub%20Block']/@subContainerMappings[name='Sub%20Block2']">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Blocks']"/>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="NodeBlock" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="NodeBlock" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
@@ -302,9 +331,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::APP"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType=daprdesigner::BlockType::MICROSERVICES">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::APP"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -312,9 +343,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::ACTOR"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType=daprdesigner::BlockType::ACTORS">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::ACTOR"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -322,9 +355,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::WORKFLOW"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType=daprdesigner::BlockType::WORKFLOW">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::WORKFLOW"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -332,9 +367,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::JOBS"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType=daprdesigner::BlockType::JOBS">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::JOBS"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -342,9 +379,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::PUBSUB"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType=daprdesigner::BlockType::PUBSUB">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::PUBSUB"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -352,9 +391,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::BINDING"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType=daprdesigner::BlockType::BINDINGS">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::BINDING"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -362,9 +403,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::SECRETSTORE"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType=daprdesigner::BlockType::SECRETSTORE">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::SECRETSTORE"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -372,9 +415,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::STATESTORE"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType=daprdesigner::BlockType::STATESTORE">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::STATESTORE"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -382,9 +427,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::MIDDLEWARE"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType=daprdesigner::BlockType::MIDDLEWARE">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::MIDDLEWARE"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -392,9 +439,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::DISTRIBUTEDLOCK"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType=daprdesigner::BlockType::DISTRIBUTEDLOCK">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::DISTRIBUTEDLOCK"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -402,9 +451,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::CRYPTOGRAPHY"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType=daprdesigner::BlockType::CRYPTOGRAPHY">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::CRYPTOGRAPHY"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -412,9 +463,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::CONFIGURATIONSTORE"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType=daprdesigner::BlockType::CONFIGURATION">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::CONFIGURATIONSTORE"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -422,9 +475,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::SUBSCRIPTION"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType=daprdesigner::BlockType::CONFIGURATIONGROUP">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::SUBSCRIPTION"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -432,9 +487,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::RESILIENCY"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType=daprdesigner::BlockType::CONFIGURATIONGROUP">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::RESILIENCY"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -442,9 +499,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::HTTPENDPOINT"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType=daprdesigner::BlockType::CONFIGURATIONGROUP">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="NodeBlocks" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="nodeBlockType" valueExpression="aql:daprdesigner::NodeBlockType::HTTPENDPOINT"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamedNodeBlock()"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -610,105 +669,105 @@
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="App" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::App">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/App2.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/48/App2.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Denied Components" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::DeniedComponentsConfiguration">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/DeniedComponentsConfiguration.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/DeniedComponentsConfiguration.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Logging Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::LoggingConfiguration">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/LoggingConfiguration.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/LoggingConfiguration.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Name Resolution Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::NameResolutionConfiguration">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/NameResolutionConfiguration.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/NameResolutionConfiguration.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Secrets Access Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SecretsAccessConfiguration">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/SecretsAccessConfiguration.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/SecretsAccessConfiguration.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Metrics Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::MetricsConfiguration">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/MetricsConfiguration.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/MetricsConfiguration.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="API Access Control" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::APIAccessControl">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/APIAccessControl.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/APIAccessControl.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="App Access Control" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::AppAccessControl">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/AppAccessControl.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/AppAccessControl.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Middleware Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::MiddlewareConfiguration">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/MiddlewareConfiguration.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/MiddlewareConfiguration.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Tracing Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::TracingConfiguration">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/TracingConfiguration.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/TracingConfiguration.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Secrets Access List" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SecretsAccessList">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/SecretsAccessList.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/SecretsAccessList.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="API" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::API">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/API.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/API.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="App Policy" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::AppPolicy">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/AppPolicy.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/AppPolicy.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Operation" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Operation">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/Operation.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/Operation.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="Http Handler" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::HttpHandler">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/HttpHandler.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/HttpHandler.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -1893,8 +1952,258 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="AppBlocks" enablePopupBars="true">
-      <defaultLayer name="Default"/>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="AppBlocks" initialisation="true" domainClass="daprdesigner::Block" enablePopupBars="true">
+      <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
+      <defaultLayer name="Default">
+        <edgeMappings name="AppConfiguration" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='App']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='API%20Access%20Control'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='App%20Access%20Control'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Denied%20Components'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Logging%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Metrics%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Middleware%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Name%20Resolution%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Secrets%20Access%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Tracing%20Configuration']" targetFinderExpression="feature:configurations">
+          <style routingStyle="tree" foldingStyle="TARGET" endsCentering="Both">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="2" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="SecretsAccessList" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Secrets%20Access%20Configuration']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Secrets%20Access%20List']" targetFinderExpression="feature:accessList">
+          <style sizeComputationExpression="-1" routingStyle="tree">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="2" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="API" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='API%20Access%20Control']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='API']" targetFinderExpression="feature:apiList">
+          <style sizeComputationExpression="-1" routingStyle="tree">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="2" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="AppAccessControlToAppPolicy" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='App%20Access%20Control']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='App%20Policy']" targetFinderExpression="feature:policies">
+          <style sizeComputationExpression="-1" routingStyle="tree">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="2" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="AppPolicyToOperation" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='App%20Policy']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Operation']" targetFinderExpression="feature:operations">
+          <style sizeComputationExpression="-1" routingStyle="tree">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="2" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="MiddlewareConfigurationToHttpHandler" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Middleware%20Configuration']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Http%20Handler']" targetFinderExpression="feature:httpHandlers">
+          <style sizeComputationExpression="-1" routingStyle="tree">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="2" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="AppNodeBlock" semanticCandidatesExpression="feature:nodes" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='App%20Node%20Block']" domainClass="NodeBlocks">
+          <subNodeMappings name="App" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::App">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName + ' : ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/32/App2.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Denied Components" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::DeniedComponentsConfiguration">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+  ' : ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/DeniedComponentsConfiguration.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Logging Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::LoggingConfiguration">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+ ' : ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/LoggingConfiguration.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Name Resolution Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::NameResolutionConfiguration">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+ ' : ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/NameResolutionConfiguration.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Secrets Access Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SecretsAccessConfiguration">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+  ' : ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/SecretsAccessConfiguration.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Metrics Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::MetricsConfiguration">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+ ' : '+ self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/MetricsConfiguration.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="API Access Control" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::APIAccessControl">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+ ' : ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/APIAccessControl.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="App Access Control" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::AppAccessControl">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+ '  ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/AppAccessControl.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Middleware Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::MiddlewareConfiguration">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+  ' : '+ self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/MiddlewareConfiguration.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Tracing Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::TracingConfiguration">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+ ' : '+ self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/TracingConfiguration.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Secrets Access List" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SecretsAccessList">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="16" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+  ' : '+ self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/16/SecretsAccessList.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="API" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::API">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+ ' : '+ self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/16/API.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="App Policy" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::AppPolicy">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+ ' : '+ self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/16/AppPolicy.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Operation" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Operation">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+  ' : '+ self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/16/Operation.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Http Handler" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::HttpHandler">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName +  ' : ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/16/HttpHandler.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+        </containerMappings>
+        <toolSections name="Block Nodes" icon="/io.dapr.daprdesigner.design/icons/png/32/BuildingBlock.png"/>
+        <toolSections name="Connectors"/>
+        <toolSections name="Interactions">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="App Node Block" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+      <additionalLayers name="Show Configuration">
+        <edgeMappings name="AppConfiguration" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='App']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='API%20Access%20Control'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='App%20Access%20Control'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Denied%20Components'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Logging%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Metrics%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Middleware%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Name%20Resolution%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Secrets%20Access%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppBlocks']/@defaultLayer/@containerMappings[name='AppNodeBlock']/@subNodeMappings[name='Tracing%20Configuration']" targetFinderExpression="feature:configurations">
+          <style routingStyle="tree" foldingStyle="TARGET" endsCentering="Both">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <centerLabelStyleDescription labelSize="2" iconPath="/io.dapr.daprdesigner.design/icons/png/24/components/AppConfiguration.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="AppNodeBlock" semanticCandidatesExpression="feature:nodes" domainClass="NodeBlocks">
+          <subNodeMappings name="App" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::App">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName + ' : ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/32/App2.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Denied Components" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::DeniedComponentsConfiguration">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+  ' : ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/DeniedComponentsConfiguration.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Logging Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::LoggingConfiguration">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+ ' : ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/LoggingConfiguration.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Name Resolution Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::NameResolutionConfiguration">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+ ' : ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/NameResolutionConfiguration.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Secrets Access Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SecretsAccessConfiguration">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+  ' : ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/SecretsAccessConfiguration.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Metrics Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::MetricsConfiguration">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+ ' : '+ self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/MetricsConfiguration.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="API Access Control" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::APIAccessControl">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+ ' : ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/APIAccessControl.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="App Access Control" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::AppAccessControl">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+ '  ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/AppAccessControl.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Middleware Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::MiddlewareConfiguration">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+  ' : '+ self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/MiddlewareConfiguration.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Tracing Configuration" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::TracingConfiguration">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="RIGHT" tooltipExpression="aql:self.eClass().instanceTypeName+ ' : '+ self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/24/TracingConfiguration.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+        </containerMappings>
+      </additionalLayers>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="io.dapr.daprdesigner.design.Services"/>
   </ownedViewpoints>

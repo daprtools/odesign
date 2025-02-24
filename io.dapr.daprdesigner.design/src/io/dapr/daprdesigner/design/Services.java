@@ -6,10 +6,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import daprdesigner.*;
 import java.awt.Desktop;
-import java.io.BufferedReader;
-import java.io.File;
+
+
 import java.io.IOException;
-import java.io.InputStreamReader;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -72,12 +72,12 @@ public class Services {
 
 	public String getUnnamed(Block self) {
 		unnamedCounter++;
-		return self.getBlockType().getName() + "_" + unnamedCounter;
+		return self.getBlockType().getName().toLowerCase() + "_" + unnamedCounter;
 	}
 
 	public String getUnnamedNodeBlock(NodeBlocks self) {
 		unnamedCounter++;
-		return self.getNodeBlockType().getName() + "_" + unnamedCounter;
+		return self.getNodeBlockType().getName().toLowerCase() + "_" + unnamedCounter;
 	}
 
 	public String getDaprNodeName(DaprNode self) {
