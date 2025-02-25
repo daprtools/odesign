@@ -7,13 +7,13 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import daprdesigner.*;
 import java.awt.Desktop;
 
-
 import java.io.IOException;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -78,6 +78,54 @@ public class Services {
 	public String getUnnamedNodeBlock(NodeBlocks self) {
 		unnamedCounter++;
 		return self.getNodeBlockType().getName().toLowerCase() + "_" + unnamedCounter;
+	}
+
+	public Collection<App> getAllApps(Block block) {
+
+		System.out.println("Comes here");
+		ArrayList<App> appList = new ArrayList<App>();
+		for (DaprNode node : block.getNodes()) {
+			if (node instanceof NodeBlocks) {
+				NodeBlocks nb = (NodeBlocks) node;
+				for (DaprNode node1 : nb.getNodes()) {
+					if (node1 instanceof App) {
+						appList.add((App) node1);
+					}
+				}
+			}
+		}
+		return appList;
+	}
+
+	public Collection<Component> getComponents(Block block) {
+
+		System.out.println("Comes here");
+		ArrayList<Component> componentList = new ArrayList<Component>();
+		for (DaprNode node : block.getNodes()) {
+			if (node instanceof NodeBlocks) {
+				NodeBlocks nb = (NodeBlocks) node;
+				for (DaprNode node1 : nb.getNodes()) {
+					if (node1 instanceof Component) {
+						componentList.add((Component) node1);
+					}
+				}
+			}
+		}
+		return componentList;
+	}
+
+	public boolean getFilters(EObject self) {
+
+		System.out.println(self.eClass().getInstanceClassName());
+
+		String s = self.eClass().getInstanceClassName();
+
+		if (s.equals("daprdesigner.App") || s.equals("daprdesigner.NodeBlocks")) {
+			System.out.println("===true===");
+			return true;
+		}
+
+		return false;
 	}
 
 	public String getDaprNodeName(DaprNode self) {
@@ -214,29 +262,28 @@ public class Services {
 		String classNameLowerCase = className.substring(className.lastIndexOf('.') + 1, className.indexOf("Impl"))
 				.toLowerCase();
 		System.out.println(classNameLowerCase);
-		
+
 		switch (classNameLowerCase) {
 		case "pubsub":
-			return (List<String>)Arrays.asList(pubsub.split(","));
+			return (List<String>) Arrays.asList(pubsub.split(","));
 		case "middleware":
-			return (List<String>)Arrays.asList(middleware.split(","));
+			return (List<String>) Arrays.asList(middleware.split(","));
 		case "bindings":
-			return (List<String>)Arrays.asList(bindings.split(","));
+			return (List<String>) Arrays.asList(bindings.split(","));
 		case "secretstore":
-			return (List<String>)Arrays.asList(secretstore.split(","));
+			return (List<String>) Arrays.asList(secretstore.split(","));
 		case "cryptography":
-			return (List<String>)Arrays.asList(cryptography.split(","));
+			return (List<String>) Arrays.asList(cryptography.split(","));
 		case "statestore":
-			return (List<String>)Arrays.asList(statestore.split(","));
+			return (List<String>) Arrays.asList(statestore.split(","));
 		case "locks":
-			return (List<String>)Arrays.asList(locks.split(","));
+			return (List<String>) Arrays.asList(locks.split(","));
 		case "configurationstore":
-			return (List<String>)Arrays.asList(configurationstore.split(","));
+			return (List<String>) Arrays.asList(configurationstore.split(","));
 
 		}
 
 		return new ArrayList<String>();
-		
 
 	}
 
