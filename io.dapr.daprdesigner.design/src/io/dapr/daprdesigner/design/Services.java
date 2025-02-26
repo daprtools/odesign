@@ -96,6 +96,14 @@ public class Services {
 		}
 		return appList;
 	}
+	
+	public boolean isAppConfiguration(EObject self) {
+		return self instanceof AppConfiguration;
+	}
+	
+	public boolean isComponent(EObject self) {
+		return self instanceof Component;
+	}
 
 	public Collection<Component> getComponents(Block block) {
 
