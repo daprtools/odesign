@@ -79,6 +79,15 @@ public class Services {
 		unnamedCounter++;
 		return self.getNodeBlockType().getName().toLowerCase() + "_" + unnamedCounter;
 	}
+	
+	public EObject getContainer(EObject self) {
+		
+		System.out.println(self.getClass().getTypeName());
+		System.out.println(self.eContainer().getClass().getTypeName());
+		
+		
+		return self;
+	}
 
 	public Collection<App> getAllApps(Block block) {
 

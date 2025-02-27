@@ -20,7 +20,7 @@
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
-          <subContainerMappings name="Service Groups" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.3/@ownedTools[name='Blocks%20and%20Nodeblocks']" semanticCandidatesExpression="feature:subblocks" domainClass="daprdesigner::Block">
+          <subContainerMappings name="Service Groups" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.3/@ownedTools[name='Blocks%20and%20Nodeblocks']" semanticCandidatesExpression="feature:subblocks" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.3/@ownedTools[name='Block']" domainClass="daprdesigner::Block">
             <subNodeMappings name="NodeBlock" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.3/@ownedTools[name='Blocks%20and%20Nodeblocks']" semanticCandidatesExpression="feature:nodes" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@toolSections.3/@ownedTools[name='NodeBlock']" domainClass="daprdesigner::NodeBlocks">
               <style xsi:type="style:WorkspaceImageDescription" labelSize="15" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/Block.png">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -29,7 +29,7 @@
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </style>
             </subNodeMappings>
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="20" iconPath="/io.dapr.daprdesigner.design/icons/png/24/Component.png" roundedCorner="true" widthComputationExpression="50" heightComputationExpression="30">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="20" iconPath="/io.dapr.daprdesigner.design/icons/png/24/Component.png" roundedCorner="true" widthComputationExpression="30" heightComputationExpression="15">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
@@ -53,7 +53,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="buildingblocks">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::ENVIRONMENT"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:get"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -438,13 +438,21 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Interactions">
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="Block" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Block" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.blockType==daprdesigner::BlockType::ENVIRONMENT">
-                  <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Environment']"/>
+                <subModelOperations xsi:type="tool_1:Switch">
+                  <cases conditionExpression="aql:self.blockType==daprdesigner::BlockType::ENVIRONMENT">
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Environment']"/>
+                  </cases>
+                  <cases conditionExpression="aql:self.blockType==daprdesigner::BlockType::MICROSERVICES">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer()">
+                      <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Environment']"/>
+                    </subModelOperations>
+                  </cases>
+                  <default/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -1074,14 +1082,14 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="PubSubNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="PubSub Component" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::PubSub">
+        <nodeMappings name="PubSub Component" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::PubSub">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/PubSub.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="SpecMetadata" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SpecMetadata">
+        <nodeMappings name="SpecMetadata" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SpecMetadata">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/SpecMetadata.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
@@ -1133,19 +1141,32 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
+        <toolSections name="Interactions">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Component Specs">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Mappings decoration" position="NORTH_WEST" preconditionExpression="aql:self.isReady=true " imageExpression="/io.dapr.daprdesigner.design/icons/png/16/ok.png" tooltipExpression="aql:'Ready to be deployed'" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubNodeBlocks']/@defaultLayer/@nodeMappings[name='PubSub%20Component'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Mappings decoration" position="NORTH_WEST" preconditionExpression="aql:self.isReady=false" imageExpression="/io.dapr.daprdesigner.design/icons/png/16/notok.png" tooltipExpression="aql:'Under progress.. not ready to be deployed'" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubNodeBlocks']/@defaultLayer/@nodeMappings[name='PubSub%20Component'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Components" position="SOUTH_EAST" preconditionExpression="aql:self.isComponent()" imageExpression="/io.dapr.daprdesigner.design/icons/png/16/components/Component.png" tooltipExpression="aql:'Component'" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubNodeBlocks']/@defaultLayer/@nodeMappings[name='PubSub%20Component']"/>
+        </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="BindingsNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="Bindings Component" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Bindings">
+        <nodeMappings name="Bindings Component" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Bindings">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/Bindings.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="SpecMetadata" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SpecMetadata">
+        <nodeMappings name="SpecMetadata" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SpecMetadata">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/SpecMetadata.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
@@ -1197,19 +1218,32 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
+        <toolSections name="Interactions">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Component Specs">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Mappings decoration" position="NORTH_WEST" preconditionExpression="aql:self.isReady=true " imageExpression="/io.dapr.daprdesigner.design/icons/png/16/ok.png" tooltipExpression="aql:'Ready to be deployed'" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsNodeBlocks']/@defaultLayer/@nodeMappings[name='Bindings%20Component'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Mappings decoration" position="NORTH_WEST" preconditionExpression="aql:self.isReady=false" imageExpression="/io.dapr.daprdesigner.design/icons/png/16/notok.png" tooltipExpression="aql:'Under progress.. not ready to be deployed'" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsNodeBlocks']/@defaultLayer/@nodeMappings[name='Bindings%20Component'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Components" position="SOUTH_EAST" preconditionExpression="aql:self.isComponent()" imageExpression="/io.dapr.daprdesigner.design/icons/png/16/components/Component.png" tooltipExpression="aql:'Component'" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsNodeBlocks']/@defaultLayer/@nodeMappings[name='Bindings%20Component']"/>
+        </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SecretStoreNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="SecretStore Component" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SecretStore">
+        <nodeMappings name="SecretStore Component" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SecretStore">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/SecretStore.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="SpecMetadata" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SpecMetadata">
+        <nodeMappings name="SpecMetadata" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SpecMetadata">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/SpecMetadata.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
@@ -1261,19 +1295,32 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
+        <toolSections name="Interactions">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Component Specs">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Mappings decoration" position="NORTH_WEST" preconditionExpression="aql:self.isReady=true " imageExpression="/io.dapr.daprdesigner.design/icons/png/16/ok.png" tooltipExpression="aql:'Ready to be deployed'" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='SecretStore%20Component'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Mappings decoration" position="NORTH_WEST" preconditionExpression="aql:self.isReady=false" imageExpression="/io.dapr.daprdesigner.design/icons/png/16/notok.png" tooltipExpression="aql:'Under progress.. not ready to be deployed'" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='SecretStore%20Component'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Components" position="SOUTH_EAST" preconditionExpression="aql:self.isComponent()" imageExpression="/io.dapr.daprdesigner.design/icons/png/16/components/Component.png" tooltipExpression="aql:'Component'" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='SecretStore%20Component']"/>
+        </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="StateStoreNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="StateStore Component" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::StateStore">
+        <nodeMappings name="StateStore Component" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::StateStore">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/StateStore.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="SpecMetadata" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SpecMetadata">
+        <nodeMappings name="SpecMetadata" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SpecMetadata">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/SpecMetadata.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
@@ -1325,6 +1372,19 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
+        <toolSections name="Interactions">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Component Specs">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Mappings decoration" position="NORTH_WEST" preconditionExpression="aql:self.isReady=true " imageExpression="/io.dapr.daprdesigner.design/icons/png/16/ok.png" tooltipExpression="aql:'Ready to be deployed'" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='StateStore%20Component']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Mappings decoration" position="NORTH_WEST" preconditionExpression="aql:self.isReady=false" imageExpression="/io.dapr.daprdesigner.design/icons/png/16/notok.png" tooltipExpression="aql:'Under progress.. not ready to be deployed'" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='SpecMetadata'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='StateStore%20Component']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Components" position="SOUTH_EAST" preconditionExpression="aql:self.isComponent()" imageExpression="/io.dapr.daprdesigner.design/icons/png/16/components/Component.png" tooltipExpression="aql:'Component'" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreNodeBlocks']/@defaultLayer/@nodeMappings[name='StateStore%20Component']"/>
+        </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="LocksNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">

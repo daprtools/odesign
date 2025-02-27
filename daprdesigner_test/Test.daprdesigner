@@ -1,93 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <daprdesigner:DaprArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:daprdesigner="http://dapr.io/daprtools/daprdesigner">
-  <buildingblocks name="Dev env">
-    <subblocks name="microservices_16" blockType="MICROSERVICES">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="Orders">
-        <nodes xsi:type="daprdesigner:App" isReady="true" name="a_1" configurations="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.4 //@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.5 //@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.3 //@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.2 //@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.7 //@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.17"/>
-        <nodes xsi:type="daprdesigner:LoggingConfiguration" name="lc_3"/>
-        <nodes xsi:type="daprdesigner:NameResolutionConfiguration" name="nrc_4"/>
-        <nodes xsi:type="daprdesigner:APIAccessControl" name="apiac_5" apiList="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.6"/>
-        <nodes xsi:type="daprdesigner:MetricsConfiguration" name="mc_6"/>
-        <nodes xsi:type="daprdesigner:SecretsAccessConfiguration" name="sac_7" accessList="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.8 //@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.10 //@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.9"/>
-        <nodes xsi:type="daprdesigner:API"/>
-        <nodes xsi:type="daprdesigner:DeniedComponentsConfiguration" name="dcc_1"/>
-        <nodes xsi:type="daprdesigner:SecretsAccessList" name="sal_2"/>
-        <nodes xsi:type="daprdesigner:SecretsAccessList" name="sal_3"/>
-        <nodes xsi:type="daprdesigner:SecretsAccessList" name="sal_4"/>
-        <nodes xsi:type="daprdesigner:AppPolicy" name="ap_5" operations="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.13 //@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.12 //@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.14"/>
-        <nodes xsi:type="daprdesigner:Operation" name="o_6"/>
-        <nodes xsi:type="daprdesigner:Operation" name="o_7"/>
-        <nodes xsi:type="daprdesigner:Operation" name="o_8"/>
-        <nodes xsi:type="daprdesigner:AppPolicy" name="ap_9" operations="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.12"/>
-        <nodes xsi:type="daprdesigner:AppPolicy" name="ap_10" operations="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.13 //@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.14"/>
-        <nodes xsi:type="daprdesigner:AppAccessControl" name="aac_11" policies="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.11 //@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.15 //@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.16"/>
-      </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="Account">
-        <nodes xsi:type="daprdesigner:App" isReady="true" name="a_1" configurations="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.5 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.2 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.1 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.6 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.4 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.3 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.13"/>
-        <nodes xsi:type="daprdesigner:DeniedComponentsConfiguration" name="dcc_2"/>
-        <nodes xsi:type="daprdesigner:LoggingConfiguration" name="lc_3"/>
-        <nodes xsi:type="daprdesigner:NameResolutionConfiguration" name="nrc_4"/>
-        <nodes xsi:type="daprdesigner:APIAccessControl" name="apiac_5" apiList="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.7 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.8 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.9"/>
-        <nodes xsi:type="daprdesigner:MetricsConfiguration" name="mc_6"/>
-        <nodes xsi:type="daprdesigner:SecretsAccessConfiguration" name="sac_7" accessList="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.10 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.12 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.11"/>
-        <nodes xsi:type="daprdesigner:API"/>
-        <nodes xsi:type="daprdesigner:API" name="api_1"/>
-        <nodes xsi:type="daprdesigner:API" name="api_1"/>
-        <nodes xsi:type="daprdesigner:SecretsAccessList" name="sal_2"/>
-        <nodes xsi:type="daprdesigner:SecretsAccessList" name="sal_3"/>
-        <nodes xsi:type="daprdesigner:SecretsAccessList" name="sal_4"/>
-        <nodes xsi:type="daprdesigner:AppAccessControl" name="aac_5" policies="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.16 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.15 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.14"/>
-        <nodes xsi:type="daprdesigner:AppPolicy" name="ap_6"/>
-        <nodes xsi:type="daprdesigner:AppPolicy" name="ap_7" operations="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.17 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.18 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.19"/>
-        <nodes xsi:type="daprdesigner:AppPolicy" name="ap_8"/>
-        <nodes xsi:type="daprdesigner:Operation" name="o_9"/>
-        <nodes xsi:type="daprdesigner:Operation" name="o_10"/>
-        <nodes xsi:type="daprdesigner:Operation" name="o_11"/>
-        <nodes xsi:type="daprdesigner:NodeBlocks" name="app_1">
-          <nodes xsi:type="daprdesigner:App" name="a_1" configurations="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.5 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.2 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.1 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.6 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.4 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.3 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.13"/>
-          <nodes xsi:type="daprdesigner:DeniedComponentsConfiguration" name="dcc_2"/>
-          <nodes xsi:type="daprdesigner:LoggingConfiguration" name="lc_3"/>
-          <nodes xsi:type="daprdesigner:NameResolutionConfiguration" name="nrc_4"/>
-          <nodes xsi:type="daprdesigner:APIAccessControl" name="apiac_5" apiList="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.7 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.8 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.9"/>
-          <nodes xsi:type="daprdesigner:MetricsConfiguration" name="mc_6"/>
-          <nodes xsi:type="daprdesigner:SecretsAccessConfiguration" name="sac_7" accessList="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.10 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.12 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.11"/>
-          <nodes xsi:type="daprdesigner:API"/>
-          <nodes xsi:type="daprdesigner:API" name="api_1"/>
-          <nodes xsi:type="daprdesigner:API" name="api_1"/>
-          <nodes xsi:type="daprdesigner:SecretsAccessList" name="sal_2"/>
-          <nodes xsi:type="daprdesigner:SecretsAccessList" name="sal_3"/>
-          <nodes xsi:type="daprdesigner:SecretsAccessList" name="sal_4"/>
-          <nodes xsi:type="daprdesigner:AppAccessControl" name="aac_5" policies="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.16 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.15 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.14"/>
-          <nodes xsi:type="daprdesigner:AppPolicy" name="ap_6"/>
-          <nodes xsi:type="daprdesigner:AppPolicy" name="ap_7" operations="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.17 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.18 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.20/@nodes.19"/>
-          <nodes xsi:type="daprdesigner:AppPolicy" name="ap_8"/>
-          <nodes xsi:type="daprdesigner:Operation" name="o_9"/>
-          <nodes xsi:type="daprdesigner:Operation" name="o_10"/>
-          <nodes xsi:type="daprdesigner:Operation" name="o_11"/>
-        </nodes>
-        <nodes xsi:type="daprdesigner:SecretsAccessConfiguration" name="sac_1"/>
+  <buildingblocks name="development">
+    <subblocks name="apps" blockType="MICROSERVICES">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="account"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="orders"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="cart"/>
+    </subblocks>
+    <subblocks name="actors" blockType="ACTORS">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="payments" nodeBlockType="ACTOR"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="user_events" nodeBlockType="ACTOR"/>
+    </subblocks>
+    <subblocks name="workflows" blockType="WORKFLOW">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="fulfillment" nodeBlockType="WORKFLOW"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="returns" nodeBlockType="WORKFLOW"/>
+    </subblocks>
+    <subblocks isReady="true" name="secretsstore" blockType="SECRETSTORE">
+      <nodes xsi:type="daprdesigner:NodeBlocks" isReady="true" name="aws" nodeBlockType="SECRETSTORE">
+        <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="region" value="us-east-1"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="accessKey" value="12345"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="secretKey" isFetchedFromEnvironment="true" envRef="AWS_SECRETKEY"/>
+        <nodes xsi:type="daprdesigner:SecretStore" isReady="true" name="aws_secretstore" providerName="secretstores.aws.secretmanager" providerVersion="v1" metadata_namespace="//@buildingblocks.0/@nodes.0" specMetadata="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.0 //@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.2"/>
       </nodes>
     </subblocks>
-    <subblocks isReady="true" name="actors_17" blockType="ACTORS"/>
-    <subblocks name="workflow_18" blockType="WORKFLOW"/>
-    <subblocks name="All Jobs" blockType="JOBS"/>
-    <subblocks name="pubsub_20" blockType="PUBSUB"/>
-    <subblocks name="secretstore_21" blockType="SECRETSTORE"/>
-    <subblocks name="States" blockType="STATESTORE"/>
-    <subblocks isReady="true" name="bindings_23" blockType="BINDINGS"/>
-    <subblocks name="configuration_24" blockType="CONFIGURATION"/>
-    <subblocks name="fdsdf" blockType="DISTRIBUTEDLOCK"/>
-    <subblocks name="middleware_26" blockType="MIDDLEWARE">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="middleware_2" nodeBlockType="MIDDLEWARE">
-        <nodes xsi:type="daprdesigner:Middleware" name="m_1" providerName="middleware.http.wasm"/>
-        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
-      </nodes>
+    <subblocks name="statestore" blockType="STATESTORE">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="redis" nodeBlockType="STATESTORE"/>
     </subblocks>
-    <subblocks name="configurationgroup_27" blockType="CONFIGURATIONGROUP">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="this works" nodeBlockType="SUBSCRIPTION"/>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="all good" nodeBlockType="RESILIENCY"/>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="httpendpoint_30" nodeBlockType="HTTPENDPOINT"/>
+    <subblocks name="bindings_18" blockType="BINDINGS">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="postgres" nodeBlockType="BINDING"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="mail" nodeBlockType="BINDING"/>
     </subblocks>
-    <nodes xsi:type="daprdesigner:Namespace" name="dev_n"/>
+    <subblocks name="pubsub_22" blockType="PUBSUB">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="redis" nodeBlockType="PUBSUB"/>
+    </subblocks>
+    <subblocks name="middleware" blockType="MIDDLEWARE"/>
+    <subblocks name="service_config" blockType="CONFIGURATIONGROUP">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="subscription" nodeBlockType="SUBSCRIPTION"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="resiliency" nodeBlockType="RESILIENCY"/>
+    </subblocks>
+    <nodes xsi:type="daprdesigner:Namespace" isReady="true" name="dev"/>
+    <nodes xsi:type="daprdesigner:Trustdomain" isReady="true" name="public"/>
   </buildingblocks>
 </daprdesigner:DaprArchitecture>
