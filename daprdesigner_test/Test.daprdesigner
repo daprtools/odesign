@@ -2,12 +2,17 @@
 <daprdesigner:DaprArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:daprdesigner="http://dapr.io/daprtools/daprdesigner">
   <buildingblocks name="development">
     <subblocks name="apps" blockType="MICROSERVICES">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="account"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="account">
+        <nodes xsi:type="daprdesigner:App" isReady="true" name="account" appId="account" sdkLanguage="NODE" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1"/>
+      </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="orders"/>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="cart"/>
     </subblocks>
     <subblocks name="actors" blockType="ACTORS">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="payments" nodeBlockType="ACTOR"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="payments" nodeBlockType="ACTOR">
+        <nodes xsi:type="daprdesigner:Actor" isReady="true" name="payments" configurations="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:DeniedComponentsConfiguration" isReady="true" name="dcc_2" deniedComponents="//@buildingblocks.0/@subblocks.5/@nodes.0/@nodes.0"/>
+      </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="user_events" nodeBlockType="ACTOR"/>
     </subblocks>
     <subblocks name="workflows" blockType="WORKFLOW">
@@ -22,19 +27,36 @@
         <nodes xsi:type="daprdesigner:SecretStore" isReady="true" name="aws_secretstore" providerName="secretstores.aws.secretmanager" providerVersion="v1" metadata_namespace="//@buildingblocks.0/@nodes.0" specMetadata="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.0 //@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.2"/>
       </nodes>
     </subblocks>
-    <subblocks name="statestore" blockType="STATESTORE">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="redis" nodeBlockType="STATESTORE"/>
+    <subblocks isReady="true" name="statestore" blockType="STATESTORE">
+      <nodes xsi:type="daprdesigner:NodeBlocks" isReady="true" name="redis" nodeBlockType="STATESTORE">
+        <nodes xsi:type="daprdesigner:StateStore" isReady="true" name="redisstore" providerName="state.redis" providerVersion="v1" metadata_namespace="//@buildingblocks.0/@nodes.0" specMetadata="//@buildingblocks.0/@subblocks.4/@nodes.0/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="redisHost" value="localhost:6379"/>
+      </nodes>
     </subblocks>
-    <subblocks name="bindings_18" blockType="BINDINGS">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="postgres" nodeBlockType="BINDING"/>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="mail" nodeBlockType="BINDING"/>
+    <subblocks isReady="true" name="bindings_18" blockType="BINDINGS">
+      <nodes xsi:type="daprdesigner:NodeBlocks" isReady="true" name="postgres" nodeBlockType="BINDING">
+        <nodes xsi:type="daprdesigner:Bindings" isReady="true" name="dev_db" providerName="bindings.postgresql" providerVersion="v1" metadata_namespace="//@buildingblocks.0/@nodes.0" specMetadata="//@buildingblocks.0/@subblocks.5/@nodes.0/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="connectionString" value="host=localhost user=postgres password=example port=5432 connect_timeout=10 database=dev_db"/>
+      </nodes>
+      <nodes xsi:type="daprdesigner:NodeBlocks" isReady="true" name="mail" nodeBlockType="BINDING">
+        <nodes xsi:type="daprdesigner:Bindings" isReady="true" name="ses" providerName="bindings.aws.ses" providerVersion="v1" metadata_namespace="//@buildingblocks.0/@nodes.0" specMetadata="//@buildingblocks.0/@subblocks.5/@nodes.1/@nodes.1 //@buildingblocks.0/@subblocks.5/@nodes.1/@nodes.2 //@buildingblocks.0/@subblocks.5/@nodes.1/@nodes.3" scopes="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.0 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.0"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="secretKey" isFetchedFromEnvironment="true" envRef="AWS_SECRETKEY"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="region" value="us-east-1"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="accessKey" value="12345"/>
+      </nodes>
     </subblocks>
-    <subblocks name="pubsub_22" blockType="PUBSUB">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="redis" nodeBlockType="PUBSUB"/>
+    <subblocks isReady="true" name="pubsub" blockType="PUBSUB">
+      <nodes xsi:type="daprdesigner:NodeBlocks" isReady="true" name="kafka" nodeBlockType="PUBSUB">
+        <nodes xsi:type="daprdesigner:PubSub" isReady="true" name="kafka_local" providerName="pubsub.kafka" providerVersion="v1" auth="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.3" metadata_namespace="//@buildingblocks.0/@nodes.0" specMetadata="//@buildingblocks.0/@subblocks.6/@nodes.0/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="brokers" value="localhost:9092" isFetchedFromSecret="true" secretKeyRefName="kafkabrokers" secretKeyRefKey="brokerhost"/>
+      </nodes>
     </subblocks>
     <subblocks name="middleware" blockType="MIDDLEWARE"/>
     <subblocks name="service_config" blockType="CONFIGURATIONGROUP">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="subscription" nodeBlockType="SUBSCRIPTION"/>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="subscription" nodeBlockType="SUBSCRIPTION">
+        <nodes xsi:type="daprdesigner:SubscriptionConfiguration" name="sc_1" pubsubComponent="//@buildingblocks.0/@subblocks.6/@nodes.0/@nodes.0"/>
+        <nodes xsi:type="daprdesigner:RouteRules" name="rr_2"/>
+      </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="resiliency" nodeBlockType="RESILIENCY"/>
     </subblocks>
     <nodes xsi:type="daprdesigner:Namespace" isReady="true" name="dev"/>
