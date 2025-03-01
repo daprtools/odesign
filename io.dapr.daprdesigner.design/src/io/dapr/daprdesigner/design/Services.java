@@ -1,5 +1,6 @@
 package io.dapr.daprdesigner.design;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -11,6 +12,7 @@ import java.io.IOException;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.channels.NetworkChannel;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -79,19 +81,18 @@ public class Services {
 		unnamedCounter++;
 		return self.getNodeBlockType().getName().toLowerCase() + "_" + unnamedCounter;
 	}
-	
+
 	public EObject getContainer(EObject self) {
-		
-		System.out.println(self.getClass().getTypeName());
-		System.out.println(self.eContainer().getClass().getTypeName());
-		
-		
+
+		// System.out.println(self.getClass().getTypeName());
+		// System.out.println(self.eContainer().getClass().getTypeName());
+
 		return self;
 	}
 
 	public Collection<App> getAllApps(Block block) {
 
-		System.out.println("Comes here");
+		// System.out.println("Comes here");
 		ArrayList<App> appList = new ArrayList<App>();
 		for (DaprNode node : block.getNodes()) {
 			if (node instanceof NodeBlocks) {
@@ -105,18 +106,18 @@ public class Services {
 		}
 		return appList;
 	}
-	
+
 	public boolean isAppConfiguration(EObject self) {
 		return self instanceof AppConfiguration;
 	}
-	
+
 	public boolean isComponent(EObject self) {
 		return self instanceof Component;
 	}
 
 	public Collection<Component> getComponents(Block block) {
 
-		System.out.println("Comes here");
+		// System.out.println("Comes here");
 		ArrayList<Component> componentList = new ArrayList<Component>();
 		for (DaprNode node : block.getNodes()) {
 			if (node instanceof NodeBlocks) {
@@ -131,14 +132,131 @@ public class Services {
 		return componentList;
 	}
 
+	public Collection<EObject> getRelations(App self) {
+
+		ArrayList<EObject> appList = new ArrayList<EObject>();
+		Block b = (Block) self.eContainer().eContainer().eContainer();
+
+		Collection<EObject> cObject = getAppsinEnvironment(b, BlockType.MICROSERVICES, NodeBlockType.APP);
+		AppAccessControl aac = findAppAccessControl(self.getConfigurations());
+		if (aac == null) {
+			for (EObject eo : cObject) {
+				if (eo instanceof App) {
+					if (((App) eo).getName().equals(self.getName()))
+						continue;
+					appList.add(eo);
+				}
+			}
+			return appList;
+		} else {
+
+			for (EObject eo : cObject) {
+				if (eo instanceof App) {
+					App app = (App) eo;
+					if (app.getName().equals(self.getName()))
+						continue;
+
+					AppPolicy ap = findAppPolicy(aac, app);
+					if (ap == null) {
+						if (aac.getDefaultAction() == AccessAction.ALLOW)
+							appList.add(app);
+					} else {
+						if (ap.getDefaultAction() == AccessAction.ALLOW)
+							appList.add(app);
+						else {
+							for (Operation o : ap.getOperations()) {
+								if (o.getAction() == AccessAction.ALLOW) {
+									appList.add(app);
+									break;
+								}
+							}
+						}
+					}
+
+				}
+			}
+		}
+
+		return appList;
+
+	}
+
+	private AppPolicy findAppPolicy(AppAccessControl aac, App app) {
+
+		for (AppPolicy ap : aac.getPolicies()) {
+			if (ap.getApp().getName().equals(app.getName())
+					&& ap.getTrustDomain().getName().equals(app.getTrustDomain().getName()))
+				return ap;
+		}
+
+		return null;
+	}
+
+	private AppAccessControl findAppAccessControl(EList<AppConfiguration> configurations) {
+		for (AppConfiguration ac : configurations)
+			if (ac instanceof AppAccessControl)
+				return (AppAccessControl) ac;
+
+		return null;
+	}
+
+	public Collection<EObject> getAppsinEnvironment(Block block, BlockType bType, NodeBlockType nType) {
+
+		// System.out.println("Comes here " +bType + " "+ nType);
+
+		ArrayList<EObject> appList = new ArrayList<EObject>();
+		if (block.getBlockType() == BlockType.ENVIRONMENT) {
+			// System.out.println("Indeed Envi");
+			for (Block subblock : block.getSubblocks()) {
+				if (subblock.getBlockType() == bType) {
+					// System.out.println("Btype "+ bType);
+					for (DaprNode node : subblock.getNodes()) {
+						if (node instanceof NodeBlocks) {
+							NodeBlocks nb = (NodeBlocks) node;
+							// System.out.println("nType "+ nb.getNodeBlockType() + " " + nType);
+							if (nb.getNodeBlockType() == nType) {
+								// System.out.println("nType "+ nType);
+								for (DaprNode node1 : nb.getNodes()) {
+
+									if (nType == NodeBlockType.APP) {
+										if (node1 instanceof App) {
+											appList.add((EObject) node1);
+										}
+									}
+									if (nType == NodeBlockType.ACTOR) {
+										if (node1 instanceof Actor) {
+											appList.add((EObject) node1);
+										}
+									}
+									if (nType == NodeBlockType.JOBS) {
+										if (node1 instanceof Jobs) {
+											appList.add((EObject) node1);
+										}
+									}
+									if (nType == NodeBlockType.WORKFLOW) {
+										if (node1 instanceof Workflow) {
+											appList.add((EObject) node1);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		// System.out.println("Applist Size " + appList.size());
+		return appList;
+	}
+
 	public boolean getFilters(EObject self) {
 
-		System.out.println(self.eClass().getInstanceClassName());
+		// System.out.println(self.eClass().getInstanceClassName());
 
 		String s = self.eClass().getInstanceClassName();
 
 		if (s.equals("daprdesigner.App") || s.equals("daprdesigner.NodeBlocks")) {
-			System.out.println("===true===");
+			// System.out.println("===true===");
 			return true;
 		}
 
@@ -164,7 +282,7 @@ public class Services {
 
 	public boolean isNodeBlockType(NodeBlocks self, String nodeType) {
 
-		System.out.println("Here " + self.getNodeBlockType().toString());
+		// System.out.println("Here " + self.getNodeBlockType().toString());
 		return self.getNodeBlockType().toString() == nodeType;
 	}
 
@@ -256,7 +374,7 @@ public class Services {
 
 	public void removeAppConfiguration(App source, AppConfiguration target) {
 
-		System.out.println("Caleed ================");
+		// System.out.println("Caleed ================");
 		source.getConfigurations().remove(target);
 	}
 
@@ -278,7 +396,7 @@ public class Services {
 		String className = self.getClass().getName();
 		String classNameLowerCase = className.substring(className.lastIndexOf('.') + 1, className.indexOf("Impl"))
 				.toLowerCase();
-		System.out.println(classNameLowerCase);
+		// System.out.println(classNameLowerCase);
 
 		switch (classNameLowerCase) {
 		case "pubsub":
@@ -305,9 +423,10 @@ public class Services {
 	}
 
 	public EObject addStringValue(EObject self, EStructuralFeature feature, String value) {
-		System.out.println("Hellloooo...." + feature.getName() + " " + value + " " + feature.getClass().getName());
+		// System.out.println("Hellloooo...." + feature.getName() + " " + value + " " +
+		// feature.getClass().getName());
 
-		System.out.println(self.eGet(feature).getClass().getName());
+		// System.out.println(self.eGet(feature).getClass().getName());
 
 		if (self instanceof SecretsAccessList) {
 
@@ -328,10 +447,11 @@ public class Services {
 	}
 
 	public EObject removeStringValue(EObject self, EStructuralFeature feature, Object value) {
-		System.out.println("Hellloooo remove...." + feature.getName() + " " + value + " " + feature.getClass().getName()
-				+ " " + value.getClass().getName());
+		// System.out.println("Hellloooo remove...." + feature.getName() + " " + value +
+		// " " + feature.getClass().getName()
+		// + " " + value.getClass().getName());
 
-		System.out.println(self.eGet(feature).getClass().getName());
+		// System.out.println(self.eGet(feature).getClass().getName());
 
 		if (self instanceof SecretsAccessList) {
 
