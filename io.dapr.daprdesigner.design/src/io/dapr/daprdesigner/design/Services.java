@@ -132,7 +132,7 @@ public class Services {
 		return componentList;
 	}
 
-	public Collection<EObject> getRelations(App self) {
+	public Collection<EObject> getRelations(App self, String type) {
 
 		ArrayList<EObject> appList = new ArrayList<EObject>();
 		Block b = (Block) self.eContainer().eContainer().eContainer();
@@ -156,19 +156,33 @@ public class Services {
 					if (app.getName().equals(self.getName()))
 						continue;
 
+					boolean canBeAdded = false;
 					AppPolicy ap = findAppPolicy(aac, app);
 					if (ap == null) {
 						if (aac.getDefaultAction() == AccessAction.ALLOW)
-							appList.add(app);
+							if (type.equalsIgnoreCase("green")) {
+								canBeAdded = true;
+							} else {
+								canBeAdded = false;
+							}
+
 					} else {
 						if (ap.getDefaultAction() == AccessAction.ALLOW)
-							appList.add(app);
+
+							if (type.equalsIgnoreCase("green")) {
+								canBeAdded = true;
+							} else {
+								canBeAdded = false;
+							}
+
 						else {
+
 							for (Operation o : ap.getOperations()) {
 								if (o.getAction() == AccessAction.ALLOW) {
 									appList.add(app);
 									break;
 								}
+
 							}
 						}
 					}
