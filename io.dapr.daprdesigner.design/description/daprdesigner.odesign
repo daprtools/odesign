@@ -449,7 +449,7 @@
                   </cases>
                   <cases conditionExpression="aql:self.blockType==daprdesigner::BlockType::MICROSERVICES">
                     <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer()">
-                      <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']"/>
+                      <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']"/>
                     </subModelOperations>
                   </cases>
                   <default/>
@@ -3307,47 +3307,55 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="All Apps (Apps Actors Jobs and Workflows)" domainClass="daprdesigner::Block" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="AppsAndComponents" domainClass="daprdesigner::Block" enablePopupBars="true">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="Apps" semanticCandidatesExpression="aql:self.getAppsinEnvironment(daprdesigner::BlockType::MICROSERVICES,daprdesigner::NodeBlockType::APP)" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']/@defaultLayer/@toolSections.0/@ownedTools[name='App']" domainClass="daprdesigner::App">
+        <nodeMappings name="Apps" semanticCandidatesExpression="aql:self.eAllContents(daprdesigner::App)" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@toolSections.0/@ownedTools[name='App']" domainClass="daprdesigner::App">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="LEFT" tooltipExpression="aql:'App ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/App2.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Actors" semanticCandidatesExpression="aql:self.getAppsinEnvironment(daprdesigner::BlockType::ACTORS, daprdesigner::NodeBlockType::ACTOR)" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']/@defaultLayer/@toolSections.0/@ownedTools[name='Actor']" domainClass="daprdesigner::Actor">
+        <nodeMappings name="Actors" semanticCandidatesExpression="aql:self.eAllContents(daprdesigner::Actor)" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@toolSections.0/@ownedTools[name='Actor']" domainClass="daprdesigner::Actor">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="LEFT" tooltipExpression="aql:'Job ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/Actor.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Jobs" semanticCandidatesExpression="aql:self.getAppsinEnvironment(daprdesigner::BlockType::JOBS ,daprdesigner::NodeBlockType::JOBS)" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']/@defaultLayer/@toolSections.0/@ownedTools[name='Jobs']" domainClass="daprdesigner::Jobs">
+        <nodeMappings name="Jobs" semanticCandidatesExpression="aql:self.eAllContents(daprdesigner::Jobs)" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@toolSections.0/@ownedTools[name='Jobs']" domainClass="daprdesigner::Jobs">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="LEFT" tooltipExpression="aql:'App ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/Jobs.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Workflow" semanticCandidatesExpression="aql:self.getAppsinEnvironment(daprdesigner::BlockType::WORKFLOW,daprdesigner::NodeBlockType::WORKFLOW)" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']/@defaultLayer/@toolSections.0/@ownedTools[name='Workflows']" domainClass="daprdesigner::Workflow">
+        <nodeMappings name="Workflow" semanticCandidatesExpression="aql:self.eAllContents(daprdesigner::Workflow)" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@toolSections.0/@ownedTools[name='Workflows']" domainClass="daprdesigner::Workflow">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="LEFT" tooltipExpression="aql:'App ' + self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/Workflow.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="Relations" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']/@defaultLayer/@nodeMappings[name='Actors'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']/@defaultLayer/@nodeMappings[name='Apps'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']/@defaultLayer/@nodeMappings[name='Jobs'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']/@defaultLayer/@nodeMappings[name='Workflow']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']/@defaultLayer/@nodeMappings[name='Actors'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']/@defaultLayer/@nodeMappings[name='Apps'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']/@defaultLayer/@nodeMappings[name='Jobs'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']/@defaultLayer/@nodeMappings[name='Workflow']" targetFinderExpression="aql:self.getRelations()">
+        <edgeMappings name="Relations Restricted" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Actors'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Apps'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Jobs'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Workflow']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Actors'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Apps'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Jobs'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Workflow']" targetFinderExpression="aql:self.getRelations(true)">
           <style sourceArrow="InputArrow" targetArrow="NoDecoration" sizeComputationExpression="2" routingStyle="manhattan">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relations Unrestricted" sourceMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Actors'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Apps'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Jobs'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Workflow']" targetMapping="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Actors'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Apps'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Jobs'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Workflow']" targetFinderExpression="aql:self.getRelations(false)">
+          <style sourceArrow="InputArrow" targetArrow="NoDecoration" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
             <centerLabelStyleDescription labelSize="12">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
         <toolSections name="Interactions">
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="App" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']/@defaultLayer/@nodeMappings[name='Apps']">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="App" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Apps']">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
@@ -3358,7 +3366,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="Actor" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']/@defaultLayer/@nodeMappings[name='Actors']">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Actor" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Actors']">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
@@ -3369,7 +3377,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="Jobs" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']/@defaultLayer/@nodeMappings[name='Jobs']">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Jobs" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Jobs']">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
@@ -3380,7 +3388,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="Workflows" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='All%20Apps%20(Apps%20Actors%20Jobs%20and%20Workflows)']/@defaultLayer/@nodeMappings[name='Workflow']">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Workflows" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Workflow']">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>

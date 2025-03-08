@@ -23,13 +23,13 @@ import java.util.List;
  */
 public class Services {
 
-	int unnamedCounter = 0;
+	static int unnamedCounter = 0;
 
-	String pubsub = "pubsub.kafka,pubsub.in-memory,pubsub.jetstream,pubsub.kubemq,"
+	static String pubsub = "pubsub.kafka,pubsub.in-memory,pubsub.jetstream,pubsub.kubemq,"
 			+ "pubsub.mqtt3,pubsub.pulsar,pubsub.rabbitmq,pubsub.redis,pubsub.rocketmq,pubsub.solace.amqp,"
 			+ "pubsub.aws.snssqs,pubsub.gcp.pubsub,pubsub.azure.eventhubs,pubsub.azure.servicebus.queues,azure.servicebus.topics";
 
-	String bindings = "bindings.apns,bindings.commercetools,bindings.cron,bindings.graphql,bindings.http,bindings.huawei.obs,"
+	static String bindings = "bindings.apns,bindings.commercetools,bindings.cron,bindings.graphql,bindings.http,bindings.huawei.obs,"
 			+ "bindings.influxdb,bindings.kafka,bindings.kubernetes,bindings.localstorage,bindings.mqtt3,bindings.mysql,"
 			+ "bindings.postgresql,bindings.postmark,bindings.rabbitmq,bindings.redis,bindings.rethinkdb.statechange,"
 			+ "bindings.twilio.sendgrid,bindings.smtp,bindings.twilio.sms,bindings.wasm,bindings.dingtalk.webhook,"
@@ -41,23 +41,23 @@ public class Services {
 			+ "bindings.azure.openai,bindings.azure.servicebusqueues,"
 			+ "bindings.azure.signalr,bindings.azure.storagequeues,bindings.zeebe.command,bindings.zeebe.jobworker";
 
-	String statestore = "state.Aerospike,state.cassandra,state.cockroachdb,state.couchbase,state.etcd,state.consul,"
+	static String statestore = "state.Aerospike,state.cassandra,state.cockroachdb,state.couchbase,state.etcd,state.consul,"
 			+ "state.hazelcast,state.in-memory,state.jetstream,state.memcached,state.mysql,state.mongodb,state.oracledatabase,"
 			+ "state.postgresql,state.redis,state.rethinkdb,state.sqlite,state.zookeeper,state.aws.dynamodb,"
 			+ "state.cloudflare.workerskv,state.gcp.firestore,state.azure.blobstorage,state.azure.cosmosdb,"
 			+ "state.azure.tablestorage,state.sqlserver,state.oci.objectstorage";
 
-	String secretstore = "secretstores.hashicorp.vault,secretstores.kubernetes,secretstores.local.env,"
+	static String secretstore = "secretstores.hashicorp.vault,secretstores.kubernetes,secretstores.local.env,"
 			+ "secretstores.local.file,secretstores.alicloud.parameterstore,secretstores.aws.secretmanager,"
 			+ "secretstores.aws.parameterstore,secretstores.gcp.secretmanager,secretstores.azure.keyvault";
 
-	String configurationstore = "configuration.postgresql,configuration.redis,configuration.azure.appconfig";
+	static String configurationstore = "configuration.postgresql,configuration.redis,configuration.azure.appconfig";
 
-	String locks = "lock.redis";
+	static String locks = "lock.redis";
 
-	String cryptography = "crypto.dapr.jwks,crypto.dapr.kubernetes.secrets,crypto.dapr.localstorage,crypto.azure.keyvault";
+	static String cryptography = "crypto.dapr.jwks,crypto.dapr.kubernetes.secrets,crypto.dapr.localstorage,crypto.azure.keyvault";
 
-	String middleware = "middleware.http.oauth2,middleware.http.oauth2clientcredentials,"
+	static String middleware = "middleware.http.oauth2,middleware.http.oauth2clientcredentials,"
 			+ "middleware.http.bearer,middleware.http.ratelimit,middleware.http.opa,"
 			+ "middleware.http.routeralias,middleware.http.routerchecker,"
 			+ "middleware.http.sentinel,middleware.http.uppercase,middleware.http.wasm";
@@ -68,7 +68,7 @@ public class Services {
 	 * for documentation on how to write service methods.
 	 */
 	public EObject myService(EObject self, String arg) {
-		// TODO Auto-generated code
+
 		return self;
 	}
 
@@ -84,15 +84,11 @@ public class Services {
 
 	public EObject getContainer(EObject self) {
 
-		// System.out.println(self.getClass().getTypeName());
-		// System.out.println(self.eContainer().getClass().getTypeName());
-
 		return self;
 	}
 
 	public Collection<App> getAllApps(Block block) {
 
-		// System.out.println("Comes here");
 		ArrayList<App> appList = new ArrayList<App>();
 		for (DaprNode node : block.getNodes()) {
 			if (node instanceof NodeBlocks) {
@@ -117,7 +113,6 @@ public class Services {
 
 	public Collection<Component> getComponents(Block block) {
 
-		// System.out.println("Comes here");
 		ArrayList<Component> componentList = new ArrayList<Component>();
 		for (DaprNode node : block.getNodes()) {
 			if (node instanceof NodeBlocks) {
@@ -132,19 +127,21 @@ public class Services {
 		return componentList;
 	}
 
-	public Collection<EObject> getRelations(App self) {
+	public Collection<EObject> getRelations(App self, boolean isRestrictedAccess) {
 
 		ArrayList<EObject> appList = new ArrayList<EObject>();
 		Block b = (Block) self.eContainer().eContainer().eContainer();
 
 		Collection<EObject> cObject = getAppsinEnvironment(b, BlockType.MICROSERVICES, NodeBlockType.APP);
+
 		AppAccessControl aac = findAppAccessControl(self.getConfigurations());
 		if (aac == null) {
 			for (EObject eo : cObject) {
 				if (eo instanceof App) {
 					if (((App) eo).getName().equals(self.getName()))
 						continue;
-					appList.add(eo);
+					if (!isRestrictedAccess)
+						appList.add(eo);
 				}
 			}
 			return appList;
@@ -159,18 +156,37 @@ public class Services {
 					AppPolicy ap = findAppPolicy(aac, app);
 					if (ap == null) {
 						if (aac.getDefaultAction() == AccessAction.ALLOW)
-							appList.add(app);
+							if (!isRestrictedAccess)
+								appList.add(app);
 					} else {
+						System.out.println("Comes into else " +isRestrictedAccess);
+						boolean isAllowedAll = false;
+						boolean isAllowedSome = false;
+						boolean isOperationDefinedForApp = false;
+
 						if (ap.getDefaultAction() == AccessAction.ALLOW)
-							appList.add(app);
-						else {
-							for (Operation o : ap.getOperations()) {
-								if (o.getAction() == AccessAction.ALLOW) {
-									appList.add(app);
-									break;
-								}
+							isAllowedAll = true;
+
+						for (Operation o : ap.getOperations()) {
+							isOperationDefinedForApp = true;
+							if (o.getAction() == AccessAction.ALLOW) {
+								isAllowedSome = true;
+								break;
+							}
+
+						}
+
+						if (isRestrictedAccess) {
+							if ((!isAllowedAll && isAllowedSome) || (isAllowedAll && !isAllowedSome)) {
+								appList.add(app);
 							}
 						}
+						else {
+							if((isAllowedAll && !isOperationDefinedForApp) || (isAllowedAll && isAllowedSome))
+								appList.add(app);
+							
+						}
+
 					}
 
 				}
@@ -202,20 +218,18 @@ public class Services {
 
 	public Collection<EObject> getAppsinEnvironment(Block block, BlockType bType, NodeBlockType nType) {
 
-		// System.out.println("Comes here " +bType + " "+ nType);
-
 		ArrayList<EObject> appList = new ArrayList<EObject>();
 		if (block.getBlockType() == BlockType.ENVIRONMENT) {
-			// System.out.println("Indeed Envi");
+
 			for (Block subblock : block.getSubblocks()) {
 				if (subblock.getBlockType() == bType) {
-					// System.out.println("Btype "+ bType);
+
 					for (DaprNode node : subblock.getNodes()) {
 						if (node instanceof NodeBlocks) {
 							NodeBlocks nb = (NodeBlocks) node;
-							// System.out.println("nType "+ nb.getNodeBlockType() + " " + nType);
+
 							if (nb.getNodeBlockType() == nType) {
-								// System.out.println("nType "+ nType);
+
 								for (DaprNode node1 : nb.getNodes()) {
 
 									if (nType == NodeBlockType.APP) {
@@ -245,18 +259,16 @@ public class Services {
 				}
 			}
 		}
-		// System.out.println("Applist Size " + appList.size());
+
 		return appList;
 	}
 
 	public boolean getFilters(EObject self) {
 
-		// System.out.println(self.eClass().getInstanceClassName());
-
 		String s = self.eClass().getInstanceClassName();
 
 		if (s.equals("daprdesigner.App") || s.equals("daprdesigner.NodeBlocks")) {
-			// System.out.println("===true===");
+
 			return true;
 		}
 
@@ -282,7 +294,6 @@ public class Services {
 
 	public boolean isNodeBlockType(NodeBlocks self, String nodeType) {
 
-		// System.out.println("Here " + self.getNodeBlockType().toString());
 		return self.getNodeBlockType().toString() == nodeType;
 	}
 
@@ -374,7 +385,6 @@ public class Services {
 
 	public void removeAppConfiguration(App source, AppConfiguration target) {
 
-		// System.out.println("Caleed ================");
 		source.getConfigurations().remove(target);
 	}
 
@@ -384,7 +394,7 @@ public class Services {
 			try {
 				Desktop.getDesktop().browse(new URI(uri));
 			} catch (IOException | URISyntaxException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			}
 		}
@@ -396,7 +406,6 @@ public class Services {
 		String className = self.getClass().getName();
 		String classNameLowerCase = className.substring(className.lastIndexOf('.') + 1, className.indexOf("Impl"))
 				.toLowerCase();
-		// System.out.println(classNameLowerCase);
 
 		switch (classNameLowerCase) {
 		case "pubsub":
@@ -423,10 +432,6 @@ public class Services {
 	}
 
 	public EObject addStringValue(EObject self, EStructuralFeature feature, String value) {
-		// System.out.println("Hellloooo...." + feature.getName() + " " + value + " " +
-		// feature.getClass().getName());
-
-		// System.out.println(self.eGet(feature).getClass().getName());
 
 		if (self instanceof SecretsAccessList) {
 
@@ -447,11 +452,6 @@ public class Services {
 	}
 
 	public EObject removeStringValue(EObject self, EStructuralFeature feature, Object value) {
-		// System.out.println("Hellloooo remove...." + feature.getName() + " " + value +
-		// " " + feature.getClass().getName()
-		// + " " + value.getClass().getName());
-
-		// System.out.println(self.eGet(feature).getClass().getName());
 
 		if (self instanceof SecretsAccessList) {
 
