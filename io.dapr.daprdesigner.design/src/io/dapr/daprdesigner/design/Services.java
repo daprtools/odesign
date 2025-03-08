@@ -196,6 +196,10 @@ public class Services {
 		return appList;
 
 	}
+	
+	public boolean isPubSub(EObject self) {
+		return self instanceof PubSub;
+	}
 
 	private AppPolicy findAppPolicy(AppAccessControl aac, App app) {
 
