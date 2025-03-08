@@ -23,7 +23,8 @@
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="app_2">
         <nodes xsi:type="daprdesigner:App" name="app_2" configurations="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.1"/>
-        <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1" policies="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.2"/>
+        <nodes xsi:type="daprdesigner:AppPolicy" name="ap_4" app="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="app_3">
         <nodes xsi:type="daprdesigner:App" name="app_3" configurations="//@buildingblocks.0/@subblocks.0/@nodes.5/@nodes.1"/>
@@ -81,7 +82,7 @@
     </subblocks>
     <subblocks isReady="true" name="bindings_18" blockType="BINDINGS">
       <nodes xsi:type="daprdesigner:NodeBlocks" isReady="true" name="postgres" nodeBlockType="BINDING">
-        <nodes xsi:type="daprdesigner:Bindings" isReady="true" name="dev_db" providerName="bindings.postgresql" providerVersion="v1" metadata_namespace="//@buildingblocks.0/@nodes.0" specMetadata="//@buildingblocks.0/@subblocks.5/@nodes.0/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:Bindings" isReady="true" name="dev_db" providerName="bindings.postgresql" providerVersion="v1" metadata_namespace="//@buildingblocks.0/@nodes.0" specMetadata="//@buildingblocks.0/@subblocks.5/@nodes.0/@nodes.1" scopes="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.7/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.0"/>
         <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="connectionString" value="host=localhost user=postgres password=example port=5432 connect_timeout=10 database=dev_db"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" isReady="true" name="mail" nodeBlockType="BINDING">
@@ -93,7 +94,7 @@
     </subblocks>
     <subblocks isReady="true" name="pubsub" blockType="PUBSUB">
       <nodes xsi:type="daprdesigner:NodeBlocks" isReady="true" name="kafka" nodeBlockType="PUBSUB">
-        <nodes xsi:type="daprdesigner:PubSub" isReady="true" name="kafka_local" providerName="pubsub.kafka" providerVersion="v1" auth="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.3" metadata_namespace="//@buildingblocks.0/@nodes.0" specMetadata="//@buildingblocks.0/@subblocks.6/@nodes.0/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:PubSub" isReady="true" name="kafka_local" providerName="pubsub.kafka" providerVersion="v1" auth="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.3" metadata_namespace="//@buildingblocks.0/@nodes.0" specMetadata="//@buildingblocks.0/@subblocks.6/@nodes.0/@nodes.1" scopes="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.5/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.6/@nodes.0 //@buildingblocks.0/@subblocks.1/@nodes.1/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0"/>
         <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="brokers" value="localhost:9092" isFetchedFromSecret="true" secretKeyRefName="kafkabrokers" secretKeyRefKey="brokerhost"/>
       </nodes>
     </subblocks>

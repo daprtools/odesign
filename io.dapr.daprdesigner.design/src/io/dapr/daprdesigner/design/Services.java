@@ -129,6 +129,7 @@ public class Services {
 
 	public Collection<EObject> getRelations(App self, boolean isRestrictedAccess) {
 
+		System.out.println(" Finding for " + self.getName() + " for " + isRestrictedAccess);
 		ArrayList<EObject> appList = new ArrayList<EObject>();
 		Block b = (Block) self.eContainer().eContainer().eContainer();
 
@@ -159,7 +160,7 @@ public class Services {
 							if (!isRestrictedAccess)
 								appList.add(app);
 					} else {
-						System.out.println("Comes into else " +isRestrictedAccess);
+						System.out.println("Comes into else " +isRestrictedAccess + " for App " + ap.getApp().getName());
 						boolean isAllowedAll = false;
 						boolean isAllowedSome = false;
 						boolean isOperationDefinedForApp = false;
@@ -193,6 +194,10 @@ public class Services {
 			}
 		}
 
+		for(EObject app : appList) 
+			System.out.print(((App)app).getName() + " ");
+			
+		System.out.println();
 		return appList;
 
 	}
