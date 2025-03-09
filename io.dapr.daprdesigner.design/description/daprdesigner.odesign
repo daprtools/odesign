@@ -1066,6 +1066,14 @@
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="Navigate to.." precondition="aql:self.oclIsKindOf(daprdesigner::App)">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="App view">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Apps']"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
         </toolSections>
         <decorationDescriptionsSet>
           <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Mappings decoration" position="NORTH_WEST" preconditionExpression="aql:self.isReady=true " imageExpression="/io.dapr.daprdesigner.design/icons/png/16/ok.png" tooltipExpression="aql:'Ready to be deployed'" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='API'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='API%20Access%20Control'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='App'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='App%20Access%20Control'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='App%20Policy'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Denied%20Components'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Http%20Handler'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Logging%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Metrics%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Middleware%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Name%20Resolution%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Operation'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Secrets%20Access%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Tracing%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@nodeMappings[name='Secrets%20Access%20List']"/>
@@ -1470,6 +1478,14 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
             </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="Navigate to.." precondition="aql:self.oclIsKindOf(daprdesigner::App)">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="App view">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Apps']"/>
+              </initialOperation>
+            </menuItemDescription>
           </ownedTools>
         </toolSections>
         <decorationDescriptionsSet>
@@ -1876,6 +1892,14 @@
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="Navigate to.." precondition="aql:self.oclIsKindOf(daprdesigner::App)">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="App view">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Apps']"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
         </toolSections>
         <decorationDescriptionsSet>
           <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Mappings decoration" position="NORTH_WEST" preconditionExpression="aql:self.isReady=true " imageExpression="/io.dapr.daprdesigner.design/icons/png/16/ok.png" tooltipExpression="aql:'Ready to be deployed'" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']/@defaultLayer/@nodeMappings[name='API'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']/@defaultLayer/@nodeMappings[name='API%20Access%20Control'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']/@defaultLayer/@nodeMappings[name='Jobs'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']/@defaultLayer/@nodeMappings[name='App%20Access%20Control'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']/@defaultLayer/@nodeMappings[name='App%20Policy'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']/@defaultLayer/@nodeMappings[name='Denied%20Components'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']/@defaultLayer/@nodeMappings[name='Http%20Handler'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']/@defaultLayer/@nodeMappings[name='Logging%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']/@defaultLayer/@nodeMappings[name='Metrics%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']/@defaultLayer/@nodeMappings[name='Middleware%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']/@defaultLayer/@nodeMappings[name='Name%20Resolution%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']/@defaultLayer/@nodeMappings[name='Operation'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']/@defaultLayer/@nodeMappings[name='Secrets%20Access%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']/@defaultLayer/@nodeMappings[name='Tracing%20Configuration'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']/@defaultLayer/@nodeMappings[name='Secrets%20Access%20List']"/>
@@ -2280,6 +2304,14 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
             </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="Navigate to.." precondition="aql:self.oclIsKindOf(daprdesigner::App)">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="App view">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Apps']"/>
+              </initialOperation>
+            </menuItemDescription>
           </ownedTools>
         </toolSections>
         <decorationDescriptionsSet>
@@ -3521,6 +3553,9 @@
             <style xsi:type="style:LozengeNodeDescription" labelSize="9" showIcon="false" sizeComputationExpression="7" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
             </style>
           </borderedNodeMappings>
@@ -3528,10 +3563,22 @@
             <style xsi:type="style:DotDescription" labelSize="9" showIcon="false" sizeComputationExpression="7" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>WEST</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
             </style>
           </borderedNodeMappings>
-          <borderedNodeMappings name="Components" semanticCandidatesExpression="feature:eAllContents" domainClass="Component"/>
+          <borderedNodeMappings name="Components" semanticCandidatesExpression="aql:self.getConnectedComponents()" domainClass="Component">
+            <style xsi:type="style:EllipseNodeDescription" labelSize="9" sizeComputationExpression="7" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>WEST</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            </style>
+          </borderedNodeMappings>
           <subNodeMappings name="Configurations" semanticCandidatesExpression="feature:configurations" domainClass="AppConfiguration">
             <style xsi:type="style:WorkspaceImageDescription" labelSize="12" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/io.dapr.daprdesigner.design/icons/svg/16/AppConfiguration2.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>

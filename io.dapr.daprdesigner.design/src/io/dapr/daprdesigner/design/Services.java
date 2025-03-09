@@ -1,6 +1,7 @@
 package io.dapr.daprdesigner.design;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -127,15 +128,45 @@ public class Services {
 		return componentList;
 	}
 
+	public ArrayList<Component> getConnectedComponents(App self) {
+
+		Collection<Component> components = getAllComponents((Block) self.eContainer().eContainer().eContainer());
+		ArrayList<Component> ac = new ArrayList<Component>();
+		for (Component c : components)
+			if (c.getScopes().contains(self))
+				ac.add(c);
+
+		return ac;
+	}
+
+	private Collection<Component> getAllComponents(Block environmentBlock) {
+
+		TreeIterator<EObject> iterator = environmentBlock.eAllContents();
+		ArrayList<Component> ac = new ArrayList<Component>();
+
+		while (iterator.hasNext()) {
+			EObject eo = iterator.next();
+			if (eo instanceof Component) {
+				Component c = (Component) eo;
+				System.out.println("Component name :" + c.getName());
+				ac.add(c);
+			}
+
+		}
+
+		return ac;
+	}
+
 	public Collection<EObject> getRelations(App self, boolean isRestrictedAccess) {
 
-		//System.out.println(" Finding for " + self.getName() + " for " + isRestrictedAccess);
+		// System.out.println(" Finding for " + self.getName() + " for " +
+		// isRestrictedAccess);
 		ArrayList<EObject> appList = new ArrayList<EObject>();
 		Block b = (Block) self.eContainer().eContainer().eContainer();
 
 		Collection<EObject> cObject = getAppsinEnvironment(b, BlockType.MICROSERVICES, NodeBlockType.APP);
 		cObject.addAll(getAppsinEnvironment(b, BlockType.ACTORS, NodeBlockType.ACTOR));
-		cObject.addAll(getAppsinEnvironment(b, BlockType.WORKFLOW,NodeBlockType.WORKFLOW));
+		cObject.addAll(getAppsinEnvironment(b, BlockType.WORKFLOW, NodeBlockType.WORKFLOW));
 		cObject.addAll(getAppsinEnvironment(b, BlockType.JOBS, NodeBlockType.JOBS));
 
 		AppAccessControl aac = findAppAccessControl(self.getConfigurations());
@@ -145,9 +176,9 @@ public class Services {
 				{
 					if (((App) eo).getName().equals(self.getName()))
 						continue;
-					if (!isRestrictedAccess)
-					{
-						System.out.println ("Adding "+ ((App) eo).getName() + " for " + self.getName() + " when " + isRestrictedAccess);
+					if (!isRestrictedAccess) {
+						System.out.println("Adding " + ((App) eo).getName() + " for " + self.getName() + " when "
+								+ isRestrictedAccess);
 						appList.add(eo);
 					}
 				}
@@ -166,11 +197,12 @@ public class Services {
 					if (ap == null) {
 						if (aac.getDefaultAction() == AccessAction.ALLOW)
 							if (!isRestrictedAccess) {
-								System.out.println ("Adding "+ app.getName() + " for " + self.getName() + " when " + isRestrictedAccess);
+								System.out.println("Adding " + app.getName() + " for " + self.getName() + " when "
+										+ isRestrictedAccess);
 								appList.add(app);
 							}
 					} else {
-						
+
 						boolean isAllowedAll = false;
 						boolean isAllowedSome = false;
 						boolean isDeniedSome = false;
@@ -184,7 +216,7 @@ public class Services {
 							if (o.getAction() == AccessAction.ALLOW) {
 								isAllowedSome = true;
 							}
-							if(o.getAction() == AccessAction.DENY) {
+							if (o.getAction() == AccessAction.DENY) {
 								isDeniedSome = true;
 							}
 
@@ -192,12 +224,14 @@ public class Services {
 
 						if (isRestrictedAccess) {
 							if ((!isAllowedAll && isAllowedSome) || (isAllowedAll && isDeniedSome)) {
-								//System.out.println ("Adding "+ app.getName() + " for " + self.getName() + " when " + isRestrictedAccess);
+								// System.out.println ("Adding "+ app.getName() + " for " + self.getName() + "
+								// when " + isRestrictedAccess);
 								appList.add(app);
 							}
 						} else {
 							if ((isAllowedAll && !isOperationDefinedForApp) || (isAllowedAll && !isDeniedSome)) {
-								//System.out.println ("Adding "+ app.getName() + " for " + self.getName() + " when " + isRestrictedAccess);
+								// System.out.println ("Adding "+ app.getName() + " for " + self.getName() + "
+								// when " + isRestrictedAccess);
 								appList.add(app);
 							}
 
@@ -209,8 +243,8 @@ public class Services {
 			}
 		}
 
-		//for (EObject app : appList)
-			//System.out.print(((App) app).getName() + " ");
+		// for (EObject app : appList)
+		// System.out.print(((App) app).getName() + " ");
 
 		System.out.println();
 		return appList;
@@ -224,7 +258,8 @@ public class Services {
 	private AppPolicy findAppPolicy(AppAccessControl aac, App app) {
 
 		for (AppPolicy ap : aac.getPolicies()) {
-			//System.out.println("Apppolicy name " + ap.getApp().getName() + " " + app.getName());
+			// System.out.println("Apppolicy name " + ap.getApp().getName() + " " +
+			// app.getName());
 			if (ap.getApp().getName().equals(app.getName())
 					&& ap.getTrustDomain().getName().equals(app.getTrustDomain().getName()))
 				return ap;
