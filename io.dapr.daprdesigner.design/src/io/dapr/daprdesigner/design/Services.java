@@ -90,6 +90,7 @@ public class Services {
 
 	public Collection<App> getAllApps(Block block) {
 
+		
 		ArrayList<App> appList = new ArrayList<App>();
 		for (DaprNode node : block.getNodes()) {
 			if (node instanceof NodeBlocks) {
@@ -148,7 +149,7 @@ public class Services {
 			EObject eo = iterator.next();
 			if (eo instanceof Component) {
 				Component c = (Component) eo;
-				System.out.println("Component name :" + c.getName());
+				//System.out.println("Component name :" + c.getName());
 				ac.add(c);
 			}
 
@@ -246,7 +247,7 @@ public class Services {
 		// for (EObject app : appList)
 		// System.out.print(((App) app).getName() + " ");
 
-		System.out.println();
+		//System.out.println();
 		return appList;
 
 	}
@@ -325,9 +326,9 @@ public class Services {
 
 	public boolean getFilters(EObject self) {
 
-		String s = self.eClass().getInstanceClassName();
+		//String s = self.eClass().getInstanceClassName();
 
-		if (s.equals("daprdesigner.App") || s.equals("daprdesigner.NodeBlocks")) {
+		if(self instanceof App || self instanceof NodeBlocks) {
 
 			return true;
 		}
