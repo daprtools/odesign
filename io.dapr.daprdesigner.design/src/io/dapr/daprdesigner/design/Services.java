@@ -134,22 +134,32 @@ public class Services {
 		Block b = (Block) self.eContainer().eContainer().eContainer();
 
 		Collection<EObject> cObject = getAppsinEnvironment(b, BlockType.MICROSERVICES, NodeBlockType.APP);
+		// cObject.addAll(getAppsinEnvironment(b, BlockType.ACTORS,
+		// NodeBlockType.ACTOR));
+		// cObject.addAll(getAppsinEnvironment(b, BlockType.WORKFLOW,
+		// NodeBlockType.WORKFLOW));
+		// cObject.addAll(getAppsinEnvironment(b, BlockType.JOBS, NodeBlockType.JOBS));
 
 		AppAccessControl aac = findAppAccessControl(self.getConfigurations());
 		if (aac == null) {
 			for (EObject eo : cObject) {
-				if (eo instanceof App) {
+				if (eo instanceof App)// || eo instanceof Actor || eo instanceof Jobs || eo instanceof Workflow)
+				{
 					if (((App) eo).getName().equals(self.getName()))
 						continue;
 					if (!isRestrictedAccess)
+					{
+						System.out.println ("Adding "+ ((App) eo).getName() + " for " + self.getName() + " when " + isRestrictedAccess);
 						appList.add(eo);
+					}
 				}
 			}
 			return appList;
 		} else {
 
 			for (EObject eo : cObject) {
-				if (eo instanceof App) {
+				if (eo instanceof App)// || eo instanceof Actor || eo instanceof Jobs || eo instanceof Workflow)
+				{
 					App app = (App) eo;
 					if (app.getName().equals(self.getName()))
 						continue;
@@ -157,12 +167,15 @@ public class Services {
 					AppPolicy ap = findAppPolicy(aac, app);
 					if (ap == null) {
 						if (aac.getDefaultAction() == AccessAction.ALLOW)
-							if (!isRestrictedAccess)
+							if (!isRestrictedAccess) {
+								System.out.println ("Adding "+ app.getName() + " for " + self.getName() + " when " + isRestrictedAccess);
 								appList.add(app);
+							}
 					} else {
-						System.out.println("Comes into else " +isRestrictedAccess + " for App " + ap.getApp().getName());
+						
 						boolean isAllowedAll = false;
 						boolean isAllowedSome = false;
+						boolean isDeniedSome = false;
 						boolean isOperationDefinedForApp = false;
 
 						if (ap.getDefaultAction() == AccessAction.ALLOW)
@@ -172,20 +185,24 @@ public class Services {
 							isOperationDefinedForApp = true;
 							if (o.getAction() == AccessAction.ALLOW) {
 								isAllowedSome = true;
-								break;
+							}
+							if(o.getAction() == AccessAction.DENY) {
+								isDeniedSome = true;
 							}
 
 						}
 
 						if (isRestrictedAccess) {
-							if ((!isAllowedAll && isAllowedSome) || (isAllowedAll && !isAllowedSome)) {
+							if ((!isAllowedAll && isAllowedSome) || (isAllowedAll && isDeniedSome)) {
+								System.out.println ("Adding "+ app.getName() + " for " + self.getName() + " when " + isRestrictedAccess);
 								appList.add(app);
 							}
-						}
-						else {
-							if((isAllowedAll && !isOperationDefinedForApp) || (isAllowedAll && isAllowedSome))
+						} else {
+							if ((isAllowedAll && !isOperationDefinedForApp) || (isAllowedAll && !isDeniedSome)) {
+								System.out.println ("Adding "+ app.getName() + " for " + self.getName() + " when " + isRestrictedAccess);
 								appList.add(app);
-							
+							}
+
 						}
 
 					}
@@ -194,14 +211,14 @@ public class Services {
 			}
 		}
 
-		for(EObject app : appList) 
-			System.out.print(((App)app).getName() + " ");
-			
+		//for (EObject app : appList)
+			//System.out.print(((App) app).getName() + " ");
+
 		System.out.println();
 		return appList;
 
 	}
-	
+
 	public boolean isPubSub(EObject self) {
 		return self instanceof PubSub;
 	}
