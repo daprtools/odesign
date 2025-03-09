@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:properties-ext-widgets-reference="http://www.eclipse.org/sirius/properties/1.0.0/ext/widgets/reference" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="daprdesigner" version="15.4.0.202401051836">
   <ownedViewpoints name="ArchitectureViewpoint" modelFileExtension="daprdesigner">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Architecture" initialisation="true" domainClass="daprdesigner::DaprArchitecture" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Architecture" initialisation="true" domainClass="daprdesigner::DaprArchitecture">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.rectpacking" label="ELK Rectangle Packing" description="Algorithm for packing of unconnected boxes, i.e. graphs without edges. The given order of the boxes is always preserved and the main reading direction of the boxes is left to right. The algorithm is divided into two phases. One phase approximates the width in which the rectangles can be placed. The next phase places the rectangles in rows using the previously calculated width as bounding width and bundles rectangles with a similar height in blocks. A compaction step reduces the size of the drawing. Finally, the rectangles are expanded to fill their bounding box and eliminate empty unused spaces."/>
       <defaultLayer name="Default" icon="/io.dapr.daprdesigner.design/icons/svg/24/DaprArchitecture.svg">
@@ -618,7 +618,7 @@
         </customization>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Environment" domainClass="daprdesigner::Block" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Environment" initialisation="true" domainClass="daprdesigner::Block">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.box" label="ELK Box" description="Algorithm for packing of unconnected boxes, i.e. graphs without edges.">
         <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.box.packingMode">
@@ -668,7 +668,7 @@
         </customization>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="AppNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="AppNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="App" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::App">
@@ -1073,7 +1073,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ActorNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ActorNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="Actor" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ActorNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Actor">
@@ -1478,7 +1478,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="JobNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="JobNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="Jobs" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='JobNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Jobs">
@@ -1883,7 +1883,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="WorkflowNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="WorkflowNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="Workflow" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='WorkflowNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Workflow">
@@ -2288,7 +2288,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="PubSubNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="PubSubNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="PubSub Component" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='PubSubNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::PubSub">
@@ -2365,7 +2365,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="BindingsNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="BindingsNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="Bindings Component" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='BindingsNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Bindings">
@@ -2442,7 +2442,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SecretStoreNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SecretStoreNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="SecretStore Component" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SecretStore">
@@ -2519,7 +2519,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="StateStoreNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="StateStoreNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="StateStore Component" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::StateStore">
@@ -2596,7 +2596,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="LocksNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="LocksNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="Locks Component" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='LocksNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Locks">
@@ -2673,7 +2673,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="CryptographyNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="CryptographyNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="Cryptography Component" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='CryptographyNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Cryptography">
@@ -2750,7 +2750,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="MiddlewareNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="MiddlewareNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="Middleware Component" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='MiddlewareNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::Middleware">
@@ -2827,7 +2827,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ConfigurationNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ConfigurationNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="ConfigurationStore Component" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ConfigurationNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::ConfigurationStore">
@@ -2904,7 +2904,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SubscriptionNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SubscriptionNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="SubscriptionConfiguration" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SubscriptionNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::SubscriptionConfiguration">
@@ -2981,7 +2981,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ResiliencyNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ResiliencyNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="ResiliencyConfiguration" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::ResiliencyConfiguration">
@@ -3230,7 +3230,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="HttpEndpointNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="HttpEndpointNodeBlocks" initialisation="true" domainClass="daprdesigner::NodeBlocks">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="HTTPEndPoint" labelDirectEdit="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='HttpEndpointNodeBlocks']/@defaultLayer/@toolSections.2/@ownedTools[name='Component%20Specs']" semanticCandidatesExpression="feature:nodes" domainClass="daprdesigner::HTTPEndPoint">
@@ -3307,7 +3307,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="AppsAndComponents" domainClass="daprdesigner::Block" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="AppsAndComponents" domainClass="daprdesigner::Block">
       <metamodel href="http://dapr.io/daprtools/daprdesigner#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="Apps" semanticCandidatesExpression="aql:self.getAppsinEnvironment(daprdesigner::BlockType::MICROSERVICES ,daprdesigner::NodeBlockType::APP)" doubleClickDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@toolSections.0/@ownedTools[name='App']" domainClass="daprdesigner::App">
@@ -3499,6 +3499,14 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="Navigate to.." precondition="aql:self.oclIsKindOf(daprdesigner::App)">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="App view">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Apps']"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
         </toolSections>
         <decorationDescriptionsSet>
           <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Mappings decoration" position="NORTH_WEST" preconditionExpression="aql:self.isReady=true " imageExpression="/io.dapr.daprdesigner.design/icons/png/16/ok.png" tooltipExpression="aql:'Ready to be deployed'" mappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Actors'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Apps'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Bindings'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='ConfigurationStore'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Cryptography'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Jobs'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Locks'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Middleware'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='PubSub'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Secret%20Store'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='StateStore'] //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Workflow']"/>
@@ -3506,7 +3514,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Apps" initialisation="true" domainClass="App" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Apps" initialisation="true" domainClass="App">
       <defaultLayer name="Default">
         <containerMappings name="AppContainer" semanticCandidatesExpression="var:self" domainClass="App" childrenPresentation="List">
           <borderedNodeMappings name="FullAccess" semanticCandidatesExpression="aql:self.getRelations(false)" domainClass="App">

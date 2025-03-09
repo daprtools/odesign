@@ -129,16 +129,14 @@ public class Services {
 
 	public Collection<EObject> getRelations(App self, boolean isRestrictedAccess) {
 
-		System.out.println(" Finding for " + self.getName() + " for " + isRestrictedAccess);
+		//System.out.println(" Finding for " + self.getName() + " for " + isRestrictedAccess);
 		ArrayList<EObject> appList = new ArrayList<EObject>();
 		Block b = (Block) self.eContainer().eContainer().eContainer();
 
 		Collection<EObject> cObject = getAppsinEnvironment(b, BlockType.MICROSERVICES, NodeBlockType.APP);
-		// cObject.addAll(getAppsinEnvironment(b, BlockType.ACTORS,
-		// NodeBlockType.ACTOR));
-		// cObject.addAll(getAppsinEnvironment(b, BlockType.WORKFLOW,
-		// NodeBlockType.WORKFLOW));
-		// cObject.addAll(getAppsinEnvironment(b, BlockType.JOBS, NodeBlockType.JOBS));
+		cObject.addAll(getAppsinEnvironment(b, BlockType.ACTORS, NodeBlockType.ACTOR));
+		cObject.addAll(getAppsinEnvironment(b, BlockType.WORKFLOW,NodeBlockType.WORKFLOW));
+		cObject.addAll(getAppsinEnvironment(b, BlockType.JOBS, NodeBlockType.JOBS));
 
 		AppAccessControl aac = findAppAccessControl(self.getConfigurations());
 		if (aac == null) {
@@ -194,12 +192,12 @@ public class Services {
 
 						if (isRestrictedAccess) {
 							if ((!isAllowedAll && isAllowedSome) || (isAllowedAll && isDeniedSome)) {
-								System.out.println ("Adding "+ app.getName() + " for " + self.getName() + " when " + isRestrictedAccess);
+								//System.out.println ("Adding "+ app.getName() + " for " + self.getName() + " when " + isRestrictedAccess);
 								appList.add(app);
 							}
 						} else {
 							if ((isAllowedAll && !isOperationDefinedForApp) || (isAllowedAll && !isDeniedSome)) {
-								System.out.println ("Adding "+ app.getName() + " for " + self.getName() + " when " + isRestrictedAccess);
+								//System.out.println ("Adding "+ app.getName() + " for " + self.getName() + " when " + isRestrictedAccess);
 								appList.add(app);
 							}
 
@@ -226,6 +224,7 @@ public class Services {
 	private AppPolicy findAppPolicy(AppAccessControl aac, App app) {
 
 		for (AppPolicy ap : aac.getPolicies()) {
+			//System.out.println("Apppolicy name " + ap.getApp().getName() + " " + app.getName());
 			if (ap.getApp().getName().equals(app.getName())
 					&& ap.getTrustDomain().getName().equals(app.getTrustDomain().getName()))
 				return ap;
