@@ -90,7 +90,6 @@ public class Services {
 
 	public Collection<App> getAllApps(Block block) {
 
-		
 		ArrayList<App> appList = new ArrayList<App>();
 		for (DaprNode node : block.getNodes()) {
 			if (node instanceof NodeBlocks) {
@@ -103,6 +102,195 @@ public class Services {
 			}
 		}
 		return appList;
+	}
+
+	public ArrayList<App> getAllApps(EObject self) {
+		ArrayList<App> ac = new ArrayList<App>();
+		Block b = findEnvironmentBlock(self);
+		Collection<EObject> cObject = getAppsinEnvironment(b, BlockType.MICROSERVICES, NodeBlockType.APP);
+		cObject.addAll(getAppsinEnvironment(b, BlockType.ACTORS, NodeBlockType.ACTOR));
+		cObject.addAll(getAppsinEnvironment(b, BlockType.WORKFLOW, NodeBlockType.WORKFLOW));
+		cObject.addAll(getAppsinEnvironment(b, BlockType.JOBS, NodeBlockType.JOBS));
+
+		for (EObject eo : cObject) {
+			ac.add((App) eo);
+		}
+
+		return ac;
+	}
+
+	public ArrayList<Trustdomain> getAllTDs(EObject self) {
+		ArrayList<Trustdomain> ac = new ArrayList<Trustdomain>();
+		Block b = findEnvironmentBlock(self);
+
+		TreeIterator<EObject> iterator = b.eAllContents();
+
+		while (iterator.hasNext()) {
+			EObject eo = iterator.next();
+			if (eo instanceof Trustdomain) {
+				Trustdomain c = (Trustdomain) eo;
+				// System.out.println("Component name :" + c.getName());
+				ac.add(c);
+			}
+
+		}
+
+		return ac;
+
+	}
+
+	public ArrayList<Namespace> getAllNSs(EObject self) {
+		ArrayList<Namespace> ac = new ArrayList<Namespace>();
+		Block b = findEnvironmentBlock(self);
+
+		TreeIterator<EObject> iterator = b.eAllContents();
+
+		while (iterator.hasNext()) {
+			EObject eo = iterator.next();
+			if (eo instanceof Namespace) {
+				Namespace c = (Namespace) eo;
+				// System.out.println("Component name :" + c.getName());
+				ac.add(c);
+			}
+
+		}
+
+		return ac;
+
+	}
+
+	public ArrayList<PubSub> getAllPubSubs(EObject self) {
+		ArrayList<PubSub> ac = new ArrayList<PubSub>();
+		Block b = findEnvironmentBlock(self);
+
+		TreeIterator<EObject> iterator = b.eAllContents();
+
+		while (iterator.hasNext()) {
+			EObject eo = iterator.next();
+			if (eo instanceof PubSub) {
+				PubSub c = (PubSub) eo;
+				// System.out.println("Component name :" + c.getName());
+				ac.add(c);
+			}
+
+		}
+
+		return ac;
+
+	}
+	
+	public ArrayList<Middleware> getAllMiddleware(EObject self) {
+		ArrayList<Middleware> ac = new ArrayList<Middleware>();
+		Block b = findEnvironmentBlock(self);
+
+		TreeIterator<EObject> iterator = b.eAllContents();
+
+		while (iterator.hasNext()) {
+			EObject eo = iterator.next();
+			if (eo instanceof Middleware) {
+				Middleware c = (Middleware) eo;
+				// System.out.println("Component name :" + c.getName());
+				ac.add(c);
+			}
+
+		}
+
+		return ac;
+
+	}
+	
+	public ArrayList<CircuitBreakerPolicy> getAllCircuitBreakers(EObject self) {
+		ArrayList<CircuitBreakerPolicy> ac = new ArrayList<CircuitBreakerPolicy>();
+		Block b = findEnvironmentBlock(self);
+
+		TreeIterator<EObject> iterator = b.eAllContents();
+
+		while (iterator.hasNext()) {
+			EObject eo = iterator.next();
+			if (eo instanceof CircuitBreakerPolicy) {
+				CircuitBreakerPolicy c = (CircuitBreakerPolicy) eo;
+				// System.out.println("Component name :" + c.getName());
+				ac.add(c);
+			}
+
+		}
+
+		return ac;
+
+	}
+	
+	public ArrayList<RetryPolicy> getAllRetryPolicies(EObject self) {
+		ArrayList<RetryPolicy> ac = new ArrayList<RetryPolicy>();
+		Block b = findEnvironmentBlock(self);
+
+		TreeIterator<EObject> iterator = b.eAllContents();
+
+		while (iterator.hasNext()) {
+			EObject eo = iterator.next();
+			if (eo instanceof RetryPolicy) {
+				RetryPolicy c = (RetryPolicy) eo;
+				// System.out.println("Component name :" + c.getName());
+				ac.add(c);
+			}
+
+		}
+
+		return ac;
+
+	}
+	
+	public ArrayList<ResiliencyTimeout> getAllResiliencyTimeouts(EObject self) {
+		ArrayList<ResiliencyTimeout> ac = new ArrayList<ResiliencyTimeout>();
+		Block b = findEnvironmentBlock(self);
+
+		TreeIterator<EObject> iterator = b.eAllContents();
+
+		while (iterator.hasNext()) {
+			EObject eo = iterator.next();
+			if (eo instanceof ResiliencyTimeout) {
+				ResiliencyTimeout c = (ResiliencyTimeout) eo;
+				// System.out.println("Component name :" + c.getName());
+				ac.add(c);
+			}
+
+		}
+
+		return ac;
+
+	}
+
+	public ArrayList<SecretStore> getAllSecretStores(EObject self) {
+		ArrayList<SecretStore> ac = new ArrayList<SecretStore>();
+		Block b = findEnvironmentBlock(self);
+
+		TreeIterator<EObject> iterator = b.eAllContents();
+
+		while (iterator.hasNext()) {
+			EObject eo = iterator.next();
+			if (eo instanceof SecretStore) {
+				SecretStore c = (SecretStore) eo;
+				// System.out.println("Component name :" + c.getName());
+				ac.add(c);
+			}
+
+		}
+
+		return ac;
+
+	}
+
+	private Block findEnvironmentBlock(EObject self) {
+
+		EObject obj = self;
+		while (obj != null) {
+			if (obj instanceof Block) {
+				Block b = (Block) obj;
+				if (b.getBlockType() == BlockType.ENVIRONMENT)
+					return b;
+			}
+			obj = obj.eContainer();
+		}
+		return null;
 	}
 
 	public boolean isAppConfiguration(EObject self) {
@@ -149,7 +337,7 @@ public class Services {
 			EObject eo = iterator.next();
 			if (eo instanceof Component) {
 				Component c = (Component) eo;
-				//System.out.println("Component name :" + c.getName());
+				// System.out.println("Component name :" + c.getName());
 				ac.add(c);
 			}
 
@@ -247,7 +435,7 @@ public class Services {
 		// for (EObject app : appList)
 		// System.out.print(((App) app).getName() + " ");
 
-		//System.out.println();
+		// System.out.println();
 		return appList;
 
 	}
@@ -261,7 +449,8 @@ public class Services {
 		for (AppPolicy ap : aac.getPolicies()) {
 			// System.out.println("Apppolicy name " + ap.getApp().getName() + " " +
 			// app.getName());
-			if (ap.getApp().getName().equals(app.getName())
+			if (ap.getApp() != null && ap.getApp().getName().equals(app.getName()) && ap.getTrustDomain() != null
+					&& app.getTrustDomain() != null
 					&& ap.getTrustDomain().getName().equals(app.getTrustDomain().getName()))
 				return ap;
 		}
@@ -326,9 +515,9 @@ public class Services {
 
 	public boolean getFilters(EObject self) {
 
-		//String s = self.eClass().getInstanceClassName();
+		// String s = self.eClass().getInstanceClassName();
 
-		if(self instanceof App || self instanceof NodeBlocks) {
+		if (self instanceof App || self instanceof NodeBlocks) {
 
 			return true;
 		}

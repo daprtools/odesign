@@ -4,7 +4,7 @@
     <semanticResources>Test.daprdesigner</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_nNw9wNZNEe-uRIHsZfhAOA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_olvdUNZNEe-uRIHsZfhAOA" name="TestArchitecture" repPath="#_olu2QNZNEe-uRIHsZfhAOA" changeId="1741540798528">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_olvdUNZNEe-uRIHsZfhAOA" name="TestArchitecture" repPath="#_olu2QNZNEe-uRIHsZfhAOA" changeId="1741600966916">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']"/>
         <target xmi:type="daprdesigner:DaprArchitecture" href="Test.daprdesigner#/"/>
       </ownedRepresentationDescriptors>
@@ -188,7 +188,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ResiliencyNodeBlocks']"/>
         <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.8/@nodes.1"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_P0kgwPZtEe-UXvWWnAe6pw" name="app1" repPath="#_P0irkPZtEe-UXvWWnAe6pw" changeId="1741540646457">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_P0kgwPZtEe-UXvWWnAe6pw" name="app1" repPath="#_P0irkPZtEe-UXvWWnAe6pw" changeId="1741600968081">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']"/>
         <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.3"/>
       </ownedRepresentationDescriptors>
@@ -228,7 +228,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='ActorNodeBlocks']"/>
         <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.1/@nodes.1"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_srdLgPtaEe-kuc2oXa93ow" name="AppsAndComponents" repPath="#_srbWUPtaEe-kuc2oXa93ow" changeId="1741540502936">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_srdLgPtaEe-kuc2oXa93ow" name="AppsAndComponents" repPath="#_srbWUPtaEe-kuc2oXa93ow" changeId="1741600967242">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']"/>
         <target xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0"/>
       </ownedRepresentationDescriptors>
@@ -240,7 +240,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='WorkflowNodeBlocks']"/>
         <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_l31mgPy2Ee-tRNMXeLQ7QA" name="app_1" repPath="#_l3zxUPy2Ee-tRNMXeLQ7QA" changeId="1741535009995">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_l31mgPy2Ee-tRNMXeLQ7QA" name="app_1" repPath="#_l3zxUPy2Ee-tRNMXeLQ7QA" changeId="1741598511574">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Apps']"/>
         <target xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0"/>
       </ownedRepresentationDescriptors>
@@ -747,7 +747,7 @@
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_CL9j4PTqEe-yOshj9qZ9Sg" name="development" width="150" height="100">
       <target xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0"/>
       <semanticElements xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0"/>
-      <decorations xmi:type="viewpoint:Decoration" uid="_AF9KgP0KEe-KwOYknb5bSw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_0TrUMP2WEe-kIKnVyfHfxQ">
         <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Blockdecoration%20']"/>
       </decorations>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_fqbNAvTqEe-yOshj9qZ9Sg" labelSize="25" iconPath="/io.dapr.daprdesigner.design/icons/png/64/containers/Environment.png" description="_fqbNAPTqEe-yOshj9qZ9Sg" borderSize="1" borderSizeComputationExpression="1">
@@ -781,7 +781,7 @@
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_pnWJIPTqEe-yOshj9qZ9Sg" name="apps" width="30" height="15">
         <target xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0"/>
         <semanticElements xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0"/>
-        <decorations xmi:type="viewpoint:Decoration" uid="_AGBb8P0KEe-KwOYknb5bSw">
+        <decorations xmi:type="viewpoint:Decoration" uid="_0Tr7QP2WEe-kIKnVyfHfxQ">
           <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Blockdecoration%20']"/>
         </decorations>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_TETIEfTsEe-yOshj9qZ9Sg" labelSize="20" iconPath="/io.dapr.daprdesigner.design/icons/png/64/containers/Microservices.png" labelColor="39,76,114" description="_TEShAPTsEe-yOshj9qZ9Sg" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="255,255,255">
@@ -791,7 +791,7 @@
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_tcVdsPTqEe-yOshj9qZ9Sg" name="account" width="-1" height="-1" resizeKind="NSEW">
           <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.0"/>
           <semanticElements xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.0"/>
-          <decorations xmi:type="viewpoint:Decoration" uid="_AGcSsP0KEe-KwOYknb5bSw">
+          <decorations xmi:type="viewpoint:Decoration" uid="_0TuXgP2WEe-kIKnVyfHfxQ">
             <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Nodedecoration%20']"/>
           </decorations>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_tcWEwPTqEe-yOshj9qZ9Sg" labelSize="15" showIcon="false" labelAlignment="RIGHT" description="_tcVdsfTqEe-yOshj9qZ9Sg" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/App2.png">
@@ -803,7 +803,7 @@
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_vt4CgPTqEe-yOshj9qZ9Sg" name="orders" width="-1" height="-1" resizeKind="NSEW">
           <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.1"/>
           <semanticElements xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.1"/>
-          <decorations xmi:type="viewpoint:Decoration" uid="_AGeH4P0KEe-KwOYknb5bSw">
+          <decorations xmi:type="viewpoint:Decoration" uid="_0TuXg_2WEe-kIKnVyfHfxQ">
             <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Nodedecoration%20']"/>
           </decorations>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_vt5QoPTqEe-yOshj9qZ9Sg" labelSize="15" showIcon="false" labelAlignment="RIGHT" description="_tcVdsfTqEe-yOshj9qZ9Sg" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/App2.png">
@@ -815,7 +815,7 @@
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_13E1YPTqEe-yOshj9qZ9Sg" name="cart" width="-1" height="-1" resizeKind="NSEW">
           <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.2"/>
           <semanticElements xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.2"/>
-          <decorations xmi:type="viewpoint:Decoration" uid="_AGf9EP0KEe-KwOYknb5bSw">
+          <decorations xmi:type="viewpoint:Decoration" uid="_0TuXhv2WEe-kIKnVyfHfxQ">
             <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Nodedecoration%20']"/>
           </decorations>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_13FccPTqEe-yOshj9qZ9Sg" labelSize="15" showIcon="false" labelAlignment="RIGHT" description="_tcVdsfTqEe-yOshj9qZ9Sg" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/App2.png">
@@ -827,7 +827,7 @@
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_LDD5kPZtEe-UXvWWnAe6pw" name="app_1" width="-1" height="-1" resizeKind="NSEW">
           <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.3"/>
           <semanticElements xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.3"/>
-          <decorations xmi:type="viewpoint:Decoration" uid="_AGhyQP0KEe-KwOYknb5bSw">
+          <decorations xmi:type="viewpoint:Decoration" uid="_0Tu-kf2WEe-kIKnVyfHfxQ">
             <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Nodedecoration%20']"/>
           </decorations>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_LDFuwPZtEe-UXvWWnAe6pw" labelSize="15" showIcon="false" labelAlignment="RIGHT" description="_tcVdsfTqEe-yOshj9qZ9Sg" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/App2.png">
@@ -839,7 +839,7 @@
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_LxMx8PZtEe-UXvWWnAe6pw" name="app_2" width="-1" height="-1" resizeKind="NSEW">
           <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.4"/>
           <semanticElements xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.4"/>
-          <decorations xmi:type="viewpoint:Decoration" uid="_AGjncP0KEe-KwOYknb5bSw">
+          <decorations xmi:type="viewpoint:Decoration" uid="_0Tu-lP2WEe-kIKnVyfHfxQ">
             <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Nodedecoration%20']"/>
           </decorations>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_LxNZAPZtEe-UXvWWnAe6pw" labelSize="15" showIcon="false" labelAlignment="RIGHT" description="_tcVdsfTqEe-yOshj9qZ9Sg" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/App2.png">
@@ -851,7 +851,7 @@
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_MehK8PZtEe-UXvWWnAe6pw" name="app_3" width="-1" height="-1" resizeKind="NSEW">
           <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.5"/>
           <semanticElements xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.5"/>
-          <decorations xmi:type="viewpoint:Decoration" uid="_AGmDsP0KEe-KwOYknb5bSw">
+          <decorations xmi:type="viewpoint:Decoration" uid="_0Tu-l_2WEe-kIKnVyfHfxQ">
             <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Nodedecoration%20']"/>
           </decorations>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_MehyAPZtEe-UXvWWnAe6pw" labelSize="15" showIcon="false" labelAlignment="RIGHT" description="_tcVdsfTqEe-yOshj9qZ9Sg" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/App2.png">
@@ -863,7 +863,7 @@
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_M3VTkPZtEe-UXvWWnAe6pw" name="app_4" width="-1" height="-1" resizeKind="NSEW">
           <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.6"/>
           <semanticElements xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.6"/>
-          <decorations xmi:type="viewpoint:Decoration" uid="_AGof8P0KEe-KwOYknb5bSw">
+          <decorations xmi:type="viewpoint:Decoration" uid="_0Tvlof2WEe-kIKnVyfHfxQ">
             <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Nodedecoration%20']"/>
           </decorations>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_M3V6oPZtEe-UXvWWnAe6pw" labelSize="15" showIcon="false" labelAlignment="RIGHT" description="_tcVdsfTqEe-yOshj9qZ9Sg" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/App2.png">
@@ -875,7 +875,7 @@
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_NZBEUPZtEe-UXvWWnAe6pw" name="app_5" width="-1" height="-1" resizeKind="NSEW">
           <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.7"/>
           <semanticElements xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.7"/>
-          <decorations xmi:type="viewpoint:Decoration" uid="_AGqVIP0KEe-KwOYknb5bSw">
+          <decorations xmi:type="viewpoint:Decoration" uid="_0TvlpP2WEe-kIKnVyfHfxQ">
             <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Nodedecoration%20']"/>
           </decorations>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_NZC5gPZtEe-UXvWWnAe6pw" labelSize="15" showIcon="false" labelAlignment="RIGHT" description="_tcVdsfTqEe-yOshj9qZ9Sg" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/App2.png">
@@ -887,7 +887,7 @@
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_N922wPZtEe-UXvWWnAe6pw" name="app_6" width="-1" height="-1" resizeKind="NSEW">
           <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.8"/>
           <semanticElements xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.8"/>
-          <decorations xmi:type="viewpoint:Decoration" uid="_AGsKUP0KEe-KwOYknb5bSw">
+          <decorations xmi:type="viewpoint:Decoration" uid="_0TwMsP2WEe-kIKnVyfHfxQ">
             <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Nodedecoration%20']"/>
           </decorations>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_N94E4PZtEe-UXvWWnAe6pw" labelSize="15" showIcon="false" labelAlignment="RIGHT" description="_tcVdsfTqEe-yOshj9qZ9Sg" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/App2.png">
@@ -900,7 +900,7 @@
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_46SuwPTqEe-yOshj9qZ9Sg" name="actors" width="30" height="15">
         <target xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.1"/>
         <semanticElements xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.1"/>
-        <decorations xmi:type="viewpoint:Decoration" uid="_AGD4MP0KEe-KwOYknb5bSw">
+        <decorations xmi:type="viewpoint:Decoration" uid="_0Tr7Q_2WEe-kIKnVyfHfxQ">
           <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Blockdecoration%20']"/>
         </decorations>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_TETvI_TsEe-yOshj9qZ9Sg" labelSize="20" iconPath="/io.dapr.daprdesigner.design/icons/png/64/containers/Actor.png" labelColor="39,76,114" description="_TETvIfTsEe-yOshj9qZ9Sg" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="255,255,255">
@@ -910,7 +910,7 @@
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_aPDUAPTrEe-yOshj9qZ9Sg" name="payments" width="-1" height="-1" resizeKind="NSEW">
           <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.1/@nodes.0"/>
           <semanticElements xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.1/@nodes.0"/>
-          <decorations xmi:type="viewpoint:Decoration" uid="_AGumkP0KEe-KwOYknb5bSw">
+          <decorations xmi:type="viewpoint:Decoration" uid="_0TwMs_2WEe-kIKnVyfHfxQ">
             <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Nodedecoration%20']"/>
           </decorations>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_aPD7EfTrEe-yOshj9qZ9Sg" labelSize="15" showIcon="false" labelAlignment="RIGHT" description="_aPD7EPTrEe-yOshj9qZ9Sg" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/Actor.png">
@@ -922,7 +922,7 @@
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_e2ziQPTrEe-yOshj9qZ9Sg" name="user_events" width="-1" height="-1" resizeKind="NSEW">
           <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.1/@nodes.1"/>
           <semanticElements xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.1/@nodes.1"/>
-          <decorations xmi:type="viewpoint:Decoration" uid="_AGwbwP0KEe-KwOYknb5bSw">
+          <decorations xmi:type="viewpoint:Decoration" uid="_0TwzwP2WEe-kIKnVyfHfxQ">
             <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Nodedecoration%20']"/>
           </decorations>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_e20wYPTrEe-yOshj9qZ9Sg" labelSize="15" showIcon="false" labelAlignment="RIGHT" description="_aPD7EPTrEe-yOshj9qZ9Sg" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/Actor.png">
@@ -935,7 +935,7 @@
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_XTycwPTrEe-yOshj9qZ9Sg" name="workflows" width="30" height="15">
         <target xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2"/>
         <semanticElements xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2"/>
-        <decorations xmi:type="viewpoint:Decoration" uid="_AGFtYf0KEe-KwOYknb5bSw">
+        <decorations xmi:type="viewpoint:Decoration" uid="_0TsiUP2WEe-kIKnVyfHfxQ">
           <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Blockdecoration%20']"/>
         </decorations>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_TEUWNPTsEe-yOshj9qZ9Sg" labelSize="20" iconPath="/io.dapr.daprdesigner.design/icons/png/64/containers/Workflow.png" labelColor="39,76,114" description="_TEUWMvTsEe-yOshj9qZ9Sg" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="255,255,255">
@@ -945,7 +945,7 @@
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_iMP0EPTrEe-yOshj9qZ9Sg" name="fulfillment" width="-1" height="-1" resizeKind="NSEW">
           <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.0"/>
           <semanticElements xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.0"/>
-          <decorations xmi:type="viewpoint:Decoration" uid="_AGyQ8P0KEe-KwOYknb5bSw">
+          <decorations xmi:type="viewpoint:Decoration" uid="_0Twzw_2WEe-kIKnVyfHfxQ">
             <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Nodedecoration%20']"/>
           </decorations>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_iMP0EvTrEe-yOshj9qZ9Sg" labelSize="15" showIcon="false" labelAlignment="RIGHT" description="_iMP0EfTrEe-yOshj9qZ9Sg" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/Workflow.png">
@@ -957,7 +957,7 @@
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_lLJ1MPTrEe-yOshj9qZ9Sg" name="returns" width="-1" height="-1" resizeKind="NSEW">
           <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1"/>
           <semanticElements xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1"/>
-          <decorations xmi:type="viewpoint:Decoration" uid="_AGzfEf0KEe-KwOYknb5bSw">
+          <decorations xmi:type="viewpoint:Decoration" uid="_0Txa0P2WEe-kIKnVyfHfxQ">
             <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Nodedecoration%20']"/>
           </decorations>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_lLKcQPTrEe-yOshj9qZ9Sg" labelSize="15" showIcon="false" labelAlignment="RIGHT" description="_iMP0EfTrEe-yOshj9qZ9Sg" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/Workflow.png">
@@ -1074,7 +1074,7 @@
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_jF9N0PTsEe-yOshj9qZ9Sg" name="middleware" width="30" height="15">
         <target xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.7"/>
         <semanticElements xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.7"/>
-        <decorations xmi:type="viewpoint:Decoration" uid="_AGRTkf0KEe-KwOYknb5bSw">
+        <decorations xmi:type="viewpoint:Decoration" uid="_0TtwcP2WEe-kIKnVyfHfxQ">
           <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Blockdecoration%20']"/>
         </decorations>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_jF904fTsEe-yOshj9qZ9Sg" labelSize="20" iconPath="/io.dapr.daprdesigner.design/icons/png/64/containers/Middleware.png" labelColor="39,76,114" description="_jF904PTsEe-yOshj9qZ9Sg" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="255,255,255">
@@ -1085,7 +1085,7 @@
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_jsELkPTsEe-yOshj9qZ9Sg" name="service_config" width="30" height="15">
         <target xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.8"/>
         <semanticElements xmi:type="daprdesigner:Block" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.8"/>
-        <decorations xmi:type="viewpoint:Decoration" uid="_AGTv0P0KEe-KwOYknb5bSw">
+        <decorations xmi:type="viewpoint:Decoration" uid="_0Ttwc_2WEe-kIKnVyfHfxQ">
           <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Blockdecoration%20']"/>
         </decorations>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_jsEyofTsEe-yOshj9qZ9Sg" labelSize="20" iconPath="/io.dapr.daprdesigner.design/icons/png/64/containers/ConfigurationGroup.png" labelColor="39,76,114" description="_jsEyoPTsEe-yOshj9qZ9Sg" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="255,255,255">
@@ -1107,7 +1107,7 @@
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_73E-EPTsEe-yOshj9qZ9Sg" name="resiliency" width="-1" height="-1" resizeKind="NSEW">
           <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.8/@nodes.1"/>
           <semanticElements xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.8/@nodes.1"/>
-          <decorations xmi:type="viewpoint:Decoration" uid="_AHMgof0KEe-KwOYknb5bSw">
+          <decorations xmi:type="viewpoint:Decoration" uid="_0TzQA_2WEe-kIKnVyfHfxQ">
             <description xmi:type="description:SemanticBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Nodedecoration%20']"/>
           </decorations>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_73E-EvTsEe-yOshj9qZ9Sg" labelSize="15" showIcon="false" labelAlignment="RIGHT" description="_73E-EfTsEe-yOshj9qZ9Sg" workspacePath="/io.dapr.daprdesigner.design/icons/png/48/components/ResiliencyConfiguration.png">
@@ -16115,7 +16115,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_QgP7APZtEe-UXvWWnAe6pw" name="app_1" outgoingEdges="_iFAOwva7Ee-UXvWWnAe6pw" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0"/>
       <semanticElements xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0"/>
-      <decorations xmi:type="viewpoint:Decoration" uid="_Xx6pgP0KEe-KwOYknb5bSw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_0e7h8f2WEe-kIKnVyfHfxQ">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Mappings%20decoration']"/>
       </decorations>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_QgQiEPZtEe-UXvWWnAe6pw" labelSize="12" showIcon="false" labelAlignment="RIGHT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/48/App2.svg">
@@ -16127,7 +16127,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_hoZyUva7Ee-UXvWWnAe6pw" name="app_1_ac" outgoingEdges="_syEHCfa-Ee-UXvWWnAe6pw" incomingEdges="_iFAOwva7Ee-UXvWWnAe6pw" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:AppAccessControl" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.1"/>
       <semanticElements xmi:type="daprdesigner:AppAccessControl" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.1"/>
-      <decorations xmi:type="viewpoint:Decoration" uid="_Xx7Qkf0KEe-KwOYknb5bSw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_0e7h9P2WEe-kIKnVyfHfxQ">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Mappings%20decoration']"/>
       </decorations>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_hoZyU_a7Ee-UXvWWnAe6pw" labelSize="12" showIcon="false" labelAlignment="RIGHT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/48/AppAccessControl.svg">
@@ -16147,7 +16147,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_sKIkUPa-Ee-UXvWWnAe6pw" name="ap_1" incomingEdges="_syEHCfa-Ee-UXvWWnAe6pw" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:AppPolicy" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.2"/>
       <semanticElements xmi:type="daprdesigner:AppPolicy" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.2"/>
-      <decorations xmi:type="viewpoint:Decoration" uid="_Xx73of0KEe-KwOYknb5bSw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_0e8JAf2WEe-kIKnVyfHfxQ">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppNodeBlocks']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Mappings%20decoration']"/>
       </decorations>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_sKIkUfa-Ee-UXvWWnAe6pw" labelSize="12" showIcon="false" labelAlignment="RIGHT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/48/AppPolicy.svg">
@@ -17917,6 +17917,22 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6bSXdvztEe-tRNMXeLQ7QA" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6bSXd_ztEe-tRNMXeLQ7QA" id="(0.5,0.5)"/>
         </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_Gb33YP2REe-kIKnVyfHfxQ" type="4001" element="_GbnYuP2REe-kIKnVyfHfxQ" source="_ch15MPxCEe-KQarRdtOWfQ" target="_ch91APxCEe-KQarRdtOWfQ">
+          <children xmi:type="notation:Node" xmi:id="_Gb4ecP2REe-kIKnVyfHfxQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Gb4ecf2REe-kIKnVyfHfxQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Gb4ecv2REe-kIKnVyfHfxQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Gb4ec_2REe-kIKnVyfHfxQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Gb4edP2REe-kIKnVyfHfxQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Gb4edf2REe-kIKnVyfHfxQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Gb33Yf2REe-kIKnVyfHfxQ" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_Gb33Yv2REe-kIKnVyfHfxQ" fontName="Ubuntu" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Gb33Y_2REe-kIKnVyfHfxQ" points="[32, 0, -228, -191]$[130, 0, -130, -191]$[130, 191, -130, 0]$[228, 191, -32, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Gb5FgP2REe-kIKnVyfHfxQ" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Gb5Fgf2REe-kIKnVyfHfxQ" id="(0.5,0.5)"/>
+        </edges>
       </data>
     </ownedAnnotationEntries>
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_ssH54PtaEe-kuc2oXa93ow" source="DANNOTATION_CUSTOMIZATION_KEY">
@@ -17937,7 +17953,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_sr6egftaEe-kuc2oXa93ow" name="userActor" tooltipText="Job userActor" outgoingEdges="_I4uEpPzeEe-tRNMXeLQ7QA _6bDG5PztEe-tRNMXeLQ7QA" incomingEdges="_0sPgWfxFEe-KQarRdtOWfQ" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:Actor" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.1/@nodes.1/@nodes.0"/>
       <semanticElements xmi:type="daprdesigner:Actor" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.1/@nodes.1/@nodes.0"/>
-      <decorations xmi:type="viewpoint:Decoration" uid="_CR9IAP0KEe-KwOYknb5bSw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_0W5nU_2WEe-kIKnVyfHfxQ">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Mappings%20decoration']"/>
       </decorations>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_sr6egvtaEe-kuc2oXa93ow" labelSize="12" showIcon="false" labelAlignment="LEFT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/Actor.svg">
@@ -18021,7 +18037,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_ccXjU_xCEe-KQarRdtOWfQ" name="orders" tooltipText="App orders" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.0"/>
       <semanticElements xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.0"/>
-      <decorations xmi:type="viewpoint:Decoration" uid="_CR1zQv0KEe-KwOYknb5bSw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_0W5AQP2WEe-kIKnVyfHfxQ">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Mappings%20decoration']"/>
       </decorations>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_ccXjVPxCEe-KQarRdtOWfQ" labelSize="12" showIcon="false" labelAlignment="LEFT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/App2.svg">
@@ -18033,7 +18049,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_ccYKYfxCEe-KQarRdtOWfQ" name="cart" tooltipText="App cart" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.2/@nodes.0"/>
       <semanticElements xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.2/@nodes.0"/>
-      <decorations xmi:type="viewpoint:Decoration" uid="_CR3BYP0KEe-KwOYknb5bSw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_0W5AQ_2WEe-kIKnVyfHfxQ">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Mappings%20decoration']"/>
       </decorations>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_ccYKYvxCEe-KQarRdtOWfQ" labelSize="12" showIcon="false" labelAlignment="LEFT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/App2.svg">
@@ -18042,10 +18058,10 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Apps']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_ccYKZPxCEe-KQarRdtOWfQ" name="app_1" tooltipText="App app_1" incomingEdges="_ccZ_kPxCEe-KQarRdtOWfQ _MSKeQPxFEe-KQarRdtOWfQ _aa-ryPxIEe-KQarRdtOWfQ _I4uEpPzeEe-tRNMXeLQ7QA _1M785PzlEe-tRNMXeLQ7QA" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_ccYKZPxCEe-KQarRdtOWfQ" name="app_1" tooltipText="App app_1" outgoingEdges="_GbnYuP2REe-kIKnVyfHfxQ" incomingEdges="_ccZ_kPxCEe-KQarRdtOWfQ _MSKeQPxFEe-KQarRdtOWfQ _aa-ryPxIEe-KQarRdtOWfQ _I4uEpPzeEe-tRNMXeLQ7QA _1M785PzlEe-tRNMXeLQ7QA" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0"/>
       <semanticElements xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0"/>
-      <decorations xmi:type="viewpoint:Decoration" uid="_CR3ocP0KEe-KwOYknb5bSw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_0W5ARv2WEe-kIKnVyfHfxQ">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Mappings%20decoration']"/>
       </decorations>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_ccYKZfxCEe-KQarRdtOWfQ" labelSize="12" showIcon="false" labelAlignment="LEFT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/App2.svg">
@@ -18057,7 +18073,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_ccYKZ_xCEe-KQarRdtOWfQ" name="app_2" tooltipText="App app_2" outgoingEdges="_1M785PzlEe-tRNMXeLQ7QA" incomingEdges="_0sO5VPxFEe-KQarRdtOWfQ" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.0"/>
       <semanticElements xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.0"/>
-      <decorations xmi:type="viewpoint:Decoration" uid="_CR4PgP0KEe-KwOYknb5bSw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_0W5ASf2WEe-kIKnVyfHfxQ">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Mappings%20decoration']"/>
       </decorations>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_ccYKaPxCEe-KQarRdtOWfQ" labelSize="12" showIcon="false" labelAlignment="LEFT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/App2.svg">
@@ -18066,10 +18082,10 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@nodeMappings[name='Apps']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_ccYKavxCEe-KQarRdtOWfQ" name="app_3" tooltipText="App app_3" incomingEdges="_0sO5WfxFEe-KQarRdtOWfQ" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_ccYKavxCEe-KQarRdtOWfQ" name="app_3" tooltipText="App app_3" incomingEdges="_0sO5WfxFEe-KQarRdtOWfQ _GbnYuP2REe-kIKnVyfHfxQ" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.5/@nodes.0"/>
       <semanticElements xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.5/@nodes.0"/>
-      <decorations xmi:type="viewpoint:Decoration" uid="_CR4Pg_0KEe-KwOYknb5bSw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_0W5ATP2WEe-kIKnVyfHfxQ">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Mappings%20decoration']"/>
       </decorations>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_ccYKa_xCEe-KQarRdtOWfQ" labelSize="12" showIcon="false" labelAlignment="LEFT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/App2.svg">
@@ -18081,7 +18097,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_ccYKbfxCEe-KQarRdtOWfQ" name="app_4" tooltipText="App app_4" incomingEdges="_0sPgVPxFEe-KQarRdtOWfQ" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.6/@nodes.0"/>
       <semanticElements xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.6/@nodes.0"/>
-      <decorations xmi:type="viewpoint:Decoration" uid="_CR42kf0KEe-KwOYknb5bSw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_0W5AT_2WEe-kIKnVyfHfxQ">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Mappings%20decoration']"/>
       </decorations>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_ccYKbvxCEe-KQarRdtOWfQ" labelSize="12" showIcon="false" labelAlignment="LEFT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/App2.svg">
@@ -18093,7 +18109,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_ccYKcPxCEe-KQarRdtOWfQ" name="app_5" tooltipText="App app_5" outgoingEdges="_ccZ_kPxCEe-KQarRdtOWfQ" incomingEdges="_7KRJLPxEEe-KQarRdtOWfQ" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.7/@nodes.0"/>
       <semanticElements xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.7/@nodes.0"/>
-      <decorations xmi:type="viewpoint:Decoration" uid="_CR5doP0KEe-KwOYknb5bSw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_0W5AUv2WEe-kIKnVyfHfxQ">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Mappings%20decoration']"/>
       </decorations>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_ccYxcPxCEe-KQarRdtOWfQ" labelSize="12" showIcon="false" labelAlignment="LEFT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/App2.svg">
@@ -18105,7 +18121,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_ccYxcvxCEe-KQarRdtOWfQ" name="app_6" tooltipText="App app_6" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.8/@nodes.0"/>
       <semanticElements xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.8/@nodes.0"/>
-      <decorations xmi:type="viewpoint:Decoration" uid="_CR6EsP0KEe-KwOYknb5bSw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_0W5AVf2WEe-kIKnVyfHfxQ">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Mappings%20decoration']"/>
       </decorations>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_ccYxc_xCEe-KQarRdtOWfQ" labelSize="12" showIcon="false" labelAlignment="LEFT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/App2.svg">
@@ -18125,7 +18141,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_ia7zgvxCEe-KQarRdtOWfQ" name="fulfillment" tooltipText="App fulfillment" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:Workflow" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.0/@nodes.1"/>
       <semanticElements xmi:type="daprdesigner:Workflow" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.0/@nodes.1"/>
-      <decorations xmi:type="viewpoint:Decoration" uid="_CR-WIf0KEe-KwOYknb5bSw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_0W5nVv2WEe-kIKnVyfHfxQ">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Mappings%20decoration']"/>
       </decorations>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_ia7zg_xCEe-KQarRdtOWfQ" labelSize="12" showIcon="false" labelAlignment="LEFT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/Workflow.svg">
@@ -18137,7 +18153,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_vAtBNvxCEe-KQarRdtOWfQ" name="returns" tooltipText="App returns" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="daprdesigner:Workflow" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.1"/>
       <semanticElements xmi:type="daprdesigner:Workflow" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.1"/>
-      <decorations xmi:type="viewpoint:Decoration" uid="_CR-9MP0KEe-KwOYknb5bSw">
+      <decorations xmi:type="viewpoint:Decoration" uid="_0W5nWf2WEe-kIKnVyfHfxQ">
         <description xmi:type="description_1:MappingBasedDecoration" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='Mappings%20decoration']"/>
       </decorations>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_vAtoQPxCEe-KQarRdtOWfQ" labelSize="12" showIcon="false" labelAlignment="LEFT" workspacePath="/io.dapr.daprdesigner.design/icons/svg/64/Workflow.svg">
@@ -18255,6 +18271,14 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_6bDG5fztEe-tRNMXeLQ7QA" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2" routingStyle="manhattan" strokeColor="138,226,52">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@edgeMappings[name='Relations%20Unrestricted']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_6bDG5vztEe-tRNMXeLQ7QA" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@edgeMappings[name='Relations%20Unrestricted']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_GbnYuP2REe-kIKnVyfHfxQ" sourceNode="_ccYKZPxCEe-KQarRdtOWfQ" targetNode="_ccYKavxCEe-KQarRdtOWfQ">
+      <target xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GbnYuf2REe-kIKnVyfHfxQ" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2" routingStyle="manhattan" strokeColor="138,226,52">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@edgeMappings[name='Relations%20Unrestricted']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GbnYuv2REe-kIKnVyfHfxQ" labelSize="12"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='AppsAndComponents']/@defaultLayer/@edgeMappings[name='Relations%20Unrestricted']"/>
     </ownedDiagramElements>
@@ -18457,6 +18481,17 @@
             <styles xmi:type="notation:ShapeStyle" xmi:id="_P7LCofz9Ee-tRNMXeLQ7QA" fontName="Ubuntu"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P7LCovz9Ee-tRNMXeLQ7QA" x="-1" y="60" width="70" height="70"/>
           </children>
+          <children xmi:type="notation:Node" xmi:id="_Gb6ToP2REe-kIKnVyfHfxQ" type="3012" element="_Gb00Ev2REe-kIKnVyfHfxQ">
+            <children xmi:type="notation:Node" xmi:id="_Gb7hwP2REe-kIKnVyfHfxQ" type="5010">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Gb7hwf2REe-kIKnVyfHfxQ" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GcBoYP2REe-kIKnVyfHfxQ" type="3017" element="_Gb1bIP2REe-kIKnVyfHfxQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_GcBoYf2REe-kIKnVyfHfxQ" fontName="Ubuntu"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GcBoYv2REe-kIKnVyfHfxQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Gb6Tof2REe-kIKnVyfHfxQ" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Gb6Tov2REe-kIKnVyfHfxQ" x="-1" y="60" width="70" height="70"/>
+          </children>
           <children xmi:type="notation:Node" xmi:id="_l4UHoPy2Ee-tRNMXeLQ7QA" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_l4UusPy2Ee-tRNMXeLQ7QA" type="7004">
             <children xmi:type="notation:Node" xmi:id="_l4YZEPy2Ee-tRNMXeLQ7QA" type="3010" element="_l4ML0Py2Ee-tRNMXeLQ7QA">
@@ -18493,6 +18528,14 @@
           <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Apps']/@defaultLayer/@containerMappings[name='AppContainer']/@borderedNodeMappings[name='Components']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Apps']/@defaultLayer/@containerMappings[name='AppContainer']/@borderedNodeMappings[name='Components']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_Gb00Ev2REe-kIKnVyfHfxQ" name="app_3" width="7" height="7" resizeKind="NSEW">
+        <target xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.5/@nodes.0"/>
+        <semanticElements xmi:type="daprdesigner:App" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.0/@nodes.5/@nodes.0"/>
+        <ownedStyle xmi:type="diagram:Lozenge" uid="_Gb1bIP2REe-kIKnVyfHfxQ" labelSize="9" showIcon="false" labelPosition="node" color="204,242,166">
+          <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Apps']/@defaultLayer/@containerMappings[name='AppContainer']/@borderedNodeMappings[name='FullAccess']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Apps']/@defaultLayer/@containerMappings[name='AppContainer']/@borderedNodeMappings[name='FullAccess']"/>
       </ownedBorderedNodes>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_l4HTUPy2Ee-tRNMXeLQ7QA" labelSize="12" iconPath="/io.dapr.daprdesigner.design/icons/svg/24/App2.svg" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Apps']/@defaultLayer/@containerMappings[name='AppContainer']/@style"/>
