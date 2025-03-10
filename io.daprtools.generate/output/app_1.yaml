@@ -1,0 +1,22 @@
+apiVersion: dapr.io/v1alpha1
+kind: Configuration
+metadata:
+	name: app_1
+	namespace: dev
+spec:
+	accessControl: 
+		defaultAction: deny
+		trustDomain: public
+		policies:
+		- appId: app_3
+		  defaultAction: allow
+		  namespace: dev	
+		  operations: 
+		  - name: order1
+			action: deny			
+		  - name: /account
+			httpVerb: ['GET', 'POST',]
+			action: deny			
+		- appId: app_2
+		  defaultAction: allow
+		  namespace: dev	

@@ -1,0 +1,42 @@
+[comment encoding = UTF-8 /]
+[module generateApp('http://dapr.io/daprtools/daprdesigner')]
+
+
+[template public generateElement(anApp : App)]
+[comment @main/]
+[file (anApp.name +'.yaml', false, 'UTF-8')]
+apiVersion: dapr.io/v1alpha1
+kind: Configuration
+metadata:
+	name: [anApp.name/]
+	namespace: [anApp.namespace.name/]
+[if (anApp.configurations->size() > 0) ]
+spec:
+[for (  ac:AppConfiguration | anApp.configurations) separator(',\n')]
+[if (ac.eClass().name = 'AppAccessControl')]
+	accessControl: 
+		defaultAction: [ac.eGet('defaultAction').toString().toLowerCase()/]
+		trustDomain: [ac.eGet('trustDomain').eGet('name')/]
+[if (ac.eGet('policies')->size() >0)]
+		policies:
+[for (ap:AppPolicy | ac.eGet('policies')) ]
+		- appId: [ap.app.name/]
+		  defaultAction: [ap.defaultAction.toString().toLowerCase()/]
+		  namespace: [ap.namespace.name/]	
+[if (ap.operations->size() > 0)]
+		  operations: 
+[for (o:Operation | ap.operations)]
+		  - name: [o.operationName/]
+[if (o.protocol = Protocol::HTTP)]
+			httpVerb: ['['/][if (o.applyToGet)]'GET',[/if][if (o.applyToPost)] 'POST',[/if][if (o.applyToPut)] 'PUT',[/if][if (o.applyToPatch)] 'PATCH',[/if][if (o.applyToDelete)]'DELETE'[/if][']'/]
+[/if]
+			action: [o.action.toString().toLowerCase()/]			
+[/for]
+[/if]
+[/for]
+[/if]
+[/if]
+[/for]
+[/if]
+[/file]
+[/template]

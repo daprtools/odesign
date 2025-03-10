@@ -1,0 +1,9 @@
+apiVersion: dapr.io/v1alpha1
+kind: Configuration
+metadata:
+	name: returns
+	namespace: invalid
+spec:
+	accessControl: 
+		defaultAction: deny
+		trustDomain: invalid

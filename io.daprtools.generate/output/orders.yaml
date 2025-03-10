@@ -1,0 +1,16 @@
+apiVersion: dapr.io/v1alpha1
+kind: Configuration
+metadata:
+	name: orders
+	namespace: invalid
+spec:
+	accessControl: 
+		defaultAction: deny
+		trustDomain: public
+		policies:
+		- appId: app_1
+		  defaultAction: allow
+		  namespace: invalid	
+		- appId: app_2
+		  defaultAction: allow
+		  namespace: invalid	

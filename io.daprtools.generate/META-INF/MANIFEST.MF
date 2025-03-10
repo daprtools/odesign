@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Acceleo Generate Module Runtime Plug-in
+Bundle-SymbolicName: io.daprtools.generate
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: io.daprtools.generate.Activator
+Bundle-Vendor: Eclipse Modeling Project
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.ocl,
+ org.eclipse.ocl.ecore,
+ org.eclipse.acceleo.common;bundle-version="3.3.0",
+ org.eclipse.acceleo.model;bundle-version="3.3.0",
+ org.eclipse.acceleo.profiler;bundle-version="3.3.0",
+ org.eclipse.acceleo.engine;bundle-version="3.3.0",
+ com.google.guava,
+ daprdesigner;bundle-version="0.1.0",
+ daprdesigner.edit;bundle-version="1.0.0",
+ daprdesigner.editor;bundle-version="1.0.0",
+ io.dapr.daprdesigner.design;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-ActivationPolicy: lazy
+Eclipse-LazyStart: true
+
