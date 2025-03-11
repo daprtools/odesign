@@ -107,8 +107,8 @@
     </subblocks>
     <subblocks isReady="true" name="statestore" blockType="STATESTORE">
       <nodes xsi:type="daprdesigner:NodeBlocks" isReady="true" name="redis" nodeBlockType="STATESTORE">
-        <nodes xsi:type="daprdesigner:StateStore" isReady="true" name="redisstore" providerName="state.redis" providerVersion="v1" auth="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.3" metadata_namespace="//@buildingblocks.0/@nodes.0" ignoreErrors="true" initTimeout="" specMetadata="//@buildingblocks.0/@subblocks.4/@nodes.0/@nodes.1"/>
-        <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="redisHost" value="localhost:6379"/>
+        <nodes xsi:type="daprdesigner:StateStore" isReady="true" name="redisstore" providerName="state.redis" providerVersion="v1" auth="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.3" metadata_namespace="//@buildingblocks.0/@nodes.0" ignoreErrors="true" initTimeout="                               " specMetadata="//@buildingblocks.0/@subblocks.4/@nodes.0/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="redisHost" value="localhost:6379" isFetchedFromSecret="true" isFetchedFromEnvironment="true" secretKeyRefName="redis-secret" secretKeyRefKey="redis-password" envRef="redisString"/>
       </nodes>
     </subblocks>
     <subblocks isReady="true" name="bindings_18" blockType="BINDINGS">

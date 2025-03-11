@@ -9,4 +9,9 @@ spec:
 	type: pubsub.kafka
 	version: v1
 	ignoreErrors: false
+	metadata:
+		-  name: brokers
+		   secretKeyRef: 
+			name: kafkabrokers 
+			key:  brokerhost
 

@@ -8,6 +8,10 @@ metadata:
 spec:
 	type: state.redis
 	version: v1
-	initTimeout: 
 	ignoreErrors: true
+	metadata:
+		-  name: redisHost
+		   secretKeyRef: 
+			name: redis-secret 
+			key:  redis-password
 

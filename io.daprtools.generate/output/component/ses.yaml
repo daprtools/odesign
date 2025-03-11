@@ -7,4 +7,11 @@ spec:
 	type: bindings.aws.ses
 	version: v1
 	ignoreErrors: false
+	metadata:
+		-  name: secretKey
+		   envRef: AWS_SECRETKEY
+		-  name: region
+		   value: us-east-1
+		-  name: accessKey
+		   value: 12345
 
