@@ -139,10 +139,10 @@
     </subblocks>
     <subblocks name="service_config" blockType="CONFIGURATIONGROUP">
       <nodes xsi:type="daprdesigner:NodeBlocks" isReady="true" name="subscription" nodeBlockType="SUBSCRIPTION">
-        <nodes xsi:type="daprdesigner:SubscriptionConfiguration" isReady="true" name="kafkasubscribe" topicName="delivery" routeRules="//@buildingblocks.0/@subblocks.8/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.8/@nodes.0/@nodes.2 //@buildingblocks.0/@subblocks.8/@nodes.0/@nodes.3" pubsubComponent="//@buildingblocks.0/@subblocks.6/@nodes.0/@nodes.0" deadLetterTopic="deadones" bulkSubscribe_enabled="true" bulkSubscribe_maxMessagesCount="10" scopes="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0"/>
+        <nodes xsi:type="daprdesigner:SubscriptionConfiguration" isReady="true" name="kafkasubscribe" topicName="delivery" routeRules="//@buildingblocks.0/@subblocks.8/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.8/@nodes.0/@nodes.2 //@buildingblocks.0/@subblocks.8/@nodes.0/@nodes.3" pubsubComponent="//@buildingblocks.0/@subblocks.6/@nodes.0/@nodes.0" deadLetterTopic="deadones" bulkSubscribe_enabled="true" bulkSubscribe_maxMessagesCount="10" bulkSubscribe_maxAwaitDurations="20" scopes="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0"/>
         <nodes xsi:type="daprdesigner:RouteRules" isReady="true" name="deliver" match="event.type == &quot;widget&quot;" path="/widgets"/>
-        <nodes xsi:type="daprdesigner:RouteRules" name="rr_16"/>
-        <nodes xsi:type="daprdesigner:RouteRules" name="rr_17"/>
+        <nodes xsi:type="daprdesigner:RouteRules" name="rr_16" match="event.type == &quot;ping&quot;" path="/ping"/>
+        <nodes xsi:type="daprdesigner:RouteRules" name="rr_17" match="event.type == &quot;healthz&quot;" path="/health"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="resiliency" nodeBlockType="RESILIENCY">
         <nodes xsi:type="daprdesigner:ResiliencyConfiguration" name="rc_1" policy="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.1"/>
