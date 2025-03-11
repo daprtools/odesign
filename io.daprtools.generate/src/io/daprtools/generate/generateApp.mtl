@@ -13,7 +13,6 @@ metadata:
 [if (anApp.configurations->size() > 0) ]
 spec:
 [for (  ac:AppConfiguration | anApp.configurations) ]
-
 [if (ac.eClass().name = 'AppAccessControl')]
 	accessControl: 
 		defaultAction: [ac.eGet('defaultAction').toString().toLowerCase()/]
@@ -128,8 +127,25 @@ spec:
 [/for]
 [/if]
 [/if]
+[elseif (ac.eClass().name = 'TracingConfiguration')]
+	tracing:
+		samplingRate: "[ac.eGet('samplingRate')/]"
+		stdout: [ac.eGet('stdout')/]
+[if (not ac.eGet('otel_endPointAddress')->isEmpty())]
+		otel:
+			endpointAddress: "[ac.eGet('otel_endPointAddress')/]"
+			isSecure: [ac.eGet('otel_isSecure')/]
+[/if]
+[if (not ac.eGet('otel_protocol')->isEmpty())]
+			protocol: [ac.eGet('otel_protocol')/]
+[/if]
+[if (not ac.eGet('zipkin_endPointAddress')->isEmpty())]
+		zipkin:
+			endpointAddress: "[ac.eGet('zipkin_endPointAddress')/]"
+[/if]
 
-[elseif (ac.eClass().name = 'MetricsConfiguration')]
+
+
 [/if]
 [/for]
 [/if]

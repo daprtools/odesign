@@ -4,7 +4,6 @@ metadata:
 	name: account
 	namespace: dev
 spec:
-
 	accessControl: 
 		defaultAction: deny
 		trustDomain: public

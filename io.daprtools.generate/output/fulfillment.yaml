@@ -4,7 +4,6 @@ metadata:
 	name: fulfillment
 	namespace: invalid
 spec:
-
 	accessControl: 
 		defaultAction: deny
 		trustDomain: invalid

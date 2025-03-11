@@ -4,7 +4,6 @@ metadata:
 	name: orders
 	namespace: invalid
 spec:
-
 	accessControl: 
 		defaultAction: deny
 		trustDomain: public
