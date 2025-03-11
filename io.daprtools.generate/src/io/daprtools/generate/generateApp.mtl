@@ -89,6 +89,29 @@ spec:
 [/if]	      
 	    excludeVerbs: [ac.eGet('http_excludeVerbs')/]
 	  recordErrorCodes: false
+[elseif (ac.eClass().name = 'APIAccessControl')]
+[if (ac.eGet('apiList')->size() > 0)]
+	api:
+[if (ac.eGet('apiList')->select(p | p.access = AccessAction::ALLOW)->size() > 0)]
+		allowed: 
+[for (api:API | ac.eGet('apiList')->select(p | p.access = AccessAction::ALLOW))]
+			- name: [api.apiType.toString().toLowerCase()/]
+			  version: [api.api_version/]
+			  protocol: [api.protocol.toString().toLowerCase()/]
+[/for]
+[/if]
+[if (ac.eGet('apiList')->select(p | p.access = AccessAction::DENY)->size() > 0)]
+		denied: 
+[for (api:API | ac.eGet('apiList')->select(p | p.access = AccessAction::DENY))]
+			- name: [api.apiType.toString().toLowerCase()/]
+			  version: [api.api_version/]
+			  protocol: [api.protocol.toString().toLowerCase()/]
+[/for]
+[/if]
+
+[/if]
+
+
 
 [elseif (ac.eClass().name = 'MetricsConfiguration')]
 [/if]

@@ -60,5 +60,21 @@ spec:
 	    excludeVerbs: true
 	  recordErrorCodes: false
 
+	api:
+		allowed: 
+			- name: state
+			  version: v1
+			  protocol: grpc
+			- name: workflows
+			  version: v1
+			  protocol: grpc
+		denied: 
+			- name: secrets
+			  version: v1
+			  protocol: http
+
+
+
+
 
 
