@@ -73,8 +73,14 @@ spec:
 			  version: v1
 			  protocol: http
 
-
-
+	httpPipeline: 
+    	handlers: 
+			- name: m_14
+			  type: middleware.http.sentinel
+	appHttpPipeline: 
+		handlers: 
+			- name: m_13
+			  type: middleware.http.opa
 
 
 

@@ -108,10 +108,26 @@ spec:
 			  protocol: [api.protocol.toString().toLowerCase()/]
 [/for]
 [/if]
-
 [/if]
-
-
+[elseif (ac.eClass().name = 'MiddlewareConfiguration')]
+[if (ac.eGet('httpHandlers')->size() > 0)]
+[if (ac.eGet('httpHandlers')->select(p | p.handlerType = HttpHandlerType::INCOMING)->size() > 0)]
+	httpPipeline: 
+    	handlers: 
+[for (handler:HttpHandler | ac.eGet('httpHandlers')->select(p | p.handlerType = HttpHandlerType::INCOMING))]
+			- name: [handler.middlewareComponent.name/]
+			  type: [handler.middlewareComponent.providerName/]
+[/for]
+[/if]
+[if (ac.eGet('httpHandlers')->select(p | p.handlerType = HttpHandlerType::OUTGOING)->size() > 0)]
+	appHttpPipeline: 
+		handlers: 
+[for (handler:HttpHandler | ac.eGet('httpHandlers')->select(p | p.handlerType = HttpHandlerType::OUTGOING))]
+			- name: [handler.middlewareComponent.name/]
+			  type: [handler.middlewareComponent.providerName/]
+[/for]
+[/if]
+[/if]
 
 [elseif (ac.eClass().name = 'MetricsConfiguration')]
 [/if]
