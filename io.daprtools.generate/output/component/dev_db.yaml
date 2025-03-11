@@ -1,0 +1,12 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+auth:
+	secretstore: secretstore
+metadata:
+	name: dev_db
+	namespace: dev
+spec:
+	type: bindings.postgresql
+	version: v1
+	ignoreErrors: false
+

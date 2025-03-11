@@ -1,0 +1,12 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+auth:
+	secretstore: secretstore
+metadata:
+	name: m_13
+	namespace: dev
+spec:
+	type: middleware.http.opa
+	version: v1
+	ignoreErrors: false
+

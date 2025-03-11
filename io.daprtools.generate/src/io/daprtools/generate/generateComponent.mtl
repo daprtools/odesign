@@ -1,0 +1,26 @@
+[comment encoding = UTF-8 /]
+[module generateComponent('http://dapr.io/daprtools/daprdesigner')]
+
+
+[template public generateElement(aComponent : Component)]
+[comment @main/]
+[file ('./component/'+aComponent.name+'.yaml', false, 'UTF-8')]
+apiVersion: dapr.io/v1alpha1
+kind: Component
+[if (not aComponent.auth->isEmpty())]
+auth:
+	secretstore: [aComponent.auth.name/]
+[/if]
+metadata:
+	name: [aComponent.name/]
+	namespace: [aComponent.metadata_namespace.name/]
+spec:
+	type: [aComponent.providerName/]
+	version: [aComponent.providerVersion/]
+[if (aComponent.initTimeout->notEmpty())]
+	initTimeout: [aComponent.initTimeout/]
+[/if]
+	ignoreErrors: [aComponent.ignoreErrors/]
+
+[/file]
+[/template]

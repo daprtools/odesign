@@ -4,7 +4,7 @@
 
 [template public generateElement(anApp : App)]
 [comment @main/]
-[file (anApp.name +'.yaml', false, 'UTF-8')]
+[file ('./app/'+anApp.name +'.yaml', false, 'UTF-8')]
 apiVersion: dapr.io/v1alpha1
 kind: Configuration
 metadata:

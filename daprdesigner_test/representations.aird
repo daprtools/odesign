@@ -156,7 +156,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='SecretStoreNodeBlocks']"/>
         <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.3/@nodes.0"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_1OSmAPUJEe-R19_UMyJPnw" name="RedisConfig" repPath="#_1ORX4PUJEe-R19_UMyJPnw" changeId="1740661019401">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_1OSmAPUJEe-R19_UMyJPnw" name="RedisConfig" repPath="#_1ORX4PUJEe-R19_UMyJPnw" changeId="1741687124701">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='StateStoreNodeBlocks']"/>
         <target xmi:type="daprdesigner:NodeBlocks" href="Test.daprdesigner#//@buildingblocks.0/@subblocks.4/@nodes.0"/>
       </ownedRepresentationDescriptors>
@@ -15267,22 +15267,22 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LpyisvUKEe-R19_UMyJPnw"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_LptqMfUKEe-R19_UMyJPnw" fontName="Ubuntu" fontHeight="12" bold="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LptqMvUKEe-R19_UMyJPnw" x="555" y="220" width="64" height="64"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LptqMvUKEe-R19_UMyJPnw" x="305" y="245" width="64" height="64"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_1Obv8vUJEe-R19_UMyJPnw"/>
         <edges xmi:type="notation:Edge" xmi:id="_QnVawPUKEe-R19_UMyJPnw" type="4001" element="_QnJ0kPUKEe-R19_UMyJPnw" source="_2-AQIPUJEe-R19_UMyJPnw" target="_LptqMPUKEe-R19_UMyJPnw">
           <children xmi:type="notation:Node" xmi:id="_QnWo4PUKEe-R19_UMyJPnw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QnWo4fUKEe-R19_UMyJPnw" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QnWo4fUKEe-R19_UMyJPnw" x="-47" y="-10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_QnXP8PUKEe-R19_UMyJPnw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QnXP8fUKEe-R19_UMyJPnw" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QnXP8fUKEe-R19_UMyJPnw" x="-14" y="10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_QnXP8vUKEe-R19_UMyJPnw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QnXP8_UKEe-R19_UMyJPnw" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QnXP8_UKEe-R19_UMyJPnw" x="-21" y="-10"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_QnVawfUKEe-R19_UMyJPnw" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_QnVawvUKEe-R19_UMyJPnw" fontName="Ubuntu" fontHeight="12"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QnVaw_UKEe-R19_UMyJPnw" points="[0, 0, -176, -115]$[88, 0, -88, -115]$[88, 115, -88, 0]$[176, 115, 0, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QnVaw_UKEe-R19_UMyJPnw" points="[-3, 0, 71, -140]$[88, 0, 162, -140]$[88, 140, 162, 0]$[-72, 140, 2, 0]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QnZFIPUKEe-R19_UMyJPnw" id="(1.0,0.390625)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QnZFIfUKEe-R19_UMyJPnw" id="(0.0,0.390625)"/>
         </edges>
