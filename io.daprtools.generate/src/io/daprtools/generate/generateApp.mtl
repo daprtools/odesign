@@ -44,6 +44,40 @@ spec:
 		 - [c.providerName/]
 [/for]
 [/if]
+[elseif (ac.eClass().name = 'LoggingConfiguration')]
+	logging:
+		apiLogging:
+			enabled: [ac.eGet('enabled')/]
+			obfuscateURLs: 	[ac.eGet('obfuscateUrls')/]
+			omitHealthChecks: [ac.eGet('omitHealthChecks')/]
+[elseif (ac.eClass().name = 'NameResolutionConfiguration')]
+	nameResolution:
+    	component: "[ac.eGet('nameResolutionComponent')/]"
+    	version: "[ac.eGet('componentVersion')/]"
+    	configuration:
+      		[ac.eGet('configurationKey')/]: "[ac.eGet('configurationValue')/]"
+[elseif (ac.eClass().name = 'SecretsAccessConfiguration')]
+[if (ac.eGet('accessList')->size()>0)]
+	secret: 
+		scopes: 
+[for (sac:SecretsAccessList | ac.eGet('accessList'))]
+			- storeName: [sac.eGet('secretStore').eGet('name')/]
+[if (sac.eGet('defaultAccess') = AccessAction::ALLOW)]
+      		  defaultAccess: allow
+[if (sac.eGet('deniedSecrets')->size()>0)]
+			  deniedSecrets: ['['/][for (s:String | sac.eGet('deniedSecrets'))]"[s/]",[/for][']'/]
+[/if]
+[else]
+			  defaultAccess: deny
+[if (sac.eGet('allowedSecrets')->size()>0)]
+			  allowedSecrets: ['['/][for (s:String | sac.eGet('allowedSecrets'))]"[s/]",[/for][']'/]
+[/if]
+[/if]
+[/for]
+
+[/if]
+[elseif (ac.eClass().name = 'SecretsAccessConfiguration')]
+
 [/if]
 [/for]
 [/if]
