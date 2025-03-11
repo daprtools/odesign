@@ -159,6 +159,11 @@
         <nodes xsi:type="daprdesigner:ResiliencyTarget" name="rt_26" type="COMPONENT_INBOUND" circuitBreakerCacheSize="20" circuitBreaker="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.7" retry="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.6" timeout="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.3" components="//@buildingblocks.0/@subblocks.6/@nodes.0/@nodes.0"/>
         <nodes xsi:type="daprdesigner:ResiliencyTarget" name="rt_27" type="COMPONENT_OUTBOUND" circuitBreakerCacheSize="10" circuitBreaker="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.8" retry="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.6" timeout="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.3" components="//@buildingblocks.0/@subblocks.7/@nodes.0/@nodes.0"/>
       </nodes>
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="httpendpoint_3" nodeBlockType="HTTPENDPOINT">
+        <nodes xsi:type="daprdesigner:HTTPEndPoint" name="httpep_28" auth="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.3" scopes="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.7/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.0" specHeaders="//@buildingblocks.0/@subblocks.8/@nodes.2/@nodes.1 //@buildingblocks.0/@subblocks.8/@nodes.2/@nodes.2"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_29"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_30"/>
+      </nodes>
     </subblocks>
     <nodes xsi:type="daprdesigner:Namespace" isReady="true" name="dev"/>
     <nodes xsi:type="daprdesigner:Trustdomain" isReady="true" name="public"/>
