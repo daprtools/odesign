@@ -1,19 +1,19 @@
 apiVersion: dapr.io/v1alpha1
 kind: Configuration
 metadata:
-	name: app_2
-	namespace: invalid
+    name: app_2
+    namespace: invalid
 spec:
-	accessControl: 
-		defaultAction: deny
-		trustDomain: public
-		policies:
-		- appId: app_1
-		  defaultAction: allow
-		  namespace: invalid	
-		  operations: 
-		  - name: /order
-			httpVerb: []
-			action: deny			
+    accessControl: 
+        defaultAction: deny
+        trustDomain: public
+        policies:
+        - appId: app_1
+          defaultAction: allow
+          namespace: invalid    
+          operations: 
+          - name: /order
+            httpVerb: []
+            action: deny            
 
 

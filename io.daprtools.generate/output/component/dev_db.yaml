@@ -1,20 +1,20 @@
 apiVersion: dapr.io/v1alpha1
 kind: Component
 auth:
-	secretstore: secretstore
+    secretstore: secretstore
 metadata:
-	name: dev_db
-	namespace: dev
+    name: dev_db
+    namespace: dev
 spec:
-	type: bindings.postgresql
-	version: v1
-	ignoreErrors: false
-	metadata:
-		-  name: connectionString
-		   value: host=localhost user=postgres password=example port=5432 connect_timeout=10 database=dev_db
+    type: bindings.postgresql
+    version: v1
+    ignoreErrors: false
+    metadata:
+        - name: connectionString
+          value: host=localhost user=postgres password=example port=5432 connect_timeout=10 database=dev_db
 scopes:
-	- payments
-	- app_5
-	- app_1
-	- account
+    - payments
+    - app_5
+    - app_1
+    - account
 

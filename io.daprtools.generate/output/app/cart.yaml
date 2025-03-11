@@ -1,11 +1,11 @@
 apiVersion: dapr.io/v1alpha1
 kind: Configuration
 metadata:
-	name: cart
-	namespace: invalid
+    name: cart
+    namespace: invalid
 spec:
-	accessControl: 
-		defaultAction: deny
-		trustDomain: public
+    accessControl: 
+        defaultAction: deny
+        trustDomain: public
 
 

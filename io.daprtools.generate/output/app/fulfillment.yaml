@@ -1,11 +1,11 @@
 apiVersion: dapr.io/v1alpha1
 kind: Configuration
 metadata:
-	name: fulfillment
-	namespace: invalid
+    name: fulfillment
+    namespace: invalid
 spec:
-	accessControl: 
-		defaultAction: deny
-		trustDomain: invalid
+    accessControl: 
+        defaultAction: deny
+        trustDomain: invalid
 
 

@@ -1,23 +1,23 @@
 apiVersion: dapr.io/v1alpha1
 kind: Component
 auth:
-	secretstore: secretstore
+    secretstore: secretstore
 metadata:
-	name: kafka_local
-	namespace: dev
+    name: kafka_local
+    namespace: dev
 spec:
-	type: pubsub.kafka
-	version: v1
-	ignoreErrors: false
-	metadata:
-		-  name: brokers
-		   secretKeyRef: 
-			name: kafkabrokers 
-			key:  brokerhost
+    type: pubsub.kafka
+    version: v1
+    ignoreErrors: false
+    metadata:
+        - name: brokers
+          secretKeyRef: 
+           name: kafkabrokers 
+           key:  brokerhost
 scopes:
-	- app_2
-	- app_3
-	- app_4
-	- userActor
-	- app_1
+    - app_2
+    - app_3
+    - app_4
+    - userActor
+    - app_1
 

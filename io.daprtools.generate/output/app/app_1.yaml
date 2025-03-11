@@ -1,87 +1,87 @@
 apiVersion: dapr.io/v1alpha1
 kind: Configuration
 metadata:
-	name: app_1
-	namespace: dev
+    name: app_1
+    namespace: dev
 spec:
-	accessControl: 
-		defaultAction: deny
-		trustDomain: public
-		policies:
-		- appId: app_3
-		  defaultAction: allow
-		  namespace: dev	
-		  operations: 
-		  - name: order1
-			action: deny			
-		  - name: /account
-			httpVerb: ['GET', 'POST',]
-			action: deny			
-		- appId: app_2
-		  defaultAction: allow
-		  namespace: dev	
-	components:
-		deny: 
-		 - pubsub.kafka
-		 - bindings.postgresql
-	logging:
-		apiLogging:
-			enabled: false
-			obfuscateURLs: 	false
-			omitHealthChecks: true
-	nameResolution:
-    	component: "sqlite"
-    	version: "v1"
-    	configuration:
-      		connectionString: "/home/user/.dapr/nr.db"
-	secret: 
-		scopes: 
-			- storeName: secretstore
-      		  defaultAccess: allow
-			  deniedSecrets: ["dsec1","dsec2",]
-			- storeName: secretstore
-			  defaultAccess: deny
-	metrics:
-	  enabled: true
-	  latencyDistributionBuckets: [1,5,10,15,25]
-	  http:
-	    increasedCardinality: false
-	    pathMatching:
-			- /orders/{item}
-			- asdf
-			- /orders/{orderID}/items/{itemID}
-			- /payments/{paymentID}/details
-	    excludeVerbs: true
-	  recordErrorCodes: false
-	api:
-		allowed: 
-			- name: state
-			  version: v1
-			  protocol: grpc
-			- name: workflows
-			  version: v1
-			  protocol: grpc
-		denied: 
-			- name: secrets
-			  version: v1
-			  protocol: http
-	httpPipeline: 
-    	handlers: 
-			- name: m_14
-			  type: middleware.http.sentinel
-	appHttpPipeline: 
-		handlers: 
-			- name: m_13
-			  type: middleware.http.opa
-	tracing:
-		samplingRate: "0.001"
-		stdout: true
-		otel:
-			endpointAddress: "otelcollector.observability.svc.cluster.local:4317"
-			isSecure: true
-			protocol: http
-		zipkin:
-			endpointAddress: "http://zipkin.default.svc.cluster.local:9411/api/v2/spans"
+    accessControl: 
+        defaultAction: deny
+        trustDomain: public
+        policies:
+        - appId: app_3
+          defaultAction: allow
+          namespace: dev    
+          operations: 
+          - name: order1
+            action: deny            
+          - name: /account
+            httpVerb: ['GET', 'POST',]
+            action: deny            
+        - appId: app_2
+          defaultAction: allow
+          namespace: dev    
+    components:
+        deny: 
+         - pubsub.kafka
+         - bindings.postgresql
+    logging:
+        apiLogging:
+            enabled: false
+            obfuscateURLs:     false
+            omitHealthChecks: true
+    nameResolution:
+        component: "sqlite"
+        version: "v1"
+        configuration:
+              connectionString: "/home/user/.dapr/nr.db"
+    secret: 
+        scopes: 
+            - storeName: secretstore
+              defaultAccess: allow
+              deniedSecrets: ["dsec1","dsec2",]
+            - storeName: secretstore
+              defaultAccess: deny
+    metrics:
+      enabled: true
+      latencyDistributionBuckets: [ 1,5,10,15,25 ]
+      http:
+        increasedCardinality: false
+        pathMatching:
+            - /orders/{item}
+            - asdf
+            - /orders/{orderID}/items/{itemID}
+            - /payments/{paymentID}/details
+        excludeVerbs: true
+      recordErrorCodes: false
+    api:
+        allowed: 
+            - name: state
+              version: v1
+              protocol: grpc
+            - name: workflows
+              version: v1
+              protocol: grpc
+        denied: 
+            - name: secrets
+              version: v1
+              protocol: http
+    httpPipeline: 
+        handlers: 
+            - name: m_14
+              type: middleware.http.sentinel
+    appHttpPipeline: 
+        handlers: 
+            - name: m_13
+              type: middleware.http.opa
+    tracing:
+        samplingRate: "0.001"
+        stdout: true
+        otel:
+            endpointAddress: "otelcollector.observability.svc.cluster.local:4317"
+            isSecure: true
+            protocol: http
+        zipkin:
+            endpointAddress: "http://zipkin.default.svc.cluster.local:9411/api/v2/spans"
 
 
 

@@ -1,14 +1,14 @@
 apiVersion: dapr.io/v1alpha1
 kind: Configuration
 metadata:
-	name: payments
-	namespace: invalid
+    name: payments
+    namespace: invalid
 spec:
-	components:
-		deny: 
-		 - bindings.postgresql
-	accessControl: 
-		defaultAction: deny
-		trustDomain: public
+    components:
+        deny: 
+         - bindings.postgresql
+    accessControl: 
+        defaultAction: deny
+        trustDomain: public
 
 

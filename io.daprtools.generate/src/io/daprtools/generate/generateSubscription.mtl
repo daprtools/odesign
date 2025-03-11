@@ -1,0 +1,15 @@
+[comment encoding = UTF-8 /]
+[module generateSubscription('http://dapr.io/daprtools/daprdesigner')]
+
+
+[template public generateElement(aSubscriptionConfiguration : SubscriptionConfiguration)]
+[comment @main/]
+[file ('./configuration/'+aSubscriptionConfiguration.name+'.yaml', false, 'UTF-8')]
+apiVersion: dapr.io/v2alpha1
+kind: Subscription
+metadata:
+	name: [aSubscriptionConfiguration.name/]
+
+
+[/file]
+[/template]

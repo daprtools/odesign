@@ -1,18 +1,18 @@
 apiVersion: dapr.io/v1alpha1
 kind: Configuration
 metadata:
-	name: userActor
-	namespace: invalid
+    name: userActor
+    namespace: invalid
 spec:
-	accessControl: 
-		defaultAction: deny
-		trustDomain: public
-		policies:
-		- appId: app_1
-		  defaultAction: allow
-		  namespace: invalid	
-		- appId: payments
-		  defaultAction: allow
-		  namespace: invalid	
+    accessControl: 
+        defaultAction: deny
+        trustDomain: public
+        policies:
+        - appId: app_1
+          defaultAction: allow
+          namespace: invalid    
+        - appId: payments
+          defaultAction: allow
+          namespace: invalid    
 
 

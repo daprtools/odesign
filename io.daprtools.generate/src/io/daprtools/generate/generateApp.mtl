@@ -8,140 +8,140 @@
 apiVersion: dapr.io/v1alpha1
 kind: Configuration
 metadata:
-	name: [anApp.appId/]
-	namespace: [anApp.namespace.name/]
+    name: [anApp.appId/]
+    namespace: [anApp.namespace.name/]
 [if (anApp.configurations->size() > 0) ]
 spec:
 [for (  ac:AppConfiguration | anApp.configurations) ]
 [if (ac.eClass().name = 'AppAccessControl')]
-	accessControl: 
-		defaultAction: [ac.eGet('defaultAction').toString().toLowerCase()/]
-		trustDomain: [ac.eGet('trustDomain').eGet('name')/]
+    accessControl: 
+        defaultAction: [ac.eGet('defaultAction').toString().toLowerCase()/]
+        trustDomain: [ac.eGet('trustDomain').eGet('name')/]
 [if (ac.eGet('policies')->size() >0)]
-		policies:
+        policies:
 [for (ap:AppPolicy | ac.eGet('policies')) ]
-		- appId: [ap.app.appId/]
-		  defaultAction: [ap.defaultAction.toString().toLowerCase()/]
-		  namespace: [ap.namespace.name/]	
+        - appId: [ap.app.appId/]
+          defaultAction: [ap.defaultAction.toString().toLowerCase()/]
+          namespace: [ap.namespace.name/]    
 [if (ap.operations->size() > 0)]
-		  operations: 
+          operations: 
 [for (o:Operation | ap.operations)]
-		  - name: [o.operationName/]
+          - name: [o.operationName/]
 [if (o.protocol = Protocol::HTTP)]
-			httpVerb: ['['/][if (o.applyToGet)]'GET',[/if][if (o.applyToPost)] 'POST',[/if][if (o.applyToPut)] 'PUT',[/if][if (o.applyToPatch)] 'PATCH',[/if][if (o.applyToDelete)]'DELETE'[/if][']'/]
+            httpVerb: ['['/][if (o.applyToGet)]'GET',[/if][if (o.applyToPost)] 'POST',[/if][if (o.applyToPut)] 'PUT',[/if][if (o.applyToPatch)] 'PATCH',[/if][if (o.applyToDelete)]'DELETE'[/if][']'/]
 [/if]
-			action: [o.action.toString().toLowerCase()/]			
+            action: [o.action.toString().toLowerCase()/]            
 [/for]
 [/if]
 [/for]
 [/if]
 [elseif (ac.eClass().name = 'DeniedComponentsConfiguration')]
 [if (ac.eGet('deniedComponents')->size()>0)]
-	components:
-		deny: 
+    components:
+        deny: 
 [for (c:Component | ac.eGet('deniedComponents') )]
-		 - [c.providerName/]
+         - [c.providerName/]
 [/for]
 [/if]
 [elseif (ac.eClass().name = 'LoggingConfiguration')]
-	logging:
-		apiLogging:
-			enabled: [ac.eGet('enabled')/]
-			obfuscateURLs: 	[ac.eGet('obfuscateUrls')/]
-			omitHealthChecks: [ac.eGet('omitHealthChecks')/]
+    logging:
+        apiLogging:
+            enabled: [ac.eGet('enabled')/]
+            obfuscateURLs:     [ac.eGet('obfuscateUrls')/]
+            omitHealthChecks: [ac.eGet('omitHealthChecks')/]
 [elseif (ac.eClass().name = 'NameResolutionConfiguration')]
-	nameResolution:
-    	component: "[ac.eGet('nameResolutionComponent')/]"
-    	version: "[ac.eGet('componentVersion')/]"
-    	configuration:
-      		[ac.eGet('configurationKey')/]: "[ac.eGet('configurationValue')/]"
+    nameResolution:
+        component: "[ac.eGet('nameResolutionComponent')/]"
+        version: "[ac.eGet('componentVersion')/]"
+        configuration:
+              [ac.eGet('configurationKey')/]: "[ac.eGet('configurationValue')/]"
 [elseif (ac.eClass().name = 'SecretsAccessConfiguration')]
 [if (ac.eGet('accessList')->size()>0)]
-	secret: 
-		scopes: 
+    secret: 
+        scopes: 
 [for (sac:SecretsAccessList | ac.eGet('accessList'))]
-			- storeName: [sac.eGet('secretStore').eGet('name')/]
+            - storeName: [sac.eGet('secretStore').eGet('name')/]
 [if (sac.eGet('defaultAccess') = AccessAction::ALLOW)]
-      		  defaultAccess: allow
+              defaultAccess: allow
 [if (sac.eGet('deniedSecrets')->size()>0)]
-			  deniedSecrets: ['['/][for (s:String | sac.eGet('deniedSecrets'))]"[s/]",[/for][']'/]
+              deniedSecrets: ['['/][for (s:String | sac.eGet('deniedSecrets'))]"[s/]",[/for][']'/]
 [/if]
 [else]
-			  defaultAccess: deny
+              defaultAccess: deny
 [if (sac.eGet('allowedSecrets')->size()>0)]
-			  allowedSecrets: ['['/][for (s:String | sac.eGet('allowedSecrets'))]"[s/]",[/for][']'/]
+              allowedSecrets: ['['/][for (s:String | sac.eGet('allowedSecrets'))]"[s/]",[/for][']'/]
 [/if]
 [/if]
 [/for]
 [/if]
 [elseif (ac.eClass().name = 'MetricsConfiguration')]
-	metrics:
-	  enabled: [ac.eGet('enabled')/]
-	  latencyDistributionBuckets: ['['/][ac.eGet('latencyDistributionBuckets')/][']'/]
-	  http:
-	    increasedCardinality: [ac.eGet('http_increasedCardinality')/]
+    metrics:
+      enabled: [ac.eGet('enabled')/]
+      latencyDistributionBuckets: ['[ '/][ac.eGet('latencyDistributionBuckets')/][' ]'/]
+      http:
+        increasedCardinality: [ac.eGet('http_increasedCardinality')/]
 [if (ac.eGet('http_pathMatching')->size() > 0)]
-	    pathMatching:
+        pathMatching:
 [for (s:String | ac.eGet('http_pathMatching'))]
-			- [s/]
+            - [s/]
 [/for]
-[/if]	      
-	    excludeVerbs: [ac.eGet('http_excludeVerbs')/]
-	  recordErrorCodes: false
+[/if]          
+        excludeVerbs: [ac.eGet('http_excludeVerbs')/]
+      recordErrorCodes: false
 [elseif (ac.eClass().name = 'APIAccessControl')]
 [if (ac.eGet('apiList')->size() > 0)]
-	api:
+    api:
 [if (ac.eGet('apiList')->select(p | p.access = AccessAction::ALLOW)->size() > 0)]
-		allowed: 
+        allowed: 
 [for (api:API | ac.eGet('apiList')->select(p | p.access = AccessAction::ALLOW))]
-			- name: [api.apiType.toString().toLowerCase()/]
-			  version: [api.api_version/]
-			  protocol: [api.protocol.toString().toLowerCase()/]
+            - name: [api.apiType.toString().toLowerCase()/]
+              version: [api.api_version/]
+              protocol: [api.protocol.toString().toLowerCase()/]
 [/for]
 [/if]
 [if (ac.eGet('apiList')->select(p | p.access = AccessAction::DENY)->size() > 0)]
-		denied: 
+        denied: 
 [for (api:API | ac.eGet('apiList')->select(p | p.access = AccessAction::DENY))]
-			- name: [api.apiType.toString().toLowerCase()/]
-			  version: [api.api_version/]
-			  protocol: [api.protocol.toString().toLowerCase()/]
+            - name: [api.apiType.toString().toLowerCase()/]
+              version: [api.api_version/]
+              protocol: [api.protocol.toString().toLowerCase()/]
 [/for]
 [/if]
 [/if]
 [elseif (ac.eClass().name = 'MiddlewareConfiguration')]
 [if (ac.eGet('httpHandlers')->size() > 0)]
 [if (ac.eGet('httpHandlers')->select(p | p.handlerType = HttpHandlerType::INCOMING)->size() > 0)]
-	httpPipeline: 
-    	handlers: 
+    httpPipeline: 
+        handlers: 
 [for (handler:HttpHandler | ac.eGet('httpHandlers')->select(p | p.handlerType = HttpHandlerType::INCOMING))]
-			- name: [handler.middlewareComponent.name/]
-			  type: [handler.middlewareComponent.providerName/]
+            - name: [handler.middlewareComponent.name/]
+              type: [handler.middlewareComponent.providerName/]
 [/for]
 [/if]
 [if (ac.eGet('httpHandlers')->select(p | p.handlerType = HttpHandlerType::OUTGOING)->size() > 0)]
-	appHttpPipeline: 
-		handlers: 
+    appHttpPipeline: 
+        handlers: 
 [for (handler:HttpHandler | ac.eGet('httpHandlers')->select(p | p.handlerType = HttpHandlerType::OUTGOING))]
-			- name: [handler.middlewareComponent.name/]
-			  type: [handler.middlewareComponent.providerName/]
+            - name: [handler.middlewareComponent.name/]
+              type: [handler.middlewareComponent.providerName/]
 [/for]
 [/if]
 [/if]
 [elseif (ac.eClass().name = 'TracingConfiguration')]
-	tracing:
-		samplingRate: "[ac.eGet('samplingRate')/]"
-		stdout: [ac.eGet('stdout')/]
+    tracing:
+        samplingRate: "[ac.eGet('samplingRate')/]"
+        stdout: [ac.eGet('stdout')/]
 [if (not ac.eGet('otel_endPointAddress')->isEmpty())]
-		otel:
-			endpointAddress: "[ac.eGet('otel_endPointAddress')/]"
-			isSecure: [ac.eGet('otel_isSecure')/]
+        otel:
+            endpointAddress: "[ac.eGet('otel_endPointAddress')/]"
+            isSecure: [ac.eGet('otel_isSecure')/]
 [/if]
 [if (not ac.eGet('otel_protocol')->isEmpty())]
-			protocol: [ac.eGet('otel_protocol')/]
+            protocol: [ac.eGet('otel_protocol')/]
 [/if]
 [if (not ac.eGet('zipkin_endPointAddress')->isEmpty())]
-		zipkin:
-			endpointAddress: "[ac.eGet('zipkin_endPointAddress')/]"
+        zipkin:
+            endpointAddress: "[ac.eGet('zipkin_endPointAddress')/]"
 [/if]
 
 
