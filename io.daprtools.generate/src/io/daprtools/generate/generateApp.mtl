@@ -8,7 +8,7 @@
 apiVersion: dapr.io/v1alpha1
 kind: Configuration
 metadata:
-	name: [anApp.name/]
+	name: [anApp.appId/]
 	namespace: [anApp.namespace.name/]
 [if (anApp.configurations->size() > 0) ]
 spec:
@@ -20,7 +20,7 @@ spec:
 [if (ac.eGet('policies')->size() >0)]
 		policies:
 [for (ap:AppPolicy | ac.eGet('policies')) ]
-		- appId: [ap.app.name/]
+		- appId: [ap.app.appId/]
 		  defaultAction: [ap.defaultAction.toString().toLowerCase()/]
 		  namespace: [ap.namespace.name/]	
 [if (ap.operations->size() > 0)]

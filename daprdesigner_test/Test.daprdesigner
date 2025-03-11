@@ -7,17 +7,17 @@
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="orders">
-        <nodes xsi:type="daprdesigner:App" name="orders" configurations="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:App" name="orders" appId="orders" configurations="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1" policies="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.2 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.3"/>
         <nodes xsi:type="daprdesigner:AppPolicy" name="ap_1" app="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0"/>
         <nodes xsi:type="daprdesigner:AppPolicy" name="ap_2" app="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.0"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="cart">
-        <nodes xsi:type="daprdesigner:App" name="cart" configurations="//@buildingblocks.0/@subblocks.0/@nodes.2/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:App" name="cart" appId="cart" configurations="//@buildingblocks.0/@subblocks.0/@nodes.2/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="app_1">
-        <nodes xsi:type="daprdesigner:App" name="app_1" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.1 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.6 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.7 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.8 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.9 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.12 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.13 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.17 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.20"/>
+        <nodes xsi:type="daprdesigner:App" name="app_1" appId="app_1" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.1 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.6 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.7 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.8 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.9 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.12 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.13 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.17 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.20"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="app_1_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1" policies="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.2 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.5"/>
         <nodes xsi:type="daprdesigner:AppPolicy" name="ap_1" app="//@buildingblocks.0/@subblocks.0/@nodes.5/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" namespace="//@buildingblocks.0/@nodes.0" operations="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.3 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.4"/>
         <nodes xsi:type="daprdesigner:Operation" isReady="true" name="o_1" protocol="GRPC" operationName="order1" action="DENY"/>
@@ -50,38 +50,38 @@
         <nodes xsi:type="daprdesigner:TracingConfiguration" name="tc_15" samplingRate="0.001" stdout="true" otel_endPointAddress="otelcollector.observability.svc.cluster.local:4317" otel_isSecure="true" otel_protocol="http" zipkin_endPointAddress="http://zipkin.default.svc.cluster.local:9411/api/v2/spans"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="app_2">
-        <nodes xsi:type="daprdesigner:App" name="app_2" configurations="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:App" name="app_2" appId="app_2" configurations="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1" policies="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.2"/>
         <nodes xsi:type="daprdesigner:AppPolicy" name="ap_4" app="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" operations="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.3"/>
         <nodes xsi:type="daprdesigner:Operation" name="o_1" operationName="/order" action="DENY"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="app_3">
-        <nodes xsi:type="daprdesigner:App" name="app_3" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.0/@nodes.5/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:App" name="app_3" appId="app_3" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.0/@nodes.5/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="app_4">
-        <nodes xsi:type="daprdesigner:App" name="app_4" configurations="//@buildingblocks.0/@subblocks.0/@nodes.6/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:App" name="app_4" appId="app_4" configurations="//@buildingblocks.0/@subblocks.0/@nodes.6/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="app_5">
-        <nodes xsi:type="daprdesigner:App" name="app_5" configurations="//@buildingblocks.0/@subblocks.0/@nodes.7/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:App" name="app_5" appId="app_5" configurations="//@buildingblocks.0/@subblocks.0/@nodes.7/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1" policies="//@buildingblocks.0/@subblocks.0/@nodes.7/@nodes.2"/>
         <nodes xsi:type="daprdesigner:AppPolicy" name="ap_1" app="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1" operations="//@buildingblocks.0/@subblocks.0/@nodes.7/@nodes.3"/>
         <nodes xsi:type="daprdesigner:Operation" name="o_1" operationName="/orders" applyToGet="true" applyToPost="true"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="app_6">
-        <nodes xsi:type="daprdesigner:App" name="app_6" configurations="//@buildingblocks.0/@subblocks.0/@nodes.8/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:App" name="app_6" appId="app_6" configurations="//@buildingblocks.0/@subblocks.0/@nodes.8/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
     </subblocks>
     <subblocks name="actors" blockType="ACTORS">
       <nodes xsi:type="daprdesigner:NodeBlocks" name="payments" nodeBlockType="ACTOR">
-        <nodes xsi:type="daprdesigner:Actor" isReady="true" name="payments" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.2"/>
+        <nodes xsi:type="daprdesigner:Actor" isReady="true" name="payments" appId="payments" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.2"/>
         <nodes xsi:type="daprdesigner:DeniedComponentsConfiguration" isReady="true" name="dcc_2" deniedComponents="//@buildingblocks.0/@subblocks.5/@nodes.0/@nodes.0"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="user_events" nodeBlockType="ACTOR">
-        <nodes xsi:type="daprdesigner:Actor" name="userActor" configurations="//@buildingblocks.0/@subblocks.1/@nodes.1/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:Actor" name="userActor" appId="userActor" configurations="//@buildingblocks.0/@subblocks.1/@nodes.1/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1" policies="//@buildingblocks.0/@subblocks.1/@nodes.1/@nodes.2 //@buildingblocks.0/@subblocks.1/@nodes.1/@nodes.3"/>
         <nodes xsi:type="daprdesigner:AppPolicy" name="ap_1" app="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppPolicy" name="ap_2" app="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1"/>
@@ -90,11 +90,11 @@
     <subblocks name="workflows" blockType="WORKFLOW">
       <nodes xsi:type="daprdesigner:NodeBlocks" name="fulfillment" nodeBlockType="WORKFLOW">
         <nodes xsi:type="daprdesigner:AppAccessControl" name="aac_3" defaultAction="DENY"/>
-        <nodes xsi:type="daprdesigner:Workflow" name="fulfillment" configurations="//@buildingblocks.0/@subblocks.2/@nodes.0/@nodes.0"/>
+        <nodes xsi:type="daprdesigner:Workflow" name="fulfillment" appId="fulfillment" configurations="//@buildingblocks.0/@subblocks.2/@nodes.0/@nodes.0"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="returns" nodeBlockType="WORKFLOW">
         <nodes xsi:type="daprdesigner:AppAccessControl" name="aac_4" defaultAction="DENY"/>
-        <nodes xsi:type="daprdesigner:Workflow" name="returns" configurations="//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.0"/>
+        <nodes xsi:type="daprdesigner:Workflow" name="returns" appId="returns" configurations="//@buildingblocks.0/@subblocks.2/@nodes.1/@nodes.0"/>
       </nodes>
     </subblocks>
     <subblocks isReady="true" name="secretsstore" blockType="SECRETSTORE">
@@ -107,7 +107,7 @@
     </subblocks>
     <subblocks isReady="true" name="statestore" blockType="STATESTORE">
       <nodes xsi:type="daprdesigner:NodeBlocks" isReady="true" name="redis" nodeBlockType="STATESTORE">
-        <nodes xsi:type="daprdesigner:StateStore" isReady="true" name="redisstore" providerName="state.redis" providerVersion="v1" auth="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.3" metadata_namespace="//@buildingblocks.0/@nodes.0" ignoreErrors="true" initTimeout="                               " specMetadata="//@buildingblocks.0/@subblocks.4/@nodes.0/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:StateStore" isReady="true" name="redisstore" providerName="state.redis" providerVersion="v1" auth="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.3" metadata_namespace="//@buildingblocks.0/@nodes.0" ignoreErrors="true" initTimeout="                               " specMetadata="//@buildingblocks.0/@subblocks.4/@nodes.0/@nodes.1" scopes="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.7/@nodes.0"/>
         <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="redisHost" value="localhost:6379" isFetchedFromSecret="true" isFetchedFromEnvironment="true" secretKeyRefName="redis-secret" secretKeyRefKey="redis-password" envRef="redisString"/>
       </nodes>
     </subblocks>

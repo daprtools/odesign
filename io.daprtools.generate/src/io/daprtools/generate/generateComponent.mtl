@@ -40,6 +40,12 @@ spec:
 [/if]
 [/for]	
 [/if]
+[if (aComponent.scopes->size() > 0)]
+scopes:
+[for (app:App | aComponent.scopes)]
+	- [app.appId/]
+[/for]
+[/if]
 
 [/file]
 [/template]

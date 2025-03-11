@@ -14,4 +14,7 @@ spec:
 		   secretKeyRef: 
 			name: redis-secret 
 			key:  redis-password
+scopes:
+	- app_1
+	- app_5
 

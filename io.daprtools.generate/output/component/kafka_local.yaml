@@ -14,4 +14,10 @@ spec:
 		   secretKeyRef: 
 			name: kafkabrokers 
 			key:  brokerhost
+scopes:
+	- app_2
+	- app_3
+	- app_4
+	- userActor
+	- app_1
 

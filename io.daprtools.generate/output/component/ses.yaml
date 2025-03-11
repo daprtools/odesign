@@ -14,4 +14,7 @@ spec:
 		   value: us-east-1
 		-  name: accessKey
 		   value: 12345
+scopes:
+	- account
+	- payments
 
