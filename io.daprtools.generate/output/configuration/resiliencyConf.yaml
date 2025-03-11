@@ -1,0 +1,79 @@
+apiVersion: dapr.io/v1alpha1
+kind: Resiliency
+metadata:
+  name: resiliencyConf
+version: v1alpha1
+scopes:
+  - app_1
+  - app_5
+  - app_2
+  - app_4
+  - account
+  - userActor
+  - payments
+spec:
+  policies:
+    timeouts:
+      rt_18: 10
+      rt_19: 30
+    retries:
+      rp_21:
+        policy: constant
+        duration: 20s
+        maxInterval: 40s
+        maxRetries: 30
+      rp_20:
+        policy: exponential
+        duration: 5s
+        maxInterval: 20s
+        maxRetries: 20
+    circuitBreakers:
+      cbp_23:
+        maxRequests: 0
+        interval: 0s
+        timeout: 0s
+        trip: consecutiveFailures > 5
+      cbp_22:
+        maxRequests: 20
+        interval: 30s
+        timeout: 40s
+        trip: consecutiveFailures > 5
+
+targets:
+  apps:
+    app_2:
+      timeout: rt_18
+      retry: rp_20
+      circuitBreaker: cbp_22
+      circuitBreakerCacheSize: 40
+    app_4:
+      timeout: rt_18
+      retry: rp_20
+      circuitBreaker: cbp_22
+      circuitBreakerCacheSize: 40
+  actors:
+    payments:
+      timeout: rt_19
+      retry: rp_21
+      circuitBreaker: cbp_23
+      circuitBreakerCacheSize: 30
+  components:
+    kafka_local:
+      inbound:
+        timeout: rt_18
+        retry: rp_21
+        circuitBreaker: cbp_22
+        circuitBreakerCacheSize: 20
+    m_13:
+      outbound:
+        timeout: rt_18
+        retry: rp_21
+        circuitBreaker: cbp_23
+        circuitBreakerCacheSize: 10
+
+
+
+
+
+
+

@@ -145,9 +145,19 @@
         <nodes xsi:type="daprdesigner:RouteRules" name="rr_17" match="event.type == &quot;healthz&quot;" path="/health"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="resiliency" nodeBlockType="RESILIENCY">
-        <nodes xsi:type="daprdesigner:ResiliencyConfiguration" name="rc_1" policy="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.1"/>
-        <nodes xsi:type="daprdesigner:ResiliencyPolicy" name="rp_2"/>
+        <nodes xsi:type="daprdesigner:ResiliencyConfiguration" name="resiliencyConf" scopes="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.7/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.6/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.0 //@buildingblocks.0/@subblocks.1/@nodes.1/@nodes.0 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.0" policy="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.1" resiliencyTargets="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.9 //@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.10 //@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.11 //@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.12"/>
+        <nodes xsi:type="daprdesigner:ResiliencyPolicy" name="rp_2" retries="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.6 //@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.5" circuitBreakers="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.8 //@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.7" timeoutDefinitions="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.3 //@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.4"/>
         <nodes xsi:type="daprdesigner:ResiliencyTarget" name="rt_3" type="COMPONENT_INBOUND"/>
+        <nodes xsi:type="daprdesigner:ResiliencyTimeout" name="rt_18" timeOutInSeconds="10"/>
+        <nodes xsi:type="daprdesigner:ResiliencyTimeout" name="rt_19" timeOutInSeconds="30"/>
+        <nodes xsi:type="daprdesigner:RetryPolicy" name="rp_20" policy_type="EXPONENTIAL" duration="5" maxRetries="20" maxInterval="20"/>
+        <nodes xsi:type="daprdesigner:RetryPolicy" name="rp_21" duration="20" maxRetries="30" maxInterval="40"/>
+        <nodes xsi:type="daprdesigner:CircuitBreakerPolicy" name="cbp_22" maxRequests="20" interval="30" timeout="40"/>
+        <nodes xsi:type="daprdesigner:CircuitBreakerPolicy" name="cbp_23"/>
+        <nodes xsi:type="daprdesigner:ResiliencyTarget" name="rt_24" circuitBreakerCacheSize="40" circuitBreaker="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.7" retry="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.5" timeout="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.3" appsActorsOrWorkflows="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.6/@nodes.0"/>
+        <nodes xsi:type="daprdesigner:ResiliencyTarget" name="rt_25" type="ACTOR" circuitBreakerCacheSize="30" circuitBreaker="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.8" retry="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.6" timeout="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.4" appsActorsOrWorkflows="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.0"/>
+        <nodes xsi:type="daprdesigner:ResiliencyTarget" name="rt_26" type="COMPONENT_INBOUND" circuitBreakerCacheSize="20" circuitBreaker="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.7" retry="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.6" timeout="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.3" components="//@buildingblocks.0/@subblocks.6/@nodes.0/@nodes.0"/>
+        <nodes xsi:type="daprdesigner:ResiliencyTarget" name="rt_27" type="COMPONENT_OUTBOUND" circuitBreakerCacheSize="10" circuitBreaker="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.8" retry="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.6" timeout="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.3" components="//@buildingblocks.0/@subblocks.7/@nodes.0/@nodes.0"/>
       </nodes>
     </subblocks>
     <nodes xsi:type="daprdesigner:Namespace" isReady="true" name="dev"/>

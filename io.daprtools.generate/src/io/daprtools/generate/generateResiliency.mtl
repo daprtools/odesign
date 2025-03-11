@@ -1,0 +1,108 @@
+[comment encoding = UTF-8 /]
+[module generateResiliency('http://dapr.io/daprtools/daprdesigner')]
+
+
+[template public generateElement(aResiliencyConfiguration : ResiliencyConfiguration)]
+[comment @main/]
+[file ('./configuration/'+aResiliencyConfiguration.name+'.yaml', false, 'UTF-8')]
+apiVersion: dapr.io/v1alpha1
+kind: Resiliency
+metadata:
+  name: [aResiliencyConfiguration.name/]
+version: v1alpha1
+[if (aResiliencyConfiguration.scopes->size() > 0)]
+scopes:
+[for (app:App | aResiliencyConfiguration.scopes)]
+  - [app.appId/]
+[/for]
+[/if]
+[if (aResiliencyConfiguration.policy <> null)]
+spec:
+  policies:
+[if (aResiliencyConfiguration.policy.timeoutDefinitions->size() > 0)]
+    timeouts:
+[for ( rt:ResiliencyTimeout | aResiliencyConfiguration.policy.timeoutDefinitions)]
+      [rt.name/]: [rt.timeOutInSeconds/]
+[/for]
+[/if]
+[if (aResiliencyConfiguration.policy.retries->size() > 0)]
+    retries:
+[for ( rp:RetryPolicy | aResiliencyConfiguration.policy.retries)]
+      [rp.name/]:
+        policy: [rp.policy_type.toString().toLowerCase()/]
+        duration: [rp.duration/]s
+        maxInterval: [rp.maxInterval/]s
+        maxRetries: [rp.maxRetries/]
+[/for]
+[/if]
+[if (aResiliencyConfiguration.policy.circuitBreakers->size() > 0)]
+    circuitBreakers:
+[for ( cb:CircuitBreakerPolicy | aResiliencyConfiguration.policy.circuitBreakers)]
+      [cb.name/]:
+        maxRequests: [cb.maxRequests/]
+        interval: [cb.interval/]s
+        timeout: [cb.timeout/]s
+        trip: [cb.trip/]
+[/for]
+[/if]
+
+[if (aResiliencyConfiguration.resiliencyTargets->size() > 0)]
+targets:
+[if (aResiliencyConfiguration.resiliencyTargets->select(p | p.type = ResiliencyTargetType::APP)->size() > 0)]
+  apps:
+[for (rt:ResiliencyTarget | aResiliencyConfiguration.resiliencyTargets->select(p | p.type = ResiliencyTargetType::APP))]
+[for (app:App | rt.appsActorsOrWorkflows)]
+    [app.appId/]:
+      timeout: [rt.timeout.name/]
+      retry: [rt.retry.name/]
+      circuitBreaker: [rt.circuitBreaker.name/]
+      circuitBreakerCacheSize: [rt.circuitBreakerCacheSize/]
+[/for]     
+[/for]
+[/if]
+[if (aResiliencyConfiguration.resiliencyTargets->select(p | p.type = ResiliencyTargetType::ACTOR)->size() > 0)]
+  actors:
+[for (rt:ResiliencyTarget | aResiliencyConfiguration.resiliencyTargets->select(p | p.type = ResiliencyTargetType::ACTOR))]
+[for (app:App | rt.appsActorsOrWorkflows)]
+    [app.appId/]:
+      timeout: [rt.timeout.name/]
+      retry: [rt.retry.name/]
+      circuitBreaker: [rt.circuitBreaker.name/]
+      circuitBreakerCacheSize: [rt.circuitBreakerCacheSize/]
+[/for]     
+[/for]
+[/if]
+[if ((aResiliencyConfiguration.resiliencyTargets->select(p | p.type = ResiliencyTargetType::COMPONENT_INBOUND)->size() > 0) or (aResiliencyConfiguration.resiliencyTargets->select(p | p.type = ResiliencyTargetType::COMPONENT_OUTBOUND)->size() > 0) )]
+  components:
+[for (rt:ResiliencyTarget | aResiliencyConfiguration.resiliencyTargets->select(p | p.type = ResiliencyTargetType::COMPONENT_INBOUND))]
+[for (c:Component | rt.components)]
+    [c.name/]:
+      inbound:
+        timeout: [rt.timeout.name/]
+        retry: [rt.retry.name/]
+        circuitBreaker: [rt.circuitBreaker.name/]
+        circuitBreakerCacheSize: [rt.circuitBreakerCacheSize/]
+[/for]     
+[/for]
+[for (rt:ResiliencyTarget | aResiliencyConfiguration.resiliencyTargets->select(p | p.type = ResiliencyTargetType::COMPONENT_OUTBOUND))]
+[for (c:Component | rt.components)]
+    [c.name/]:
+      outbound:
+        timeout: [rt.timeout.name/]
+        retry: [rt.retry.name/]
+        circuitBreaker: [rt.circuitBreaker.name/]
+        circuitBreakerCacheSize: [rt.circuitBreakerCacheSize/]
+[/for]     
+[/for]
+[/if]
+
+
+
+[/if]
+
+
+
+
+[/if]
+[/file]
+[/template]
