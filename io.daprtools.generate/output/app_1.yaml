@@ -47,6 +47,18 @@ spec:
 			- storeName: secretstore
 			  defaultAccess: deny
 
+	metrics:
+	  enabled: true
+	  latencyDistributionBuckets: [1,5,10,15,25]
+	  http:
+	    increasedCardinality: false
+	    pathMatching:
+			- /orders/{item}
+			- asdf
+			- /orders/{orderID}/items/{itemID}
+			- /payments/{paymentID}/details
+	    excludeVerbs: true
+	  recordErrorCodes: false
 
 
 

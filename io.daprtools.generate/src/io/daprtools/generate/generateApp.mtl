@@ -74,10 +74,23 @@ spec:
 [/if]
 [/if]
 [/for]
-
 [/if]
-[elseif (ac.eClass().name = 'SecretsAccessConfiguration')]
+[elseif (ac.eClass().name = 'MetricsConfiguration')]
+	metrics:
+	  enabled: [ac.eGet('enabled')/]
+	  latencyDistributionBuckets: ['['/][ac.eGet('latencyDistributionBuckets')/][']'/]
+	  http:
+	    increasedCardinality: [ac.eGet('http_increasedCardinality')/]
+[if (ac.eGet('http_pathMatching')->size() > 0)]
+	    pathMatching:
+[for (s:String | ac.eGet('http_pathMatching'))]
+			- [s/]
+[/for]
+[/if]	      
+	    excludeVerbs: [ac.eGet('http_excludeVerbs')/]
+	  recordErrorCodes: false
 
+[elseif (ac.eClass().name = 'MetricsConfiguration')]
 [/if]
 [/for]
 [/if]
