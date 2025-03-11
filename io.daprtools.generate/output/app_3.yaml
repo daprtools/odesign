@@ -4,6 +4,9 @@ metadata:
 	name: app_3
 	namespace: dev
 spec:
+
 	accessControl: 
 		defaultAction: deny
 		trustDomain: public
+
+

@@ -4,7 +4,13 @@ metadata:
 	name: payments
 	namespace: invalid
 spec:
-,
+
+	components:
+		deny: 
+		 - bindings.postgresql
+
 	accessControl: 
 		defaultAction: deny
 		trustDomain: public
+
+

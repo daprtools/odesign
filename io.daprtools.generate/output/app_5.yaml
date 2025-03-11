@@ -4,6 +4,7 @@ metadata:
 	name: app_5
 	namespace: invalid
 spec:
+
 	accessControl: 
 		defaultAction: deny
 		trustDomain: public
@@ -15,3 +16,5 @@ spec:
 		  - name: /orders
 			httpVerb: ['GET', 'POST',]
 			action: allow			
+
+

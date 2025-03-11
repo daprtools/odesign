@@ -12,7 +12,8 @@ metadata:
 	namespace: [anApp.namespace.name/]
 [if (anApp.configurations->size() > 0) ]
 spec:
-[for (  ac:AppConfiguration | anApp.configurations) separator(',\n')]
+[for (  ac:AppConfiguration | anApp.configurations) ]
+
 [if (ac.eClass().name = 'AppAccessControl')]
 	accessControl: 
 		defaultAction: [ac.eGet('defaultAction').toString().toLowerCase()/]
@@ -35,8 +36,18 @@ spec:
 [/if]
 [/for]
 [/if]
+[elseif (ac.eClass().name = 'DeniedComponentsConfiguration')]
+[if (ac.eGet('deniedComponents')->size()>0)]
+	components:
+		deny: 
+[for (c:Component | ac.eGet('deniedComponents') )]
+		 - [c.providerName/]
+[/for]
+[/if]
 [/if]
 [/for]
 [/if]
+
+
 [/file]
 [/template]

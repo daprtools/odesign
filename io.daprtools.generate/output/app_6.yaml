@@ -4,6 +4,9 @@ metadata:
 	name: app_6
 	namespace: invalid
 spec:
+
 	accessControl: 
 		defaultAction: deny
 		trustDomain: public
+
+

@@ -4,6 +4,7 @@ metadata:
 	name: orders
 	namespace: invalid
 spec:
+
 	accessControl: 
 		defaultAction: deny
 		trustDomain: public
@@ -14,3 +15,5 @@ spec:
 		- appId: app_2
 		  defaultAction: allow
 		  namespace: invalid	
+
+

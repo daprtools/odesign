@@ -23,7 +23,7 @@
         <nodes xsi:type="daprdesigner:Operation" isReady="true" name="o_1" protocol="GRPC" operationName="order1" action="DENY"/>
         <nodes xsi:type="daprdesigner:Operation" isReady="true" name="o_2" operationName="/account" applyToGet="true" applyToPost="true" action="DENY"/>
         <nodes xsi:type="daprdesigner:AppPolicy" name="ap_3" app="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" namespace="//@buildingblocks.0/@nodes.0"/>
-        <nodes xsi:type="daprdesigner:DeniedComponentsConfiguration" name="dcc_4"/>
+        <nodes xsi:type="daprdesigner:DeniedComponentsConfiguration" name="dcc_4" deniedComponents="//@buildingblocks.0/@subblocks.6/@nodes.0/@nodes.0 //@buildingblocks.0/@subblocks.5/@nodes.0/@nodes.0"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="app_2">
         <nodes xsi:type="daprdesigner:App" name="app_2" configurations="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.1"/>

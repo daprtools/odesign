@@ -4,6 +4,7 @@ metadata:
 	name: app_2
 	namespace: invalid
 spec:
+
 	accessControl: 
 		defaultAction: deny
 		trustDomain: public
@@ -15,3 +16,5 @@ spec:
 		  - name: /order
 			httpVerb: []
 			action: deny			
+
+

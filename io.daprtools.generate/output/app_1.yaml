@@ -4,6 +4,7 @@ metadata:
 	name: app_1
 	namespace: dev
 spec:
+
 	accessControl: 
 		defaultAction: deny
 		trustDomain: public
@@ -20,3 +21,10 @@ spec:
 		- appId: app_2
 		  defaultAction: allow
 		  namespace: dev	
+
+	components:
+		deny: 
+		 - pubsub.kafka
+		 - bindings.postgresql
+
+
