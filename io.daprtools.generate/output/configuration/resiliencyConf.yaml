@@ -70,10 +70,3 @@ targets:
         retry: rp_21
         circuitBreaker: cbp_23
         circuitBreakerCacheSize: 10
-
-
-
-
-
-
-

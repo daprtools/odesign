@@ -1,0 +1,17 @@
+apiVersion: dapr.io/v1alpha1
+kind: HTTPEndpoint
+metadata:
+  name: httpep_28
+spec:
+  baseUrl: http://www.google.com
+  headers:
+    - name: sm_29
+      value: arasrwser
+    - name: sm_30
+      value: werwer
+scopes:
+    - app_1
+    - app_5
+    - app_2
+auth: 
+  secretStore: secretstore

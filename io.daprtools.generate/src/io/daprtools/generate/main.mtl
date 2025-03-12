@@ -1,0 +1,39 @@
+[comment encoding = UTF-8 /]
+[module main('http://dapr.io/daprtools/daprdesigner')/]
+[import io::daprtools::generate::generateApp/]
+[import io::daprtools::generate::generateComponent/]
+[import io::daprtools::generate::generateHttpEndpoint/]
+[import io::daprtools::generate::generateResiliency/]
+[import io::daprtools::generate::generateSubscription/]
+
+
+[template public mainApp(aApp : App)]
+	
+	[comment @main /]
+	[aApp.generateElement()/]
+	
+[/template]
+[template public mainComponent(aComponent : Component)]
+	
+	[comment @main /]
+	[aComponent.generateElement()/]
+	
+[/template]
+[template public mainHTTPEndPoint(aHTTPEndPoint : HTTPEndPoint)]
+	
+	[comment @main /]
+	[aHTTPEndPoint.generateElement()/]
+	
+[/template]
+[template public mainResiliencyConfiguration(aResiliencyConfiguration : ResiliencyConfiguration)]
+	
+	[comment @main /]
+	[aResiliencyConfiguration.generateElement()/]
+	
+[/template]
+[template public mainSubscriptionConfiguration(aSubscriptionConfiguration : SubscriptionConfiguration)]
+	
+	[comment @main /]
+	[aSubscriptionConfiguration.generateElement()/]
+	
+[/template]

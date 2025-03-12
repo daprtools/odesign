@@ -1,0 +1,47 @@
+[comment encoding = UTF-8 /]
+[module generateHttpEndpoint('http://dapr.io/daprtools/daprdesigner')]
+
+
+[template public generateElement(aHTTPEndPoint : HTTPEndPoint)]
+[comment @main/]
+[file ('./configuration/'+aHTTPEndPoint.name+'.yaml', false, 'UTF-8')]
+apiVersion: dapr.io/v1alpha1
+kind: HTTPEndpoint
+metadata:
+  name: [aHTTPEndPoint.name/]
+spec:
+  baseUrl: [aHTTPEndPoint.baseUrl/]
+[if (aHTTPEndPoint.specHeaders->size() > 0)]
+  headers:
+[for (header:SpecMetadata | aHTTPEndPoint.specHeaders)]
+    - name: [header.name/]
+      value: [header.value/]
+[/for]
+[/if] 
+[if (aHTTPEndPoint.specRootCA <> null and aHTTPEndPoint.specCertificate <> null and aHTTPEndPoint.specPrivateKey <> null)]
+  clientTLS:
+    rootCA:
+      secretKeyRef:
+        name: [aHTTPEndPoint.specRootCA.secretKeyRefName/]
+        key: [aHTTPEndPoint.specRootCA.secretKeyRefKey/]
+    certificate:
+      secretKeyRef:
+        name: [aHTTPEndPoint.specCertificate.secretKeyRefName/]
+        key: [aHTTPEndPoint.specCertificate.secretKeyRefKey/]
+    privateKey:
+      secretKeyRef:
+        name: [aHTTPEndPoint.specPrivateKey.secretKeyRefName/]
+        key: [aHTTPEndPoint.specPrivateKey.secretKeyRefKey/]
+[/if]
+[if (aHTTPEndPoint.scopes->size() > 0)]
+scopes:
+[for (app:App | aHTTPEndPoint.scopes)]
+    - [app.appId/]
+[/for]
+[/if]
+[if (aHTTPEndPoint.auth <> null)]
+auth: 
+  secretStore: [aHTTPEndPoint.auth.name/]
+[/if]
+[/file]
+[/template]
