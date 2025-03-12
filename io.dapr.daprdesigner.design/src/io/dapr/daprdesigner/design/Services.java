@@ -154,9 +154,25 @@ public class Services {
 			}
 
 		}
-
 		return ac;
+	}
+	
+	public ArrayList<SpecMetadata> getAllSpecMetadata(EObject self) {
+		ArrayList<SpecMetadata> ac = new ArrayList<SpecMetadata>();
+		Block b = findEnvironmentBlock(self);
 
+		TreeIterator<EObject> iterator = b.eAllContents();
+
+		while (iterator.hasNext()) {
+			EObject eo = iterator.next();
+			if (eo instanceof SpecMetadata) {
+				SpecMetadata c = (SpecMetadata) eo;
+				// System.out.println("Component name :" + c.getName());
+				ac.add(c);
+			}
+
+		}
+		return ac;
 	}
 
 	public ArrayList<PubSub> getAllPubSubs(EObject self) {
@@ -178,7 +194,7 @@ public class Services {
 		return ac;
 
 	}
-	
+
 	public ArrayList<Middleware> getAllMiddleware(EObject self) {
 		ArrayList<Middleware> ac = new ArrayList<Middleware>();
 		Block b = findEnvironmentBlock(self);
@@ -198,7 +214,7 @@ public class Services {
 		return ac;
 
 	}
-	
+
 	public ArrayList<CircuitBreakerPolicy> getAllCircuitBreakers(EObject self) {
 		ArrayList<CircuitBreakerPolicy> ac = new ArrayList<CircuitBreakerPolicy>();
 		Block b = findEnvironmentBlock(self);
@@ -218,7 +234,7 @@ public class Services {
 		return ac;
 
 	}
-	
+
 	public ArrayList<RetryPolicy> getAllRetryPolicies(EObject self) {
 		ArrayList<RetryPolicy> ac = new ArrayList<RetryPolicy>();
 		Block b = findEnvironmentBlock(self);
@@ -238,7 +254,7 @@ public class Services {
 		return ac;
 
 	}
-	
+
 	public ArrayList<ResiliencyTimeout> getAllResiliencyTimeouts(EObject self) {
 		ArrayList<ResiliencyTimeout> ac = new ArrayList<ResiliencyTimeout>();
 		Block b = findEnvironmentBlock(self);

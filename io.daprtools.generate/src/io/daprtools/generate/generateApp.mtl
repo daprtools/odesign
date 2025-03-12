@@ -87,7 +87,7 @@ spec:
 [/for]
 [/if]          
         excludeVerbs: [ac.eGet('http_excludeVerbs')/]
-      recordErrorCodes: false
+      recordErrorCodes: [ac.eGet('recordErrorCodes')/]
 [elseif (ac.eClass().name = 'APIAccessControl')]
 [if (ac.eGet('apiList')->size() > 0)]
     api:
@@ -137,7 +137,7 @@ spec:
             isSecure: [ac.eGet('otel_isSecure')/]
 [/if]
 [if (not ac.eGet('otel_protocol')->isEmpty())]
-            protocol: [ac.eGet('otel_protocol')/]
+            protocol: [ac.eGet('otel_protocol').toString().toLowerCase()/]
 [/if]
 [if (not ac.eGet('zipkin_endPointAddress')->isEmpty())]
         zipkin:

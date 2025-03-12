@@ -47,7 +47,7 @@
         <nodes xsi:type="daprdesigner:MiddlewareConfiguration" name="mc_10" httpHandlers="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.19 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.18"/>
         <nodes xsi:type="daprdesigner:HttpHandler" name="hh_11" middlewareComponent="//@buildingblocks.0/@subblocks.7/@nodes.1/@nodes.0"/>
         <nodes xsi:type="daprdesigner:HttpHandler" name="hh_12" middlewareComponent="//@buildingblocks.0/@subblocks.7/@nodes.0/@nodes.0" handlerType="OUTGOING"/>
-        <nodes xsi:type="daprdesigner:TracingConfiguration" name="tc_15" samplingRate="0.001" stdout="true" otel_endPointAddress="otelcollector.observability.svc.cluster.local:4317" otel_isSecure="true" otel_protocol="http" zipkin_endPointAddress="http://zipkin.default.svc.cluster.local:9411/api/v2/spans"/>
+        <nodes xsi:type="daprdesigner:TracingConfiguration" name="tc_1" samplingRate="0.001" stdout="true" otel_endPointAddress="otelcollector.observability.svc.cluster.local:4317" otel_isSecure="true" zipkin_endPointAddress="http://zipkin.default.svc.cluster.local:9411/api/v2/spans"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="app_2">
         <nodes xsi:type="daprdesigner:App" name="app_2" appId="app_2" configurations="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.1"/>

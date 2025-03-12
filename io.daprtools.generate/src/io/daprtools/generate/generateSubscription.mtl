@@ -11,7 +11,12 @@ metadata:
   name: [aSubscriptionConfiguration.name/]
 spec:
   topic: [aSubscriptionConfiguration.topicName/]
-[if (aSubscriptionConfiguration.routeRules->size()>0)]
+[if (aSubscriptionConfiguration.routeRules->select(p | p.isDefault)->size() = 1)]
+[let r : RouteRules = self.routeRules->select(p | p.isDefault)->at(1)]
+  routes:
+    default: [r.path/]	
+[/let]
+[elseif (aSubscriptionConfiguration.routeRules->size()>0)]
   routes:
     rules:
 [for (rr:RouteRules | aSubscriptionConfiguration.routeRules)]
