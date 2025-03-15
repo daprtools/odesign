@@ -3598,10 +3598,22 @@
   </ownedViewpoints>
   <extensions xsi:type="properties:ViewExtensionDescription" name="sirius_default_rules_properties">
     <categories name="Default">
-      <pages name="sirius_default_rules_defaultpage" labelExpression="aql:input.emfEditServices(self).getTabName()" semanticCandidateExpression="aql:input.getAllSemanticElements()" groups="//@extensions.0/@categories.0/@groups.0"/>
+      <pages name="sirius_default_rules_defaultpage" labelExpression="aql:input.emfEditServices(self).getTabName()" semanticCandidateExpression="aql:input.getAllSemanticElements()" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.2"/>
+      <groups name="sirius_default_rules_Help" labelExpression="Help" semanticCandidateExpression="var:self" preconditionExpression="">
+        <controls xsi:type="properties:DynamicMappingForDescription" name="sirius_default_rules_structural_features_for" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
+          <ifs name="if_hyperlink" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and (eStructuralFeature.name='help' or eStructuralFeature.name='additionalHelp') and not input.emfEditServices(self).isMultiline(eStructuralFeature) ">
+            <widget xsi:type="properties:HyperlinkDescription" name="Hyperlink" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:true" valueExpression="aql:self.eGet(eStructuralFeature.name)" displayExpression="var:value">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.openURL(eStructuralFeature)"/>
+              </initialOperation>
+            </widget>
+          </ifs>
+        </controls>
+        <style/>
+      </groups>
       <groups name="sirius_default_rules_defaultgroup" labelExpression="Properties" semanticCandidateExpression="var:self" preconditionExpression="">
         <controls xsi:type="properties:DynamicMappingForDescription" name="sirius_default_rules_structural_features_for" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
-          <ifs name="sirius_default_rules_mono_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature) and not (eStructuralFeature.name='help' or eStructuralFeature.name='additionalHelp' or eStructuralFeature.name='providerName')">
+          <ifs name="sirius_default_rules_mono_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature) and not (eStructuralFeature.name='help' or eStructuralFeature.name='additionalHelp' or eStructuralFeature.name='providerName' or  eStructuralFeature.name='description' or  eStructuralFeature.name='notes')">
             <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
@@ -3618,18 +3630,6 @@
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
               </initialOperation>
-            </widget>
-          </ifs>
-          <ifs name="sirius_default_rules_multi_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and input.emfEditServices(self).isMultiline(eStructuralFeature)">
-            <widget xsi:type="properties:TextAreaDescription" name="sirius_default_rules_multi_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
-              </initialOperation>
-              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-                <style>
-                  <labelFontFormat>bold</labelFontFormat>
-                </style>
-              </conditionalStyles>
             </widget>
           </ifs>
           <ifs name="sirius_default_rules_mono_boolean" predicateExpression="aql:input.emfEditServices(self).needsCheckboxWidget(eStructuralFeature)">
@@ -3667,7 +3667,7 @@
                     <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                       <initialOperation/>
                     </buttons>
-                    <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0/@controls.0/@ifs.5/@widget/@actions.0/@initialOperation/@firstModelOperations/@groups.0"/>
+                    <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.1/@controls.0/@ifs.4/@widget/@actions.0/@initialOperation/@firstModelOperations/@groups.0"/>
                     <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self">
                       <controls xsi:type="properties:TextDescription">
                         <initialOperation>
@@ -3687,13 +3687,6 @@
           </ifs>
           <ifs name="sirius_default_rules_ereference_if" predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EReference) and  eStructuralFeature.many ">
             <widget xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="sirius_default_rules_ereference" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" referenceNameExpression="aql:eStructuralFeature.name"/>
-          </ifs>
-          <ifs name="if_hyperlink" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and (eStructuralFeature.name='help' or eStructuralFeature.name='additionalHelp') and not input.emfEditServices(self).isMultiline(eStructuralFeature) ">
-            <widget xsi:type="properties:HyperlinkDescription" name="Hyperlink" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:true" valueExpression="aql:self.eGet(eStructuralFeature.name)" displayExpression="var:value">
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.openURL(eStructuralFeature)"/>
-              </initialOperation>
-            </widget>
           </ifs>
           <ifs name="sirius_default_rules_reference_App" predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EReference) and (not  eStructuralFeature.many) and eStructuralFeature.eReferenceType=daprdesigner::App">
             <widget xsi:type="properties:SelectDescription" name="provider_select" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)" candidatesExpression="aql:self.getAllApps()" candidateDisplayExpression="aql:candidate.name">
@@ -3766,6 +3759,24 @@
             </widget>
           </ifs>
         </controls>
+        <style expandedByDefault="true"/>
+      </groups>
+      <groups name="sirius_default_rules_additional" labelExpression="Description and Notes" semanticCandidateExpression="var:self" preconditionExpression="">
+        <controls xsi:type="properties:DynamicMappingForDescription" name="sirius_default_rules_structural_features_for" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures() ">
+          <ifs name="sirius_default_rules_multi_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and (eStructuralFeature.name = 'notes' or eStructuralFeature.name = 'description')">
+            <widget xsi:type="properties:TextAreaDescription" name="sirius_default_rules_multi_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+        </controls>
+        <style/>
       </groups>
     </categories>
   </extensions>

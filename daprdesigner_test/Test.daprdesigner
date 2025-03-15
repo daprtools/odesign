@@ -3,7 +3,7 @@
   <buildingblocks name="development">
     <subblocks name="apps" blockType="MICROSERVICES">
       <nodes xsi:type="daprdesigner:NodeBlocks" name="account">
-        <nodes xsi:type="daprdesigner:App" isReady="true" name="account" appId="account" sdkLanguage="NODE" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:App" isReady="true" name="account" description="asdccx" notes="xczxc" appId="account" sdkLanguage="NODE" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="orders">
@@ -60,7 +60,7 @@
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="app_4">
-        <nodes xsi:type="daprdesigner:App" name="app_4" appId="app_4" configurations="//@buildingblocks.0/@subblocks.0/@nodes.6/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:App" name="app_4" notes="" appId="app_4" configurations="//@buildingblocks.0/@subblocks.0/@nodes.6/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="app_5">
