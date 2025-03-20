@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module generateMainAppLocal('http://dapr.io/daprtools/daprdesigner')]
+
+
+[template public generateElement(aBlock : Block)]
+[comment @main/]
+[file (aBlock.name, false, 'UTF-8')]
+
+[/file]
+[/template]

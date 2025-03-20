@@ -712,6 +712,11 @@ public class Services {
 			MetricsConfiguration m = (MetricsConfiguration) self;
 			m.getHttp_pathMatching().add(value);
 		}
+		if(self instanceof App)
+		{
+			App app = (App)self;
+			app.getCommand().add(value);
+		}
 
 		return self;
 
@@ -731,6 +736,11 @@ public class Services {
 		if (self instanceof MetricsConfiguration) {
 			MetricsConfiguration m = (MetricsConfiguration) self;
 			m.getHttp_pathMatching().removeAll((ArrayList) value);
+		}
+		if(self instanceof App)
+		{
+			App app = (App)self;
+			app.getCommand().removeAll((ArrayList)value);
 		}
 
 		return self;

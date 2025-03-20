@@ -3,7 +3,7 @@
   <buildingblocks name="development">
     <subblocks name="apps" blockType="MICROSERVICES">
       <nodes xsi:type="daprdesigner:NodeBlocks" name="account">
-        <nodes xsi:type="daprdesigner:App" isReady="true" name="account" description="asdccx" notes="xczxc" appId="account" sdkLanguage="NODE" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.1"/>
+        <nodes xsi:type="daprdesigner:App" isReady="true" name="account" description="asdccx" notes="xczxc" appId="account" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.1" sdkLanguage="NODE"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="orders">
@@ -76,7 +76,7 @@
     </subblocks>
     <subblocks name="actors" blockType="ACTORS">
       <nodes xsi:type="daprdesigner:NodeBlocks" name="payments" nodeBlockType="ACTOR">
-        <nodes xsi:type="daprdesigner:Actor" isReady="true" name="payments" appId="payments" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.2"/>
+        <nodes xsi:type="daprdesigner:Actor" isReady="true" name="payments" appId="payments" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.2"/>
         <nodes xsi:type="daprdesigner:DeniedComponentsConfiguration" isReady="true" name="dcc_2" deniedComponents="//@buildingblocks.0/@subblocks.5/@nodes.0/@nodes.0"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
