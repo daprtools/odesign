@@ -3,7 +3,10 @@
   <buildingblocks name="development">
     <subblocks name="apps" blockType="MICROSERVICES">
       <nodes xsi:type="daprdesigner:NodeBlocks" name="account">
-        <nodes xsi:type="daprdesigner:App" isReady="true" name="account" description="asdccx" notes="xczxc" appId="account" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.1" sdkLanguage="NODE"/>
+        <nodes xsi:type="daprdesigner:App" isReady="true" name="account" description="asdccx" notes="xczxc" appId="account" appDirPath="./account" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.1" sdkLanguage="NODE">
+          <command>python</command>
+          <command>app.py</command>
+        </nodes>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
       <nodes xsi:type="daprdesigner:NodeBlocks" name="orders">

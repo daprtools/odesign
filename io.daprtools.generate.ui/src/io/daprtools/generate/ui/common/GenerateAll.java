@@ -119,6 +119,13 @@ public class GenerateAll {
 			generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("io.daprtools.generate", "io.daprtools.generate.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 			gen5.setGenerationID(generationID);
 			gen5.doGenerate(BasicMonitor.toMonitor(monitor));
+			
+			monitor.subTask("Loading...");
+			io.daprtools.generate.GenerateMainAppLocal gen6 = new io.daprtools.generate.GenerateMainAppLocal(model, targetFolder.getLocation().toFile(), arguments);
+			monitor.worked(1);
+			generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("io.daprtools.generate", "io.daprtools.generate.GenerateMainAppLocal", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
+			gen6.setGenerationID(generationID);
+			gen6.doGenerate(BasicMonitor.toMonitor(monitor));
 		}
 			
 		

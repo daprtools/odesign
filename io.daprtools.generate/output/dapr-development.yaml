@@ -1,0 +1,58 @@
+version: 1
+common:
+  resourcesPath: ./components 
+  
+apps:
+  appId: account
+  appDirPath: ./account
+  command: [ "python" , "app.py" ,  ]
+  appHealthCheckPath: "/healthz"
+  configFilePath: account/config.yaml
+  appId: orders
+  appDirPath: 
+  appHealthCheckPath: "/healthz"
+  configFilePath: orders/config.yaml
+  appId: cart
+  appDirPath: 
+  appHealthCheckPath: "/healthz"
+  configFilePath: cart/config.yaml
+  appId: app_1
+  appDirPath: 
+  appHealthCheckPath: "/healthz"
+  configFilePath: app_1/config.yaml
+  appId: app_2
+  appDirPath: 
+  appHealthCheckPath: "/healthz"
+  configFilePath: app_2/config.yaml
+  appId: app_3
+  appDirPath: 
+  appHealthCheckPath: "/healthz"
+  configFilePath: app_3/config.yaml
+  appId: app_4
+  appDirPath: 
+  appHealthCheckPath: "/healthz"
+  configFilePath: app_4/config.yaml
+  appId: app_5
+  appDirPath: 
+  appHealthCheckPath: "/healthz"
+  configFilePath: app_5/config.yaml
+  appId: app_6
+  appDirPath: 
+  appHealthCheckPath: "/healthz"
+  configFilePath: app_6/config.yaml
+  appId: payments
+  appDirPath: 
+  appHealthCheckPath: "/healthz"
+  configFilePath: payments/config.yaml
+  appId: userActor
+  appDirPath: 
+  appHealthCheckPath: "/healthz"
+  configFilePath: userActor/config.yaml
+  appId: fulfillment
+  appDirPath: 
+  appHealthCheckPath: "/healthz"
+  configFilePath: fulfillment/config.yaml
+  appId: returns
+  appDirPath: 
+  appHealthCheckPath: "/healthz"
+  configFilePath: returns/config.yaml

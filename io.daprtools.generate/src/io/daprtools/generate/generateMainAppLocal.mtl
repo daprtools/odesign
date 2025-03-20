@@ -4,7 +4,22 @@
 
 [template public generateElement(aBlock : Block)]
 [comment @main/]
-[file (aBlock.name, false, 'UTF-8')]
-
+[if (aBlock.blockType = BlockType::ENVIRONMENT)]
+[file ('dapr-'+aBlock.name+'.yaml', false, 'UTF-8')]
+version: 1
+common:
+  resourcesPath: ./components 
+  
+apps:
+[for (app:App | aBlock.eAllContents(daprdesigner::App))]
+  appId: [app.appId/]
+  appDirPath: [app.appDirPath/]
+[if (app.command->size() > 0)]
+  command: ['[ '/][for (s:String | command)]"[s/]" , [/for][' ]'/]
+[/if]
+  appHealthCheckPath: "[app.appHealthCheckPath/]"
+  configFilePath: [app.appId/]/config.yaml
+[/for]
 [/file]
+[/if]
 [/template]
