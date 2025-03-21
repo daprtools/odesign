@@ -238,6 +238,20 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Conversation" containerMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']" iconPath="/io.dapr.daprdesigner.design/icons/png/64/containers/Conversation.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.blockType = daprdesigner::BlockType::ENVIRONMENT">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="daprdesigner::Block" referenceName="subblocks">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="blockType" valueExpression="aql:daprdesigner::BlockType::CONVERSATION"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:getUnnamed()"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="App Configurations" containerMappings="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']" iconPath="/io.dapr.daprdesigner.design/icons/png/64/containers/ConfigurationGroup.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -567,6 +581,9 @@
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.blockType=daprdesigner::BlockType::STATESTORE">
             <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@style //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@style //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Environment']/@defaultLayer/@containerMappings[name='Block']/@style" attributeName="iconPath" value="/io.dapr.daprdesigner.design/icons/png/64/containers/StateStore.png"/>
           </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.blockType=daprdesigner::BlockType::CONVERSATION">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@style //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@style //@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Environment']/@defaultLayer/@containerMappings[name='Block']/@style" attributeName="iconPath" value="/io.dapr.daprdesigner.design/icons/png/64/containers/Conversation.png"/>
+          </vsmElementCustomizations>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.nodeBlockType=daprdesigner::NodeBlockType::APP">
             <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']/@style" attributeName="workspacePath" value="/io.dapr.daprdesigner.design/icons/png/48/components/App2.png"/>
           </vsmElementCustomizations>
@@ -613,6 +630,9 @@
             <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']/@style" attributeName="workspacePath" value="/io.dapr.daprdesigner.design/icons/png/48/components/ConfigurationStore.png"/>
           </vsmElementCustomizations>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.nodeBlockType=daprdesigner::NodeBlockType::MIDDLEWARE">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']/@style" attributeName="workspacePath" value="/io.dapr.daprdesigner.design/icons/png/48/components/Middleware.png"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.nodeBlockType=daprdesigner::NodeBlockType::CONVERSATION">
             <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer/@containerMappings[name='Environment']/@subContainerMappings[name='Service%20Groups']/@subNodeMappings[name='NodeBlock']/@style" attributeName="workspacePath" value="/io.dapr.daprdesigner.design/icons/png/48/components/Middleware.png"/>
           </vsmElementCustomizations>
         </customization>
@@ -3608,12 +3628,15 @@
               </initialOperation>
             </widget>
           </ifs>
+          <ifs name="if_requiredFields" predicateExpression="aql:eStructuralFeature.name = 'requiredFields'">
+            <widget xsi:type="properties:LabelDescription" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:true" valueExpression="aql:self.eGet(eStructuralFeature.name)" displayExpression="var:value"/>
+          </ifs>
         </controls>
         <style/>
       </groups>
       <groups name="sirius_default_rules_defaultgroup" labelExpression="Properties" semanticCandidateExpression="var:self" preconditionExpression="">
         <controls xsi:type="properties:DynamicMappingForDescription" name="sirius_default_rules_structural_features_for" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
-          <ifs name="sirius_default_rules_mono_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature) and not (eStructuralFeature.name='help' or eStructuralFeature.name='additionalHelp' or eStructuralFeature.name='providerName' or  eStructuralFeature.name='description' or  eStructuralFeature.name='notes')">
+          <ifs name="sirius_default_rules_mono_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature) and not (eStructuralFeature.name='help' or eStructuralFeature.name='additionalHelp' or eStructuralFeature.name='providerName' or  eStructuralFeature.name='description' or  eStructuralFeature.name='notes' or  eStructuralFeature.name='requiredFields')">
             <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>

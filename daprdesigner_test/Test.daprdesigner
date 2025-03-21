@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <daprdesigner:DaprArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:daprdesigner="http://dapr.io/daprtools/daprdesigner">
-  <buildingblocks name="development">
+  <buildingblocks name="development" blockType="ENVIRONMENT">
     <subblocks name="apps" blockType="MICROSERVICES">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="account">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="account" nodeBlockType="APP">
         <nodes xsi:type="daprdesigner:App" isReady="true" name="account" description="asdccx" notes="xczxc" appId="account" appDirPath="./account" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.0/@nodes.0/@nodes.1" sdkLanguage="NODE">
           <command>python</command>
           <command>app.py</command>
         </nodes>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="orders">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="orders" nodeBlockType="APP">
         <nodes xsi:type="daprdesigner:App" name="orders" appId="orders" configurations="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1" policies="//@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.2 //@buildingblocks.0/@subblocks.0/@nodes.1/@nodes.3"/>
         <nodes xsi:type="daprdesigner:AppPolicy" name="ap_1" app="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0"/>
         <nodes xsi:type="daprdesigner:AppPolicy" name="ap_2" app="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.0"/>
       </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="cart">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="cart" nodeBlockType="APP">
         <nodes xsi:type="daprdesigner:App" name="cart" appId="cart" configurations="//@buildingblocks.0/@subblocks.0/@nodes.2/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="app_1">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="app_1" nodeBlockType="APP">
         <nodes xsi:type="daprdesigner:App" name="app_1" appId="app_1" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.1 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.6 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.7 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.8 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.9 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.12 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.13 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.17 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.20"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="app_1_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1" policies="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.2 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.5"/>
         <nodes xsi:type="daprdesigner:AppPolicy" name="ap_1" app="//@buildingblocks.0/@subblocks.0/@nodes.5/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" namespace="//@buildingblocks.0/@nodes.0" operations="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.3 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.4"/>
-        <nodes xsi:type="daprdesigner:Operation" isReady="true" name="o_1" protocol="GRPC" operationName="order1" action="DENY"/>
+        <nodes xsi:type="daprdesigner:Operation" isReady="true" name="o_1" operationName="order1" action="DENY"/>
         <nodes xsi:type="daprdesigner:Operation" isReady="true" name="o_2" operationName="/account" applyToGet="true" applyToPost="true" action="DENY"/>
         <nodes xsi:type="daprdesigner:AppPolicy" name="ap_3" app="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" namespace="//@buildingblocks.0/@nodes.0"/>
         <nodes xsi:type="daprdesigner:DeniedComponentsConfiguration" name="dcc_4" deniedComponents="//@buildingblocks.0/@subblocks.6/@nodes.0/@nodes.0 //@buildingblocks.0/@subblocks.5/@nodes.0/@nodes.0"/>
@@ -44,46 +44,46 @@
           <http_pathMatching>/payments/{paymentID}/details</http_pathMatching>
         </nodes>
         <nodes xsi:type="daprdesigner:APIAccessControl" name="apiac_7" apiList="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.14 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.15 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.16"/>
-        <nodes xsi:type="daprdesigner:API" name="api_8" apiType="STATE" api_version="v1" protocol="GRPC"/>
+        <nodes xsi:type="daprdesigner:API" name="api_8" apiType="STATE" api_version="v1"/>
         <nodes xsi:type="daprdesigner:API" name="api_9" apiType="SECRETS" api_version="v1" access="DENY"/>
-        <nodes xsi:type="daprdesigner:API" name="api_10" apiType="WORKFLOWS" api_version="v1" protocol="GRPC"/>
+        <nodes xsi:type="daprdesigner:API" name="api_10" apiType="WORKFLOWS" api_version="v1"/>
         <nodes xsi:type="daprdesigner:MiddlewareConfiguration" name="mc_10" httpHandlers="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.19 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.18"/>
         <nodes xsi:type="daprdesigner:HttpHandler" name="hh_11" middlewareComponent="//@buildingblocks.0/@subblocks.7/@nodes.1/@nodes.0"/>
         <nodes xsi:type="daprdesigner:HttpHandler" name="hh_12" middlewareComponent="//@buildingblocks.0/@subblocks.7/@nodes.0/@nodes.0" handlerType="OUTGOING"/>
         <nodes xsi:type="daprdesigner:TracingConfiguration" name="tc_1" samplingRate="0.001" stdout="true" otel_endPointAddress="otelcollector.observability.svc.cluster.local:4317" otel_isSecure="true" zipkin_endPointAddress="http://zipkin.default.svc.cluster.local:9411/api/v2/spans"/>
       </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="app_2">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="app_2" nodeBlockType="APP">
         <nodes xsi:type="daprdesigner:App" name="app_2" appId="app_2" configurations="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1" policies="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.2"/>
         <nodes xsi:type="daprdesigner:AppPolicy" name="ap_4" app="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" operations="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.3"/>
         <nodes xsi:type="daprdesigner:Operation" name="o_1" operationName="/order" action="DENY"/>
       </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="app_3">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="app_3" nodeBlockType="APP">
         <nodes xsi:type="daprdesigner:App" name="app_3" appId="app_3" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.0/@nodes.5/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="app_4">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="app_4" nodeBlockType="APP">
         <nodes xsi:type="daprdesigner:App" name="app_4" notes="" appId="app_4" configurations="//@buildingblocks.0/@subblocks.0/@nodes.6/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="app_5">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="app_5" nodeBlockType="APP">
         <nodes xsi:type="daprdesigner:App" name="app_5" appId="app_5" configurations="//@buildingblocks.0/@subblocks.0/@nodes.7/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1" policies="//@buildingblocks.0/@subblocks.0/@nodes.7/@nodes.2"/>
         <nodes xsi:type="daprdesigner:AppPolicy" name="ap_1" app="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1" operations="//@buildingblocks.0/@subblocks.0/@nodes.7/@nodes.3"/>
         <nodes xsi:type="daprdesigner:Operation" name="o_1" operationName="/orders" applyToGet="true" applyToPost="true"/>
       </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="app_6">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="app_6" nodeBlockType="APP">
         <nodes xsi:type="daprdesigner:App" name="app_6" appId="app_6" configurations="//@buildingblocks.0/@subblocks.0/@nodes.8/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
     </subblocks>
-    <subblocks name="actors" blockType="ACTORS">
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="payments" nodeBlockType="ACTOR">
+    <subblocks name="actors">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="payments">
         <nodes xsi:type="daprdesigner:Actor" isReady="true" name="payments" appId="payments" namespace="//@buildingblocks.0/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1" configurations="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.2"/>
         <nodes xsi:type="daprdesigner:DeniedComponentsConfiguration" isReady="true" name="dcc_2" deniedComponents="//@buildingblocks.0/@subblocks.5/@nodes.0/@nodes.0"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1"/>
       </nodes>
-      <nodes xsi:type="daprdesigner:NodeBlocks" name="user_events" nodeBlockType="ACTOR">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="user_events">
         <nodes xsi:type="daprdesigner:Actor" name="userActor" appId="userActor" configurations="//@buildingblocks.0/@subblocks.1/@nodes.1/@nodes.1"/>
         <nodes xsi:type="daprdesigner:AppAccessControl" name="account_ac" defaultAction="DENY" trustDomain="//@buildingblocks.0/@nodes.1" policies="//@buildingblocks.0/@subblocks.1/@nodes.1/@nodes.2 //@buildingblocks.0/@subblocks.1/@nodes.1/@nodes.3"/>
         <nodes xsi:type="daprdesigner:AppPolicy" name="ap_1" app="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0" trustDomain="//@buildingblocks.0/@nodes.1"/>
@@ -158,7 +158,7 @@
         <nodes xsi:type="daprdesigner:CircuitBreakerPolicy" name="cbp_22" maxRequests="20" interval="30" timeout="40"/>
         <nodes xsi:type="daprdesigner:CircuitBreakerPolicy" name="cbp_23"/>
         <nodes xsi:type="daprdesigner:ResiliencyTarget" name="rt_24" circuitBreakerCacheSize="40" circuitBreaker="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.7" retry="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.5" timeout="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.3" appsActorsOrWorkflows="//@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.6/@nodes.0"/>
-        <nodes xsi:type="daprdesigner:ResiliencyTarget" name="rt_25" type="ACTOR" circuitBreakerCacheSize="30" circuitBreaker="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.8" retry="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.6" timeout="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.4" appsActorsOrWorkflows="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.0"/>
+        <nodes xsi:type="daprdesigner:ResiliencyTarget" name="rt_25" circuitBreakerCacheSize="30" circuitBreaker="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.8" retry="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.6" timeout="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.4" appsActorsOrWorkflows="//@buildingblocks.0/@subblocks.1/@nodes.0/@nodes.0"/>
         <nodes xsi:type="daprdesigner:ResiliencyTarget" name="rt_26" type="COMPONENT_INBOUND" circuitBreakerCacheSize="20" circuitBreaker="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.7" retry="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.6" timeout="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.3" components="//@buildingblocks.0/@subblocks.6/@nodes.0/@nodes.0"/>
         <nodes xsi:type="daprdesigner:ResiliencyTarget" name="rt_27" type="COMPONENT_OUTBOUND" circuitBreakerCacheSize="10" circuitBreaker="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.8" retry="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.6" timeout="//@buildingblocks.0/@subblocks.8/@nodes.1/@nodes.3" components="//@buildingblocks.0/@subblocks.7/@nodes.0/@nodes.0"/>
       </nodes>
