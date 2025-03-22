@@ -105,7 +105,7 @@
         <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="region" value="us-east-1"/>
         <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="accessKey" value="12345"/>
         <nodes xsi:type="daprdesigner:SpecMetadata" isReady="true" name="secretKey" isFetchedFromEnvironment="true" envRef="AWS_SECRETKEY"/>
-        <nodes xsi:type="daprdesigner:SecretStore" isReady="true" name="secretstore" providerName="secretstores.aws.secretmanager" providerVersion="v1" metadata_namespace="//@buildingblocks.0/@nodes.0" specMetadata="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.0 //@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.2"/>
+        <nodes xsi:type="daprdesigner:SecretStore" isReady="true" name="secretstore" providerName="secretstores.aws.secretmanager" providerVersion="v1" metadata_namespace="//@buildingblocks.0/@nodes.0" specMetadata="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.0 //@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.1 //@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.2" scopes="//@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.4/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.7/@nodes.0"/>
       </nodes>
     </subblocks>
     <subblocks isReady="true" name="statestore" blockType="STATESTORE">
