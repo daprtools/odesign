@@ -62,6 +62,10 @@ public class Services {
 			+ "middleware.http.bearer,middleware.http.ratelimit,middleware.http.opa,"
 			+ "middleware.http.routeralias,middleware.http.routerchecker,"
 			+ "middleware.http.sentinel,middleware.http.uppercase,middleware.http.wasm";
+	
+	static String conversation = "conversation.aws.bedrock,conversation.anthropic,"
+			+ "conversation.deepseek,conversation.huggingface,"
+			+ "conversation.mistral,conversation.openai";
 
 	/**
 	 * See
@@ -690,6 +694,8 @@ public class Services {
 			return (List<String>) Arrays.asList(locks.split(","));
 		case "configurationstore":
 			return (List<String>) Arrays.asList(configurationstore.split(","));
+		case "conversation":
+			return (List<String>) Arrays.asList(conversation.split(","));	
 
 		}
 

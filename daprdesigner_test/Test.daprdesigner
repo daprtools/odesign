@@ -168,6 +168,12 @@
         <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_30" value="werwer"/>
       </nodes>
     </subblocks>
+    <subblocks name="conversation_1" blockType="CONVERSATION">
+      <nodes xsi:type="daprdesigner:NodeBlocks" name="conversation_2" nodeBlockType="CONVERSATION">
+        <nodes xsi:type="daprdesigner:Conversation" name="c_1" providerName="conversation.openai" auth="//@buildingblocks.0/@subblocks.3/@nodes.0/@nodes.3" metadata_namespace="//@buildingblocks.0/@nodes.0" specMetadata="//@buildingblocks.0/@subblocks.9/@nodes.0/@nodes.1" scopes="//@buildingblocks.0/@subblocks.0/@nodes.7/@nodes.0 //@buildingblocks.0/@subblocks.0/@nodes.3/@nodes.0"/>
+        <nodes xsi:type="daprdesigner:SpecMetadata" name="sm_2"/>
+      </nodes>
+    </subblocks>
     <nodes xsi:type="daprdesigner:Namespace" isReady="true" name="dev"/>
     <nodes xsi:type="daprdesigner:Trustdomain" isReady="true" name="public"/>
   </buildingblocks>
