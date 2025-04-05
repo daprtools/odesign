@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Acceleo Generate Module Runtime Plug-in
-Bundle-SymbolicName: io.daprtools.generate
+Bundle-Name: DaprDesigner YAML Generator
+Bundle-SymbolicName: io.daprtools.generate;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: io.daprtools.generate.Activator
-Bundle-Vendor: Eclipse Modeling Project
+Bundle-Vendor: io.github.daprtools
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,

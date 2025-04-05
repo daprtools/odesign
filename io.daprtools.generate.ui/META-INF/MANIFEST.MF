@@ -9,15 +9,15 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
  io.daprtools.generate,
- org.eclipse.acceleo.engine,
- daprdesigner;bundle-version="0.1.0",
- daprdesigner.edit;bundle-version="1.0.0",
- daprdesigner.editor;bundle-version="1.0.0",
- io.dapr.daprdesigner.design;bundle-version="1.0.0"
+ org.eclipse.acceleo.engine
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
 Automatic-Module-Name: io.daprtools.generate.ui
-Export-Package: io.daprtools.generate.ui,
- io.daprtools.generate.ui.common,
- io.daprtools.generate.ui.popupMenus
+Export-Package: io.daprtools.generate.ui;uses:="org.osgi.framework,org.eclipse.ui.plugin",
+ io.daprtools.generate.ui.common;uses:="org.eclipse.core.runtime,org.eclipse.emf.common.util,org.eclipse.core.resources",
+ io.daprtools.generate.ui.popupMenus;
+  uses:="org.eclipse.ui,
+   org.eclipse.ui.actions,
+   org.eclipse.jface.action,
+   org.eclipse.jface.viewers"
