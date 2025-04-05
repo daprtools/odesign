@@ -15,7 +15,7 @@
                enablesFor="+"
                id="io.daprtools.generate.ui.popupMenus.acceleoGenerateSampleAction"
                icon="icons/default.gif"
-               label="Generate Sample"
+               label="Generate Yaml"
                menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
       </objectContribution>
    </extension>
