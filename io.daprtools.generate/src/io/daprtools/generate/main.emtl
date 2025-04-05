@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="main" nsURI="io::daprtools::generate::main" startHeaderPosition="29" endHeaderPosition="82">
+    <input>
+      <takesTypesFrom href="http://dapr.io/daprtools/daprdesigner#/"/>
+    </input>
+    <imports href="generateApp.emtl#/0"/>
+    <imports href="generateComponent.emtl#/0"/>
+    <imports href="generateHttpEndpoint.emtl#/0"/>
+    <imports href="generateResiliency.emtl#/0"/>
+    <imports href="generateSubscription.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Template" name="mainApp" visibility="Public" main="true">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#xA;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+      <body xsi:type="mtl:TemplateInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="generateApp.emtl#/0/generateElement"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aApp" referredVariable="/0/mainApp/aApp">
+          <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//App"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;"/>
+      <parameter name="aApp">
+        <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//App"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="mainComponent" visibility="Public" main="true">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#xA;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+      <body xsi:type="mtl:TemplateInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="generateComponent.emtl#/0/generateElement"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aComponent" referredVariable="/0/mainComponent/aComponent">
+          <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//Component"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;"/>
+      <parameter name="aComponent">
+        <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//Component"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="mainHTTPEndPoint" visibility="Public" main="true">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#xA;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+      <body xsi:type="mtl:TemplateInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="generateHttpEndpoint.emtl#/0/generateElement"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aHTTPEndPoint" referredVariable="/0/mainHTTPEndPoint/aHTTPEndPoint">
+          <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//HTTPEndPoint"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;"/>
+      <parameter name="aHTTPEndPoint">
+        <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//HTTPEndPoint"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="mainResiliencyConfiguration" visibility="Public" main="true">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#xA;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+      <body xsi:type="mtl:TemplateInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="generateResiliency.emtl#/0/generateElement"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aResiliencyConfiguration" referredVariable="/0/mainResiliencyConfiguration/aResiliencyConfiguration">
+          <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//ResiliencyConfiguration"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;"/>
+      <parameter name="aResiliencyConfiguration">
+        <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//ResiliencyConfiguration"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="mainSubscriptionConfiguration" visibility="Public" main="true">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#xA;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+      <body xsi:type="mtl:TemplateInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="generateSubscription.emtl#/0/generateElement"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aSubscriptionConfiguration" referredVariable="/0/mainSubscriptionConfiguration/aSubscriptionConfiguration">
+          <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//SubscriptionConfiguration"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;"/>
+      <parameter name="aSubscriptionConfiguration">
+        <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//SubscriptionConfiguration"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="mainApp">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/mainApp"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aApp">
+          <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//App"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="mainComponent">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/mainComponent"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aComponent">
+          <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//Component"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="mainHTTPEndPoint">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/mainHTTPEndPoint"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aHTTPEndPoint">
+          <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//HTTPEndPoint"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="mainResiliencyConfiguration">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/mainResiliencyConfiguration"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aResiliencyConfiguration">
+          <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//ResiliencyConfiguration"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="mainSubscriptionConfiguration">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/mainSubscriptionConfiguration"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aSubscriptionConfiguration">
+          <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//SubscriptionConfiguration"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateElement">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="generateApp.emtl#/0/generateElement"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="anApp">
+          <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//App"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateElement">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="generateComponent.emtl#/0/generateElement"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aComponent">
+          <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//Component"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateElement">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="generateHttpEndpoint.emtl#/0/generateElement"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aHTTPEndPoint">
+          <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//HTTPEndPoint"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateElement">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="generateResiliency.emtl#/0/generateElement"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aResiliencyConfiguration">
+          <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//ResiliencyConfiguration"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateElement">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="generateSubscription.emtl#/0/generateElement"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aSubscriptionConfiguration">
+          <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//SubscriptionConfiguration"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="daprdesigner_App_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://dapr.io/daprtools/daprdesigner#//App"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="daprdesigner_Component_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://dapr.io/daprtools/daprdesigner#//Component"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="daprdesigner_HTTPEndPoint_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://dapr.io/daprtools/daprdesigner#//HTTPEndPoint"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="daprdesigner_ResiliencyConfiguration_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://dapr.io/daprtools/daprdesigner#//ResiliencyConfiguration"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="daprdesigner_SubscriptionConfiguration_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://dapr.io/daprtools/daprdesigner#//SubscriptionConfiguration"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//App"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//App"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//App"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//Component"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//Component"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//Component"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//HTTPEndPoint"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//HTTPEndPoint"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//HTTPEndPoint"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//ResiliencyConfiguration"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//ResiliencyConfiguration"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//ResiliencyConfiguration"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//SubscriptionConfiguration"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//SubscriptionConfiguration"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://dapr.io/daprtools/daprdesigner#//SubscriptionConfiguration"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/mainApp">
+      <details key="start" value="353"/>
+      <details key="end" value="452"/>
+      <details key="line" value="10"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/mainApp/%">
+      <details key="start" value="391"/>
+      <details key="end" value="393"/>
+      <details key="line" value="11"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/mainApp/%.1">
+      <details key="start" value="412"/>
+      <details key="end" value="413"/>
+      <details key="line" value="13"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/mainApp/%.2">
+      <details key="start" value="414"/>
+      <details key="end" value="436"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/mainApp/%.2/aApp">
+      <details key="start" value="414"/>
+      <details key="end" value="418"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/mainApp/%.3">
+      <details key="start" value="438"/>
+      <details key="end" value="440"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/mainApp/aApp">
+      <details key="start" value="378"/>
+      <details key="end" value="388"/>
+      <details key="line" value="10"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/mainComponent">
+      <details key="start" value="453"/>
+      <details key="end" value="576"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/mainComponent/%">
+      <details key="start" value="509"/>
+      <details key="end" value="511"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/mainComponent/%.1">
+      <details key="start" value="530"/>
+      <details key="end" value="531"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/mainComponent/%.2">
+      <details key="start" value="532"/>
+      <details key="end" value="560"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/mainComponent/%.2/aComponent">
+      <details key="start" value="532"/>
+      <details key="end" value="542"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/mainComponent/%.3">
+      <details key="start" value="562"/>
+      <details key="end" value="564"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/mainComponent/aComponent">
+      <details key="start" value="484"/>
+      <details key="end" value="506"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/mainHTTPEndPoint">
+      <details key="start" value="577"/>
+      <details key="end" value="712"/>
+      <details key="line" value="22"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/mainHTTPEndPoint/%">
+      <details key="start" value="642"/>
+      <details key="end" value="644"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/mainHTTPEndPoint/%.1">
+      <details key="start" value="663"/>
+      <details key="end" value="664"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/mainHTTPEndPoint/%.2">
+      <details key="start" value="665"/>
+      <details key="end" value="696"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/mainHTTPEndPoint/%.2/aHTTPEndPoint">
+      <details key="start" value="665"/>
+      <details key="end" value="678"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/mainHTTPEndPoint/%.3">
+      <details key="start" value="698"/>
+      <details key="end" value="700"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/mainHTTPEndPoint/aHTTPEndPoint">
+      <details key="start" value="611"/>
+      <details key="end" value="639"/>
+      <details key="line" value="22"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/mainResiliencyConfiguration">
+      <details key="start" value="713"/>
+      <details key="end" value="892"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/mainResiliencyConfiguration/%">
+      <details key="start" value="811"/>
+      <details key="end" value="813"/>
+      <details key="line" value="29"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/mainResiliencyConfiguration/%.1">
+      <details key="start" value="832"/>
+      <details key="end" value="833"/>
+      <details key="line" value="31"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/mainResiliencyConfiguration/%.2">
+      <details key="start" value="834"/>
+      <details key="end" value="876"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/mainResiliencyConfiguration/%.2/aResiliencyConfiguration">
+      <details key="start" value="834"/>
+      <details key="end" value="858"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/mainResiliencyConfiguration/%.3">
+      <details key="start" value="878"/>
+      <details key="end" value="880"/>
+      <details key="line" value="32"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/mainResiliencyConfiguration/aResiliencyConfiguration">
+      <details key="start" value="758"/>
+      <details key="end" value="808"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/mainSubscriptionConfiguration">
+      <details key="start" value="893"/>
+      <details key="end" value="1080"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/mainSubscriptionConfiguration/%">
+      <details key="start" value="997"/>
+      <details key="end" value="999"/>
+      <details key="line" value="35"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/mainSubscriptionConfiguration/%.1">
+      <details key="start" value="1018"/>
+      <details key="end" value="1019"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/mainSubscriptionConfiguration/%.2">
+      <details key="start" value="1020"/>
+      <details key="end" value="1064"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/mainSubscriptionConfiguration/%.2/aSubscriptionConfiguration">
+      <details key="start" value="1020"/>
+      <details key="end" value="1046"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/mainSubscriptionConfiguration/%.3">
+      <details key="start" value="1066"/>
+      <details key="end" value="1068"/>
+      <details key="line" value="38"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/mainSubscriptionConfiguration/aSubscriptionConfiguration">
+      <details key="start" value="940"/>
+      <details key="end" value="994"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>
