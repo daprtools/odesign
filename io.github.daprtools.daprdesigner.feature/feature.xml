@@ -18,17 +18,30 @@
    </license>
 
    <plugin
-         id="daprdesigner.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
          id="io.dapr.daprdesigner.design"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="daprdesigner"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="io.daprtools.generate.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="daprdesigner.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
 
    <plugin
          id="daprdesigner.editor"
@@ -37,9 +50,10 @@
          version="0.0.0"/>
 
    <plugin
-         id="daprdesigner"
+         id="io.daprtools.generate"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>

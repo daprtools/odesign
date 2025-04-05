@@ -18,7 +18,8 @@ Require-Bundle: org.eclipse.core.runtime,
  daprdesigner;bundle-version="0.1.0",
  daprdesigner.edit;bundle-version="1.0.0",
  daprdesigner.editor;bundle-version="1.0.0",
- io.dapr.daprdesigner.design;bundle-version="1.0.0"
+ io.dapr.daprdesigner.design;bundle-version="1.0.0",
+ org.eclipse.acceleo.parser;bundle-version="3.7.14"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true

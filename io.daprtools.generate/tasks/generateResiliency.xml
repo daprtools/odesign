@@ -49,6 +49,7 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.commands_3.10.400.v20230220-0932.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.ide_3.20.100.v20230220-1021.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.e4.ui.ide_3.16.300.v20230220-0932.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.parser_3.7.14.202311201319.jar"/>
     </path>
 
     <path id="io.daprtools.generate.classpath">
