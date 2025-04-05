@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: io.dapr.daprdesigner.design;singleton:=true
 Bundle-Version: 1.0.0.qualifier
+Export-Package: io.dapr.daprdesigner.design
 Bundle-Activator: io.dapr.daprdesigner.design.Activator
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.ui,

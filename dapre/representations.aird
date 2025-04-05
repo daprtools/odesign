@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:daprdesigner="http://dapr.io/daprtools/daprdesigner" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description">
+  <viewpoint:DAnalysis uid="_bi9QEBIwEfCbx8xTG_2Vdw" selectedViews="_hqVeABIwEfCbx8xTG_2Vdw" version="15.4.1.202403191723">
+    <semanticResources>My.daprdesigner</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_hqVeABIwEfCbx8xTG_2Vdw">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_hqWsIBIwEfCbx8xTG_2Vdw" name="Architecture" repPath="#_hqWFEBIwEfCbx8xTG_2Vdw" changeId="1743866007560">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']"/>
+        <target xmi:type="daprdesigner:DaprArchitecture" href="My.daprdesigner#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_hqWFEBIwEfCbx8xTG_2Vdw">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_hqXTMBIwEfCbx8xTG_2Vdw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_hqXTMRIwEfCbx8xTG_2Vdw" type="Sirius" element="_hqWFEBIwEfCbx8xTG_2Vdw" measurementUnit="Pixel">
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_hqXTMhIwEfCbx8xTG_2Vdw"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_hqaWgBIwEfCbx8xTG_2Vdw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_hqaWgRIwEfCbx8xTG_2Vdw"/>
+    </ownedAnnotationEntries>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_hqWFERIwEfCbx8xTG_2Vdw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/io.dapr.daprdesigner.design/description/daprdesigner.odesign#//@ownedViewpoints[name='ArchitectureViewpoint']/@ownedRepresentations[name='Architecture']/@defaultLayer"/>
+    <target xmi:type="daprdesigner:DaprArchitecture" href="My.daprdesigner#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
