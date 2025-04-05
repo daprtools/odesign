@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Acceleo Sample Module IDE Plug-in
+Bundle-Name: DaprDesigner Generator
 Bundle-SymbolicName: io.daprtools.generate.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: io.daprtools.generate.ui.Activator
-Bundle-Vendor: Eclipse Modeling Project
+Bundle-Vendor: io.github.daprdesigner
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
