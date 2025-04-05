@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/io.github.daprtools.daprdesigner.feature_1.0.0.202504051929.jar" id="io.github.daprtools.daprdesigner.feature" version="1.0.0.202504051929">
+   <feature url="features/io.github.daprtools.daprdesigner.feature_1.0.0.202504052027.jar" id="io.github.daprtools.daprdesigner.feature" version="1.0.0.202504052027">
       <category name="DaprDesigner"/>
    </feature>
    <category-def name="DaprDesigner" label="DaprDesigner"/>
