@@ -23,4 +23,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
 Export-Package: io.daprtools.generate
+Automatic-Module-Name: io.daprtools.generate
 
