@@ -27,15 +27,13 @@
          id="io.dapr.daprdesigner.design"
          download-size="0"
          install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="io.daprtools.generate"
          download-size="0"
          install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="daprdesigner.editor"
@@ -47,8 +45,7 @@
          id="io.daprtools.generate.ui"
          download-size="0"
          install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="daprdesigner"
