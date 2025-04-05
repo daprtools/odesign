@@ -10,7 +10,9 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources,
  org.eclipse.sirius,
  org.eclipse.sirius.common.acceleo.aql,
- daprdesigner;bundle-version="0.1.0"
+ daprdesigner;bundle-version="0.1.0",
+ daprdesigner.edit;bundle-version="1.0.0",
+ daprdesigner.editor;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Vendor: %providerName
